@@ -7,7 +7,8 @@ import { works } from "@/data/works";
  * 商品データ（data/products）を import しないこと（ブラウザ側のバンドルが大きくなる）。
  */
 /** short … PC のヘッダーで、画面の幅が狭いとき（1280px 未満）に使う短い名前 */
-export type NavLink = { href: string; label: string; note?: string; short?: string };
+/** short：1024〜1279px のヘッダーで使う短い名前。long：1536px 以上のヘッダーとスマホのメニューで使う長い名前 */
+export type NavLink = { href: string; label: string; note?: string; short?: string; long?: string };
 export type NavGroup = { id: string; name: string; links: NavLink[] };
 
 /** 施工事例は、事例を1件以上載せてから、メニューに出す（準備中のページへ、全ページから案内しない） */
@@ -42,6 +43,15 @@ export const categoryNav: NavLink[] = [
   { href: "/ene-farm", label: "エネファームからの交換" },
 ];
 
+/** 設置方式から探す（商品一覧の絞り込みへ） */
+export const installNav: NavLink[] = [
+  { href: "/products?install=wall", label: "屋外壁掛" },
+  { href: "/products?install=floor", label: "屋外据置" },
+  { href: "/products?install=ps-door", label: "PS扉内設置（マンション）" },
+  { href: "/products?install=ps-standard", label: "PS標準設置・アルコーブ" },
+  { href: "/products?install=ground", label: "タンク式（エコキュート・ハイブリッド）" },
+];
+
 /** 条件から探す（商品一覧の絞り込みへ） */
 export const finderNav: NavLink[] = [
   { href: "/products?gou=24", label: "24号" },
@@ -51,17 +61,28 @@ export const finderNav: NavLink[] = [
   { href: "/products?subsidy=1", label: "補助金の対象機種" },
 ];
 
-/** ヘッダーの主メニュー */
+/**
+ * ヘッダーの主メニュー（PC の下段・スマホのメニュー）。
+ * 「給湯器を探す」「メーカーから探す」は、PC ではホバー・フォーカスで一覧が開く（components/layout/Header.tsx）。
+ */
 export const mainNav: NavLink[] = [
-  { href: "/products", label: "商品を探す" },
+  { href: "/products", label: "給湯器を探す" },
+  { href: "/products#makers", label: "メーカーから探す", short: "メーカー" },
+  { href: "/ecocute", label: "エコキュート" },
   { href: "/hybrid", label: "ハイブリッド給湯器", short: "ハイブリッド" },
-  { href: "/subsidy", label: "補助金" },
-  { href: "/guide", label: "選び方" },
-  { href: "/trouble", label: "故障・トラブル" },
+  { href: "/guide/cost", label: "交換費用", long: "給湯器の交換費用" },
+  { href: "/subsidy", label: "補助金", long: "補助金情報" },
   { href: "/area", label: "対応エリア" },
 ];
 
-/** ヘッダー上段の補助メニュー */
+/** スマホのメニューで、主メニューに続けて出すページ */
+export const guideNav: NavLink[] = [
+  { href: "/guide", label: "給湯器の選び方" },
+  { href: "/trouble", label: "故障・トラブル" },
+  { href: "/compare", label: "機種を比較する" },
+];
+
+/** ヘッダー上段の補助メニュー（PC・1280px 以上） */
 export const subNav: NavLink[] = [
   { href: "/flow", label: "交換工事の流れ" },
   ...worksNav,

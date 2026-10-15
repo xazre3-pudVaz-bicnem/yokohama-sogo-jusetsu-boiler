@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * パナソニックの商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const panasonicProducts: Product[] = [
+export const panasonicProducts: ProductData[] = [
   {
     "id": "panasonic-he-j37nqs",
     "slug": "he-j37nqs",
@@ -184,15 +184,6 @@ export const panasonicProducts: Product[] = [
       "停電時は、ふろ自動・追いだき、タンクの沸き上げ等はできない。集合住宅等でポンプ給水の場合はお湯が出ない。非常用取水栓の湯水の飲用は避ける。非常用取水栓だけではタンクの湯水をすべては取り出せない",
       "耐塩害仕様（HE-J37NQES）は受注生産。納期は受注後約60営業日、状況によっては約90営業日前後かかる場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://sumai.panasonic.jp/hp/lineup/img_db/lineup_j37nqs_main.jpg",
-      "pageUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_fa_jn_370",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "横長（1200×350）のバナー形の画像。スマホ用は同じ名前に _s が付く（750×510）。"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_fa_jn_370",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -403,15 +394,6 @@ export const panasonicProducts: Product[] = [
       "停電時は、ふろ自動・追いだき、タンクの沸き上げ等はできない。集合住宅等でポンプ給水の場合はお湯が出ない。非常用取水栓の湯水の飲用は避ける。非常用取水栓だけではタンクの湯水をすべては取り出せない",
       "耐塩害仕様（HE-J46NQES）は受注生産。納期は受注後約60営業日、状況によっては約90営業日前後かかる場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://sumai.panasonic.jp/hp/lineup/img_db/lineup_j46nqs_main.jpg",
-      "pageUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_fa_jn_460",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "横長（1200×350）のバナー形の画像。スマホ用は同じ名前に _s が付く（750×510）。"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_fa_jn_460",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -624,15 +606,6 @@ export const panasonicProducts: Product[] = [
       "給水圧力が低いと十分な性能が得られないことがある。メーカーのシャワー流量の比較条件は「給水元圧：高圧・パワフル高圧300kPa／ウルトラ高圧400kPa」",
       "J シリーズのウルトラ高圧フルオートに耐塩害仕様は無い（耐塩害仕様の J シリーズは高圧フルオートと給湯専用）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://sumai.panasonic.jp/hp/lineup/img_db/lineup_ju37nqs_main.jpg",
-      "pageUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_uk_jun_370",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "横長（1200×350）のバナー形の画像。スマホ用は同じ名前に _s が付く（750×510）。"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_uk_jun_370",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -832,15 +805,6 @@ export const panasonicProducts: Product[] = [
       "W シリーズに耐塩害仕様は無い",
       "年間給湯保温効率は、冬期の沸き上げ温度を65℃（W・Hシリーズの370Lタイプは70℃）とした条件の値"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://sumai.panasonic.jp/hp/lineup/img_db/lineup_w37lqs_main.jpg",
-      "pageUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_fa_wl_370",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "横長（1200×350）のバナー形の画像。スマホ用は同じ名前に _s が付く（750×510）。"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_fa_wl_370",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -1054,15 +1018,6 @@ export const panasonicProducts: Product[] = [
       "JP シリーズに耐塩害仕様は無い",
       "ヒートポンプユニットの質量は 49kg で、J シリーズ（41kg）より重い"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://sumai.panasonic.jp/hp/lineup/img_db/lineup_jpu37nqs_main.jpg",
-      "pageUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_uk_jpn_370",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "横長（1200×350）のバナー形の画像。スマホ用は同じ名前に _s が付く（750×510）。"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://sumai.panasonic.jp/hp/lineup/product.php?id=ippan_uk_jpn_370",
     "manufacturerPrice": null,
     "salesPrice": null,

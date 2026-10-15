@@ -1,11 +1,13 @@
-import type { Brand } from "@/data/products/types";
+import logoRecords from "@/data/brand-logos.json";
+import type { Brand, BrandLogo } from "@/data/products/types";
 
 /**
  * メーカー（商品カタログに載せるもの）。並びは、ガス給湯器・ハイブリッド → エコキュート の順。
  * summary は、メーカーの公式サイトで確かめられる事実だけ（「人気」「おすすめ」のような評価は書かない）。
- * imagePolicy は、公式サイトの利用条件で、製品写真の転載について確かめたこと（docs/IMAGE_SOURCES.md と同じ内容）。
+ * imagePolicy は、製品写真・ロゴの利用の許可について確かめたこと（docs/IMAGE_SOURCES.md と同じ内容）。
+ * logo は、公式ロゴのファイル。記録は data/brand-logos.json（scripts/apply-image-manifests.ts が、取得の記録から作る）。
  */
-export const brands: Brand[] = [
+const brandData: Omit<Brand, "logo">[] = [
   {
     id: "rinnai",
     name: "リンナイ",
@@ -15,10 +17,10 @@ export const brands: Brand[] = [
     summary: "ガス給湯器（エコジョーズ・従来型）と、ハイブリッド給湯・暖房システム「ECO ONE（エコワン）」をつくっています。",
     categories: ["eco-jozu", "gas", "hybrid"],
     imagePolicy: {
-      status: "pending",
-      note: "公式サイトの写真は、承諾なしの複製・送信が禁止。販売店向けの会員サイト「Rinnai BiZ」に画像のダウンロードがあるが、利用は「当社商品の販売・取付工事・修理その他当社商品に関する業務」の範囲とされ、自社サイトへの掲載が含まれるかは書かれていない。製品データダウンロード（Sup-Ri-net）は、不特定多数への公開には連絡と許可が必要。リンナイに掲載の許可を確かめるまで、写真は載せない。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www.rinnai.jp/site_policy/",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
   {
@@ -30,10 +32,10 @@ export const brands: Brand[] = [
     summary: "ガス給湯器（エコジョーズ・従来型）と、ハイブリッド給湯システムをつくっています。",
     categories: ["eco-jozu", "gas", "hybrid"],
     imagePolicy: {
-      status: "pending",
-      note: "公式サイトの写真は、許諾なしの複製・営利目的の利用が禁止。会員サイト「お湯net」（ビジネスパートナー向け・無料）で製品画像をダウンロードできるが、自社サイトへの掲載の可否は公開ページでは確かめられなかった。ノーリツか、お湯net の利用条件で掲載を確かめるまで、写真は載せない。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www.noritz.co.jp/policy/",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
   {
@@ -45,10 +47,10 @@ export const brands: Brand[] = [
     summary: "ガス給湯器（エコジョーズ・従来型）と、ハイブリッドふろ給湯システムをつくっています。",
     categories: ["eco-jozu", "gas", "hybrid"],
     imagePolicy: {
-      status: "pending",
-      note: "製品画像は「製品仕様図 / 取扱説明書 / 工事説明書等ダウンロード」で、利用条件（販売促進目的の使用は可、複製・加工しての第三者提供は禁止）に同意して取得できる。ウェブサイトへの掲載が販売促進目的に含まれるかは明記がない。会員サイト「パロマほっとなび」にも画像ダウンロードがある（条件は非公開）。パロマに確かめるまで、写真は載せない。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www.paloma.co.jp/downloads/index.html",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
   {
@@ -60,10 +62,10 @@ export const brands: Brand[] = [
     summary: "エコキュート（家庭用ヒートポンプ給湯機）をつくっています。",
     categories: ["ecocute"],
     imagePolicy: {
-      status: "pending",
-      note: "公式サイトの情報は私用目的に限られ、それを越える使用は明示の許諾が必要。パートナーWeb「WIN2K」に製品画像があるが、利用規約の目的は建築設計・お客様への説明等で、自社サイトへの掲載を認める文言はない。三菱電機（または仕入先）に許諾を確かめるまで、写真は載せない。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www.mitsubishielectric.co.jp/ja/terms/",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
   {
@@ -75,10 +77,10 @@ export const brands: Brand[] = [
     summary: "エコキュート（家庭用ヒートポンプ給湯機）をつくっています。",
     categories: ["ecocute"],
     imagePolicy: {
-      status: "pending",
-      note: "公式サイト（sumai.panasonic.jp）の画像の転載は不可。販売店・工事店向けの「画像データ ダウンロード」の画像は、パナソニック製品を代理店等から仕入れて販売している場合に、改変しない・商品名を表示する・ロゴを使わない・自社の施工事例と誤認させない等の条件をすべて守れば、連絡なしでウェブサイトに掲載できる（許諾したものとみなす、と規約にある）。当社の仕入れの形を確かめたうえで、この仕組みの画像を条件どおりに使える。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www2.panasonic.biz/jp/sumai/gazou/",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
   {
@@ -90,10 +92,10 @@ export const brands: Brand[] = [
     summary: "エコキュート（家庭用ヒートポンプ給湯機）をつくっています。",
     categories: ["ecocute"],
     imagePolicy: {
-      status: "pending",
-      note: "公式サイトの情報は、文書による事前の許可がない限り使用禁止。販売店向けの「D-SEARCH」に製品画像があるが、利用目的にウェブサイトへの掲載が含まれるかは明記がない。ダイキンの販売会社に確かめるまで、写真は載せない。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www.daikin.co.jp/policy",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
   {
@@ -105,10 +107,14 @@ export const brands: Brand[] = [
     summary: "エコキュート（家庭用ヒートポンプ給湯機）をつくっています。",
     categories: ["ecocute"],
     imagePolicy: {
-      status: "pending",
-      note: "公式サイトの情報は、許可なく複製・転載することが禁止。販売店向けに製品画像を配る仕組みは、公開ページでは見つからなかった。コロナの営業所に許可を取るまで、写真は載せない。",
+      status: "permitted",
+      note: "2026-10-15、横浜総合住設から「メーカーの製品写真・ロゴの使用許可を取得済み」との連絡を受けて、掲載を始めた（許可の書面と条件は会社で保管する）。使うのは、メーカーの公式サイト・公式資料の写真とロゴだけで、縮小と形式の変換のほかは加工しない。公式サイトの規約では、許可なしの転載は禁止されている（許可の範囲が変わったら、ここと docs/IMAGE_SOURCES.md を直す）。",
       termsUrl: "https://www.corona.co.jp/website/index.html",
-      checkedAt: "2026-10-14",
+      checkedAt: "2026-10-15",
     },
   },
 ];
+
+const logos = logoRecords as Record<string, BrandLogo>;
+
+export const brands: Brand[] = brandData.map((b) => ({ ...b, logo: logos[b.id] ?? null }));

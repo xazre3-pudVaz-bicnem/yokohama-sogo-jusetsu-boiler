@@ -162,8 +162,15 @@ async function sendMail(payload: { to: string[]; subject: string; text: string; 
   if (!res.ok) throw new Error(`Resend ${res.status}: ${(await res.text()).slice(0, 300)}`);
 }
 
+/** 見ていた機種のページを、メールで開ける形にする（本番の URL が決まっていなければ、パスのまま） */
+function pageUrl(path: string): string {
+  if (!path) return "（なし）";
+  const base = (process.env.NEXT_PUBLIC_SITE_URL ?? "").replace(/\/+$/, "");
+  return base ? `${base}${path}` : path;
+}
+
 function estimateText(d: Estimate): string {
-  return ESTIMATE_FIELDS.map((k) => `■ ${estimateLabels[k]}\n${d[k] || "（未入力）"}`).join("\n\n");
+  return ESTIMATE_FIELDS.map((k) => `■ ${estimateLabels[k]}\n${k === "productPage" ? pageUrl(d.productPage) : d[k] || "（未入力）"}`).join("\n\n");
 }
 
 async function sendNotification(d: Estimate, photos: CheckedPhoto[]) {
@@ -300,7 +307,7 @@ async function sendPhotoNotification(d: PhotoEstimate, photos: CheckedPhoto[], m
           ? "お客様の入力"
           : "";
   const body = PHOTO_ESTIMATE_FIELDS.map((k) => {
-    const v = d[k] || "（未入力）";
+    const v = k === "productPage" ? pageUrl(d.productPage) : d[k] || "（未入力）";
     return `■ ${photoEstimateLabels[k]}\n${v}${k === "currentModel" && source ? `\n（${source}）` : ""}`;
   }).join("\n\n");
   await sendMail({

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { startTransition, useActionState, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { readLabelPhoto, submitPhotoEstimate } from "@/app/contact/actions";
 import { newToken, shrinkPhoto } from "@/components/contact/photo-utils";
+import { ProductContextNote, readProductContext } from "@/components/contact/ProductContext";
 import { PhotoSlotFigure } from "@/components/contact/PhotoSlotFigure";
 import {
   initialPhotoEstimateState,
@@ -45,6 +46,7 @@ const FIELD_STEP: Record<PhotoEstimateField | "photos", number> = {
   desiredProduct: 1,
   contactPref: 2,
   message: 2,
+  productPage: 1,
   photos: 0,
 };
 
@@ -76,9 +78,11 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
 
   // 機種のページから来たとき：その機種を「気になっている機種」に入れる
   useEffect(() => {
-    const product = new URLSearchParams(window.location.search).get("product");
+    const { product, page } = readProductContext();
     const input = formRef.current?.elements.namedItem("desiredProduct") as HTMLInputElement | null;
-    if (product && input && !input.value) input.value = product.slice(0, 120);
+    if (product && input && !input.value) input.value = product;
+    const pageInput = formRef.current?.elements.namedItem("productPage") as HTMLInputElement | null;
+    if (page && pageInput && !pageInput.value) pageInput.value = page;
   }, [state.attempt]);
 
   // 送信の結果が返ってきたら、最初の誤りがある段階に戻る
@@ -201,7 +205,9 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
       // 確認の画面に出す内容
       const fd = new FormData(formRef.current!);
       setSummary(
-        PHOTO_ESTIMATE_FIELDS.map((k) => [photoEstimateLabels[k], String(fd.get(k) ?? "").trim()] as [string, string]).filter(([, val]) => val !== ""),
+        PHOTO_ESTIMATE_FIELDS.filter((k) => k !== "productPage")
+          .map((k) => [photoEstimateLabels[k], String(fd.get(k) ?? "").trim()] as [string, string])
+          .filter(([, val]) => val !== ""),
       );
     }
     go(step + 1);
@@ -316,6 +322,7 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
         </p>
       )}
 
+      <ProductContextNote />
       <form key={state.attempt} ref={formRef} action={action} onSubmit={onSubmit} noValidate>
         <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
           <label>
@@ -324,6 +331,8 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
           </label>
         </div>
         <input type="hidden" name="elapsed" defaultValue="" />
+        {/* 見ていた機種のページ（機種のページから来たときだけ入る） */}
+        <input type="hidden" name="productPage" defaultValue={v.productPage ?? ""} />
 
         {/* 1. 写真 */}
         <section hidden={step !== 0} aria-label="写真" className="space-y-8">

@@ -9,7 +9,8 @@ import { LineIcon } from "@/components/ui/LineIcon";
  * スマホ下部の固定ボタン（電話・LINE・無料見積もり）。1024px 未満でだけ表示する。
  * 「無料見積もり」は、写真でかんたん見積もり（/contact/photo）へ（スマホなら、その場で給湯器を撮って送れる）。
  * - LINE の設定があるときは3つ並べる。幅 360px でも1行に収まるよう、文字を短くする（読み上げ用の名前は aria-label に書く）。
- * - ページの冒頭では出さない（まず内容を読んでもらう）。ある程度スクロールしてから出す。
+ * - 冒頭に問い合わせのボタンがあるページ（[data-hero-cta]）では、そのボタンが画面から外れたら出す。
+ *   ないページでは、少しスクロールしたら出す（同じボタンが、画面に二重に並ばないように）。
  * - ページ末尾の問い合わせ案内（data-cta-zone）が見えているときは隠す（同じ案内が二重に並ばないように）。
  * - お問い合わせページでは出さない（フォームの送信ボタンと重なるため）。
  * 表示の切り替えは data 属性で行い、React の再描画を起こさない。
@@ -27,7 +28,9 @@ export function MobileCtaBar({ phone, telHref, line }: { phone: string; telHref:
       ticking = false;
       const zone = document.querySelector<HTMLElement>("[data-cta-zone]");
       const inZone = zone ? zone.getBoundingClientRect().top < window.innerHeight - 64 : false;
-      const show = window.scrollY > 520 && !inZone;
+      const hero = document.querySelector<HTMLElement>("[data-hero-cta]");
+      const pastHero = hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 160;
+      const show = pastHero && !inZone;
       el.dataset.show = show ? "1" : "0";
       el.inert = !show;
     };
@@ -60,13 +63,13 @@ export function MobileCtaBar({ phone, telHref, line }: { phone: string; telHref:
           </a>
         )}
         {line && (
-          <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm min-h-12 flex-[0.9] !gap-1 !px-2" data-cv="line" aria-label="LINE で相談する">
+          <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-line btn-sm min-h-12 flex-[0.9] !gap-1 !px-2" data-cv="line" aria-label="LINE で相談する">
             <LineIcon className="size-[1.125rem]" />
             {/* 幅 320px でも「LINE」を割らない */}
             <span className="whitespace-nowrap">LINE</span>
           </a>
         )}
-        <Link href="/contact/photo" className={`btn btn-primary btn-sm min-h-12 !px-2 ${line ? "flex-[1.3]" : "flex-1"}`} aria-label="写真でかんたん無料見積もり">
+        <Link href="/contact/photo" className={`btn btn-cta btn-sm min-h-12 !px-2 ${line ? "flex-[1.3]" : "flex-1"}`} aria-label="写真でかんたん無料見積もり">
           <span>無料見積もり</span>
         </Link>
       </div>

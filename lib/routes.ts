@@ -12,7 +12,8 @@ import { latestProductUpdate, productPath, products } from "@/lib/products";
  * サーバー側とスクリプト（tsx）からだけ読む。fs を使う lib/blog を読み込むので、クライアントコンポーネントから import しないこと。
  */
 
-export type RouteEntry = { path: string; lastModified: string; priority?: number };
+/** images … そのページの主な画像（画像の sitemap に載せる。機種のページの製品写真） */
+export type RouteEntry = { path: string; lastModified: string; priority?: number; images?: string[] };
 
 const SITE_UPDATED = "2026-10-14";
 
@@ -41,7 +42,7 @@ export function sitemapRoutes(): RouteEntry[] {
   const entries: RouteEntry[] = [
     ...STATIC_PAGES.map((p) => ({ path: p.path, priority: p.priority, lastModified: p.path === "/" ? max(SITE_UPDATED, latestPost) : SITE_UPDATED })),
     ...brands.filter((b) => products.some((p) => p.brand === b.id)).map((b) => ({ path: `/products/${b.id}`, priority: 0.8, lastModified: latestProductUpdate(products.filter((p) => p.brand === b.id)) })),
-    ...products.map((p) => ({ path: productPath(p), priority: 0.7, lastModified: p.lastUpdatedAt })),
+    ...products.map((p) => ({ path: productPath(p), priority: 0.7, lastModified: p.lastUpdatedAt, images: p.images.map((i) => i.src) })),
     ...allContentPages().map((p) => ({ path: contentPagePath(p), priority: p.cluster === "subsidy" ? 0.8 : 0.7, lastModified: p.updatedAt })),
     ...publishedAreas.map((a) => ({ path: `/area/${a.slug}`, priority: a.priority === "A" ? 0.8 : 0.6, lastModified: a.updatedAt })),
   ];

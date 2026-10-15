@@ -3,15 +3,25 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { MAX_COMPARE, clearCompare, pruneCompare, setCompare, toggleCompare, useCompareIds } from "@/components/product/compare-store";
+import { MakerLogo } from "@/components/brand/MakerLogo";
 import { ModelNumber } from "@/components/product/ModelNumber";
+import { ProductImage, type CardImage } from "@/components/product/ProductImage";
+import type { BrandLogo, CategoryId, InstallationKey } from "@/data/products/types";
 
 /** 比較の表に出す1機種ぶんの値（サーバー側で組み立てて渡す） */
 export type CompareItem = {
   id: string;
   href: string;
   brandName: string;
+  brandLogo: BrandLogo | null;
   modelNumber: string;
   name: string;
+  image: CardImage | null;
+  imageShared: boolean;
+  category: CategoryId;
+  installKey: InstallationKey;
+  /** 「この商品で見積もり」の行き先 */
+  quoteHref: string;
   rows: Record<string, string>;
 };
 
@@ -72,23 +82,35 @@ export function CompareView({ items, rowLabels }: { items: CompareItem[]; rowLab
           すべて外す
         </button>
       </div>
+      {selected.length > 1 && <p className="mb-2 text-[0.8125rem] text-ink-mute lg:hidden">表は横に動かして比べられます。</p>}
       <div className="table-wrap border border-silver-200" tabIndex={0} role="region" aria-label="選んだ機種の比較">
         <table className="table-compare">
           <thead>
             <tr>
-              <th scope="col" className="min-w-[8.5rem]">
-                比べる点
-              </th>
+              <th scope="col">比べる点</th>
               {selected.map((i) => (
-                <th key={i.id} scope="col" className="min-w-[13rem] align-top">
-                  <span className="block text-xs font-bold text-ink-mute">{i.brandName}</span>
-                  <Link href={i.href} className="num text-link block text-[0.9375rem] leading-snug">
-                    <ModelNumber value={i.modelNumber} />
-                  </Link>
-                  <span className="mt-1 block text-xs font-normal leading-relaxed text-ink-mute">{i.name}</span>
-                  <button type="button" onClick={() => toggleCompare(i.id)} className="mt-2 min-h-9 text-xs font-bold text-ink-mute underline underline-offset-4">
-                    外す<span className="sr-only">（{i.modelNumber}）</span>
-                  </button>
+                // 見積もりのボタンを、列ごとに同じ高さにそろえる（セルの高さ 1px と、中の高さ 100% の組み合わせ。効かないブラウザでは、上に詰めて並ぶだけ）
+                <th key={i.id} scope="col" className="h-px align-top">
+                  <div className="flex h-full flex-col">
+                    <Link href={i.href} tabIndex={-1} aria-hidden="true" className="mb-2.5 block max-w-[15rem]">
+                      <ProductImage image={i.image} shared={i.imageShared} category={i.category} installKey={i.installKey} sizes="(min-width: 64rem) 240px, 176px" note={false} />
+                    </Link>
+                    <span className="block">
+                      <MakerLogo logo={i.brandLogo} name={i.brandName} height={18} />
+                    </span>
+                    <Link href={i.href} className="num text-link mt-1.5 block text-[0.9375rem] leading-snug">
+                      <ModelNumber value={i.modelNumber} />
+                    </Link>
+                    <span className="mt-1 block text-xs font-normal leading-relaxed text-ink-mute">{i.name}</span>
+                    <span className="mt-auto block pt-3">
+                      <Link href={i.quoteHref} className="btn btn-cta btn-xs w-full !whitespace-normal">
+                        この商品で見積もり
+                      </Link>
+                      <button type="button" onClick={() => toggleCompare(i.id)} className="mt-1 min-h-9 text-xs font-bold text-ink-mute underline underline-offset-4">
+                        外す<span className="sr-only">（{i.modelNumber}）</span>
+                      </button>
+                    </span>
+                  </div>
                 </th>
               ))}
             </tr>

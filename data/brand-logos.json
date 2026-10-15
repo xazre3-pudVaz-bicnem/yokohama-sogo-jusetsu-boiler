@@ -1,0 +1,51 @@
+{
+  "corona": {
+    "src": "/images/manufacturers/corona.svg",
+    "width": 144,
+    "height": 21,
+    "sourceUrl": "https://www.corona.co.jp/kodomo-ecosumai-mlit/images/logo.svg",
+    "scale": 0.77
+  },
+  "daikin": {
+    "src": "/images/manufacturers/daikin.png",
+    "width": 200,
+    "height": 43,
+    "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/dj_common/rwd/images/logo%20png",
+    "scale": 0.98
+  },
+  "mitsubishi": {
+    "src": "/images/manufacturers/mitsubishi.svg",
+    "width": 109,
+    "height": 35,
+    "sourceUrl": "https://www.mitsubishielectric.co.jp/global/common/img/logo.svg",
+    "scale": 1.2
+  },
+  "noritz": {
+    "src": "/images/manufacturers/noritz.svg",
+    "width": 138,
+    "height": 34,
+    "sourceUrl": "https://www.noritz.co.jp/common/img/common/logo.svg",
+    "scale": 1.05
+  },
+  "paloma": {
+    "src": "/images/manufacturers/paloma.svg",
+    "width": 117,
+    "height": 28,
+    "sourceUrl": "https://www.paloma.co.jp/recruit/assets/img/logo_paloma.svg",
+    "scale": 0.9
+  },
+  "panasonic": {
+    "src": "/images/manufacturers/panasonic.svg",
+    "width": 183,
+    "height": 28,
+    "sourceUrl": "https://panasonic.jp/etc.clientlibs/panasonic-aem-frontend/clientlibs/clientlib-site/resources/images/logo.svg",
+    "scale": 0.83
+  },
+  "rinnai": {
+    "src": "/images/manufacturers/rinnai.svg",
+    "width": 284,
+    "height": 72,
+    "sourceUrl": "https://www.rinnai.jp/shared/img/title/site_logo.svg",
+    "scale": 1.07
+  }
+}

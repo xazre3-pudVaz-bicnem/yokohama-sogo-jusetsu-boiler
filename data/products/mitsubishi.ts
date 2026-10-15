@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * 三菱電機の商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const mitsubishiProducts: Product[] = [
+export const mitsubishiProducts: ProductData[] = [
   {
     "id": "mitsubishi-srt-s377",
     "slug": "srt-s377",
@@ -174,14 +174,6 @@ export const mitsubishiProducts: Product[] = [
       "スマホ連携（MyMU）と太陽光連携（お天気リンクEZ）には、無線LANアダプター搭載リモコンセット、インターネット接続、専用アプリ、お客様による設定が必要",
       "3年に1度の定期点検（有料）をメーカーが案内している。ヒートポンプ配管は据え付け後10年以内に更新する"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S377.jpg",
-      "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338407&ccd=10501110",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.mitsubishielectric.co.jp/home/ecocute/product/s/index.html",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -381,14 +373,6 @@ export const mitsubishiProducts: Product[] = [
       "スマホ連携（MyMU）と太陽光連携（お天気リンクEZ）には、無線LANアダプター搭載リモコンセット、インターネット接続、専用アプリ、お客様による設定が必要",
       "3年に1度の定期点検（有料）をメーカーが案内している。ヒートポンプ配管は据え付け後10年以内に更新する"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S467.jpg",
-      "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338406&ccd=10501110",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.mitsubishielectric.co.jp/home/ecocute/product/s/index.html",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -589,14 +573,6 @@ export const mitsubishiProducts: Product[] = [
       "3年に1度の定期点検（有料）をメーカーが案内している。ヒートポンプ配管は据え付け後10年以内に更新する",
       "ハイパワー給湯タイプは水源水圧300kPa以上で使う。3階への給湯（蛇口・シャワー）は可能だが、3階へのふろ自動（湯はり）には対応していない"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S467U.jpg",
-      "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338401&ccd=10501110",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.mitsubishielectric.co.jp/home/ecocute/product/s/index.html",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -801,14 +777,6 @@ export const mitsubishiProducts: Product[] = [
       "貯湯ユニットは屋外専用",
       "年間給湯保温効率の算出条件が他機種と違う：SRT-S377UZ は、沸上げモード「おまかせ」での着霜期・冬期の給湯モード性能試験時の沸上げ温度が70℃"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S377UZ.jpg",
-      "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338404&ccd=10501110",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.mitsubishielectric.co.jp/home/ecocute/product/s/index.html",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -1016,14 +984,6 @@ export const mitsubishiProducts: Product[] = [
       "ホットりたーんをしても、蛇口やシャワー、おふろで使えるお湯は増えない。当社製以外の浴槽アダプターでは働かないことがある",
       "メーカーから『「三菱 エコキュート Pシリーズ」に関するお知らせ（第2回改定）』（2026年3月4日）が出ている。対象 17 型式に SRT-P377UB を含む。内容は、住宅の省エネ計算（住宅版 WEB プログラム）に使う「エネルギー消費性能算定のためのパラメータ」の誤記（試験時の着霜期高温エネルギー消費効率 誤 3.05 → 正 2.93 など）で、新築の省エネ計算に関するもの"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-P377UB.jpg",
-      "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338399&ccd=10501110",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.mitsubishielectric.co.jp/home/ecocute/product/p/index.html",
     "manufacturerPrice": null,
     "salesPrice": null,

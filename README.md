@@ -25,21 +25,22 @@ npm run dev                  # http://localhost:3000
 | --- | --- |
 | `npm run dev` / `build` / `start` | 開発サーバー・本番ビルド・ビルドの起動 |
 | `npm run typecheck` / `lint` | 型の検査・ESLint |
-| `npm run data:check` | 商品・解説・地域のデータの検査（型番の重複、補助額と制度の額、写真の許諾、リンク切れ、メモ書きの残り） |
+| `npm run data:check` | 商品・解説・地域のデータの検査（型番の重複、補助額と制度の額、写真の記録、リンク切れ、メモ書きの残り） |
+| `npm run images:check` | 製品写真とメーカーのロゴの検査（ファイルの有無・壊れていないか・大きさ・取得元が公式のドメインか・型番との対応の記録）。`-- --write` で `docs/PRODUCT_IMAGE_AUDIT.md` を作り直す |
 | `npm run site:check` | ビルドした HTML の検査（title・description・h1・alt・JSON-LD・リンク切れ・noindex）。先に `build` |
 | `npm run seo:audit` | 検索語の取り合い・sitemap との食い違い・本文の量。結果は `docs/seo-audit-report.md`。先に `build` |
 | `npm run check` | 上の検査をまとめて実行 |
 | `npm run subsidy:budget` | 補助金の予算の割合を公式ページから取り直す（毎日の自動実行で使う） |
 | `npm run subsidy:check` | 補助額・期限・掲載機種の登録を、公式ページと照合する |
 | `npm run images:prepare` | `public/images/` の画像の一覧（`data/images.generated.json`）とヒーロー・OGP 画像を作り直す |
-| `npm run images:products` | 許諾を確かめた製品写真を取り込む（`docs/IMAGE_SOURCES.md`） |
+| `npm run images:apply -- <フォルダ>` | 製品写真・ロゴの取得の記録（manifest-<メーカー>.json）を、`data/products/images.json`・`data/brand-logos.json` に取り込む（`docs/IMAGE_SOURCES.md`） |
 | `npm run blog:*` | コラムの自動投稿（下の「コラムの自動投稿」） |
 
 ## 3. フォルダの構成
 
 ```
 app/                 ページ（App Router）
-  page.tsx           トップ（17の区画）
+  page.tsx           トップ（15の区画）
   products/          商品の一覧（絞り込み）・メーカー別・機種のページ
   gas-water-heater/ eco-jozu/ ecocute/ hybrid/ ene-farm/   種類のページ
   subsidy/           補助金（11ページ。本文は data/subsidy/pages.ts）
@@ -84,7 +85,8 @@ content/blog/        コラムの記事（自動投稿で増える）
 
 ## 7-2. 写真でかんたん見積もり（/contact/photo）
 
-- ①写真（型番のシール・本体の全体・そのほか3枚まで）→ ②いまの給湯器 → ③ご連絡先 → ④確認、の手順で送るフォームです。ページ末尾の案内・スマホ下部の「無料見積もり」・機種のページの「この機種で見積もりを依頼」は、ここにつながっています。項目の多いフォーム（/contact）も残しています。
+- ①写真（型番のシール・本体の全体・そのほか3枚まで）→ ②いまの給湯器 → ③ご連絡先 → ④確認、の手順で送るフォームです。ページ末尾の案内・スマホ下部の「無料見積もり」は、ここにつながっています。商品カード・機種のページの「この商品で見積もり」は、項目を入力するフォーム（/contact）に、メーカー・型番・商品名と、見ていたページ（メールに載る）を引き継ぎます。
+- **メール送信の設定（`RESEND_API_KEY`・`CONTACT_TO_EMAIL`）が無い本番では、どちらのフォームも出さず、LINE（QR コード・ID つき）と電話の案内を出します**（動かないフォームへ誘導しないため）。設定すると、自動でフォームに切り替わります。
 - 必須は、お名前・電話番号・工事の場所と、型番のシールの写真（「シールが無い・読めない」を選んだときは、全体の写真）。
 - 送信は、お見積もりフォームと同じ Resend の設定（`RESEND_API_KEY`・`CONTACT_TO_EMAIL`）で届きます。写真は欄ごとの名前（`1-kataban.jpg`・`2-zentai.jpg`・`3-sonota-1.jpg`…）で添付されます。
 - **写真から型番を読み取る（任意）**：Vercel に `ANTHROPIC_API_KEY` を入れると、型番のシールの写真の下に「写真から型番を読み取る」ボタンが出ます。押したときだけ、その写真を Claude（既定 `claude-haiku-5-5`、`LABEL_READER_MODEL` で変更）に送り、型番・メーカー・製造年月を入力欄に入れます。お客様に確かめてもらう前提で、見積もりの判断には自動で使いません。写真は保存しません。回数は接続元ごとに10分で8回まで。止めるときは `LABEL_READER=off`。プライバシーポリシーの「4.」に、この送信のことを書いてあります。
@@ -124,5 +126,6 @@ content/blog/        コラムの記事（自動投稿で増える）
 
 ## 11. 写真の差し替え
 
-- トップの写真：`public/images/photos/hero-wide`（横長）と `hero-tall`（縦長）。差し替えたら `npm run images:prepare`。出典が要る写真なら `data/credits.ts` も。
-- 製品写真：`docs/IMAGE_SOURCES.md` の手順（メーカーの許諾が先）。
+- 共有用の画像（og-image.jpg）の元の写真：`public/images/photos/hero-wide`（横長）と `hero-tall`（縦長）。差し替えたら `npm run images:prepare`。出典が要る写真なら `data/credits.ts` も。
+- 製品写真・メーカーのロゴ：`docs/IMAGE_SOURCES.md` の手順。写真の記録は `data/products/images.json`（ページに写真の場所を直書きしない）。全機種の状況は `docs/PRODUCT_IMAGE_AUDIT.md`。
+- トップの冒頭の写真は、商品データの写真から自動で選んでいます（`app/page.tsx` の `heroShowcase`）。

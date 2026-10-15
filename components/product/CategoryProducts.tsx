@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MakerLogo } from "@/components/brand/MakerLogo";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Icon } from "@/components/ui/Icon";
 import type { CategoryId } from "@/data/products/types";
@@ -19,9 +20,10 @@ export function CategoryProducts({ categories, filterHref }: { categories: Categ
       {groups.map((g) => (
         <div key={g.b.id}>
           <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b-2 border-navy-900 pb-2">
-            <h3 className="font-heading text-lg font-black text-navy-900">
-              {g.b.name}
-              <span className="num ml-2 text-sm font-medium text-ink-mute">{g.items.length}機種</span>
+            <h3 className="flex items-center gap-3 font-heading text-lg font-bold text-navy-900">
+              <MakerLogo logo={g.b.logo} name={g.b.name} height={26} decorative />
+              <span className={g.b.logo ? "sr-only" : ""}>{g.b.name}</span>
+              <span className="num text-sm font-medium text-ink-mute">{g.items.length}機種</span>
             </h3>
             <Link href={`/products/${g.b.id}`} className="inline-flex min-h-10 items-center gap-1 text-[0.8125rem] font-bold text-brand-700 underline-offset-4 hover:underline">
               {g.b.name}の機種をすべて見る

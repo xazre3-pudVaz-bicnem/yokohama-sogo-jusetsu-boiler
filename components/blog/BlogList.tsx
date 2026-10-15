@@ -70,7 +70,7 @@ export function PostGrid({ posts, cluster }: { posts: Post[]; cluster?: BlogClus
     <>
       <article className="grid items-center gap-x-14 gap-y-8 lg:grid-cols-12">
         <div className="lg:col-span-6">
-          <Link href={`/blog/${first.slug}`} className="block overflow-hidden rounded-3xl" tabIndex={-1} aria-hidden="true">
+          <Link href={`/blog/${first.slug}`} className="block overflow-hidden rounded-xl" tabIndex={-1} aria-hidden="true">
             <span className="relative block aspect-[16/9]">
               <PostCover cover={first.cover} illustWidth={220} />
             </span>

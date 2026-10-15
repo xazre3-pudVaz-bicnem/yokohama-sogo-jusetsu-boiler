@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { EstimateForm } from "@/components/contact/EstimateForm";
+import { LineConsultPanel } from "@/components/contact/LineConsultPanel";
 import { PhotoSlotFigure } from "@/components/contact/PhotoSlotFigure";
 import { Figure } from "@/components/diagram/Figures";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -82,27 +83,8 @@ export default function ContactPage() {
             {shown ? (
               <EstimateForm note={siteConfig.contact.formNote} preview={!enabled} lineUrl={line} />
             ) : (
-              <div className="rounded-3xl bg-paper-2 px-6 py-8 sm:px-9">
-                <h2 className="h-sub">お電話か LINE でご相談ください</h2>
-                <p className="mt-3 text-[0.9375rem] leading-[1.95]">
-                  ただいま、フォームからの送信を準備しています。お見積もりのご依頼は、お電話か LINE でお受けしています。LINE では、型番のシールや設置場所の写真を、そのままお送りいただけます。
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {phone && (
-                    <a href={telHref(phone)} className="btn btn-primary" data-cv="tel">
-                      <Icon name="phone" className="size-5" />
-                      <span className="num text-lg font-semibold tracking-wider">{phone}</span>
-                    </a>
-                  )}
-                  {line && (
-                    <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-outline" data-cv="line">
-                      <LineIcon className="size-6" />
-                      LINE で相談する
-                    </a>
-                  )}
-                </div>
-                {hours && <p className="mt-3 text-[0.8125rem] text-ink-mute">電話受付 {hours}</p>}
-              </div>
+              // フォームから送れないあいだは、動かないフォームを出さず、LINE とお電話の案内にする
+              <LineConsultPanel title="LINE・お電話で、無料見積もり" />
             )}
           </div>
 
@@ -140,7 +122,7 @@ export default function ContactPage() {
                 </div>
               </div>
             )}
-            <div className="rounded-3xl bg-cream px-5 py-5">
+            <div className="rounded-xl bg-cream px-5 py-5">
               <p className="font-heading text-[0.9375rem] font-black text-navy-900">お見積もりまでの流れ</p>
               <ol className="steps mt-4">
                 <li>

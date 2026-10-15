@@ -73,7 +73,7 @@ export function KyutouAmounts() {
   ];
   return (
     <TableShell
-      label={`${k.name}の補助額`}
+      label={`${k.name}の補助額の表（給湯器ごと）`}
       note={
         <>
           撤去加算：電気蓄熱暖房機 {manYen(k.removalBonus.storageHeater.amount)}／台（{k.removalBonus.storageHeater.limit}）、電気温水器 {manYen(k.removalBonus.electricWaterHeater.amount)}／台（{k.removalBonus.electricWaterHeater.limit}）。{formatDateJa(k.verifiedAt)}に

@@ -1,0 +1,1691 @@
+{
+  "rinnai-ruf-e240eaw": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240eaw-main.webp",
+        "width": 926,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1774790000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3101880000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240eaw-remote.webp",
+        "width": 900,
+        "height": 300,
+        "role": "remote",
+        "caption": "浴室・台所リモコン MBC-342VC（別売）",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/remocon_342vc.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E240EAW（品名コード 24-7007、ガスふろ給湯器）の商品詳細ページに表示される画像（サムネイルを押して開く拡大画像）。同じ画像（画像ID 1774790000）は RUF-E240EAW・RUF-E240ESAW・RUF-E200FSAW・RUF-E161ESAW の商品詳細ページで共通。rinnai.jp の RUF-Eシリーズのページ（屋外壁掛型（W）の16・20・24号、フルオート・オートの6機種の一覧）の本体画像も同じ外観。カタログ（Rinnai_KSE.pdf の p.73）では W の24・20・16号はどれも高さ600×幅470×奥行240。リモコンの画像は rinnai.jp のシリーズページの「おすすめリモコン（別売品）MBC-342VC」の画像。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-ruf-e240esaw": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240esaw-main.webp",
+        "width": 926,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1774790000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3101900000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240esaw-remote.webp",
+        "width": 900,
+        "height": 300,
+        "role": "remote",
+        "caption": "浴室・台所リモコン MBC-342VC（別売）",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/remocon_342vc.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E240ESAW（品名コード 24-7024、ガスふろ給湯器）の商品詳細ページに表示される画像（拡大画像）。同じ画像（画像ID 1774790000）は RUF-E240EAW・RUF-E240ESAW・RUF-E200FSAW・RUF-E161ESAW の商品詳細ページで共通。rinnai.jp の RUF-Eシリーズのページ（屋外壁掛型（W）の16・20・24号、フルオート・オートの6機種の一覧）の本体画像も同じ外観。カタログ（Rinnai_KSE.pdf の p.73）では W の24・20・16号はどれも高さ600×幅470×奥行240。リモコンの画像は rinnai.jp のシリーズページの「おすすめリモコン（別売品）MBC-342VC」の画像。以前の記録（シリーズページの e-series.webp）も同じ外観の壁掛型で誤りではないが、型式ごとのページの大きい画像に置き換えた。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-ruf-e200fsaw": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e200fsaw-main.webp",
+        "width": 926,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1774790000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3101940000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e200fsaw-remote.webp",
+        "width": 900,
+        "height": 300,
+        "role": "remote",
+        "caption": "浴室・台所リモコン MBC-342VC（別売）",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/remocon_342vc.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E200FSAW（品名コード 24-7066、ガスふろ給湯器）の商品詳細ページに表示される画像（拡大画像）。同じ画像（画像ID 1774790000）は RUF-E240EAW・RUF-E240ESAW・RUF-E200FSAW・RUF-E161ESAW の商品詳細ページで共通。rinnai.jp の RUF-Eシリーズのページ（屋外壁掛型（W）の16・20・24号、フルオート・オートの6機種の一覧）の本体画像も同じ外観。カタログ（Rinnai_KSE.pdf の p.73）では W の24・20・16号はどれも高さ600×幅470×奥行240。リモコンの画像は rinnai.jp のシリーズページの「おすすめリモコン（別売品）MBC-342VC」の画像。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-ruf-e161esaw": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e161esaw-main.webp",
+        "width": 926,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1774790000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3101540000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e161esaw-remote.webp",
+        "width": 900,
+        "height": 300,
+        "role": "remote",
+        "caption": "浴室・台所リモコン MBC-342VC（別売）",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/remocon_342vc.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E161ESAW（品名コード 24-6664、ガスふろ給湯器）の商品詳細ページに表示される画像（拡大画像）。同じ画像（画像ID 1774790000）は RUF-E240EAW・RUF-E240ESAW・RUF-E200FSAW・RUF-E161ESAW の商品詳細ページで共通。rinnai.jp の RUF-Eシリーズのページ（屋外壁掛型（W）の16・20・24号、フルオート・オートの6機種の一覧）の本体画像も同じ外観。カタログ（Rinnai_KSE.pdf の p.73）では W の24・20・16号はどれも高さ600×幅470×奥行240。リモコンの画像は rinnai.jp のシリーズページの「おすすめリモコン（別売品）MBC-342VC」の画像。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-ruf-e240esag": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240esag-main.webp",
+        "width": 1032,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1488870000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3180150000"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E240ESAG（品名コード 24-9753、ガスふろ給湯器）の商品詳細ページに表示される画像（拡大画像）。箱形の屋外据置型の本体。カタログ（Rinnai_KSE.pdf の p.76、RUF-Eシリーズ 屋外据置型）の写真（RUF-E240EAG と表記、EAG/ESAG の24・20・16号で共通）と同じ外観。rinnai.jp の RUF-Eシリーズのページには据置型の製品写真はなく、対応設置場所の図（place_02.webp）だけなので使っていない。壁掛型の画像は使っていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-ruf-e240esat": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240esat-main.webp",
+        "width": 921,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1774810000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3101910000"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E240ESAT（品名コード 24-7033、ガスふろ給湯器）の商品詳細ページに表示される画像（拡大画像）。上部に丸い前方排気の部品が付いた PS扉内設置型／PS前排気型（T）の本体。カタログ（Rinnai_KSE.pdf の p.74）の PS扉内設置型・PS前排気型の行（RUF-E240EAT/ESAT など）の写真と同じ外観。rinnai.jp のシリーズページには T の製品写真はない（設置場所の図だけ）。壁掛型の画像は使っていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-ruf-e240esaa": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e240esaa-main.webp",
+        "width": 921,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1774760000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3102160000"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUF-E240ESAA（品名コード 24-7287、ガスふろ給湯器）の商品詳細ページに表示される画像（拡大画像）。上部に排気カバーが付いたアルコーブ設置型（A）の本体。カタログ（Rinnai_KSE.pdf の p.74）のアルコーブ設置型の行（RUF-E240EAA/ESAA など）の写真と同じ外観。rinnai.jp のシリーズページには A の製品写真はない（設置場所の図だけ）。壁掛型の画像は使っていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rux-e2016w-a": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rux-e2016w-a-main.webp",
+        "width": 797,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1775300000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2720010000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rux-e2016w-a-remote.webp",
+        "width": 960,
+        "height": 330,
+        "role": "remote",
+        "caption": "浴室リモコン BC-145V（A）・台所リモコン MC-145V（A）（別売）",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/remocon_145v.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUX-E2016W(A)（品名コード 23-6253、ガス給湯器）の商品詳細ページに表示される画像（拡大画像）。rinnai.jp の RUX-Eシリーズのページ（屋外壁掛型（W）の RUX-E2406W(A)・RUX-E2016W(A)・RUX-E1616W(A) の一覧）の本体画像（rux/e-series.webp）と同じ外観。リモコンの画像は同じページの「おすすめリモコン（別売品）」BC-145V（A）・MC-145V（A）の画像。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rufh-e2408aw2-6-a": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rufh-e2408aw2-6-a-main.webp",
+        "width": 764,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1776640000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2996480000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rufh-e2408aw2-6-a-remote.webp",
+        "width": 900,
+        "height": 300,
+        "role": "remote",
+        "caption": "浴室・台所リモコン MBC-342VC（別売）",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/remocon_342vc.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/rufh-rvd/e-series/"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページ https://www.rinnai.jp/manual/ のリンクから入る）の、型式 RUFH-E2408AW2-6(A)（品名コード 26-7508、給湯暖房用熱源機）の商品詳細ページに表示される画像（拡大画像）。縦長の本体（高さ750×幅480×奥行250）で、下に点検用の四角いカバーがある。rinnai.jp の RUFH-E, RVD-Eシリーズのページの「RUFH-Eシリーズ」タブの画像（ファイル名 rufh-ue.webp）も同じ外観。以前の記録のページ冒頭の画像 rufh-e.webp は、RVD-E（600×470×240）と同じ低い本体（左上に丸いカバー）で、この機種の外観ではないため使っていない。リモコンの画像は同じタブの「おすすめリモコン（別売品）MBC-342VC」の画像。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbh-rc248aw2-1-rhp-r223-s-rtu-r1603": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-rc248aw2-1-rhp-r223-s-rtu-r1603-main.webp",
+        "width": 580,
+        "height": 580,
+        "role": "main",
+        "sourceUrl": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/double_160.webp",
+        "pageUrl": "https://rinnai.jp/ecoone/lineup/double_160"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-rc248aw2-1-rhp-r223-s-rtu-r1603-unit.webp",
+        "width": 775,
+        "height": 695,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R223(S)",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1968880000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2766900000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-rc248aw2-1-rhp-r223-s-rtu-r1603-unit-2.webp",
+        "width": 453,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTU-R1603",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1968900000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2872130000"
+      }
+    ],
+    "evidence": "rinnai.jp の ECO ONE ダブルハイブリッド（給湯＋暖房）160L のページ（lineup/double_160）で、「標準モデル」タブ（ヒートポンプ RHP-R223(S)・タンクユニット RTU-R1603・熱源機 RHBH-RC248AW2-1／RHBH-RC247AW2-1、熱源機・タンク一体タイプ）に表示される画像（double_160/03.webp、380px）と同じ写真の大きい版（ページ冒頭の double_160.webp、580px。画素の比較で一致。同じ写真はウルトラファインバブル搭載モデルのタブでも使われている）。熱源機はタンクと一体の外装の中に入る。右側の外装の分かれ目の高さは暖房付き（RHBH）用（カタログ Rinnai_HB.pdf の p.61 の寸法図）。ヒートポンプとタンクユニットは、総合商品情報サイト（rkids.rinnai.jp）の各型式の商品詳細ページ（RHP-R223(S) 28-5150、RTU-R1603 28-5738）の画像を unit として追加。熱源機 RHBH-RC248AW2-1 の商品詳細ページには画像がない（-EG 型式にだけある）ため、熱源機単体の画像はない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbh-rc248aw2-1-rhp-r222-s-rtu-r1602": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-rc248aw2-1-rhp-r222-s-rtu-r1602-main.webp",
+        "width": 580,
+        "height": 580,
+        "role": "main",
+        "sourceUrl": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/double_160.webp",
+        "pageUrl": "https://rinnai.jp/ecoone/lineup/single_160"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-rc248aw2-1-rhp-r222-s-rtu-r1602-unit.webp",
+        "width": 908,
+        "height": 840,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R222(S)",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1968890000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2651830000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-rc248aw2-1-rhp-r222-s-rtu-r1602-unit-2.webp",
+        "width": 453,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTU-R1602",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1968900000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2872120000"
+      }
+    ],
+    "sharedGroup": "ECO ONE 160L（給湯＋暖房）標準モデル：ダブルハイブリッド（RHP-R223(S)＋RTU-R1603）とシングルハイブリッド（RHP-R222(S)＋RTU-R1602）で共通の画像（熱源機 RHBH-RC248AW2-1）",
+    "evidence": "rinnai.jp の ECO ONE シングルハイブリッド（給湯＋暖房）160L のページ（lineup/single_160）で、ページ冒頭と「標準モデル」タブ（ヒートポンプ RHP-R222(S)・タンクユニット RTU-R1602／RTU-R1602-PV・熱源機 RHBH-RC248AW2-1／RHBH-RC247AW2-1）に表示される画像。ファイル名はダブルハイブリッド用（double_160.webp、タブは double_160/03.webp）だが、リンナイがこの構成のページで使っている（冒頭の 580px 版を使用）。熱源機・タンク一体の外装はダブルと同じ。ただしカタログ（Rinnai_HB.pdf の p.61）ではヒートポンプの全幅が RHP-R222(S) 755mm、RHP-R223(S) 815mm（本体の幅はどちらも675mm）と少し違う。ヒートポンプとタンクユニットは、総合商品情報サイト（rkids.rinnai.jp）の各型式の商品詳細ページ（RHP-R222(S) 28-4880、RTU-R1602 28-5720）の画像を unit として追加（RTU-R1602 のページの画像は RTU-R1603 と共通）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbf-rck246aw-rhp-r222-s-rtu-r1602": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rck246aw-rhp-r222-s-rtu-r1602-main.webp",
+        "width": 1200,
+        "height": 1199,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1889200000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2946480000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rck246aw-rhp-r222-s-rtu-r1602-unit.webp",
+        "width": 908,
+        "height": 840,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R222(S)",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1968890000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2651830000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rck246aw-rhp-r222-s-rtu-r1602-unit-2.webp",
+        "width": 453,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTU-R1602",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1968900000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2872120000"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページのリンクから入る）の、型式 RHBF-RCK246AW（品名コード 28-6122、ハイブリッドふろ給湯器）の商品詳細ページに表示されるシステムの写真（ヒートポンプ＋タンク・熱源機一体の外装）。rinnai.jp の ECO ONE シングルハイブリッド（ふろ給湯）160L のページ（lineup/single_wh_160）の「標準モデル」タブ（RHP-R222(S)・RTU-R1602・RHBF-RCK246AW）の画像（single_wh_160/03.webp）と同じ外観で、右側の外装の分かれ目がふろ給湯（RHBF）用の高い位置（カタログ Rinnai_HB.pdf の p.61 の寸法図どおり）。暖房付きの画像（double_160.webp）は使っていない。ヒートポンプとタンクユニットは各型式の商品詳細ページ（RHP-R222(S) 28-4880、RTU-R1602 28-5720）の画像を unit として追加。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbh-r248aw2-1-rhp-r225-rtu-r701": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-r248aw2-1-rhp-r225-rtu-r701-main.webp",
+        "width": 1200,
+        "height": 1016,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1889170000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3087960000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-r248aw2-1-rhp-r225-rtu-r701-unit.webp",
+        "width": 854,
+        "height": 892,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R225",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821020000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2073650000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-r248aw2-1-rhp-r225-rtu-r701-unit-2.webp",
+        "width": 1093,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTU-R701",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821010000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3100820000"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページのリンクから入る）の、型式 RHBH-R248AW2-1（品名コード 28-6556、ハイブリッド給湯暖房用熱源機）の商品詳細ページに表示されるシステムの写真（ヒートポンプ・70Lタンク・据置台の上の熱源機）。熱源機は、カタログ（Rinnai_HB.pdf の p.62）の寸法図どおり高さ750×幅480×奥行250で、左上の丸いカバーがない。rinnai.jp の ECO ONE X5 シングルハイブリッド（給湯＋暖房）のページの画像（冒頭の single_70.webp、標準モデルタブの single_wh_70/03.webp）は、同じタブにある暖房能力11.6kW の RHBD-R245AW2-1(S)（600×470×240、左上に丸いカバー）の本体で、この構成の熱源機とは見た目が違うため使っていない（以前の記録の single_70.webp は誤り）。ヒートポンプとタンクユニットは各型式の商品詳細ページ（RHP-R225 28-4618、RTU-R701 28-7021）の画像を unit として追加。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbf-rk246aw-rhp-r225-rtu-r701": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rk246aw-rhp-r225-rtu-r701-main.webp",
+        "width": 1200,
+        "height": 856,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1678140000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2087480000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rk246aw-rhp-r225-rtu-r701-unit.webp",
+        "width": 854,
+        "height": 892,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R225",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821020000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2073650000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rk246aw-rhp-r225-rtu-r701-unit-2.webp",
+        "width": 1093,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTU-R701",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821010000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3100820000"
+      }
+    ],
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページのリンクから入る）の、型式 RHBF-RK246AW（品名コード 28-4650、ハイブリッドふろ給湯器）の商品詳細ページに表示されるシステムの写真（ヒートポンプ・据置台の上の熱源機・70Lタンク）。熱源機は、カタログ（Rinnai_HB.pdf の p.62）の寸法図どおり600×470×240で点検カバーのない本体。rinnai.jp の ECO ONE X5 シングルハイブリッド（ふろ給湯）のページの画像（冒頭の single_wh_70.webp、標準モデルタブの single_wh_70/04.webp）と同じ外観。暖房付きの画像は使っていない。ヒートポンプとタンクユニットは各型式の商品詳細ページ（RHP-R225 28-4618、RTU-R701 28-7021）の画像を unit として追加。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbh-r248aw2-1-rhp-r225-p-rtup-r701": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-r248aw2-1-rhp-r225-p-rtup-r701-main.webp",
+        "width": 1200,
+        "height": 1016,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1889170000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3087960000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-r248aw2-1-rhp-r225-p-rtup-r701-unit.webp",
+        "width": 854,
+        "height": 892,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R225-P",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821000000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2932820000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbh-r248aw2-1-rhp-r225-p-rtup-r701-unit-2.webp",
+        "width": 1093,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTUP-R701",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821010000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3100860000"
+      }
+    ],
+    "sharedGroup": "ECO ONE X5 70L（給湯＋暖房）熱源機 RHBH-R248AW2-1 の構成：標準（RHP-R225＋RTU-R701）と PLUG-IN MODEL（RHP-R225-P＋RTUP-R701）",
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページのリンクから入る）の、熱源機 RHBH-R248AW2-1（品名コード 28-6556）の商品詳細ページのシステムの写真。この熱源機は標準の X5 と PLUG-IN MODEL で共通。総合商品情報サイトでは RHP-R225-P（28-5932）の画像は RHP-R225 と同じもの、RTUP-R701（28-7064）の画像は RTU-R701 と同じ画像IDで、rinnai.jp の PLUG-IN MODEL のページ（lineup/single_70pi）も標準の X5 と同じ画像を使っている。ただし rinnai.jp の X5 のページの画像（single_70.webp、single_wh_70/03.webp）は暖房能力11.6kW の RHBD-R245AW2-1(S) の本体（600×470、丸いカバー）で、RHBH-R248AW2-1（カタログ Rinnai_HB.pdf の p.62 で750×480×250、丸いカバーなし）とは見た目が違うため使っていない（以前の記録は誤り）。ヒートポンプとタンクユニットは各型式の商品詳細ページの画像を unit として追加。",
+    "verifiedAt": "2026-10-15"
+  },
+  "rinnai-rhbf-rk246aw-rhp-r225-p-rtup-r701": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rk246aw-rhp-r225-p-rtup-r701-main.webp",
+        "width": 1200,
+        "height": 856,
+        "role": "main",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1678140000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2087480000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rk246aw-rhp-r225-p-rtup-r701-unit.webp",
+        "width": 854,
+        "height": 892,
+        "role": "unit",
+        "caption": "ヒートポンプユニット RHP-R225-P",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821000000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=2932820000"
+      },
+      {
+        "src": "/images/products/rinnai/rinnai-rhbf-rk246aw-rhp-r225-p-rtup-r701-unit-2.webp",
+        "width": 1093,
+        "height": 1200,
+        "role": "unit",
+        "caption": "タンクユニット RTUP-R701",
+        "sourceUrl": "https://rkids.rinnai.jp/rin/cgi-bin/thumbnail.cgi?id=1821010000&age=prev",
+        "pageUrl": "https://rkids.rinnai.jp/rin/cgi-bin/itemDetail.cgi?id=3100860000"
+      }
+    ],
+    "sharedGroup": "ECO ONE X5 70L（ふろ給湯）熱源機 RHBF-RK246AW の構成：標準（RHP-R225＋RTU-R701）と PLUG-IN MODEL（RHP-R225-P＋RTUP-R701）",
+    "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページのリンクから入る）の、熱源機 RHBF-RK246AW（品名コード 28-4650）の商品詳細ページのシステムの写真。この熱源機は標準の X5 と PLUG-IN MODEL で共通。総合商品情報サイトでは RHP-R225-P（28-5932）の画像は RHP-R225 と同じもの、RTUP-R701（28-7064）の画像は RTU-R701 と同じ画像IDで、rinnai.jp の PLUG-IN MODEL（ふろ給湯）のページ（lineup/single_wh_70pi）も標準の X5 と同じ画像（single_wh_70.webp、single_wh_70/04.webp）を使っている。暖房付きの画像は使っていない。ヒートポンプとタンクユニットは各型式の商品詳細ページの画像を unit として追加。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c2472aw-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c2472aw-1-bl-main.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118142/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118142"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C2472AW-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT-C72.jpg」）。写真は屋外壁掛形・前方排気（前面上部の横長の排気口）の外観。同じページの仕様表（CSV）は「屋外壁掛設置形・PS標準設置形」「高さ600mm×幅469mm×奥行240mm」「プレシャスシルバー」で、写真と合う。同じ写真（ファイルの中身も同じ）が GT-C2472AW-1 BL・GT-C2472SAW-1 BL・GT-C2072SAW-1 BL・GT-C1672SAW-1 BL の各ページに使われていて、4機種とも仕様表の設置の方式・外形寸法・外装色が同じ。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c2472saw-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c2472saw-1-bl-main.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118172/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118172"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C2472SAW-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT-C72.jpg」）。写真は屋外壁掛形・前方排気（前面上部の横長の排気口）の外観。同じページの仕様表（CSV）は「屋外壁掛設置形・PS標準設置形」「高さ600mm×幅469mm×奥行240mm」「プレシャスシルバー」で、写真と合う。同じ写真（ファイルの中身も同じ）が GT-C2472AW-1 BL・GT-C2472SAW-1 BL・GT-C2072SAW-1 BL・GT-C1672SAW-1 BL の各ページに使われていて、4機種とも仕様表の設置の方式・外形寸法・外装色が同じ。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c2072saw-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c2072saw-1-bl-main.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118117/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118117"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C2072SAW-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT-C72.jpg」）。写真は屋外壁掛形・前方排気（前面上部の横長の排気口）の外観。同じページの仕様表（CSV）は「屋外壁掛設置形・PS標準設置形」「高さ600mm×幅469mm×奥行240mm」「プレシャスシルバー」で、写真と合う。同じ写真（ファイルの中身も同じ）が GT-C2472AW-1 BL・GT-C2472SAW-1 BL・GT-C2072SAW-1 BL・GT-C1672SAW-1 BL の各ページに使われていて、4機種とも仕様表の設置の方式・外形寸法・外装色が同じ。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c1672saw-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c1672saw-1-bl-main.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118073/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118073"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C1672SAW-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT-C72.jpg」）。写真は屋外壁掛形・前方排気（前面上部の横長の排気口）の外観。同じページの仕様表（CSV）は「屋外壁掛設置形・PS標準設置形」「高さ600mm×幅469mm×奥行240mm」「プレシャスシルバー」で、写真と合う。同じ写真（ファイルの中身も同じ）が GT-C2472AW-1 BL・GT-C2472SAW-1 BL・GT-C2072SAW-1 BL・GT-C1672SAW-1 BL の各ページに使われていて、4機種とも仕様表の設置の方式・外形寸法・外装色が同じ。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c2472sar-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c2472sar-1-bl-main.webp",
+        "width": 900,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118170/_GT-C2472_%E6%8D%AE%E3%81%88%E7%BD%AE%E3%81%8D_0541.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118170"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C2472SAR-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT-C2472_据え置き_0541.jpg」）。写真は壁掛けの金具がなく、側面に配管が出る屋外据置形の外観。仕様表（CSV）は「屋外据置設置形」「高さ638mm×幅539mm×奥行240mm」「プレシャスシルバー」。以前の記録は壁掛形のシリーズ写真（pic_gt-c72.png）で、設置形態が違うため使っていない。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-cv2072saw-t-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-cv2072saw-t-1-bl-main.webp",
+        "width": 900,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118268/_GT72-T_0571.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118268"
+      }
+    ],
+    "sharedGroup": "GT-C72・GT-CV72 PS扉内設置形（前方排気延長形）20号：GT-C2072SAW-T-1 BL と GT-CV2072SAW-T-1 BL に同じ写真",
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-CV2072SAW-T-1 BL のページに載っている写真。ファイル名は「_GT72-T_0571.jpg」で、GT-C2072SAW-T-1 BL のページの写真とファイルの中身も同じ（メーカーが兄弟機種の写真をこの型番にも使っている）。写真は前面上部に丸形の排気口（前方排気延長）がある PS扉内設置形の外観。仕様表（CSV）では、GT-CV2072SAW-T-1 BL と GT-C2072SAW-T-1 BL は設置の方式（屋外壁掛・PS標準・PS扉内の前方排気延長形）・外形寸法（高さ600mm×幅469mm×奥行240mm）・外装色（プレシャスシルバー）が同じ。違いは底面のドレン排出口（CV は接続口なし）と質量（28kg／26.5kg）で、底面の配管の口は写真と少し違う可能性がある。以前の記録は壁掛形のシリーズ写真（pic_gt-c72.png）で、外観が違うため使っていない。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c2072saw-t-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c2072saw-t-1-bl-main.webp",
+        "width": 900,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118137/_GT72-T_0571.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118137"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C2072SAW-T-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT72-T_0571.jpg」）。写真は前面上部に丸形の排気口（前方排気延長）がある PS扉内設置形の外観。仕様表（CSV）は「屋外壁掛設置前方排気延長形・PS標準設置前方排気延長形・PS扉内設置前方排気延長形」「高さ600mm×幅469mm×奥行240mm」「プレシャスシルバー」。以前の記録は壁掛形のシリーズ写真（pic_gt-c72.png）で、外観が違うため使っていない。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-c2072saw-l-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-c2072saw-l-1-bl-main.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118130/_GT-C72-L.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118130"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-C2072SAW-L-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT-C72-L.jpg」）。写真は前面上部にアルコーブ設置用の排気カバーが付いた外観。仕様表（CSV）は「屋外壁掛設置形・PSアルコーブ設置形」「高さ600mm×幅469mm×奥行240mm」「プレシャスシルバー」。ノーリツの GT-C72 シリーズのページ（gasfuro_c72.html）では、この型番は「PSアルコーブ設置形」の欄にある。以前の記録は壁掛形のシリーズ写真（pic_gt-c72.png）で、外観が違うため使っていない。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gt-2070saw-1-bl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-2070saw-1-bl-main.webp",
+        "width": 900,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118022/_GT70.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118022"
+      }
+    ],
+    "evidence": "製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GT-2070SAW-1 BL のページに、この型番の製品写真として載っている（ファイル名「_GT70.jpg」）。写真は白い外装の屋外壁掛形・前方排気の外観。仕様表（CSV）は「屋外壁掛設置形・PS標準設置形」「高さ600mm×幅469mm×奥行240mm」「GQホワイト」で、写真と合う。noritz.co.jp のガスふろ給湯器のページ（gasfuro_eco/）の GT-70シリーズの代表写真（pic_gt_2470.png、840×1000px）も同じ外観だが、より大きい製品データサービスの写真を使った。画像ファイルは、このページが表示用に発行する期限付きの URL（Amazon S3 の techdocs-production-strg。署名の部分は記録から省いた）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gq-c1634ws": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gq-c1634ws-main.webp",
+        "width": 840,
+        "height": 1000,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/common/img/product/kyutoki/gus/gus_eco/pic_gq_c2434ws.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/gas_c34ws.html"
+      }
+    ],
+    "sharedGroup": "GQ-C34WSシリーズ 屋外壁掛形（PS標準設置形）：GQ-C2434WS・GQ-C2034WS・GQ-C1634WS",
+    "evidence": "noritz.co.jp の GQ-C34WSシリーズのページ（gas_c34ws.html）の代表写真（alt「GQ-C34WSシリーズ」。ファイル名は24号の pic_gq_c2434ws.png）。同じページの「屋外壁掛形（PS標準設置形）」の一覧に 24号 GQ-C2434WS・20号 GQ-C2034WS・16号 GQ-C1634WS が並ぶ。写真は前面にエコジョーズのマークがある、白い屋外壁掛形の外観。製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の GQ-C1634WS のページにも同じ外観の写真（GQ-C34WS.jpg）が載っているが、274×432px と小さいため、シリーズページの大きい写真を使った。PS扉内設置形（GQ-C1634WS-T など）の写真ではない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-gq-1679ws": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gq-1679ws-main.webp",
+        "width": 527,
+        "height": 832,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/img/img_gq79ws.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/"
+      }
+    ],
+    "sharedGroup": "GQ-79WSシリーズ 屋外壁掛形：GQ-2479WS・GQ-2079WS・GQ-1679WS",
+    "evidence": "noritz.co.jp のガス給湯器のページ（gas_eco/）で、GQ-79WSシリーズに1枚だけ使われている写真（alt「GQ-79WSシリーズ」、img_gq79ws.png）。同じページの比較表で、GQ-79WSシリーズには 24・20・16号がある。製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の仕様表（CSV）で、GQ-1679WS と GQ-2479WS はどちらも「屋外壁掛設置形」「高さ520mm×幅350mm×奥行170mm」「GQホワイト」で、外観が同じ。写真は前面上部に横長の排気口がある、白い屋外壁掛形の外観。製品データサービスの GQ-1679WS のページには写真が無い。別のシリーズ（GQ-1679WS-60・25WSシリーズ）の写真は使っていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-sh-q1401-bl-hp-2233-bl-gt-c2472aw-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-sh-q1401-bl-hp-2233-bl-gt-c2472aw-1-bl-main.webp",
+        "width": 627,
+        "height": 582,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/special/hphb_r290/images/img_lineup01.jpg",
+        "pageUrl": "https://www.noritz.co.jp/product/special/hphb_r290/"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q1401-bl-hp-2233-bl-gt-c2472aw-1-bl-unit.webp",
+        "width": 762,
+        "height": 1143,
+        "role": "unit",
+        "caption": "貯湯ユニット SH-Q1401 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118963/_%E5%88%86%E9%9B%A2%E8%A8%AD%E7%BD%AE_%E8%B2%AF%E6%B9%AF%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88_SH-Q1401.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118963"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q1401-bl-hp-2233-bl-gt-c2472aw-1-bl-unit-2.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "unit",
+        "caption": "ガス熱源機 GT-C2472AW-1 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118142/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118142"
+      }
+    ],
+    "sharedGroup": "HPHB R290 145L MODEL 標準機（貯湯ユニット SH-Q1401 BL＋ヒートポンプユニット HP-2233 BL。組み合わせるガス熱源機は選べる）",
+    "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページ（product/special/hphb_r290/）の商品ラインアップで「145L MODEL 標準機」に使われているシステムの写真（img_lineup01.jpg）。ヒートポンプユニットと貯湯ユニット（145L）、その横に給湯器を組み付けた抱き合わせ設置の外観。ハイブリッド給湯機のページ（kyutou_bath/hybrid/）でも同じ構図の写真（img_145.jpg、648×524px）が「145L MODEL【標準機】」に使われ、参考システム希望小売価格の給湯器は GT-C2472AW-1 BL と書かれている。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。145L のページ（lineup_145.html）のシステム構成例「ふろ・給湯タイプ」が SH-Q1401 BL＋HP-2233 BL＋GT-C2472AW-1BL。抱き合わせ設置の写真では、給湯器は貯湯ユニットの横に組み付けられた形で写っていて、型番は写真からは分からない。ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q1401 BL のページの写真（貯湯ユニット）と、GT-C2472AW-1 BL のページの写真（ガス熱源機）。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。システムの写真は 627×582px で、これより大きい文字なしの公式写真は見つからなかった。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-sh-q1401-bl-hp-2233-bl-gth-c2471awd-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-sh-q1401-bl-hp-2233-bl-gth-c2471awd-bl-main.webp",
+        "width": 627,
+        "height": 582,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/special/hphb_r290/images/img_lineup01.jpg",
+        "pageUrl": "https://www.noritz.co.jp/product/special/hphb_r290/"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q1401-bl-hp-2233-bl-gth-c2471awd-bl-unit.webp",
+        "width": 762,
+        "height": 1143,
+        "role": "unit",
+        "caption": "貯湯ユニット SH-Q1401 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118963/_%E5%88%86%E9%9B%A2%E8%A8%AD%E7%BD%AE_%E8%B2%AF%E6%B9%AF%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88_SH-Q1401.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118963"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q1401-bl-hp-2233-bl-gth-c2471awd-bl-unit-2.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "ガス熱源機 GTH-C2471AWD BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118906/03_W_8516.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118906"
+      }
+    ],
+    "sharedGroup": "HPHB R290 145L MODEL 標準機（貯湯ユニット SH-Q1401 BL＋ヒートポンプユニット HP-2233 BL。組み合わせるガス熱源機は選べる）",
+    "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページの商品ラインアップで「145L MODEL 標準機」に使われているシステムの写真（img_lineup01.jpg）。ヒートポンプユニットと貯湯ユニット（145L）、その横に給湯器を組み付けた抱き合わせ設置の外観。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。145L のページ（lineup_145.html）のシステム構成例「暖房・ふろ・給湯タイプ」が SH-Q1401 BL＋HP-2233 BL＋GTH-C2471AWDBL。ただし写真の給湯器は貯湯ユニットの横に組み付けられた形で写っていて、型番は写真からは分からない（ハイブリッド給湯機のページで同じ構図の写真に添えた参考システムの給湯器は GT-C2472AW-1 BL）。GTH-C2471AWD BL は、仕様表（CSV）で高さ740mm×幅480mm×奥行240mm、製品データサービスの写真では前面上部に丸形の排気口と下部に点検ふたがある形で、システムの写真の給湯器とは外観が違う。そのため、GTH-C2471AWD BL のページの写真（ファイル名 03_W_8516.jpg）をユニットの写真として添えた。貯湯ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q1401 BL のページのもの。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。システムの写真は 627×582px で、これより大きい文字なしの公式写真は見つからなかった。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-sh-q0701-bl-hp-2233-bl-gt-c2472aw-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-bl-hp-2233-bl-gt-c2472aw-1-bl-main.webp",
+        "width": 822,
+        "height": 574,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/special/hphb_r290/images/img_lineup02.jpg",
+        "pageUrl": "https://www.noritz.co.jp/product/special/hphb_r290/"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-bl-hp-2233-bl-gt-c2472aw-1-bl-unit.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "貯湯ユニット SH-Q0701 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118962/_%E5%88%86%E9%9B%A2%E8%A8%AD%E7%BD%AE_%E8%B2%AF%E6%B9%AF%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88_SH-Q0701.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118962"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-bl-hp-2233-bl-gt-c2472aw-1-bl-unit-2.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "unit",
+        "caption": "ガス熱源機 GT-C2472AW-1 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118142/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118142"
+      }
+    ],
+    "sharedGroup": "HPHB R290 70L MODEL 標準機（貯湯ユニット SH-Q0701 BL＋ヒートポンプユニット HP-2233 BL。組み合わせるガス熱源機は選べる）",
+    "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページの商品ラインアップで「70L MODEL 標準機」に使われているシステムの写真（img_lineup02.jpg）。ヒートポンプユニット・貯湯ユニット（70L）・据置台に載せた給湯器（分離設置・給湯器据置）の外観で、給湯器は前面上部に横長の排気口がある、GT-C72 と同じ形に見えるもの。ハイブリッド給湯機のページ（kyutou_bath/hybrid/）でも同じ写真（img_70.jpg、648×524px）が「70L MODEL【標準機】」に使われ、参考システム希望小売価格の給湯器は GT-C2472AW-1 BL と書かれている。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。70L のページ（lineup_70.html）のシステム構成例「ふろ・給湯タイプ」が SH-Q0701 BL＋HP-2233 BL＋GT-C2472AW-1BL。ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q0701 BL のページの写真（貯湯ユニット）と、GT-C2472AW-1 BL のページの写真（ガス熱源機）。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-sh-q0701-bl-hp-2233-bl-gth-c2471awd-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-bl-hp-2233-bl-gth-c2471awd-bl-main.webp",
+        "width": 822,
+        "height": 574,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/special/hphb_r290/images/img_lineup02.jpg",
+        "pageUrl": "https://www.noritz.co.jp/product/special/hphb_r290/"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-bl-hp-2233-bl-gth-c2471awd-bl-unit.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "貯湯ユニット SH-Q0701 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118962/_%E5%88%86%E9%9B%A2%E8%A8%AD%E7%BD%AE_%E8%B2%AF%E6%B9%AF%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88_SH-Q0701.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118962"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-bl-hp-2233-bl-gth-c2471awd-bl-unit-2.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "ガス熱源機 GTH-C2471AWD BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118906/03_W_8516.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118906"
+      }
+    ],
+    "sharedGroup": "HPHB R290 70L MODEL 標準機（貯湯ユニット SH-Q0701 BL＋ヒートポンプユニット HP-2233 BL。組み合わせるガス熱源機は選べる）",
+    "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページの商品ラインアップで「70L MODEL 標準機」に使われているシステムの写真（img_lineup02.jpg）。ヒートポンプユニット・貯湯ユニット（70L）・据置台に載せた給湯器（分離設置・給湯器据置）の外観。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。プラグイン機のページ（lineup_plugin.html）の設置の図でも、同じ形の給湯器に「GTH-C71/70シリーズ GT-C72-1シリーズ」と書いている。70L のページ（lineup_70.html）のシステム構成例「暖房・ふろ・給湯タイプ」が SH-Q0701 BL＋HP-2233 BL＋GTH-C2471AWDBL。ただし写真の給湯器は前面上部に横長の排気口がある形（GT-C72 と同じ形に見える）。GTH-C2471AWD BL は、仕様表（CSV）で高さ740mm×幅480mm×奥行240mm、製品データサービスの写真では前面上部に丸形の排気口と下部に点検ふたがある形で、システムの写真の給湯器とは外観が違う。そのため、GTH-C2471AWD BL のページの写真（ファイル名 03_W_8516.jpg）をユニットの写真として添えた。貯湯ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q0701 BL のページのもの。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gt-c2472aw-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gt-c2472aw-1-bl-main.webp",
+        "width": 822,
+        "height": 574,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/special/hphb_r290/images/img_lineup03.jpg",
+        "pageUrl": "https://www.noritz.co.jp/product/special/hphb_r290/"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gt-c2472aw-1-bl-unit.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "貯湯ユニット SH-Q0701-PL BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/120901/_%E5%88%86%E9%9B%A2%E8%A8%AD%E7%BD%AE_%E8%B2%AF%E6%B9%AF%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88_SH-Q0701.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/120901"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gt-c2472aw-1-bl-unit-2.webp",
+        "width": 960,
+        "height": 1200,
+        "role": "unit",
+        "caption": "ガス熱源機 GT-C2472AW-1 BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118142/_GT-C72.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118142"
+      }
+    ],
+    "sharedGroup": "HPHB R290 70L MODEL プラグイン機（貯湯ユニット SH-Q0701-PL BL＋ヒートポンプユニット HP-2233-PL BL。組み合わせるガス熱源機は選べる）",
+    "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページの商品ラインアップで「70L MODEL プラグイン機」に使われているシステムの写真（img_lineup03.jpg）。ヒートポンプユニット・貯湯ユニット（70L）・据置台に載せた給湯器の外観で、給湯器は前面上部に横長の排気口がある、GT-C72 と同じ形に見えるもの。この写真は標準機の写真（img_lineup02.jpg）と画素の差がほぼ無く、メーカーはプラグイン機にも同じ写真を使っている（ハイブリッド給湯機のページでも「70L MODEL【プラグイン機】」に標準機と同じ img_70.jpg）。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。プラグイン機のページ（lineup_plugin.html）のシステム構成例「ふろ・給湯タイプ」が SH-Q0701-PL BL＋HP-2233-PL BL＋GT-C2472AW-1BL。貯湯ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q0701-PL BL のページに載っている写真（ファイル名は SH-Q0701 で、標準機と同じ写真）。ガス熱源機の写真は GT-C2472AW-1 BL のページのもの。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gth-c2471awd-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gth-c2471awd-bl-main.webp",
+        "width": 822,
+        "height": 574,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/special/hphb_r290/images/img_lineup03.jpg",
+        "pageUrl": "https://www.noritz.co.jp/product/special/hphb_r290/"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gth-c2471awd-bl-unit.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "貯湯ユニット SH-Q0701-PL BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/120901/_%E5%88%86%E9%9B%A2%E8%A8%AD%E7%BD%AE_%E8%B2%AF%E6%B9%AF%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88_SH-Q0701.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/120901"
+      },
+      {
+        "src": "/images/products/noritz/noritz-sh-q0701-pl-bl-hp-2233-pl-bl-gth-c2471awd-bl-unit-2.webp",
+        "width": 800,
+        "height": 1200,
+        "role": "unit",
+        "caption": "ガス熱源機 GTH-C2471AWD BL",
+        "sourceUrl": "https://techdocs-production-strg.s3.ap-northeast-1.amazonaws.com/uploads/product/image/118906/03_W_8516.jpg",
+        "pageUrl": "https://www.n-techdocs.com/products/118906"
+      }
+    ],
+    "sharedGroup": "HPHB R290 70L MODEL プラグイン機（貯湯ユニット SH-Q0701-PL BL＋ヒートポンプユニット HP-2233-PL BL。組み合わせるガス熱源機は選べる）",
+    "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページの商品ラインアップで「70L MODEL プラグイン機」に使われているシステムの写真（img_lineup03.jpg。標準機の写真と画素の差がほぼ無い）。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。プラグイン機のページ（lineup_plugin.html）の設置の図でも、同じ形の給湯器に「GTH-C71/70シリーズ GT-C72-1シリーズ」と書いている。同じページのシステム構成例「暖房・ふろ・給湯タイプ」が SH-Q0701-PL BL＋HP-2233-PL BL＋GTH-C2471AWDBL。ただし写真の給湯器は前面上部に横長の排気口がある形（GT-C72 と同じ形に見える）。GTH-C2471AWD BL は、仕様表（CSV）で高さ740mm×幅480mm×奥行240mm、製品データサービスの写真では前面上部に丸形の排気口と下部に点検ふたがある形で、システムの写真の給湯器とは外観が違う。そのため、GTH-C2471AWD BL のページの写真（ファイル名 03_W_8516.jpg）をユニットの写真として添えた。貯湯ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q0701-PL BL のページに載っている写真（ファイル名は SH-Q0701 で、標準機と同じ写真）。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-eh2422fawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-eh2422fawl-main.webp",
+        "width": 749,
+        "height": 983,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_01.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      }
+    ],
+    "sharedGroup": "BRIGHTS（ハイブリッド対応・FH-EH）壁掛型／PS標準設置型：FH-EH2422FAWL・FH-EH2022FAWL・FH-EH1612FAWL・FH-EH2422SAWL・FH-EH2022SAWL・FH-EH2012SAWL・FH-EH1612SAWL",
+    "evidence": "公式の製品ページ（rno=275「BRIGHTS フルオート 24号 FH-EH2422FAシリーズ」）のラインアップでは、FH-EH2422FAWL（壁掛型）の行に旧型番名の画像 FH-E2422AWL-eco-1-1.jpg（240×280、人数アイコンとエコジョーズのマーク入り）が使われている。メーカーが旧型 FH-E の写真を EH 型に使っているもの。サイト用には、同じ外観でマークのない大きい公式画像として、HYBRID PLUS 特設ページの「ハイブリッド対応型給湯器発売／全ラインナップでハイブリッド対応いたします。」にある「壁掛け・PS標準タイプの給湯器」を使用（同ページはこの給湯器を「ハイブリッド対応BRIGHTS（新ブライツ）」と説明し、カタログでも BRIGHTS FH-EH シリーズに「ハイブリッド対応」の表示がある）。公式デジタルカタログ「ガス給湯器総合カタログ 2026年9月新価格」（2026年8月発行）p.51（PDF の52ページ目）でも FH-EH2422FAWL・FH-EH2022FAWL・FH-EH1612FAWL は1枚の写真で示され、外形寸法はすべて高さ600×幅470×奥行240。画像を並べて見比べ、前面上部の排気口・ロゴ・下部の形が同じことを確認した。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-eh2422sawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-eh2422sawl-main.webp",
+        "width": 749,
+        "height": 983,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_01.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      }
+    ],
+    "sharedGroup": "BRIGHTS（ハイブリッド対応・FH-EH）壁掛型／PS標準設置型：FH-EH2422FAWL・FH-EH2022FAWL・FH-EH1612FAWL・FH-EH2422SAWL・FH-EH2022SAWL・FH-EH2012SAWL・FH-EH1612SAWL",
+    "evidence": "公式の製品ページ（rno=278「BRIGHTS オート 24号 FH-EH2422SAシリーズ」）のラインアップで、FH-EH2422SAWL（壁掛型）の行に旧型番名の画像 FH-E2422AWL-eco-1-1.jpg（フルオートの FH-EH2422FAWL と同じ写真、240×280、マーク入り）が使われている。サイト用には同じ外観でマークのない大きい公式画像（HYBRID PLUS 特設ページ「ハイブリッド対応型給湯器」の「壁掛け・PS標準タイプの給湯器」）を使用。公式カタログ（2026年8月発行）p.53（PDF の54ページ目）の「オートタイプ 壁掛専用型（PS標準設置型）」で FH-EH2422SAWL・FH-EH2022SAWL・FH-EH2012SAWL・FH-EH1612SAWL が1枚の写真で示され、外形寸法はすべて600×470×240。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-eh2022sawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-eh2022sawl-main.webp",
+        "width": 749,
+        "height": 983,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_01.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      }
+    ],
+    "sharedGroup": "BRIGHTS（ハイブリッド対応・FH-EH）壁掛型／PS標準設置型：FH-EH2422FAWL・FH-EH2022FAWL・FH-EH1612FAWL・FH-EH2422SAWL・FH-EH2022SAWL・FH-EH2012SAWL・FH-EH1612SAWL",
+    "evidence": "公式の製品ページ（rno=279「BRIGHTS オート 20号 FH-EH2022SAシリーズ」）のラインアップで、FH-EH2022SAWL（壁掛型）の行に旧型番名の画像 FH-E2022AWL-eco-1-1.jpg（20号の人数アイコン入り、240×280）が使われている。写真の外観は24号と同じ。サイト用には同じ外観でマークのない大きい公式画像（HYBRID PLUS 特設ページ「ハイブリッド対応型給湯器」の「壁掛け・PS標準タイプの給湯器」）を使用。公式カタログ（2026年8月発行）p.53 で 24・20・16号の SAWL が1枚の写真で示され、外形寸法はすべて600×470×240。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-eh1612sawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-eh1612sawl-main.webp",
+        "width": 749,
+        "height": 983,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_01.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      }
+    ],
+    "sharedGroup": "BRIGHTS（ハイブリッド対応・FH-EH）壁掛型／PS標準設置型：FH-EH2422FAWL・FH-EH2022FAWL・FH-EH1612FAWL・FH-EH2422SAWL・FH-EH2022SAWL・FH-EH2012SAWL・FH-EH1612SAWL",
+    "evidence": "公式の製品ページ（rno=281「BRIGHTS オート 16号 FH-EH1612SAシリーズ」）のラインアップで、FH-EH1612SAWL（壁掛型）の行に旧型番名の画像 FH-E1612AWL-eco-1-1.jpg（16号の人数アイコン入り、240×280）が使われている。写真の外観は24・20号と同じ。公式カタログ（2026年8月発行）p.53 で16号も24・20号と同じ写真・同じ外形寸法（600×470×240）で示されているため、16号だけ小さい本体ということはない。サイト用には同じ外観でマークのない大きい公式画像（HYBRID PLUS 特設ページ「ハイブリッド対応型給湯器」の「壁掛け・PS標準タイプの給湯器」）を使用。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-eh2022satl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-eh2022satl-main.webp",
+        "width": 710,
+        "height": 921,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_02.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      }
+    ],
+    "sharedGroup": "BRIGHTS（ハイブリッド対応・FH-EH）PS扉内前方排気・PS標準設置型：FH-EH2422SATL・FH-EH2022SATL・FH-EH2012SATL・FH-EH1612SATL（フルオートの FATL も同じ外観）",
+    "evidence": "PS扉内前方排気型の専用画像を使用（壁掛型の画像は使っていない）。公式の製品ページ（rno=279）のラインアップで、FH-EH2022SATL（PS扉内前方排気型・PS標準設置型）の行に旧型番名の画像 FH-E2022FATL-eco-1.jpg（前面左上に丸い排気口、2000×2333、20号の人数アイコンとエコジョーズのマーク入り）が使われている。サイト用には、同じ外観でマークのない公式画像として、HYBRID PLUS 特設ページ「ハイブリッド対応型給湯器」の「PS扉内前方排気タイプの給湯器」を使用。公式カタログ（2026年8月発行）p.54（PDF の55ページ目）の「PS扉内前方排気・PS標準設置型」で FH-EH2422SATL・FH-EH2022SATL・FH-EH2012SATL・FH-EH1612SATL が1枚の写真で示されている（外形600×470×240）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-eh2422sarl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-eh2422sarl-main.webp",
+        "width": 749,
+        "height": 997,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_07.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      }
+    ],
+    "sharedGroup": "BRIGHTS（ハイブリッド対応・FH-EH）据置型：FH-EH2422SARL・FH-EH2012SARL・FH-EH1612SARL（フルオートの FH-EH2422FARL など据置型も同じ外観）",
+    "evidence": "据置型の専用画像を使用（壁掛型の画像は使っていない）。公式の製品ページ（rno=324「BRIGHTS オート据置型 24号 FH-EH2422SARL」）では、FH-EH2422SARL（据置型）の行と上部の画像に、フルオート据置の旧型番名の画像 FH-E2422FARL-eco-1.jpg／FH-E2422FARL-eco.jpg（240px、マーク入り）が使われている。フルオートの FH-EH2422FARL のページ（rno=321）も同じ画像。サイト用には、同じ外観でマークのない大きい公式画像として、HYBRID PLUS 特設ページ「ハイブリッド対応型給湯器」の「据置きタイプの給湯器」を使用。公式カタログ（2026年8月発行）p.56（PDF の57ページ目）の「据置設置型」で FH-EH2422SARL・FH-EH2012SARL・FH-EH1612SARL が1枚の写真で示され、外形寸法はすべて高さ670×幅534×奥行240。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-2023saw-1": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-2023saw-1-main.webp",
+        "width": 240,
+        "height": 300,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-2023FAWL-icon-1-1.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305"
+      }
+    ],
+    "sharedGroup": "ガスふろ給湯器 オートタイプ（従来型）壁掛型・PS標準設置型：FH-2423SAW-1・FH-2023SAW-1・FH-2013SAW-1・FH-1613SAW-1（それぞれの …SAWL-1 を含む）",
+    "evidence": "公式の製品ページ（rno=305「オート 20号 FH-2023SAシリーズ」）のラインアップで、FH-2023SAW-1（壁掛型・PS 標準設置型）の行にこの画像が使われている。ファイル名はフルオートの姉妹機 FH-2023FAWL を示しているが、メーカーがこの機種の画像として示しているもの（FH-2023SAWL-1 の行も同じ画像）。公式カタログ（2026年8月発行）p.67（PDF の68ページ目）の「オートタイプ 壁掛型・PS標準設置型」で FH-2423SAW-1・FH-2023SAW-1・FH-2013SAW-1・FH-1613SAW-1（各 L 付きを含む）が1枚の写真で示され、外形寸法はすべて600×470×240。従来型（エコジョーズではない）なので、BRIGHTS（エコジョーズ）の画像は使っていない。公式サイトにある画像は 240px 幅だけで、20号の人数アイコン（2〜3人）が入っている。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-ph-em1616awl": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-ph-em1616awl-main.webp",
+        "width": 240,
+        "height": 360,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/boileronly/img/PH-EM1616AWL-eco.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=119"
+      }
+    ],
+    "evidence": "公式の製品ページ（rno=119「エコジョーズ オートストップ 16号 PH-EM1616Aシリーズ」）の上部画像と、ラインアップの PH-EM1616AWL（壁掛型・PS標準扉内設置型）の行に、この型番名の画像 PH-EM1616AWL-eco.jpg が使われている。前面上部に丸い排気口がある本体で、公式カタログ（2026年8月発行）p.88（PDF の89ページ目）の写真・寸法図（外形520×350×215、前面上部に排気口）とも一致。公式サイトにある画像は 240×360 だけで、人数アイコン（1〜2人）とエコジョーズのマークが入っている。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-ph-1617aw": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-ph-1617aw-main.webp",
+        "width": 240,
+        "height": 360,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/boileronly/img/PH-1615AW-icon.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=237"
+      }
+    ],
+    "sharedGroup": "ガス給湯器 コンパクトオートストップタイプ（従来型）壁掛型・PS標準設置型：PH-2017AW・PH-2015AW・PH-1617AW・PH-1615AW・PH-1017AW・PH-1015AW（各 AWL を含む）",
+    "evidence": "公式の製品ページ（rno=237「オートストップ 16号 PH-1617Aシリーズ」）の上部画像と、ラインアップの PH-1617AW（壁掛型・PS標準設置型）の行にこの画像が使われている。ファイル名は前の型番 PH-1615AW を示しているが、メーカーがこの機種の画像として示しているもの（PH-1617AWL の行も同じ画像）。公式カタログ（2026年8月発行）p.91（PDF の92ページ目）の「コンパクトオートストップタイプ 壁掛型・PS標準設置型」で PH-2017AW・PH-1617AW・PH-1615AW・PH-1017AW などが1枚の写真で示され、外形寸法はすべて520×350×135。公式サイトにある画像は 240×360 だけで、人数アイコン（1〜2人）が入っている。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-hb-232tuhpl-p-fh-ueh2422fawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-ueh2422fawl-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/paloma/product/product_waterheater_hybridplus_300_300.jpg",
+        "pageUrl": "https://www.paloma.co.jp/product/waterheater/index.html"
+      },
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-ueh2422fawl-remote.webp",
+        "width": 240,
+        "height": 240,
+        "role": "remote",
+        "caption": "対応リモコン MFC-HBE308D（マルチリモコンセット・別売）",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/option/img/mfc-hbe308d_240_240.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=544"
+      }
+    ],
+    "sharedGroup": "HYBRID PLUS 壁掛型熱源機の構成：HB-232TUHPL-P＋FH-UEH2422FAWL／FH-UEH2422SAWL／FH-EH2422FAWL／FH-EH2422SAWL",
+    "evidence": "公式の製品ページ（rno=541 HYBRID PLUS）のラインアップで、HB-232TUHPL-P_FH-UEH2422FAWL の行に、ヒートポンプタンクユニットと壁掛型熱源機を並べたシステム画像 products_hybridplus-24_240_240.jpg（240×240、人数アイコンとエコジョーズのマーク入り）が使われている。同じ構図でマークのない 600×600 の公式画像が、公式サイトの給湯器カテゴリページで rno=541 へのリンク（「ハイブリッド給湯器」）に使われているため、それを main に使用。熱源機 FH-UEH2422FAWL は壁掛型で、rno=541 の仕様表では外形600×470×240（FH-EH2422FAWL と同じ）。同じ構図の画像は、公式の給湯省エネ2026案内ページと HYBRID PLUS 特設ページのラインアップでも、壁掛型の構成全体に1枚で使われている。リモコン画像は rno=541 のオプション品に載っている MFC-HBE308D の公式画像（製品ページ rno=544）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-hb-232tuhpl-p-fh-ueh2422sawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-ueh2422sawl-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/paloma/product/product_waterheater_hybridplus_300_300.jpg",
+        "pageUrl": "https://www.paloma.co.jp/product/waterheater/index.html"
+      },
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-ueh2422sawl-remote.webp",
+        "width": 240,
+        "height": 240,
+        "role": "remote",
+        "caption": "対応リモコン MFC-HBE308D（マルチリモコンセット・別売）",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/option/img/mfc-hbe308d_240_240.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=544"
+      }
+    ],
+    "sharedGroup": "HYBRID PLUS 壁掛型熱源機の構成：HB-232TUHPL-P＋FH-UEH2422FAWL／FH-UEH2422SAWL／FH-EH2422FAWL／FH-EH2422SAWL",
+    "evidence": "公式の製品ページ（rno=541）のラインアップで、HB-232TUHPL-P_FH-UEH2422SAWL の行には products_hybridplus-20_240_240.jpg（同じ構図だが20号用の人数アイコン「2〜3人」入り）が使われている。24号の構成と人数表示が合わないため、そのファイルは使わず、同じ構図でマークのない 600×600 の公式システム画像（給湯器カテゴリページで rno=541 へのリンクに使われているもの）を main に使用。熱源機 FH-UEH2422SAWL は壁掛型で、rno=541 の仕様表では外形600×470×240（FH-UEH2422FAWL・FH-EH2422FAWL/SAWL と同じ）。リモコン画像は rno=541 のオプション品の MFC-HBE308D（製品ページ rno=544）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-hb-232tuhpl-p-fh-eh2422fawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422fawl-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/paloma/product/product_waterheater_hybridplus_300_300.jpg",
+        "pageUrl": "https://www.paloma.co.jp/product/waterheater/index.html"
+      },
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422fawl-remote.webp",
+        "width": 240,
+        "height": 240,
+        "role": "remote",
+        "caption": "対応リモコン MFC-HBE308D（マルチリモコンセット・別売）",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/option/img/mfc-hbe308d_240_240.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=544"
+      }
+    ],
+    "sharedGroup": "HYBRID PLUS 壁掛型熱源機の構成：HB-232TUHPL-P＋FH-UEH2422FAWL／FH-UEH2422SAWL／FH-EH2422FAWL／FH-EH2422SAWL",
+    "evidence": "公式の製品ページ（rno=541）のラインアップで、HB-232TUHPL-P_FH-EH2422FAWL の行に、ヒートポンプタンクユニットと壁掛型熱源機のシステム画像 products_hybridplus-24_240_240.jpg（240×240、マーク入り）が使われている。同じ構図でマークのない 600×600 の公式画像（給湯器カテゴリページで rno=541 へのリンクに使われているもの）を main に使用。熱源機 FH-EH2422FAWL は壁掛型（BRIGHTS、外形600×470×240）。公式カタログ（2026年8月発行）p.43（PDF の44ページ目）のハイブリッド給湯器ラインアップでも、壁掛のふろ給湯器の熱源機（FH-UEH2422FAWL/SAWL・FH-EH2422FAWL/SAWL）は1枚の「熱源機（ふろ給湯器）」の写真で示されている。なお HYBRID PLUS 特設ページのラインアップ表（画像）では、同じシステム価格の行の熱源機が「HBF-E242FAWL」と書かれている（製品ページと特設ページで型番表記が違う）。リモコン画像は MFC-HBE308D（rno=544）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-hb-232tuhpl-p-fh-eh2422sawl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422sawl-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/paloma/product/product_waterheater_hybridplus_300_300.jpg",
+        "pageUrl": "https://www.paloma.co.jp/product/waterheater/index.html"
+      },
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422sawl-remote.webp",
+        "width": 240,
+        "height": 240,
+        "role": "remote",
+        "caption": "対応リモコン MFC-HBE308D（マルチリモコンセット・別売）",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/option/img/mfc-hbe308d_240_240.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=544"
+      }
+    ],
+    "sharedGroup": "HYBRID PLUS 壁掛型熱源機の構成：HB-232TUHPL-P＋FH-UEH2422FAWL／FH-UEH2422SAWL／FH-EH2422FAWL／FH-EH2422SAWL",
+    "evidence": "公式の製品ページ（rno=541）のラインアップで、HB-232TUHPL-P_FH-EH2422SAWL の行に、ヒートポンプタンクユニットと壁掛型熱源機のシステム画像 products_hybridplus-24_240_240.jpg（240×240、マーク入り）が使われている。同じ構図でマークのない 600×600 の公式画像（給湯器カテゴリページで rno=541 へのリンクに使われているもの）を main に使用。熱源機 FH-EH2422SAWL は壁掛型（BRIGHTS、外形600×470×240、フルオートの FH-EH2422FAWL と同じ外観）。リモコン画像は rno=541 のオプション品の MFC-HBE308D（製品ページ rno=544）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "paloma-hb-232tuhpl-p-fh-eh2422farl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422farl-main.webp",
+        "width": 440,
+        "height": 260,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_space_list_02.jpg",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-easy"
+      },
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422farl-unit.webp",
+        "width": 749,
+        "height": 997,
+        "role": "unit",
+        "caption": "ガス熱源機 FH-EH2422FARL（据置型）",
+        "sourceUrl": "https://www.paloma.co.jp/special/hybrid-plus/images/pc/feature_retrofit_lineup_07.png",
+        "pageUrl": "https://www.paloma.co.jp/special/hybrid-plus/#linkpoint-retrofit"
+      },
+      {
+        "src": "/images/products/paloma/paloma-hb-232tuhpl-p-fh-eh2422farl-remote.webp",
+        "width": 240,
+        "height": 240,
+        "role": "remote",
+        "caption": "対応リモコン MFC-HBE308D（マルチリモコンセット・別売）",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/option/img/mfc-hbe308d_240_240.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=544"
+      }
+    ],
+    "sharedGroup": "HYBRID PLUS 据置タイプ：HB-232TUHPL-P＋据置型熱源機（FH-EH2422FARL／FH-EH2422SARL）",
+    "evidence": "公式の製品ページ（rno=541）では、HB-232TUHPL-P_FH-EH2422FARL（24号据え置きフルオート）の行にも壁掛型熱源機のシステム画像（products_hybridplus-24_240_240.jpg）が使われているが、熱源機が据置型なので使わない（前回の記録はこの壁掛型の画像だった）。給湯省エネ2026案内ページと特設ページのラインアップ画像も壁掛型の熱源機なので使わない。main には、HYBRID PLUS 特設ページ「コンパクトだから限られたスペースでも設置できる」の「据置タイプ」の画像（ヒートポンプタンクユニットと据置型熱源機を並べたもの）を使用。これがこの構成を示す唯一の公式画像で、背景に壁と床がある設置イメージ（人物・文字なし）、440×260 と小さい。unit には、特設ページ「ハイブリッド対応型給湯器」の「据置きタイプの給湯器」（マークなし、749×997）を追加。FH-EH2422FARL の製品ページ（rno=321）の画像 FH-E2422FARL-eco.jpg と同じ外観で、rno=541 の仕様表では FH-EH2422FARL／SARL は屋外据置型・外形670×534×240。ヒートポンプタンクユニット HB-232TUHPL-P だけを写した文字のない公式写真は見つからなかった。リモコン画像は MFC-HBE308D（rno=544）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "mitsubishi-srt-s377": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s377-main.webp",
+        "width": 640,
+        "height": 480,
+        "role": "main",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S377.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338407&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s377-unit.webp",
+        "width": 640,
+        "height": 480,
+        "role": "unit",
+        "caption": "ヒートポンプユニット SRT-MU417-S",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-MU417-S.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?spid=338369&pid=338407&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s377-remote.webp",
+        "width": 640,
+        "height": 480,
+        "role": "remote",
+        "caption": "リモコンセット RMCB-F7SE（台所リモコン RMCB-KC7・浴室リモコン RMCB-BD7）",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/RMCB-F7SE.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338392&ccd=10501170"
+      }
+    ],
+    "evidence": "三菱電機の業務向け製品情報サイト WIN2K の SRT-S377 の製品ページで、この型番の製品画像（SRT-S377.jpg）として載っている。角型370Lの貯湯ユニット SRT-ST377 とヒートポンプユニット SRT-MU417-S のセット写真。公式で入手できる最大の大きさは 640×480（技術資料の「外観写真」も同じファイル。一般向けのシリーズページの画像は 433px 前後で、こちらより小さい）。ヒートポンプユニットの写真は、構成品の製品ページ（WIN2K）に載っているもの。三菱電機は SRT-MU417-S・SRT-MU517-S・SRT-MU417-SZ・SRT-MU417-P に同じ写真を使っている（外形寸法はどれも 715×800×285mm）。リモコンセットの写真は、このセットの別売品として載っている RMCB-F7SE の製品ページのもの。",
+    "verifiedAt": "2026-10-15"
+  },
+  "mitsubishi-srt-s467": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s467-main.webp",
+        "width": 640,
+        "height": 480,
+        "role": "main",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S467.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338406&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s467-unit.webp",
+        "width": 640,
+        "height": 480,
+        "role": "unit",
+        "caption": "ヒートポンプユニット SRT-MU517-S",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-MU517-S.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?spid=338368&pid=338406&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s467-remote.webp",
+        "width": 640,
+        "height": 480,
+        "role": "remote",
+        "caption": "リモコンセット RMCB-F7SE（台所リモコン RMCB-KC7・浴室リモコン RMCB-BD7）",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/RMCB-F7SE.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338392&ccd=10501170"
+      }
+    ],
+    "evidence": "WIN2K の SRT-S467 の製品ページで、この型番の製品画像（SRT-S467.jpg）として載っている。角型460Lの貯湯ユニット SRT-ST467（高さ2,160mm）と SRT-MU517-S のセット写真で、370L の写真より貯湯ユニットが高い。SRT-S467U のページにも同じ写真が使われている。公式で入手できる最大の大きさは 640×480（技術資料の「外観写真」も同じファイル。一般向けのシリーズページの画像は 433px 前後で、こちらより小さい）。ヒートポンプユニットの写真は、構成品の製品ページ（WIN2K）に載っているもの。三菱電機は SRT-MU417-S・SRT-MU517-S・SRT-MU417-SZ・SRT-MU417-P に同じ写真を使っている（外形寸法はどれも 715×800×285mm）。リモコンセットは別売品の RMCB-F7SE の製品ページの写真。",
+    "verifiedAt": "2026-10-15"
+  },
+  "mitsubishi-srt-s467u": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s467u-main.webp",
+        "width": 640,
+        "height": 480,
+        "role": "main",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S467U.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338401&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s467u-unit.webp",
+        "width": 640,
+        "height": 480,
+        "role": "unit",
+        "caption": "ヒートポンプユニット SRT-MU517-S",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-MU517-S.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?spid=338368&pid=338401&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s467u-remote.webp",
+        "width": 640,
+        "height": 480,
+        "role": "remote",
+        "caption": "リモコンセット RMCB-F7SE（台所リモコン RMCB-KC7・浴室リモコン RMCB-BD7）",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/RMCB-F7SE.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338392&ccd=10501170"
+      }
+    ],
+    "evidence": "WIN2K の SRT-S467U の製品ページで、この型番の名前の製品画像（SRT-S467U.jpg）として載っている。ただし中身は SRT-S467 の写真と同じデータで、技術資料の「外観写真」も srt-s467.jpg。貯湯ユニット SRT-ST467U と SRT-ST467 は外形寸法が同じ（2160×630×760mm）で、メーカーは同じ外観として扱っている。角型460L。一般向けのSシリーズのページでも、SRT-S467U と SRT-S467 は同じ画像（product_460.png）。公式で入手できる最大の大きさは 640×480（技術資料の「外観写真」も同じファイル。一般向けのシリーズページの画像は 433px 前後で、こちらより小さい）。ヒートポンプユニットの写真は、構成品の製品ページ（WIN2K）に載っているもの。三菱電機は SRT-MU417-S・SRT-MU517-S・SRT-MU417-SZ・SRT-MU417-P に同じ写真を使っている（外形寸法はどれも 715×800×285mm）。リモコンセットは別売品の RMCB-F7SE の製品ページの写真。",
+    "verifiedAt": "2026-10-15"
+  },
+  "mitsubishi-srt-s377uz": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s377uz-main.webp",
+        "width": 640,
+        "height": 480,
+        "role": "main",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-S377UZ.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338404&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s377uz-unit.webp",
+        "width": 640,
+        "height": 480,
+        "role": "unit",
+        "caption": "ヒートポンプユニット SRT-MU417-SZ",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-MU417-SZ.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?spid=338371&pid=338404&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-s377uz-remote.webp",
+        "width": 640,
+        "height": 480,
+        "role": "remote",
+        "caption": "リモコンセット RMCB-F7SE（台所リモコン RMCB-KC7・浴室リモコン RMCB-BD7）",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/RMCB-F7SE.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338392&ccd=10501170"
+      }
+    ],
+    "evidence": "WIN2K の SRT-S377UZ の製品ページで、この型番の製品画像（SRT-S377UZ.jpg）として載っている。薄型370Lの貯湯ユニット SRT-ST377UZ とヒートポンプユニット SRT-MU417-SZ のセット写真で、角型より幅が広く奥行きが薄い形が写っている（角型の写真とは別のファイル）。公式で入手できる最大の大きさは 640×480（技術資料の「外観写真」も同じファイル。一般向けのシリーズページの画像は 433px 前後で、こちらより小さい）。ヒートポンプユニットの写真は、構成品の製品ページ（WIN2K）に載っているもの。三菱電機は SRT-MU417-S・SRT-MU517-S・SRT-MU417-SZ・SRT-MU417-P に同じ写真を使っている（外形寸法はどれも 715×800×285mm）。リモコンセットは別売品の RMCB-F7SE の製品ページの写真。",
+    "verifiedAt": "2026-10-15"
+  },
+  "mitsubishi-srt-p377ub": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-p377ub-main.webp",
+        "width": 640,
+        "height": 480,
+        "role": "main",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-P377UB.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338399&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-p377ub-unit.webp",
+        "width": 640,
+        "height": 480,
+        "role": "unit",
+        "caption": "ヒートポンプユニット SRT-MU417-P",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/SRT-MU417-P.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?spid=338366&pid=338399&ccd=10501110"
+      },
+      {
+        "src": "/images/products/mitsubishi/mitsubishi-srt-p377ub-remote.webp",
+        "width": 640,
+        "height": 480,
+        "role": "remote",
+        "caption": "リモコンセット RMCB-H7SE（台所リモコン RMCB-KC7・浴室リモコン RMCB-BH7）",
+        "sourceUrl": "https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/contents/doc/photo/image/2025/RMCB-H7SE.jpg",
+        "pageUrl": "https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProduct.do?pid=338391&ccd=10501170"
+      }
+    ],
+    "evidence": "WIN2K の SRT-P377UB の製品ページで、この型番の製品画像（SRT-P377UB.jpg）として載っている。角型370Lの貯湯ユニット SRT-PT377UB とヒートポンプユニット SRT-MU417-P のセット写真（SRT-S377 の写真とは別のファイル）。公式で入手できる最大の大きさは 640×480（技術資料の「外観写真」も同じファイル。一般向けのシリーズページの画像は 433px 前後で、こちらより小さい）。ヒートポンプユニットの写真は、構成品の製品ページ（WIN2K）に載っているもの。三菱電機は SRT-MU417-S・SRT-MU517-S・SRT-MU417-SZ・SRT-MU417-P に同じ写真を使っている（外形寸法はどれも 715×800×285mm）。リモコンセットは、このセットの別売品として載っている RMCB-H7SE の製品ページの写真（浴室リモコンに「ホットあわー」のボタンがあり、Sシリーズ用の RMCB-F7SE とは違う）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "panasonic-he-j37nqs": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/panasonic/panasonic-he-j37nqs-main.webp",
+        "width": 1142,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://panasonicjp.scene7.com/is/image/panasonicjp/HE-J37NQS?hei=1600&fmt=png&bfc=off",
+        "pageUrl": "https://panasonic.jp/ecocute/products/HE-J37NQS.html"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-j37nqs-unit.webp",
+        "width": 1062,
+        "height": 950,
+        "role": "unit",
+        "caption": "ヒートポンプユニット HE-PJ45N",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-PJ45N_Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-j37nqs-remote.webp",
+        "width": 883,
+        "height": 745,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（台所リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-D.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-j37nqs-remote-2.webp",
+        "width": 1200,
+        "height": 732,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（浴室リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      }
+    ],
+    "evidence": "panasonic.jp の HE-J37NQS の製品ページで、この型番の商品画像（画像の名前 HE-J37NQS、元の大きさ 3867×4063）として表示されている。角型370L・アイボリーの貯湯ユニット HE-J37NQ（1810×600×680mm）とヒートポンプユニット HE-PJ45N のセット写真。panasonic.jp の製品ページの画像は、パナソニックが使っている画像配信（Adobe Scene7、panasonicjp.scene7.com）から表示されている（panasonic.jp の自社ドメインでは配信されていない）。この配信から、加工の指定なしで PNG・高さ1600px の版を取得した。sumai.panasonic.jp の商品ページの画像（lineup_〜_main.jpg 1200×350 と _s 750×510）は、シリーズ名・容量・機能アイコンの文字が入ったバナーなので使っていない。ヒートポンプユニットとリモコンの写真は、panasonic.biz の「画像データ ダウンロード」（ログイン不要。エコキュートのカタログ 2026.9・ZBCT1B397M）の大きい画像（bicon）で、ファイル名がその型番のもの。41ページ（Jシリーズの掲載ページ）に載っている。リモコン HE-RQWNW は、sumai.panasonic.jp の商品ページで対応リモコンとして載っているもの。",
+    "verifiedAt": "2026-10-15"
+  },
+  "panasonic-he-j46nqs": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/panasonic/panasonic-he-j46nqs-main.webp",
+        "width": 961,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://panasonicjp.scene7.com/is/image/panasonicjp/HE-J46NQS?hei=1600&fmt=png&bfc=off",
+        "pageUrl": "https://panasonic.jp/ecocute/products/HE-J46NQS.html"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-j46nqs-remote.webp",
+        "width": 883,
+        "height": 745,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（台所リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-D.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-j46nqs-remote-2.webp",
+        "width": 1200,
+        "height": 732,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（浴室リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      }
+    ],
+    "evidence": "panasonic.jp の HE-J46NQS の製品ページで、この型番の商品画像（画像の名前 HE-J46NQS、元の大きさ 3867×4833）として表示されている。角型460L・アイボリーの貯湯ユニット HE-J46NQ（2170×600×680mm）とヒートポンプユニット HE-PJ60N のセット写真で、370L の写真より貯湯ユニットが高い。panasonic.jp の製品ページの画像は、パナソニックが使っている画像配信（Adobe Scene7、panasonicjp.scene7.com）から表示されている（panasonic.jp の自社ドメインでは配信されていない）。この配信から、加工の指定なしで PNG・高さ1600px の版を取得した。sumai.panasonic.jp の商品ページの画像（lineup_〜_main.jpg 1200×350 と _s 750×510）は、シリーズ名・容量・機能アイコンの文字が入ったバナーなので使っていない。ヒートポンプユニット HE-PJ60N だけの写真は、panasonic.biz の画像データ（2026.9 のカタログ）になかったので付けていない（画像データには 370L 用の機器しかない）。リモコンの写真は panasonic.biz の画像データの41ページ（Jシリーズ）の HE-RQWNW で、sumai.panasonic.jp の HE-J46NQS の商品ページでも対応リモコンは HE-RQWNW。",
+    "verifiedAt": "2026-10-15"
+  },
+  "panasonic-he-ju37nqs": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/panasonic/panasonic-he-ju37nqs-main.webp",
+        "width": 1142,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://panasonicjp.scene7.com/is/image/panasonicjp/HE-JU37NQS?hei=1600&fmt=png&bfc=off",
+        "pageUrl": "https://panasonic.jp/ecocute/products/HE-JU37NQS.html"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-ju37nqs-unit.webp",
+        "width": 1062,
+        "height": 950,
+        "role": "unit",
+        "caption": "ヒートポンプユニット HE-PJU45N",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-PJU45N_Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-ju37nqs-remote.webp",
+        "width": 883,
+        "height": 745,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（台所リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-D.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-ju37nqs-remote-2.webp",
+        "width": 1200,
+        "height": 732,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（浴室リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=41"
+      }
+    ],
+    "evidence": "panasonic.jp の HE-JU37NQS の製品ページで、この型番の商品画像（画像の名前 HE-JU37NQS、元の大きさ 3867×4063）として表示されている。角型370L・ウォームシルバーの貯湯ユニット HE-JU37NQ（1810×600×680mm）とヒートポンプユニット HE-PJU45N のセット写真。HE-JPU37NQS のページの写真と中身が同じデータ（2機種は寸法も色も同じで、panasonic.biz の画像データでも HE-JU37NQ と HE-JPU37NQ、HE-PJU45N と HE-PJPU45N はそれぞれ同じ写真）。panasonic.jp の製品ページの画像は、パナソニックが使っている画像配信（Adobe Scene7、panasonicjp.scene7.com）から表示されている（panasonic.jp の自社ドメインでは配信されていない）。この配信から、加工の指定なしで PNG・高さ1600px の版を取得した。sumai.panasonic.jp の商品ページの画像（lineup_〜_main.jpg 1200×350 と _s 750×510）は、シリーズ名・容量・機能アイコンの文字が入ったバナーなので使っていない。ヒートポンプユニットとリモコンの写真は、panasonic.biz の「画像データ ダウンロード」（ログイン不要。エコキュートのカタログ 2026.9・ZBCT1B397M）の大きい画像（bicon）で、ファイル名がその型番のもの。41ページ（Jシリーズの掲載ページ）に載っている。",
+    "verifiedAt": "2026-10-15"
+  },
+  "panasonic-he-w37lqs": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/panasonic/panasonic-he-w37lqs-main.webp",
+        "width": 1200,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://panasonicjp.scene7.com/is/image/panasonicjp/24V_tank370_usugata_Y_set-1?hei=1600&fmt=png&bfc=off",
+        "pageUrl": "https://panasonic.jp/ecocute/products/HE-W37LQS.html"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-w37lqs-unit.webp",
+        "width": 1034,
+        "height": 953,
+        "role": "unit",
+        "caption": "ヒートポンプユニット HE-PW45L",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-PW45L_Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=45"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-w37lqs-remote.webp",
+        "width": 883,
+        "height": 745,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-WQWLW（台所リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-WQWLW-D.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=45"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-w37lqs-remote-2.webp",
+        "width": 1200,
+        "height": 732,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-WQWLW（浴室リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-WQWLW-Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=45"
+      }
+    ],
+    "sharedGroup": "パナソニックの薄型370L（2024年度モデル・アイボリー・貯湯ユニット 1843×1078×440mm）：W シリーズ 高圧フルオート HE-W37LQS・W シリーズ パワフル高圧フルオート HE-WU37LQS・H シリーズ HE-H37LQS",
+    "evidence": "panasonic.jp の HE-W37LQS の製品ページの商品画像は、型番ではなく「24V_tank370_usugata_Y_set-1」という名前の写真（2024年度モデルの薄型370Lのセット写真、元の大きさ 1654×1654）。HE-WU37LQS のページ（…_set）と HE-H37LQS のページ（…_set-2）の写真も中身が同じデータで、パナソニックは薄型370Lの3機種に1枚の写真を使っている。3機種とも貯湯ユニットは 1843×1078×440mm・アイボリー（sumai.panasonic.jp の商品ページで確認）。写真は幅が広く奥行きが薄い薄型の形で、角型ではない。panasonic.jp の製品ページの画像は、パナソニックが使っている画像配信（Adobe Scene7、panasonicjp.scene7.com）から表示されている（panasonic.jp の自社ドメインでは配信されていない）。この配信から、加工の指定なしで PNG・高さ1600px の版を取得した。sumai.panasonic.jp の商品ページの画像（lineup_〜_main.jpg 1200×350 と _s 750×510）は、シリーズ名・容量・機能アイコンの文字が入ったバナーなので使っていない。panasonic.biz の画像データ（2026.9）には HE-W37LQ の貯湯ユニット単体の写真はなく、別の機種 HE-WU37LQ のものだけだった。ヒートポンプユニットとリモコンの写真は、panasonic.biz の「画像データ ダウンロード」（ログイン不要。エコキュートのカタログ 2026.9・ZBCT1B397M）の大きい画像（bicon）で、ファイル名がその型番のもの。45ページ（薄型の掲載ページ）に載っている。HE-PW45L は sumai.panasonic.jp で HE-W37LQS の構成品として載っている型番。リモコンは対応リモコン HE-WQWLW（sumai.panasonic.jp のページの画像はひとつ前の型の名前 lineup_he-wqwkw_remo1.jpg で文字入りのため、型番どおりの名前の panasonic.biz の画像を使った）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "panasonic-he-jpu37nqs": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/panasonic/panasonic-he-jpu37nqs-main.webp",
+        "width": 1142,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://panasonicjp.scene7.com/is/image/panasonicjp/HE-JPU37NQS?hei=1600&fmt=png&bfc=off",
+        "pageUrl": "https://panasonic.jp/ecocute/products/HE-JPU37NQS.html"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-jpu37nqs-unit.webp",
+        "width": 1062,
+        "height": 950,
+        "role": "unit",
+        "caption": "ヒートポンプユニット HE-PJPU45N",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-PJPU45N_Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=39"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-jpu37nqs-remote.webp",
+        "width": 883,
+        "height": 745,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（台所リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-D.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=39"
+      },
+      {
+        "src": "/images/products/panasonic/panasonic-he-jpu37nqs-remote-2.webp",
+        "width": 1200,
+        "height": 732,
+        "role": "remote",
+        "caption": "コミュニケーションリモコン HE-RQWNW（浴室リモコン）",
+        "sourceUrl": "https://www2.panasonic.biz/jp/sumai/gazou/bicon/HE-RQWNW-Y.jpg",
+        "pageUrl": "https://www2.panasonic.biz/jp/ai/sumai/gazou/index.jsp?c=search&ctlg_cd=ZBCT1B397M&ctlg_pg=39"
+      }
+    ],
+    "evidence": "panasonic.jp の HE-JPU37NQS の製品ページで、この型番の商品画像（画像の名前 HE-JPU37NQS、元の大きさ 3867×4063）として表示されている。角型370L・ウォームシルバーの貯湯ユニット HE-JPU37NQ（1810×600×680mm）とヒートポンプユニット HE-PJPU45N のセット写真。中身は HE-JU37NQS のページの写真と同じデータ（寸法・色が同じで、panasonic.biz の画像データでも貯湯ユニット・ヒートポンプユニットとも同じ写真を使っている）。panasonic.jp の製品ページの画像は、パナソニックが使っている画像配信（Adobe Scene7、panasonicjp.scene7.com）から表示されている（panasonic.jp の自社ドメインでは配信されていない）。この配信から、加工の指定なしで PNG・高さ1600px の版を取得した。sumai.panasonic.jp の商品ページの画像（lineup_〜_main.jpg 1200×350 と _s 750×510）は、シリーズ名・容量・機能アイコンの文字が入ったバナーなので使っていない。ヒートポンプユニットとリモコンの写真は、panasonic.biz の「画像データ ダウンロード」（ログイン不要。エコキュートのカタログ 2026.9・ZBCT1B397M）の大きい画像（bicon）で、ファイル名がその型番のもの。39ページ（JPシリーズの掲載ページ）に載っている。リモコン HE-RQWNW は sumai.panasonic.jp の商品ページで対応リモコンとして載っているもの（画像データの題名も「JP_J_FP_F_フルオート用」）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "daikin-ea377afv": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/daikin/daikin-ea377afv-main.webp",
+        "width": 440,
+        "height": 440,
+        "role": "main",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/assets/images/2025/img_fullauto_02-png.png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ea377afv-remote.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "スタイリッシュリモコン BRC083K1（台所リモコン BRC083K11・浴室リモコン BRC083K12）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ea377afv-remote-2.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "ブラックリモコン BRC083K1K（台所リモコン BRC083K11K・浴室リモコン BRC083K12K）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main_k%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      }
+    ],
+    "sharedGroup": "フルオートタイプ Aシリーズ 一般地仕様 角型（460L EA467AFV・370L EA377AFV）",
+    "evidence": "ダイキン公式のエコキュート ラインアップページで「フルオートタイプ Aシリーズ 一般地仕様 角型」の欄（460L・370L、リンク先は lineup/fullauto/02）に使われている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 440×440）。エコキュートのトップページの同じ欄も同じ画像。メーカーは460L（EA467AFV）と370L（EA377AFV）に1枚の写真を使っている。写真のタンクの縦横比は460L（高さ2,175mm）に合い、370L（高さ1,825mm、幅・奥行きは同じ）の貯湯ユニットは写真より約350mm低い。写真のヒートポンプは X シリーズの写真より背が低く、この機種の RQ457AV（高さ635mm）と矛盾しない。シリーズのページ（lineup/fullauto/02）の上部の画像（以前の記録の hero png、3840×960）は、シリーズ名・品番・給湯省エネ事業などのマークの文字が入ったバナーなので使っていない（ページ内にほかの製品写真は無い）。より大きい版は見つからなかった（パラメータなしの元ファイルも440×440）。画像は2025年のフォルダーにあり、前年モデルの写真を引き継いでいる可能性がある（外観の違いは公式に書かれていない）。リモコンの写真は、このシリーズのページの「リモコンについてはこちら」から開く公式のフルオートタイプ リモコンページのもので、この機種の仕様に書かれた BRC083K1・BRC083K1K と一致（リモコン本体に型番が印刷されている）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "daikin-ea467afv": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/daikin/daikin-ea467afv-main.webp",
+        "width": 440,
+        "height": 440,
+        "role": "main",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/assets/images/2025/img_fullauto_02-png.png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ea467afv-remote.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "スタイリッシュリモコン BRC083K1（台所リモコン BRC083K11・浴室リモコン BRC083K12）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ea467afv-remote-2.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "ブラックリモコン BRC083K1K（台所リモコン BRC083K11K・浴室リモコン BRC083K12K）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main_k%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      }
+    ],
+    "sharedGroup": "フルオートタイプ Aシリーズ 一般地仕様 角型（460L EA467AFV・370L EA377AFV）",
+    "evidence": "ダイキン公式のエコキュート ラインアップページで「フルオートタイプ Aシリーズ 一般地仕様 角型」の欄（460L・370L、リンク先は lineup/fullauto/02）に使われている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 440×440）。エコキュートのトップページの同じ欄も同じ画像。メーカーは460L（EA467AFV）と370L（EA377AFV）に1枚の写真を使っている。写真のタンクの縦横比は460Lの貯湯ユニット（高さ2,175×幅630mm）に合う。写真のヒートポンプは X シリーズの写真より背が低く、この機種の RQ607AV（高さ635mm）と矛盾しない。この機種だけの写真として示されてはいないので exact-model にはしていない。シリーズのページ（lineup/fullauto/02）の上部の画像（以前の記録の hero png、3840×960）は、シリーズ名・品番・給湯省エネ事業などのマークの文字が入ったバナーなので使っていない（ページ内にほかの製品写真は無い）。より大きい版は見つからなかった（パラメータなしの元ファイルも440×440）。画像は2025年のフォルダーにあり、前年モデルの写真を引き継いでいる可能性がある（外観の違いは公式に書かれていない）。リモコンの写真は、このシリーズのページの「リモコンについてはこちら」から開く公式のフルオートタイプ リモコンページのもので、この機種の仕様に書かれた BRC083K1・BRC083K1K と一致（リモコン本体に型番が印刷されている）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "daikin-en377afv": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/daikin/daikin-en377afv-main.webp",
+        "width": 440,
+        "height": 440,
+        "role": "main",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/assets/images/2025/img_fullauto_05-png.png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup"
+      },
+      {
+        "src": "/images/products/daikin/daikin-en377afv-remote.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "スタイリッシュリモコン BRC083K1（台所リモコン BRC083K11・浴室リモコン BRC083K12）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      },
+      {
+        "src": "/images/products/daikin/daikin-en377afv-remote-2.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "ブラックリモコン BRC083K1K（台所リモコン BRC083K11K・浴室リモコン BRC083K12K）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main_k%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      }
+    ],
+    "sharedGroup": "フルオートタイプ Nシリーズ 一般地仕様 角型（460L EN467AFV・370L EN377AFV）",
+    "evidence": "ダイキン公式のエコキュート ラインアップページで「フルオートタイプ Nシリーズ 一般地仕様 角型」の欄（460L・370L、リンク先は lineup/fullauto/05）に使われている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 440×440）。エコキュートのトップページの同じ欄も同じ画像。メーカーは460L（EN467AFV）と370L（EN377AFV）に1枚の写真を使っている。写真のタンクの縦横比は460L（高さ2,175mm）に合い、370L（高さ1,825mm、幅・奥行きは同じ）の貯湯ユニットは写真より約350mm低い。写真のヒートポンプは X シリーズの写真より背が低く、この機種の RQ457AV（高さ635mm）と矛盾しない。シリーズのページ（lineup/fullauto/05）の上部の画像（以前の記録の hero png、3840×960）は、シリーズ名・品番・マークの文字が入ったバナーなので使っていない（ページ内にほかの製品写真は無い）。より大きい版は見つからなかった。画像は2025年のフォルダーにあり、前年モデルの写真を引き継いでいる可能性がある（外観の違いは公式に書かれていない）。リモコンの写真は、このシリーズのページの「リモコンについてはこちら」から開く公式のフルオートタイプ リモコンページのもので、この機種の仕様に書かれた BRC083K1・BRC083K1K と一致（リモコン本体に型番が印刷されている）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "daikin-ex377afv": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/daikin/daikin-ex377afv-main.webp",
+        "width": 440,
+        "height": 440,
+        "role": "main",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/assets/images/2025/img_fullauto_01-png.png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ex377afv-remote.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "スタイリッシュリモコン BRC083K1（台所リモコン BRC083K11・浴室リモコン BRC083K12）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ex377afv-remote-2.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "ブラックリモコン BRC083K1K（台所リモコン BRC083K11K・浴室リモコン BRC083K12K）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main_k%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      }
+    ],
+    "sharedGroup": "フルオートタイプ Xシリーズ 一般地仕様 角型（460L EX467AFV・370L EX377AFV）",
+    "evidence": "ダイキン公式のエコキュート ラインアップページで「フルオートタイプ Xシリーズ 一般地仕様 角型」の欄（460L・370L、リンク先は lineup/fullauto/01）に使われている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 440×440）。エコキュートのトップページの同じ欄も同じ画像。メーカーは460L（EX467AFV）と370L（EX377AFV）に1枚の写真を使っている。写真のタンクの縦横比は460L（高さ2,175mm）に合い、370L（高さ1,825mm、幅・奥行きは同じ）の貯湯ユニットは写真より約350mm低い。写真のヒートポンプは A・N シリーズの写真より背が高く、この機種の RQX457AV（高さ735mm、A・N の RQ 系は635mm）と合う。シリーズのページ（lineup/fullauto/01）の上部の画像（以前の記録の hero png、3840×960）は、シリーズ名・品番・マークの文字が入ったバナーなので使っていない（ページ内にほかの製品写真は無い）。より大きい版は見つからなかった。画像は2025年のフォルダーにあり、前年モデルの写真を引き継いでいる可能性がある（外観の違いは公式に書かれていない）。リモコンの写真は、このシリーズのページの「リモコンについてはこちら」から開く公式のフルオートタイプ リモコンページのもので、この機種の仕様に書かれた BRC083K1・BRC083K1K と一致（リモコン本体に型番が印刷されている）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "daikin-ea377aftv": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/daikin/daikin-ea377aftv-main.webp",
+        "width": 440,
+        "height": 440,
+        "role": "main",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/assets/images/2025/img_fullauto_03-png.png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ea377aftv-remote.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "スタイリッシュリモコン BRC083K1（台所リモコン BRC083K11・浴室リモコン BRC083K12）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      },
+      {
+        "src": "/images/products/daikin/daikin-ea377aftv-remote-2.webp",
+        "width": 1200,
+        "height": 437,
+        "role": "remote",
+        "caption": "ブラックリモコン BRC083K1K（台所リモコン BRC083K11K・浴室リモコン BRC083K12K）。別売",
+        "sourceUrl": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/remote/images/202608/rc_full_main_k%20png",
+        "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/remote"
+      }
+    ],
+    "sharedGroup": "フルオートタイプ Aシリーズ 一般地仕様 薄型（460L EA467AFTV・370L EA377AFTV）",
+    "evidence": "ダイキン公式のエコキュート ラインアップページで「フルオートタイプ Aシリーズ 一般地仕様 薄型」の欄（2026年10月発売、460L・370L、リンク先は lineup/fullauto/03）に使われている製品写真（薄型の貯湯ユニット＋ヒートポンプユニット、透過PNG 440×440）。エコキュートのトップページの同じ欄も同じ画像。写真は横幅の広い薄型のタンクで、角型の写真とは別の画像。メーカーは460L（EA467AFTV）と370L（EA377AFTV）に1枚の写真を使っている。写真のタンクの縦横比は460Lの薄型（高さ2,173×幅1,075mm）に合い、370Lの薄型（高さ1,813mm、幅・奥行きは同じ）の貯湯ユニットは写真より約360mm低い。写真のヒートポンプは A・N シリーズ角型の写真より背が高く、この機種の RQX457AV（高さ735mm）と合う。シリーズのページ（lineup/fullauto/03）の上部の画像（以前の記録の hero png、3840×960）は、シリーズ名・品番・マークの文字が入ったバナーなので使っていない（ページ内にほかの製品写真は無い）。より大きい版は見つからなかった。画像は2025年のフォルダーにあり、2026年10月発売のこの機種より前の薄型モデルの写真を引き継いでいる可能性がある（外観の違いは公式に書かれていない）。リモコンの写真は、このシリーズのページの「リモコンについてはこちら」から開く公式のフルオートタイプ リモコンページのもので、この機種の仕様に書かれた BRC083K1・BRC083K1K と一致（リモコン本体に型番が印刷されている）。",
+    "verifiedAt": "2026-10-15"
+  },
+  "corona-chp-37az2": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/corona/corona-chp-37az2-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.corona.co.jp/eco/img/products/chp-37ay4.png",
+        "pageUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#37az2"
+      }
+    ],
+    "sharedGroup": "ハイグレードタイプ 370L 一般地用（CHP-37AZ2。同じ写真を2024年モデル CHP-37AZ1 にも使用。ファイル名は旧モデル CHP-37AY4）",
+    "evidence": "コロナ公式の製品詳細ページ（ハイグレードタイプ 一般地向け）で、この型番の欄（#37az2、見出し「貯湯量370L CHP-37AZ2」）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 600×600）。製品一覧ページ（eco/products/index.html）でも同じ画像が alt「CHP-37AZ2」で使われている。ただしファイル名は旧モデルの「chp-37ay4.png」で、同じ画像を2024年モデルの CHP-37AZ1（eco/past/highgrade/lineup.html）にも使っている。前の世代の写真を引き継いでいるので officially-shared-series とした。2024年モデルとこの機種の公表寸法は同じ（貯湯ユニット 高さ1,860×幅630×奥行730mm、ヒートポンプ CHP-AZ451 高さ720×幅884×奥行299mm）。写真のタンクの縦横比は370L（高さ1,860×幅630mm）に合い、幅の広い460L（幅700mm）は別の写真（chp-46ay4.png）。なお同じ写真は CHP-37AZ2-2（貯湯ユニット屋内形）・CHP-37AZ2JE・CHP-37AZ2JJ の欄にも使われている。コロナのエコキュートのサイトで、この写真より大きい版は見つからなかった（ニュースリリースの大きい画像は「5年保証」の文字入りで、機種も特定されていない）。リモコンの画像（img-controller-set1.png 500×200）は alt が旧型の「RBP-GAD1（S）」で、この機種の RBP-GADW2（S）と同じか確かめられないため載せていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "corona-chp-46az2": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/corona/corona-chp-46az2-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.corona.co.jp/eco/img/products/chp-46ay4.png",
+        "pageUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#46az2"
+      }
+    ],
+    "sharedGroup": "ハイグレードタイプ 460L 一般地用（CHP-46AZ2。同じ写真を2024年モデル CHP-46AZ1 にも使用。ファイル名は旧モデル CHP-46AY4）",
+    "evidence": "コロナ公式の製品詳細ページ（ハイグレードタイプ 一般地向け）で、この型番の欄（#46az2、見出し「貯湯量460L CHP-46AZ2」）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 600×600）。製品一覧ページでも同じ画像が alt「CHP-46AZ2」で使われている。画像は開いて確かめた。ファイル名は旧モデルの「chp-46ay4.png」で、同じ画像を2024年モデルの CHP-46AZ1 にも使っている。前の世代の写真を引き継いでいるので officially-shared-series とした。2024年モデルとこの機種の公表寸法は同じ（貯湯ユニット 高さ1,850×幅700×奥行795mm、ヒートポンプ CHP-AZ601 高さ720×幅884×奥行299mm）。写真のタンクの縦横比は460L（高さ1,850×幅700mm）に合い、370L の写真（chp-37ay4.png）よりタンクの幅が広い。同じ写真は CHP-46AZ2JE・CHP-46AZ2JJ の欄にも使われている。この写真より大きい版は見つからなかった。リモコンの画像は alt が旧型の「RBP-GAD1（S）」で、この機種の RBP-GADW2（S）と同じか確かめられないため載せていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "corona-chp-e37az2": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/corona/corona-chp-e37az2-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.corona.co.jp/eco/img/products/chp-e37ay4.png",
+        "pageUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#e37az2"
+      }
+    ],
+    "sharedGroup": "高圧力パワフル給湯ハイグレード 370L 一般地用（CHP-E37AZ2。同じ写真を2024年モデル CHP-E37AZ1 にも使用。ファイル名は旧モデル CHP-E37AY4。写真の中身はハイグレードタイプ CHP-37AZ2 の写真と同じ）",
+    "evidence": "コロナ公式の製品詳細ページ（ハイグレードタイプ 一般地向け）で、この型番の欄（#e37az2、見出し「貯湯量370L CHP-E37AZ2」、高圧力パワフル給湯ハイグレード）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 600×600）。製品一覧ページでも同じ画像が alt「CHP-E37AZ2」で使われている。画像は開いて確かめた。ファイル名は旧モデルの「chp-e37ay4.png」で、同じ画像を2024年モデルの CHP-E37AZ1 にも使っている。前の世代の写真を引き継いでいるので officially-shared-series とした。このファイルの画素は、ハイグレードタイプ CHP-37AZ2 の写真（chp-37ay4.png）と同じ（圧縮の差だけ）。公表寸法も CHP-37AZ2 と同じ（貯湯ユニット 高さ1,860×幅630×奥行730mm、ヒートポンプ CHP-AZ451 高さ720×幅884×奥行299mm）で、2024年モデルとも同じ。写真のタンクの縦横比は370L に合う。この写真より大きい版は見つからなかった。リモコンの画像は alt が旧型の「RBP-GAD1（S）」で、この機種の RBP-GADW2（S）と同じか確かめられないため載せていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "corona-chp-hxe37az2": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/corona/corona-chp-hxe37az2-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.corona.co.jp/eco/img/products/chp-hxe37ay4.png",
+        "pageUrl": "https://www.corona.co.jp/eco/premium/lineup.html#hxe37az2"
+      }
+    ],
+    "sharedGroup": "プレミアムエコキュート 370L 一般地用（CHP-HXE37AZ2。同じ写真を2024年モデル CHP-HXE37AZ1 にも使用。ファイル名は旧モデル CHP-HXE37AY4）",
+    "evidence": "コロナ公式の製品詳細ページ（プレミアムエコキュート 一般地向け）で、この型番の欄（#hxe37az2、見出し「貯湯量 370L CHP-HXE37AZ2」）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット、透過PNG 600×600）。製品一覧ページでも同じ画像が alt「CHP-HXE37AZ2」で使われている。画像は開いて確かめた。ファイル名は旧モデルの「chp-hxe37ay4.png」で、同じ画像を2024年モデルの CHP-HXE37AZ1（eco/past/premium/lineup.html）にも使っている。前の世代の写真を引き継いでいるので officially-shared-series とした。2024年モデルとこの機種の公表寸法は同じ（貯湯ユニット 高さ1,860×幅630×奥行730mm、ヒートポンプ CHP-DHZ451 高さ690×幅900×奥行300mm）。写真のヒートポンプはハイグレードタイプの写真と形が違い（ファンガードの形・四隅のねじ）、この機種のヒートポンプがハイグレードの CHP-AZ451 と別形式であることと合う。写真のタンクの縦横比は370L に合い、460L（CHP-HXE46AZ2）は別の写真（chp-hxe46ay4.png）。この写真より大きい版は見つからなかった。リモコンの画像は alt が旧型の「RBP-GAD1（S）」で、この機種の RBP-GADW2（S）と同じか確かめられないため載せていない。",
+    "verifiedAt": "2026-10-15"
+  },
+  "corona-chp-e372az2": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/corona/corona-chp-e372az2-main.webp",
+        "width": 600,
+        "height": 600,
+        "role": "main",
+        "sourceUrl": "https://www.corona.co.jp/eco/img/products/chp-e372ay4.png",
+        "pageUrl": "https://www.corona.co.jp/eco/thin/lineup.html#e372az2"
+      }
+    ],
+    "sharedGroup": "高圧力パワフル給湯・薄型・省スペース 370L 一般地用（CHP-E372AZ2。同じ写真を2024年モデル CHP-E372AZ1 にも使用。ファイル名は旧モデル CHP-E372AY4）",
+    "evidence": "コロナ公式の製品詳細ページ（薄型タイプ 一般地向け）で、この型番の欄（#e372az2、見出し「貯湯量 370L CHP-E372AZ2」、高圧力パワフル給湯・薄型・省スペース）に置かれている製品写真（薄型の貯湯ユニット＋ヒートポンプユニット、透過PNG 600×600）。製品一覧ページでも同じ画像が alt「CHP-E372AZ2」で使われている。画像は開いて確かめた（横幅の広い薄型のタンクで、角型の写真ではない）。ファイル名は旧モデルの「chp-e372ay4.png」で、同じ画像を2024年モデルの CHP-E372AZ1（eco/past/thin/lineup.html）にも使っている。前の世代の写真を引き継いでいるので officially-shared-series とした。貯湯ユニットの公表寸法は2024年モデルと同じ（高さ1,890×幅1,090×奥行450mm）。ヒートポンプは2024年モデルの CHP-DZ451 からこの機種の CHP-DZ452 に型式が変わっているが、公表寸法は同じ（高さ650×幅900×奥行300mm）。写真のタンクの縦横比は370L の薄型（高さ1,890×幅1,090mm）に合い、背の高い460L の薄型（CHP-E462AZ2、高さ2,225mm）は別の写真（chp-e462ay4.png）。この写真より大きい版は見つからなかった。リモコンの画像は alt が旧型の「RBP-GAD1（S）」で、この機種の RBP-GADW2（S）と同じか確かめられないため載せていない。",
+    "verifiedAt": "2026-10-15"
+  }
+}

@@ -8,35 +8,58 @@ import { MAX_COMPARE, clearCompare, toggleCompare, useCompareIds } from "@/compo
 /**
  * 商品カード・機種のページに置く「比較に追加」。
  * 押すたびに、追加と取り消しが切り替わる。上限（4機種）を超えるときは、その場で知らせる。
+ * variant="compact" … 商品カードの下の段に置く、小さな形（お知らせは、ボタンの下に重ねて出す）
  */
-export function CompareToggle({ id, model, className = "" }: { id: string; model: string; className?: string }) {
+export function CompareToggle({ id, model, className = "", variant = "full" }: { id: string; model: string; className?: string; variant?: "full" | "compact" }) {
   const ids = useCompareIds();
   const [full, setFull] = useState(false);
   const on = ids.includes(id);
+  const box = (
+    <span aria-hidden="true" className={`grid size-4 shrink-0 place-items-center rounded-[0.25rem] border-[1.5px] ${on ? (variant === "full" ? "border-white bg-white" : "border-navy-900 bg-navy-900") : "border-silver-400 bg-white"}`}>
+      {on && (
+        <svg viewBox="0 0 16 16" className="size-3" fill="none" stroke={variant === "full" ? "#061537" : "#fff"} strokeWidth={2.75} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3.5 8.5l3 3 6-7" />
+        </svg>
+      )}
+    </span>
+  );
+  const message = full && !on ? `比較できるのは${MAX_COMPARE}機種までです。ほかの機種を外してから追加してください。` : "";
+
+  if (variant === "compact") {
+    return (
+      <div className={`relative ${className}`}>
+        <button type="button" aria-pressed={on} onClick={() => setFull(!toggleCompare(id))} className="inline-flex min-h-11 items-center gap-1.5 text-[0.8125rem] font-bold text-navy-900 hover:text-brand-700">
+          {box}
+          <span>
+            {on ? "比較に追加済み" : "比較に追加"}
+            <span className="sr-only">（{model}）</span>
+          </span>
+        </button>
+        <p role="status" className="absolute right-0 top-full z-10 w-60 rounded-lg border border-silver-200 bg-white px-3 py-2 text-xs font-bold leading-relaxed text-heat shadow-[var(--shadow-pop)] empty:hidden">
+          {message}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       <button
         type="button"
         aria-pressed={on}
         onClick={() => setFull(!toggleCompare(id))}
-        className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border-[1.5px] px-4 text-[0.8125rem] font-bold transition-colors ${
+        className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border-[1.5px] px-4 text-[0.8125rem] font-bold transition-colors ${
           on ? "border-navy-900 bg-navy-900 text-white" : "border-silver-300 bg-white text-navy-900 hover:border-brand-500"
         }`}
       >
-        <span aria-hidden="true" className={`grid size-4 place-items-center rounded-[0.3rem] border-[1.5px] ${on ? "border-white bg-white" : "border-silver-400"}`}>
-          {on && (
-            <svg viewBox="0 0 16 16" className="size-3" fill="none" stroke="#061537" strokeWidth={2.75} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3.5 8.5l3 3 6-7" />
-            </svg>
-          )}
-        </span>
+        {box}
         <span>
           {on ? "比較に追加済み" : "比較に追加"}
           <span className="sr-only">（{model}）</span>
         </span>
       </button>
       <p role="status" className="mt-1.5 text-xs font-bold leading-relaxed text-heat empty:hidden">
-        {full && !on ? `比較できるのは${MAX_COMPARE}機種までです。ほかの機種を外してから追加してください。` : ""}
+        {message}
       </p>
     </div>
   );

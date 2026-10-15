@@ -43,9 +43,13 @@
 - 額は `data/subsidy/programs.ts` から計算した値と一致することを `npm run data:check` が確かめる。
 - 登録がいまも続いているかは `npm run subsidy:check` が国の検索で確かめる（2026-10-14 は32型番すべて登録あり）。
 
-## 4. 写真
+## 4. 写真とロゴ
 
-製品写真は載せていない（メーカーの許諾を確かめていないため）。くわしくは `docs/IMAGE_SOURCES.md`。
+- 製品写真は、メーカーの公式サイト・公式資料の写真（2026-10-15 に、依頼者からメーカーの使用許可の取得済みの連絡を受けて掲載）。
+- 写真の記録は `data/products/images.json` の1か所（メーカー別の `<メーカー>.ts` には書かない）。一覧・機種のページ・比較・トップは、どれも `data/products/index.ts` がこの記録から足した `images` を使う。
+- 型番との対応は `matchType`（`exact-model`＝その型番の写真／`officially-shared-series`＝メーカーが同じシリーズの型番に共通で使っている写真／`unavailable`＝外観の合う公式の写真が無い）。似た機種の写真で埋めない。
+- 全機種の一覧は `docs/PRODUCT_IMAGE_AUDIT.md`（`npm run images:check -- --write` で作り直す）。手順と決まりは `docs/IMAGE_SOURCES.md`。
+- メーカーのロゴは `public/images/manufacturers/`、記録は `data/brand-logos.json`。
 
 ## 5. データを足す・直すとき
 
@@ -53,4 +57,5 @@
 2. `data/products/<メーカー>.ts` に足す（`slug` は型番を英小文字とハイフンにしたもの。公開後は変えない）。
 3. ハイブリッド給湯器・エコキュートは、国の「補助対象製品の検索」で登録を確かめる。エコキュートの型番検索は `Model_number?search=型番` だけで引く（`option=1` を付けると0件になる）。
 4. 表示する文（特徴・注意・仕様）には、調べたときのメモ書き（「カタログの表記は…」「未確認」など）を残さない。部品の価格も書かない。
-5. `npm run data:check` → `npm run build` → `npm run site:check`。
+5. 写真を足す・替えるときは `docs/IMAGE_SOURCES.md` の手順で記録を作り、`npm run images:apply -- <記録のフォルダ>` → `npm run images:check`。
+6. `npm run data:check` → `npm run build` → `npm run site:check`。

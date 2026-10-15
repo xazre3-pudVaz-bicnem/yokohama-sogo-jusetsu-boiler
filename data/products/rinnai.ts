@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * リンナイの商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const rinnaiProducts: Product[] = [
+export const rinnaiProducts: ProductData[] = [
   {
     "id": "rinnai-ruf-e240eaw",
     "slug": "ruf-e240eaw",
@@ -80,14 +80,6 @@ export const rinnaiProducts: Product[] = [
       "PS設置はできない",
       "戸建て、マンションによって設置できる型式が異なる。設置可否の詳細は現地調査が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.rinnai.jp/products/waterheater/assets/images/gas/ruf/e-series.webp",
-      "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 533500,
@@ -188,14 +180,6 @@ export const rinnaiProducts: Product[] = [
       "PS設置はできない",
       "設置可否の詳細は現地調査が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.rinnai.jp/products/waterheater/assets/images/gas/ruf/e-series.webp",
-      "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 471900,
@@ -300,14 +284,6 @@ export const rinnaiProducts: Product[] = [
       "PS設置はできない",
       "設置可否の詳細は現地調査が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.rinnai.jp/products/waterheater/assets/images/gas/ruf/e-series.webp",
-      "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 442200,
@@ -412,14 +388,6 @@ export const rinnaiProducts: Product[] = [
       "PS設置はできない",
       "設置可否の詳細は現地調査が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.rinnai.jp/products/waterheater/assets/images/gas/ruf/e-series.webp",
-      "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 407000,
@@ -521,9 +489,6 @@ export const rinnaiProducts: Product[] = [
       "オート：湯はりから、おいだき・保温までが自動"
     ],
     "cautions": [],
-    "images": [],
-    "imageSource": null,
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 487300,
@@ -625,9 +590,6 @@ export const rinnaiProducts: Product[] = [
       "PS扉内設置の場合は扉内設置用取付BOX UOP-P030が必要",
       "排気筒口径φ100（排気延長不可）"
     ],
-    "images": [],
-    "imageSource": null,
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 485100,
@@ -729,9 +691,6 @@ export const rinnaiProducts: Product[] = [
       "扉内設置の場合はアルコーブ扉内アダプタを使用（専用オプション UOP-TAR114）",
       "左・右共通"
     ],
-    "images": [],
-    "imageSource": null,
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
     "manufacturerPrice": {
       "amount": 485100,
@@ -834,14 +793,6 @@ export const rinnaiProducts: Product[] = [
       "PS設置はできない",
       "設置可否の詳細は現地調査が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.rinnai.jp/products/waterheater/assets/images/gas/rux/e-series.webp",
-      "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/",
     "manufacturerPrice": {
       "amount": 228800,
@@ -944,14 +895,6 @@ export const rinnaiProducts: Product[] = [
       "停電モード（ポータブル電源が必要）"
     ],
     "cautions": [],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.rinnai.jp/products/waterheater/assets/images/gas/rufh-rvd/rufh-e.webp",
-      "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/rufh-rvd/e-series/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/rufh-rvd/e-series/",
     "manufacturerPrice": {
       "amount": 668800,
@@ -1083,14 +1026,6 @@ export const rinnaiProducts: Product[] = [
     "cautions": [
       "設置スペースの目安：奥行550mm×幅2,000mm（ECO ONE 160Lの場合。商品タイプや設置方法で異なる）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/double_160.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/double_160",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/double_160",
     "manufacturerPrice": {
       "amount": 1191300,
@@ -1225,14 +1160,6 @@ export const rinnaiProducts: Product[] = [
     "cautions": [
       "設置スペースの目安：奥行550mm×幅2,000mm（ECO ONE 160Lの場合）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/double_160.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/single_160",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/single_160",
     "manufacturerPrice": {
       "amount": 1062600,
@@ -1361,14 +1288,6 @@ export const rinnaiProducts: Product[] = [
     "cautions": [
       "設置スペースの目安：奥行550mm×幅2,000mm（ECO ONE 160Lの場合）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/single_wh_160.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/single_wh_160",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/single_wh_160",
     "manufacturerPrice": {
       "amount": 982300,
@@ -1508,14 +1427,6 @@ export const rinnaiProducts: Product[] = [
     "cautions": [
       "設置可能スペースの最小寸法 奥行500mm（ECO ONE X5の場合。商品タイプや設置方法により異なる）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/single_70.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/single_70",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/single_70",
     "manufacturerPrice": {
       "amount": 983400,
@@ -1650,14 +1561,6 @@ export const rinnaiProducts: Product[] = [
     "cautions": [
       "設置可能スペースの最小寸法 奥行500mm（ECO ONE X5の場合。商品タイプや設置方法により異なる）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/single_wh_70.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/single_wh_70",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/single_wh_70",
     "manufacturerPrice": {
       "amount": 898700,
@@ -1799,14 +1702,6 @@ export const rinnaiProducts: Product[] = [
       "ヒートポンプは屋外コンセント（AC100V）から給電。宅内の屋外コンセントにつながる個別配線ブレーカーは20Aであること。システム全体の最大消費電流：ふろ給湯器の場合最大11A、給湯暖房機の場合最大12A、マイクロバブルを使用する場合最大15A",
       "設置可能スペースの最小寸法 奥行500mm（商品タイプや設置方法により異なる）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/single_70.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/single_70pi",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/single_70pi",
     "manufacturerPrice": {
       "amount": 983400,
@@ -1943,14 +1838,6 @@ export const rinnaiProducts: Product[] = [
       "ヒートポンプは屋外コンセント（AC100V）から給電。宅内の屋外コンセントにつながる個別配線ブレーカーは20Aであること。システム全体の最大消費電流：ふろ給湯器の場合最大11A、給湯暖房機の場合最大12A、マイクロバブルを使用する場合最大15A",
       "設置可能スペースの最小寸法 奥行500mm（商品タイプや設置方法により異なる）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://rinnai.jp/products/waterheater/assets/images/hybrid/lineup/single_wh_70.webp",
-      "pageUrl": "https://rinnai.jp/ecoone/lineup/single_wh_70pi",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://rinnai.jp/ecoone/lineup/single_wh_70pi",
     "manufacturerPrice": {
       "amount": 898700,

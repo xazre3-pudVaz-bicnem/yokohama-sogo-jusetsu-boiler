@@ -175,13 +175,13 @@ export function ProductExplorer({ items, groups }: { items: ProductCardData[]; g
           </summary>
           <div className="border-t-2 border-dotted border-silver-300 py-5">{panel}</div>
         </details>
-        <div className="sticky top-24 hidden max-h-[calc(100dvh-7rem)] overflow-y-auto rounded-3xl border border-silver-200 bg-white px-5 py-6 lg:block">
+        <div className="sticky top-24 hidden max-h-[calc(100dvh-7rem)] overflow-y-auto rounded-xl border border-silver-200 bg-white px-5 py-6 lg:block">
           <p className="mb-5 font-heading text-base font-black text-navy-900">条件で絞り込む</p>
           {panel}
         </div>
       </div>
 
-      <div>
+      <div id="results" className="scroll-mt-28">
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
           <p aria-live="polite" className="text-[0.9375rem] font-bold text-navy-900">
             <span className="num text-2xl font-semibold">{shown.length}</span> 機種
@@ -216,7 +216,7 @@ export function ProductExplorer({ items, groups }: { items: ProductCardData[]; g
         )}
 
         {shown.length === 0 ? (
-          <div className="mt-8 rounded-3xl bg-paper-2 px-6 py-10 text-center">
+          <div className="mt-8 rounded-xl bg-paper-2 px-6 py-10 text-center">
             <p className="font-heading text-lg font-black text-navy-900">条件に合う機種が、まだ掲載されていません</p>
             <p className="mx-auto mt-3 max-w-xl text-[0.9375rem] leading-[1.95]">このサイトに載せているのは、代表的な機種です。いまお使いの給湯器の型番をお知らせいただければ、設置の形と号数に合う機種をお調べします。</p>
             <button type="button" onClick={() => apply({}, sort)} className="btn btn-outline btn-sm mt-5">
@@ -225,9 +225,9 @@ export function ProductExplorer({ items, groups }: { items: ProductCardData[]; g
           </div>
         ) : (
           <ul className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {shown.map((item) => (
+            {shown.map((item, index) => (
               <li key={item.id}>
-                <ProductCard item={item} headingLevel="h2" action={<CompareToggle id={item.id} model={item.modelNumber} />} sizes="(min-width: 1280px) 280px, (min-width: 640px) 44vw, 92vw" />
+                <ProductCard item={item} headingLevel="h2" action={<CompareToggle id={item.id} model={item.modelNumber} variant="compact" />} sizes="(min-width: 1280px) 280px, (min-width: 640px) 44vw, 92vw" priority={index === 0} />
               </li>
             ))}
           </ul>

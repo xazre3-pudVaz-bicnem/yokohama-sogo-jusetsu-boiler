@@ -58,7 +58,7 @@ export default function CompanyPage() {
           ],
         ] as [string, React.ReactNode][])
       : []),
-    ...(lineUrl() ? ([["LINE", <a key="line" href={lineUrl()} target="_blank" rel="noopener noreferrer" className="text-link" data-cv="line">公式アカウント（{siteConfig.social.lineId}）</a>]] as [string, React.ReactNode][]) : []),
+    ...(lineUrl() ? ([["LINE", <a key="line" href={lineUrl()} target="_blank" rel="noopener noreferrer" className="text-link inline-flex min-h-6 items-center" data-cv="line">公式アカウント（{siteConfig.social.lineId}）</a>]] as [string, React.ReactNode][]) : []),
     ...(c.founded ? ([["設立", c.founded]] as [string, React.ReactNode][]) : []),
     ...(t.licenses ? ([["許認可", t.licenses]] as [string, React.ReactNode][]) : []),
     ...(t.qualifications ? ([["資格", t.qualifications]] as [string, React.ReactNode][]) : []),

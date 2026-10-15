@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * パロマの商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const palomaProducts: Product[] = [
+export const palomaProducts: ProductData[] = [
   {
     "id": "paloma-fh-eh2422fawl",
     "slug": "fh-eh2422fawl",
@@ -112,14 +112,6 @@ export const palomaProducts: Product[] = [
       "PS標準設置をする場合は、別売の PSFA-8 を使う",
       "側方排気カバー ATFA-8 を使うときは、給湯器本体の設定切替えが必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-E2422AWL-eco-1-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=275",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=275",
     "manufacturerPrice": {
       "amount": 540870,
@@ -252,14 +244,6 @@ export const palomaProducts: Product[] = [
       "PS標準設置をする場合は、別売の PSFA-8を使う",
       "側方排気カバー ATFA-8 を使うときは、給湯器本体の設定切替えが必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-E2422AWL-eco-1-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=278",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=278",
     "manufacturerPrice": {
       "amount": 477620,
@@ -392,14 +376,6 @@ export const palomaProducts: Product[] = [
       "PS標準設置をする場合は、別売の PSFA-8 を使う",
       "側方排気カバー ATFA-8 を使うときは、給湯器本体の設定切替えが必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-E2022AWL-eco-1-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=279",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=279",
     "manufacturerPrice": {
       "amount": 447040,
@@ -533,14 +509,6 @@ export const palomaProducts: Product[] = [
       "ハイブリッドプラスの熱源機として使う場合、パロマは 24号を推奨",
       "側方排気カバー ATFA-8 を使うときは、給湯器本体の設定切替えが必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-E1612AWL-eco-1-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=281",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=281",
     "manufacturerPrice": {
       "amount": 407770,
@@ -673,14 +641,6 @@ export const palomaProducts: Product[] = [
       "壁掛設置の場合はブラケットが2枚必要",
       "PS扉内に設置する場合は、専用のオプション部品（PS扉内取付ボックス TBFH-2 など）が要る"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-E2022FATL-eco-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=279",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=279",
     "manufacturerPrice": {
       "amount": 462660,
@@ -811,14 +771,6 @@ export const palomaProducts: Product[] = [
     "cautions": [
       "据置設置型"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-E2422FARL-eco-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=324",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=324",
     "manufacturerPrice": {
       "amount": 493130,
@@ -943,14 +895,6 @@ export const palomaProducts: Product[] = [
     "cautions": [
       "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-2023FAWL-icon-1-1.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305",
     "manufacturerPrice": {
       "amount": 445390,
@@ -1061,14 +1005,6 @@ export const palomaProducts: Product[] = [
       "排気延長は不可",
       "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/boileronly/img/PH-EM1616AWL-eco.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=119",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=119",
     "manufacturerPrice": {
       "amount": 226380,
@@ -1177,14 +1113,6 @@ export const palomaProducts: Product[] = [
       "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う",
       "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/boileronly/img/PH-1615AW-icon.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=237",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=237",
     "manufacturerPrice": {
       "amount": 190410,
@@ -1325,14 +1253,6 @@ export const palomaProducts: Product[] = [
       "水道水を使う（温泉水・地下水・井戸水は使わない）。運転音や振動が出ることがあるので、隣家・寝室などに配慮して設置場所を選ぶ",
       "20号・16号の熱源機を設置した場合は水圧が弱くなる可能性があるため、24号を推奨"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/paloma/product/products_hybridplus/products_hybridplus-24_240_240.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
     "manufacturerPrice": {
       "amount": 1178980,
@@ -1476,14 +1396,6 @@ export const palomaProducts: Product[] = [
       "水道水を使う（温泉水・地下水・井戸水は使わない）。運転音や振動が出ることがあるので、隣家・寝室などに配慮して設置場所を選ぶ",
       "20号・16号の熱源機を設置した場合は水圧が弱くなる可能性があるため、24号を推奨"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/paloma/product/products_hybridplus/products_hybridplus-20_240_240.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
     "manufacturerPrice": {
       "amount": 1118370,
@@ -1626,14 +1538,6 @@ export const palomaProducts: Product[] = [
       "水道水を使う（温泉水・地下水・井戸水は使わない）。運転音や振動が出ることがあるので、隣家・寝室などに配慮して設置場所を選ぶ",
       "20号・16号の熱源機を設置した場合は水圧が弱くなる可能性があるため、24号を推奨"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/paloma/product/products_hybridplus/products_hybridplus-24_240_240.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
     "manufacturerPrice": {
       "amount": 1154670,
@@ -1776,14 +1680,6 @@ export const palomaProducts: Product[] = [
       "水道水を使う（温泉水・地下水・井戸水は使わない）。運転音や振動が出ることがあるので、隣家・寝室などに配慮して設置場所を選ぶ",
       "20号・16号の熱源機を設置した場合は水圧が弱くなる可能性があるため、24号を推奨"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/paloma/product/products_hybridplus/products_hybridplus-24_240_240.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
     "manufacturerPrice": {
       "amount": 1091420,
@@ -1926,14 +1822,6 @@ export const palomaProducts: Product[] = [
       "水道水を使う（温泉水・地下水・井戸水は使わない）。運転音や振動が出ることがあるので、隣家・寝室などに配慮して設置場所を選ぶ",
       "20号・16号の熱源機を設置した場合は水圧が弱くなる可能性があるため、24号を推奨"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.paloma.co.jp/vc-files/paloma/product/products_hybridplus/products_hybridplus-24_240_240.jpg",
-      "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=541",
     "manufacturerPrice": {
       "amount": 1169850,

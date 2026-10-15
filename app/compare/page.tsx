@@ -5,7 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { PageHero } from "@/components/ui/PageHero";
 import { getCategory, housingLabels } from "@/data/categories";
 import type { Product } from "@/data/products/types";
-import { getBrand, manufacturerPriceLabel, priceView, products, subsidyView } from "@/lib/products";
+import { getBrand, manufacturerPriceLabel, priceView, products, subsidyView, toCard } from "@/lib/products";
 import { buildMetadata, formatDateJa, formatYen } from "@/lib/seo";
 
 const PATH = "/compare";
@@ -29,12 +29,19 @@ function toCompare(p: Product): CompareItem {
   const price = priceView(p);
   const s = subsidyView(p);
   const msrp = manufacturerPriceLabel(p);
+  const card = toCard(p);
   return {
     id: p.id,
     href: `/products/${p.brand}/${p.slug}`,
     brandName: getBrand(p.brand).name,
+    brandLogo: card.brandLogo,
     modelNumber: p.modelNumber,
     name: p.name,
+    image: card.image,
+    imageShared: card.imageShared,
+    category: p.category,
+    installKey: p.installationType.key,
+    quoteHref: card.quoteHref,
     rows: {
       種類: getCategory(p.category).shortName,
       "号数・容量": [p.capacity.tankLiters ? `${p.capacity.tankLiters}L` : "", p.capacity.gou ? `${p.capacity.gou}号` : ""].filter(Boolean).join("・"),

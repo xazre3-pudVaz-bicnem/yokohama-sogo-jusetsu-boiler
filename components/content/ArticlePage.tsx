@@ -59,7 +59,7 @@ export function ArticlePage({ page }: { page: ContentPage }) {
               このページの金額と条件は、2026年の事業の内容の記録です。次の年度の制度は、国の発表でご確認ください。
             </p>
           )}
-          <nav aria-label="このページの内容" className="rounded-3xl bg-paper-2 px-5 py-5 sm:px-7">
+          <nav aria-label="このページの内容" className="rounded-xl bg-paper-2 px-5 py-5 sm:px-7">
             <p className="font-heading text-[0.8125rem] font-bold tracking-wider text-brand-700">このページの内容</p>
             <ol className="mt-2 grid gap-x-8 sm:grid-cols-2">
               {page.sections.map((s) => (
@@ -123,7 +123,7 @@ export function ArticlePage({ page }: { page: ContentPage }) {
           )}
 
           {page.sources && page.sources.length > 0 && (
-            <aside aria-labelledby="page-sources" className="rounded-3xl bg-paper-2 px-5 py-6 sm:px-7">
+            <aside aria-labelledby="page-sources" className="rounded-xl bg-paper-2 px-5 py-6 sm:px-7">
               <h2 id="page-sources" className="text-sm font-bold text-navy-900">
                 このページの出典
               </h2>

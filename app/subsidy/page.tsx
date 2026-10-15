@@ -182,7 +182,7 @@ export default function SubsidyIndexPage() {
         <div className="container-narrow">
           <SectionHeading id="subsidy-faq" eyebrow="よくある質問" title="補助金についての質問" className="mb-8" />
           <FaqList faqs={faqs} />
-          <aside className="mt-10 rounded-3xl bg-white px-5 py-6 sm:px-7">
+          <aside className="mt-10 rounded-xl bg-white px-5 py-6 sm:px-7">
             <p className="text-sm font-bold text-navy-900">このページの出典</p>
             <ul className="mt-3 space-y-1.5 text-[0.8125rem] leading-[1.8]">
               {[...subsidySources.kyutouShoene, ...subsidySources.yokohama].map((s) => (

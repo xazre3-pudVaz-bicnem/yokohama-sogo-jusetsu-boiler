@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * ダイキンの商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const daikinProducts: Product[] = [
+export const daikinProducts: ProductData[] = [
   {
     "id": "daikin-ea377afv",
     "slug": "ea377afv",
@@ -159,15 +159,6 @@ export const daikinProducts: Product[] = [
       "運転音は JIS C 9220 に準拠し無響室で測定した値（音響パワーレベル）。実際に据え付けた状態では表示値より大きくなるのが普通",
       "沸き上げ温度はヒートポンプユニットの出口温度。低外気温では加熱能力が低下する場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/02/images/202608/hero%20png",
-      "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/02",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14",
-      "note": "ページ上部のメインビジュアル。HTML 上の src は「-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/02/images/202608/hero png」（拡張子の前が空白）で、記録した URL は空白を %20 にしたもの（HTTP 200・image/png を確認）。シリーズ名・「460L EA467AFV」「370L EA377AFV」の品番・圧力のバッジな"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/02",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -345,15 +336,6 @@ export const daikinProducts: Product[] = [
       "運転音は JIS C 9220 に準拠し無響室で測定した値（音響パワーレベル）。実際に据え付けた状態では表示値より大きくなるのが普通",
       "沸き上げ温度はヒートポンプユニットの出口温度。低外気温では加熱能力が低下する場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/02/images/202608/hero%20png",
-      "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/02",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14",
-      "note": "ページ上部のメインビジュアル。HTML 上の src は「-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/02/images/202608/hero png」（拡張子の前が空白）で、記録した URL は空白を %20 にしたもの（HTTP 200・image/png を確認）。シリーズ名・「460L EA467AFV」「370L EA377AFV」の品番・圧力のバッジな"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/02",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -529,15 +511,6 @@ export const daikinProducts: Product[] = [
       "運転音は JIS C 9220 に準拠し無響室で測定した値（音響パワーレベル）。実際に据え付けた状態では表示値より大きくなるのが普通",
       "沸き上げ温度はヒートポンプユニットの出口温度。低外気温では加熱能力が低下する場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/05/images/202608/hero%20png",
-      "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/05",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14",
-      "note": "ページ上部のメインビジュアル。HTML 上の src は「-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/05/images/202608/hero png」（拡張子の前が空白）で、記録した URL は空白を %20 にしたもの（HTTP 200・image/png を確認）。シリーズ名・「460L EN467AFV」「370L EN377AFV」の品番・圧力のバッジな"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/05",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -717,15 +690,6 @@ export const daikinProducts: Product[] = [
       "運転音は JIS C 9220 に準拠し無響室で測定した値（音響パワーレベル）。実際に据え付けた状態では表示値より大きくなるのが普通",
       "沸き上げ温度はヒートポンプユニットの出口温度。低外気温では加熱能力が低下する場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/01/images/202608/hero%20png",
-      "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/01",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14",
-      "note": "ページ上部のメインビジュアル。HTML 上の src は「-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/01/images/202608/hero png」（拡張子の前が空白）で、記録した URL は空白を %20 にしたもの（HTTP 200・image/png を確認）。シリーズ名・「460L EX467AFV」「370L EX377AFV」の品番・圧力のバッジな"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/01",
     "manufacturerPrice": null,
     "salesPrice": null,
@@ -905,15 +869,6 @@ export const daikinProducts: Product[] = [
       "運転音は JIS C 9220 に準拠し無響室で測定した値（音響パワーレベル）。実際に据え付けた状態では表示値より大きくなるのが普通",
       "沸き上げ温度はヒートポンプユニットの出口温度。低外気温では加熱能力が低下する場合がある"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.ac.daikin.co.jp/-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/03/images/202608/hero%20png",
-      "pageUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/03",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14",
-      "note": "ページ上部のメインビジュアル。HTML 上の src は「-/media/Project/Daikin/ac_daikin_co_jp/sumai/alldenka/ecocute/lineup/fullauto/03/images/202608/hero png」（拡張子の前が空白）で、記録した URL は空白を %20 にしたもの（HTTP 200・image/png を確認）。シリーズ名・「460L EA467AFTV」「370L EA377AFTV」の品番・圧力のバッ"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.ac.daikin.co.jp/sumai/alldenka/ecocute/lineup/fullauto/03",
     "manufacturerPrice": null,
     "salesPrice": null,

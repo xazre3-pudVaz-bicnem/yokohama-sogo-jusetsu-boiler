@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LineConsultPanel } from "@/components/contact/LineConsultPanel";
 import { PhotoEstimateForm } from "@/components/contact/PhotoEstimateForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqList } from "@/components/ui/FaqList";
-import { Icon } from "@/components/ui/Icon";
-import { LineIcon } from "@/components/ui/LineIcon";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { isContactFormEnabled, isContactFormShown, isLabelReaderEnabled } from "@/lib/contact";
 import { faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
-import { lineUrl, primaryPhone, receptionHours, siteConfig, telHref } from "@/lib/site";
+import { lineUrl, primaryPhone, siteConfig } from "@/lib/site";
 
 const PATH = "/contact/photo";
 
@@ -31,7 +30,6 @@ const TIPS = [
 
 export default function PhotoEstimatePage() {
   const phone = primaryPhone();
-  const hours = receptionHours();
   const line = lineUrl();
   const shown = isContactFormShown();
   const enabled = isContactFormEnabled();
@@ -79,25 +77,8 @@ export default function PhotoEstimatePage() {
             {shown ? (
               <PhotoEstimateForm note={siteConfig.contact.formNote} preview={!enabled} lineUrl={line} readerEnabled={reader} />
             ) : (
-              <div className="rounded-3xl bg-paper-2 px-6 py-8 sm:px-9">
-                <h2 className="h-sub">LINE で写真をお送りください</h2>
-                <p className="mt-3 text-[0.9375rem] leading-[1.95]">ただいま、フォームからの送信を準備しています。LINE では、型番のシールと給湯器の全体の写真を、そのままお送りいただけます。お電話でもご相談いただけます。</p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {line && (
-                    <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-primary" data-cv="line">
-                      <LineIcon className="size-6" />
-                      LINE で写真を送る
-                    </a>
-                  )}
-                  {phone && (
-                    <a href={telHref(phone)} className="btn btn-outline" data-cv="tel">
-                      <Icon name="phone" className="size-5" />
-                      <span className="num text-lg font-semibold tracking-wider">{phone}</span>
-                    </a>
-                  )}
-                </div>
-                {hours && <p className="mt-3 text-[0.8125rem] text-ink-mute">電話受付 {hours}</p>}
-              </div>
+              // フォームから送れないあいだは、動かないフォームを出さず、LINE とお電話の案内にする
+              <LineConsultPanel title="LINE で写真を送って、かんたん見積もり" />
             )}
           </div>
 
@@ -113,7 +94,7 @@ export default function PhotoEstimatePage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl bg-cream px-5 py-5">
+            <div className="rounded-xl bg-cream px-5 py-5">
               <p className="font-heading text-[0.9375rem] font-black text-navy-900">送ったあとの流れ</p>
               <ol className="steps mt-4">
                 <li>
@@ -122,7 +103,7 @@ export default function PhotoEstimatePage() {
                 </li>
                 <li>
                   <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-navy-900">機種の候補と費用の目安</p>
-                  <p className="mt-1 text-[0.8125rem] leading-[1.85]">合う機種の候補と、費用の目安を、お電話かメールでお伝えします。</p>
+                  <p className="mt-1 text-[0.8125rem] leading-[1.85]">合う機種の候補と、費用の目安を、{shown ? "お電話かメール" : "LINE のトークかお電話"}でお伝えします。</p>
                 </li>
                 <li>
                   <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-navy-900">現地調査（無料）・正式なお見積もり</p>

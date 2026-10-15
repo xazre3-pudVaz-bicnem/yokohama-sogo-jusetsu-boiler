@@ -7,8 +7,9 @@
  * - 公式で確認できなかった項目は書かない（specifications に行を足さない・null のままにする）。
  * - 当社の販売価格・工事費（salesPrice など）は、会社から金額を受け取るまで null。null のあいだは、画面では「お見積もり」と出る。
  *   ほかの販売店の価格を入れないこと。
- * - 製品写真（images）は、メーカーから掲載の許諾を得たものだけ。許諾の確認が済むまでは空にし、
- *   imageLicenseStatus を "pending" のままにする（画面には、設置タイプの図が出る）。
+ * - 製品写真は、メーカーの公式サイト・公式資料の写真だけ（許諾の状態は data/brands.ts の imagePolicy）。
+ *   写真と型番の対応の記録は data/products/images.json の1か所に置き、メーカー別のファイルには書かない。
+ *   外観の合う公式の写真が無い機種は、似た機種の写真で埋めない（画面には、設置タイプの図が出る）。
  * - 補助金の対象かどうか（subsidy）は、国の「補助対象製品の検索」で確かめた結果と、その日付を書く。
  */
 
@@ -50,26 +51,54 @@ export type ManufacturerPrice = {
   sourceUrl: string;
 };
 
-/** 製品写真の出どころ（公式サイトのどの画像か）。掲載の許諾とは別に、型番との対応を記録する */
-export type ImageSource = {
-  /** 公式サイトの画像の URL */
-  url: string;
-  /** その画像が載っている公式ページ */
-  pageUrl: string;
-  /** その型番そのものの写真か、シリーズ代表の写真か */
-  match: "exact-model" | "series-representative" | "unknown";
-  /** 画像と型番の対応を確かめた日 */
-  checkedAt: string;
-  note?: string;
-};
-
 /**
- * 画像の掲載許諾の状態。
- *   pending       … 未確認（メーカーに確認中・これから確認）。写真は出さない
- *   permitted     … 許諾あり（images に入れた写真を出す）
- *   not-permitted … 許諾が得られなかった（写真は出さない）
+ * 画像の利用の許可の状態（メーカーごと。data/brands.ts の imagePolicy）。
+ *   pending       … 未確認。写真は出さない
+ *   permitted     … 許可あり（写真とロゴを出す）
+ *   not-permitted … 許可が得られなかった（写真は出さない）
  */
 export type ImageLicenseStatus = "pending" | "permitted" | "not-permitted";
+
+/**
+ * 製品写真と型番の対応。
+ *   exact-model              … メーカーの公式ページが、この型番の写真として載せているもの
+ *   officially-shared-series … メーカーが、外観の同じ複数の型番に1枚の写真を使っているもの（画面に「シリーズ共通イメージ」と添える）
+ *   unavailable              … 外観の合う公式の写真が見つからなかった（設置タイプの図を出す。似た機種の写真で埋めない）
+ */
+export type ImageMatchType = "exact-model" | "officially-shared-series" | "unavailable";
+
+/** 写真の役割。main＝代表の写真（一覧・カードに出す）、unit＝組み合わせの中の1つのユニット、remote＝リモコン、side＝別の向き */
+export type ProductImageRole = "main" | "unit" | "remote" | "side";
+
+/** サイトに置いた製品写真（public/images/products/<メーカー>/ にあるもの） */
+export type ProductImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  role: ProductImageRole;
+  /** 写真の下に添える説明（ユニットの名前など）。代表の写真は空 */
+  caption?: string;
+  /** 取得元の画像の URL（メーカーの公式サイト） */
+  sourceUrl: string;
+  /** その画像が載っている、メーカーの公式ページ */
+  pageUrl: string;
+};
+
+/** 製品写真の記録（data/products/images.json の1件。scripts/apply-image-manifests.ts が作る） */
+export type ProductImageRecord = {
+  matchType: ImageMatchType;
+  /** 代わりの文（alt）は、読み込むときに組み立てる（data/products/index.ts） */
+  images: Omit<ProductImage, "alt">[];
+  /** シリーズ共通の写真のとき、メーカーがその写真を使っている型番のまとまり */
+  sharedGroup?: string;
+  /** 写真と型番の対応を、どう確かめたか */
+  evidence: string;
+  /** 写真を載せていない理由（unavailable のとき） */
+  unavailableReason?: string;
+  /** 確かめた日 */
+  verifiedAt: string;
+};
 
 /**
  * 給湯省エネ2026事業の対象かどうか。
@@ -81,9 +110,8 @@ export type ImageLicenseStatus = "pending" | "permitted" | "not-permitted";
  */
 export type SubsidyEligibility = "eligible" | "bonus" | "not-target" | "not-listed" | "unverified";
 
-export type ProductImage = { src: string; alt: string; width: number; height: number };
-
-export type Product = {
+/** メーカー別のファイル（data/products/<メーカー>.ts）に書く、商品の情報。写真の欄は data/products/images.json から足す */
+export type ProductData = {
   /** 一意の ID（brand と slug をつないだもの） */
   id: string;
   /** URL の末尾（/products/<brand>/<slug>）。型番を小文字にし、記号を - に置き換えたもの。公開後は変えない */
@@ -122,11 +150,6 @@ export type Product = {
   /** その機種に固有の注意点（公式にあるもの）。設置方式・種類に共通の注意点は lib/product-notes.ts が足す */
   cautions?: string[];
 
-  /** 掲載の許諾を得た製品写真（public/images/products/<brand>/ に置いたもの）。許諾の確認が済むまでは空 */
-  images: ProductImage[];
-  imageSource: ImageSource | null;
-  imageLicenseStatus: ImageLicenseStatus;
-
   /** メーカーの公式ページ（製品またはシリーズ） */
   manufacturerUrl: string;
   manufacturerPrice: ManufacturerPrice | null;
@@ -163,6 +186,30 @@ export type Product = {
   sources: string[];
 };
 
+/** 画面で使う商品の情報（メーカー別のファイル＋写真の記録） */
+export type Product = ProductData & {
+  /** 載せる製品写真（1枚目が代表）。メーカーの許可があり、型番との対応を確かめた写真だけ。無ければ空 */
+  images: ProductImage[];
+  /** 代表の写真と型番の対応（写真が無いときは unavailable） */
+  imageMatchType: ImageMatchType;
+  /** 写真の記録（調べていない機種は null） */
+  imageRecord: ProductImageRecord | null;
+};
+
+/** メーカーの公式ロゴ（public/images/manufacturers/ に置いたもの） */
+export type BrandLogo = {
+  src: string;
+  width: number;
+  height: number;
+  /** 取得元（メーカーの公式サイト） */
+  sourceUrl: string;
+  /**
+   * 見た目の大きさをそろえるための倍率（1＝基準）。横長のロゴ・正方形に近いロゴで、
+   * 同じ高さにすると大きさの印象が変わるため、メーカーごとに調整する
+   */
+  scale?: number;
+};
+
 export type Brand = {
   id: BrandId;
   /** 画面に出す名前 */
@@ -177,6 +224,8 @@ export type Brand = {
   summary: string;
   /** 扱う種類 */
   categories: CategoryId[];
-  /** 公式サイトの画像の利用条件について、確認できたこと */
+  /** 製品写真・ロゴの利用の許可について、確認できたこと */
   imagePolicy: { status: ImageLicenseStatus; note: string; termsUrl: string; checkedAt: string };
+  /** 公式ロゴ（取得前は null。画面では社名の文字を出す） */
+  logo: BrandLogo | null;
 };

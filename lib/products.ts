@@ -1,9 +1,10 @@
 import { brands } from "@/data/brands";
 import { categories, functionLabels, getCategory, housingLabels, installationLabels } from "@/data/categories";
 import { products as allData } from "@/data/products";
-import type { Brand, BrandId, CategoryId, Product } from "@/data/products/types";
+import type { Brand, BrandId, BrandLogo, CategoryId, Product } from "@/data/products/types";
 import { kyutouShoene2026 } from "@/data/subsidy/programs";
-import { formatYen } from "@/lib/seo";
+import { formatYen, textWidth } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import { kyutouPhase, manYen } from "@/lib/subsidy";
 
 /**
@@ -56,12 +57,35 @@ export function productTagline(p: Product): string {
   return [c.shortName, capacityLabel(p), p.functions.label, p.installationType.label].filter(Boolean).join(" ");
 }
 
-/** 検索結果のタイトル用（例：リンナイ RUF-E2406SAW(B)｜エコジョーズ 24号 フルオート） */
+/**
+ * 検索結果のタイトル用。メーカー名と型番を先頭に置く（型番で探す人が多いため）。
+ *   例：リンナイ RUF-E240EAW｜特徴・仕様・交換見積もり｜ヨコジュウ（2026-10-15 の依頼の形）
+ * 検索結果で切れにくい長さ（全角32字＝幅64）に収まる形を、前から順に選ぶ。
+ * 長い型番（ハイブリッドの組み合わせなど）は、末尾の「｜ヨコジュウ」や後ろの語を減らす。
+ * 種類（エコジョーズなど）は、説明文（description）と、ページの見出しの近くに入れている。
+ */
+const PRODUCT_TITLE_MAX_WIDTH = 64;
 export function productTitle(p: Product): string {
   const c = getCategory(p.category);
-  // ハイブリッドは型番（ユニットをつないだもの）が長いので、機能の表記は省く（ページの本文と札には出る）
-  const tail = p.category === "hybrid" ? [c.shortName, capacityLabel(p)] : [c.shortName, capacityLabel(p), p.functions.label];
-  return `${getBrand(p.brand).name} ${p.modelNumber}｜${tail.filter(Boolean).join(" ")}`;
+  const head = `${getBrand(p.brand).name} ${p.modelNumber}｜`;
+  const tail = `｜${siteConfig.nickname}`;
+  const candidates = [
+    `${head}${c.shortName}の特徴・仕様・交換見積もり${tail}`,
+    `${head}特徴・仕様・交換見積もり${tail}`,
+    `${head}特徴・仕様・交換見積もり`,
+    `${head}${c.name}・交換見積もり`,
+    `${head}${c.name}`,
+  ];
+  return candidates.find((t) => textWidth(t) <= PRODUCT_TITLE_MAX_WIDTH) ?? candidates[candidates.length - 1];
+}
+
+/**
+ * 「この商品で見積もり」の行き先。お見積もりのフォームに、メーカー・型番・商品名と、見ていたページを引き継ぐ
+ * （フォームの「気になっている機種」に入り、メールにページの URL が載る）。
+ */
+export function quoteHref(p: Product): string {
+  const q = new URLSearchParams({ product: `${getBrand(p.brand).name} ${p.modelNumber}（${p.name}）`.slice(0, 120), page: productPath(p) });
+  return `/contact?${q.toString()}`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -115,8 +139,10 @@ export function manufacturerPriceLabel(p: Product): string | null {
 /* 補助金                                                              */
 /* ------------------------------------------------------------------ */
 export type SubsidyView = {
-  /** 札に出す短い表記。出さないときは null */
+  /** 札に出す表記。出さないときは null */
   badge: string | null;
+  /** 商品カードの札に出す、さらに短い表記（例：補助金対象 12万円） */
+  short: string | null;
   tone: "sun" | "mute";
   /** 機種のページに出す説明 */
   text: string;
@@ -144,6 +170,7 @@ export function subsidyView(p: Product): SubsidyView {
   if (!cat.kyutouShoeneTarget || p.subsidyEligibility === "not-target") {
     return {
       badge: null,
+      short: null,
       tone: "mute",
       eligible: false,
       amount: null,
@@ -153,6 +180,7 @@ export function subsidyView(p: Product): SubsidyView {
   if (ended) {
     return {
       badge: null,
+      short: null,
       tone: "mute",
       eligible: false,
       amount: null,
@@ -164,7 +192,8 @@ export function subsidyView(p: Product): SubsidyView {
     const bonus = p.subsidyEligibility === "bonus";
     const amount = p.subsidyAmount ?? kyutouAmountFor(p.category, bonus);
     return {
-      badge: amount ? `補助金の対象（${manYen(amount)}）` : "補助金の対象",
+      badge: amount ? `補助金の対象機種（${manYen(amount)}）` : "補助金の対象機種",
+      short: amount ? `補助金対象 ${manYen(amount)}` : "補助金対象",
       tone: "sun",
       eligible: true,
       amount,
@@ -174,6 +203,7 @@ export function subsidyView(p: Product): SubsidyView {
   if (p.subsidyEligibility === "not-listed") {
     return {
       badge: "補助金：登録を確認できず",
+      short: "補助金：未確認",
       tone: "mute",
       eligible: false,
       amount: null,
@@ -182,6 +212,7 @@ export function subsidyView(p: Product): SubsidyView {
   }
   return {
     badge: "補助金：確認中",
+    short: "補助金：確認中",
     tone: "mute",
     eligible: false,
     amount: null,
@@ -218,7 +249,13 @@ export type ProductCardData = {
   total: number | null;
   subsidyBadge: string | null;
   subsidyEligible: boolean;
+  /** 代表の製品写真（無ければ null。画面では設置タイプの図を出す） */
   image: { src: string; alt: string; width: number; height: number } | null;
+  /** メーカーが複数の型番に使っている写真か（「シリーズ共通イメージ」と添える） */
+  imageShared: boolean;
+  brandLogo: BrandLogo | null;
+  /** 「この商品で見積もり」の行き先 */
+  quoteHref: string;
 };
 
 export function toCard(p: Product): ProductCardData {
@@ -248,9 +285,12 @@ export function toCard(p: Product): ProductCardData {
     msrp: manufacturerPriceLabel(p),
     msrpAmount: p.manufacturerPrice?.amount ?? null,
     total: price.totalInTax,
-    subsidyBadge: s.badge,
+    subsidyBadge: s.short,
     subsidyEligible: s.eligible,
-    image: p.imageLicenseStatus === "permitted" && p.images[0] ? p.images[0] : null,
+    image: p.images[0] ? { src: p.images[0].src, alt: p.images[0].alt, width: p.images[0].width, height: p.images[0].height } : null,
+    imageShared: p.imageMatchType === "officially-shared-series",
+    brandLogo: getBrand(p.brand).logo,
+    quoteHref: quoteHref(p),
   };
 }
 
@@ -269,6 +309,25 @@ export function relatedProducts(p: Product, limit = 4): Product[] {
     .sort((a, b) => b.s - a.s || a.x.modelNumber.localeCompare(b.x.modelNumber))
     .slice(0, limit)
     .map(({ x }) => x);
+}
+
+/**
+ * 記事やページの話題（パスの手がかり）に合う種類の機種を、メーカーごとに1つずつ選ぶ（人気や販売の順位ではない）。
+ * 写真のある機種を先にする。コラムの記事が機種を挙げていないときの「記事に関係する機種」に使う。
+ */
+export function suggestProducts(pathHint: string, limit = 4): Product[] {
+  const cats: CategoryId[] = /ecocute/.test(pathHint)
+    ? ["ecocute"]
+    : /hybrid|eco-one/.test(pathHint)
+      ? ["hybrid"]
+      : /subsidy/.test(pathHint)
+        ? ["hybrid", "ecocute"]
+        : ["eco-jozu", "gas"];
+  const list = products.filter((p) => cats.includes(p.category)).sort((a, b) => Number(b.images.length > 0) - Number(a.images.length > 0));
+  return brands
+    .map((b) => list.find((p) => p.brand === b.id))
+    .filter((p): p is Product => !!p)
+    .slice(0, limit);
 }
 
 /** 商品の更新日のうち、いちばん新しいもの（一覧ページの lastmod 用） */

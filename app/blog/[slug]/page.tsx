@@ -15,7 +15,7 @@ import { SectionHeading, SectionSplit } from "@/components/ui/SectionHeading";
 import { kyutouShoene2026 } from "@/data/subsidy/programs";
 import { BLOG_NAME, getAllPosts, getPost, getRelatedPosts } from "@/lib/blog";
 import { pageLabel } from "@/lib/blog-links";
-import { products, toCard } from "@/lib/products";
+import { products, suggestProducts, toCard } from "@/lib/products";
 import { reveal } from "@/lib/reveal";
 import { blogPostingSchema, faqSchema } from "@/lib/schema";
 import { buildMetadata, formatDateJa } from "@/lib/seo";
@@ -65,7 +65,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const relatedPages = [...new Set([p.cluster.pillar.href, ...p.relatedPages, ...p.relatedAreas.map((a) => `/area/${a}`)])]
     .map((href) => ({ href, label: href === p.cluster.pillar.href ? p.cluster.pillar.label : (pageLabel(href) ?? "") }))
     .filter((l) => l.label);
-  const relatedProducts = p.relatedProducts.map((id) => products.find((x) => x.id === id)).filter((x) => x !== undefined);
+  const listed = p.relatedProducts.map((id) => products.find((x) => x.id === id)).filter((x) => x !== undefined);
+  // 記事が機種を挙げていないときは、記事の分野（親ページ）に合う種類の機種を、メーカーごとに1つ出す
+  const relatedProducts = listed.length ? listed : suggestProducts(p.cluster.pillar.href);
   const relatedPosts = getRelatedPosts(p, 3);
   const toc = p.headings.filter((h) => h.level === 2);
   const updated = p.updatedAt !== p.publishedAt;
@@ -133,7 +135,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* 目次 */}
             {toc.length >= 3 && (
-              <nav aria-label="この記事の内容" className="mb-10 rounded-3xl bg-paper-2 px-5 py-5 sm:px-7">
+              <nav aria-label="この記事の内容" className="mb-10 rounded-xl bg-paper-2 px-5 py-5 sm:px-7">
                 <p className="font-heading text-[0.8125rem] font-bold tracking-wider text-brand-700">この記事の内容</p>
                 <ol className="mt-2">
                   {toc.map((h, i) => (
@@ -162,7 +164,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* 出典 */}
             {p.sources.length > 0 && (
-              <section aria-labelledby="post-sources" className="mt-12 rounded-3xl bg-paper-2 px-5 py-6 sm:px-7">
+              <section aria-labelledby="post-sources" className="mt-12 rounded-xl bg-paper-2 px-5 py-6 sm:px-7">
                 <h2 id="post-sources" className="text-sm font-bold text-navy-900">
                   出典・参考にした公式情報
                 </h2>
@@ -235,7 +237,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <section aria-labelledby="post-products" className="cv section band band-mist">
           <div className="container-x">
             <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4">
-              <SectionHeading id="post-products" title="この記事に出てくる機種" />
+              <SectionHeading id="post-products" title={listed.length ? "この記事に出てくる機種" : "記事に関係する種類の機種"} lead={listed.length ? undefined : "メーカーごとに1つずつ並べています。人気や販売の順位ではありません。"} />
               <Link href="/products" className="link-arrow shrink-0" {...reveal(80)}>
                 商品一覧
                 <Icon name="arrowRight" className="size-4" />

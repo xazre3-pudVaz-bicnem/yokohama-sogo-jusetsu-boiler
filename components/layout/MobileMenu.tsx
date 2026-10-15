@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState, type MouseEvent } from "react";
+import { MakerLogo } from "@/components/brand/MakerLogo";
 import { LineIcon } from "@/components/ui/LineIcon";
+import type { BrandLogo } from "@/data/products/types";
 
-type LinkItem = { href: string; label: string };
+type LinkItem = { href: string; label: string; long?: string };
 
 /**
  * スマホ・タブレット用のメニュー（1024px 未満）。
@@ -16,6 +18,7 @@ export function MobileMenu({
   main,
   sub,
   groups,
+  makers = [],
   phone,
   telHref,
   hours,
@@ -25,6 +28,8 @@ export function MobileMenu({
   main: LinkItem[];
   sub: LinkItem[];
   groups: { name: string; links: LinkItem[] }[];
+  /** メーカー別のページ（ロゴで並べる） */
+  makers?: { href: string; name: string; logo: BrandLogo | null }[];
   phone: string;
   telHref: string;
   hours: string;
@@ -93,11 +98,11 @@ export function MobileMenu({
                 <span className="num whitespace-nowrap text-[1.0625rem] font-semibold tracking-wide">{phone}</span>
               </a>
             )}
-            <Link prefetch={false} href="/contact" className={`btn btn-primary btn-sm ${phone ? "" : "col-span-2"}`}>
+            <Link prefetch={false} href="/contact" className={`btn btn-cta btn-sm ${phone ? "" : "col-span-2"}`}>
               {formLabel}
             </Link>
             {line && (
-              <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm col-span-2" data-cv="line">
+              <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-line btn-sm col-span-2" data-cv="line">
                 <LineIcon className="size-5" />
                 LINE で写真を送って相談する
               </a>
@@ -111,11 +116,27 @@ export function MobileMenu({
             {main.map((l) => (
               <li key={l.href} className="border-b border-silver-200">
                 <Link prefetch={false} href={l.href} className="flex min-h-12 items-center py-2 text-[0.9375rem] font-bold leading-snug text-navy-900 text-balance">
-                  {l.label}
+                  {l.long ?? l.label}
                 </Link>
               </li>
             ))}
           </ul>
+
+          {/* メーカー（公式ロゴ） */}
+          {makers.length > 0 && (
+            <>
+              <p className="eyebrow mt-9">メーカーから探す</p>
+              <ul className="mt-3 grid grid-cols-2 gap-2">
+                {makers.map((m) => (
+                  <li key={m.href}>
+                    <Link prefetch={false} href={m.href} className="logo-tile !min-h-14" aria-label={`${m.name}の給湯器`}>
+                      <MakerLogo logo={m.logo} name={m.name} height={22} decorative />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
           {/* 商品 */}
           <p className="eyebrow mt-9">商品を探す</p>

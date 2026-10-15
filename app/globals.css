@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
 /*
- * デザイントークン
- * トーンは「クリーム地に白い角丸パネル、吹き出し型のラベル、蛍光ペンの見出し、人物のイラスト」。
- * 色はロゴの濃紺と青を軸にし、クリームと黄色（蛍光ペン・小さな飾り）で温かさを足す。
- * 色は必ずここで定義したものを使う。
+ * デザイントークン（色は必ずここで定義したものを使う）
+ * トーンは「白と淡いグレーの地に、メーカーの製品写真とロゴを主役にした、住宅設備の専門店」。
+ * 角丸は控えめ（カード 12px・ボタン 8px）、影は薄く、飾りの図形は置かない。
+ *
+ * 色の役割
+ *   ブランド … navy（濃紺・ロゴの背景色）と brand（青）。ヘッダー・見出し・リンク・主な装飾
+ *   CTA      … cta（オレンジ）。「無料見積もり」など、問い合わせのボタンだけに使う（ほかの場所に使わない）
+ *   補助金   … eco（緑）。補助金の対象の札と、補助金の説明の枠だけ
+ *   地色     … 白・paper-2（淡いグレー）・mist（淡い青）
+ *   文字     … ink（濃紺）・ink-body・ink-mute
+ *   LINE     … line（LINE の緑）は、LINE のボタンの縁とアイコンだけ（白い文字は載せない。4.5:1 に届かないため）
  *
  * コントラストの実測（白文字を載せるとき）
+ *   cta-700   #c2410c … 5.2:1（ボタンの文字は 15px 以上・太字）
  *   brand-600 #0d57e6 … 5.9:1（小さい文字もOK）
  *   navy-900  #061537 … 17:1
+ *   eco-700   #0b7a5a … 5.3:1（eco-50 の地に載せても 4.9:1）
  * 黄色（sun / marker）は地色・飾り専用。黄色の上の文字は必ず濃紺にする（白文字は不可）。
- * クリーム地（#fdf7e3）に載せるグレーの文字は ink-mute（#556075、6.0:1）まで。
  */
 @theme {
   /* 濃紺（ロゴの背景色 #010b24 を基準に、紙面用に少し明るい段階を用意） */
@@ -34,9 +42,26 @@
   --color-sky-400: #45b4ff;
   --color-sky-300: #7dcbff;
 
-  /* クリーム・黄色（地色、蛍光ペン、小さな飾り） */
-  --color-cream: #fdf7e3;
-  --color-cream-2: #faedc4;
+  /* 問い合わせのボタン（CTA）だけに使うオレンジ */
+  --color-cta-800: #9a3412;
+  --color-cta-700: #c2410c;
+  --color-cta-600: #dc5a14;
+  --color-cta-100: #ffe8d6;
+  --color-cta-50: #fff5ed;
+
+  /* 補助金（対象の札・説明の枠）の緑 */
+  --color-eco-800: #075c44;
+  --color-eco-700: #0b7a5a;
+  --color-eco-200: #b8e3d2;
+  --color-eco-100: #d6efe5;
+  --color-eco-50: #edf8f3;
+
+  /* LINE の緑（ボタンの縁とアイコンだけ） */
+  --color-line: #06c755;
+
+  /* 淡い地色（以前のクリーム。いまは白に近いグレー）と、黄色（蛍光ペン、小さな飾り） */
+  --color-cream: #f6f8fb;
+  --color-cream-2: #eceff4;
   --color-marker: #ffe27a;
   --color-sun-500: #f5a81c;
   --color-sun-400: #ffbd3d;
@@ -71,9 +96,10 @@
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --shadow-card: 0 10px 30px -14px rgb(6 21 55 / 0.22);
-  --shadow-pop: 0 18px 40px -18px rgb(6 21 55 / 0.35);
-  --shadow-pill: 0 10px 22px -10px rgb(13 87 230 / 0.6);
+  --shadow-card: 0 1px 2px rgb(6 21 55 / 0.05), 0 4px 14px -8px rgb(6 21 55 / 0.16);
+  --shadow-pop: 0 2px 4px rgb(6 21 55 / 0.06), 0 14px 32px -16px rgb(6 21 55 / 0.3);
+  --shadow-pill: 0 6px 14px -8px rgb(13 87 230 / 0.55);
+  --shadow-cta: 0 6px 14px -8px rgb(194 65 12 / 0.6);
 
   --breakpoint-xs: 26rem;
 
@@ -251,89 +277,44 @@
   .band-paper {
     background: var(--color-paper-2);
   }
-  /* 右上・左下に、大きな丸をのぞかせる（帯の上にだけ使う） */
-  .deco-tr::before,
-  .deco-bl::after {
-    content: "";
-    position: absolute;
-    width: clamp(10rem, 20vw, 17rem);
-    aspect-ratio: 1;
-    border-radius: 9999px;
-    pointer-events: none;
-  }
-  .deco-tr::before {
-    top: clamp(-7rem, -9vw, -4rem);
-    right: clamp(-6rem, -7vw, -3rem);
-    background: rgb(255 255 255 / 0.7);
-  }
-  .deco-bl::after {
-    bottom: clamp(-7rem, -9vw, -4rem);
-    left: clamp(-6rem, -7vw, -3rem);
-    background: rgb(255 255 255 / 0.7);
-  }
-  .band-cream.deco-tr::before {
-    background: var(--color-sun-100);
-  }
+  /* 隅の丸い飾り（deco-tr・deco-bl）は、使わなくなった（クラスが残っていても何も出さない） */
   .band > .container-x,
   .band > .container-narrow {
     position: relative;
   }
 
   /* ── 見出し ─────────────────────────────────────── */
-  /* 吹き出し型のラベル（見出しの上に添える）。下に小さな三角が付く */
+  /* 見出しの上に添える短いラベル（区画が何の話か）。左に短い線を引いた文字だけにする（吹き出しや色の板は使わない） */
   .pill {
-    position: relative;
-    display: inline-block;
-    padding: 0.4rem 1.25rem;
-    border-radius: 9999px;
-    background: var(--color-brand-600);
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    color: var(--color-brand-700);
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 700;
     line-height: 1.6;
-    letter-spacing: 0.06em;
-    box-shadow: 0 1px 2px rgb(6 21 55 / 0.12);
+    letter-spacing: 0.08em;
   }
-  /* 幅の狭いスマホ（360px 未満）では、長いラベルの最後の1文字だけが次の行に落ちるので、少し小さくする */
-  @media (max-width: 22.49rem) {
-    .pill {
-      padding-inline: 0.9rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.02em;
-    }
-  }
-  .pill::after {
+  .pill::before {
     content: "";
-    position: absolute;
-    top: 100%;
-    left: 1.75rem;
-    border-inline: 7px solid transparent;
-    border-top: 8px solid var(--color-brand-600);
+    flex: none;
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
   }
-  .pill-center::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .pill-center {
+    justify-content: center;
   }
   .pill-navy {
-    background: var(--color-navy-900);
-  }
-  .pill-navy::after {
-    border-top-color: var(--color-navy-900);
-  }
-  .pill-sun {
-    background: var(--color-sun-400);
     color: var(--color-navy-900);
   }
-  .pill-sun::after {
-    border-top-color: var(--color-sun-400);
+  .pill-sun {
+    color: var(--color-eco-700);
   }
   .pill-white {
-    background: #fff;
-    color: var(--color-brand-700);
-  }
-  .pill-white::after {
-    border-top-color: #fff;
+    color: var(--color-sky-300);
   }
   /* 小さな区分名（ラベルにするほどでもない場所） */
   .eyebrow {
@@ -359,14 +340,14 @@
     font-weight: 900;
   }
   .h-section {
-    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem);
-    line-height: 1.4;
-    font-weight: 900;
+    font-size: clamp(1.4375rem, 1.18rem + 1.1vw, 2rem);
+    line-height: 1.45;
+    font-weight: 700;
   }
   .h-sub {
-    font-size: clamp(1.125rem, 1.03rem + 0.45vw, 1.375rem);
+    font-size: clamp(1.0938rem, 1.02rem + 0.4vw, 1.3125rem);
     line-height: 1.5;
-    font-weight: 900;
+    font-weight: 700;
   }
   .lead {
     font-size: clamp(0.9688rem, 0.94rem + 0.15vw, 1.0313rem);
@@ -385,15 +366,19 @@
     padding: 0 0.1em;
   }
 
-  /* ── ボタン（丸いピル型） ───────────────────────── */
+  /* ── ボタン（角丸 8px） ────────────────────────────
+   * btn-cta     … 問い合わせ（無料見積もり・この商品で見積もり）。オレンジは、このボタンだけに使う
+   * btn-line    … LINE で相談（白地・緑の縁）
+   * btn-primary … そのほかの主な操作（青）
+   * btn-outline / btn-navy … 補助の操作 */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
     min-height: 3rem;
-    padding: 0.5rem 1.6rem;
-    border-radius: 9999px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
     border: 2px solid transparent;
     font-family: var(--font-heading);
     font-weight: 700;
@@ -411,7 +396,7 @@
       box-shadow 0.2s var(--ease-out-soft);
   }
   .btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
   .btn .btn-arrow,
   .btn svg {
@@ -427,6 +412,22 @@
   }
   .btn-primary:hover {
     background: var(--color-brand-700);
+  }
+  .btn-cta {
+    background: var(--color-cta-700);
+    color: #fff;
+    box-shadow: var(--shadow-cta);
+  }
+  .btn-cta:hover {
+    background: var(--color-cta-800);
+  }
+  .btn-line {
+    background: #fff;
+    color: var(--color-navy-900);
+    border-color: var(--color-line);
+  }
+  .btn-line:hover {
+    background: #f0fbf4;
   }
   .btn-navy {
     background: var(--color-navy-900);
@@ -450,7 +451,7 @@
     border-color: var(--color-navy-900);
   }
   .btn-outline:hover {
-    background: var(--color-cream);
+    background: var(--color-paper-2);
   }
   .btn-ghost-dark {
     color: #fff;
@@ -463,8 +464,19 @@
   }
   .btn-sm {
     min-height: 2.75rem;
-    padding: 0.4rem 1.25rem;
+    padding: 0.4rem 1.1rem;
     font-size: 0.875rem;
+  }
+  .btn-xs {
+    min-height: 2.75rem;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+  }
+  .btn-lg {
+    min-height: 3.5rem;
+    padding: 0.6rem 1.75rem;
+    font-size: 1rem;
   }
 
   /* 矢印つきのリンク（一覧・くわしいページへ送るとき）。黄色の太い下線 */
@@ -516,7 +528,7 @@
     min-height: 2.5rem;
     padding-inline: 1rem;
     border: 1px solid var(--color-silver-300);
-    border-radius: 9999px;
+    border-radius: 0.5rem;
     background: #fff;
     color: var(--color-navy-900);
     font-size: 0.8125rem;
@@ -564,12 +576,12 @@
   /* ── 白い角丸パネル ─────────────────────────────── */
   .card {
     background: #fff;
-    border-radius: 1.5rem;
+    border-radius: 0.75rem;
     box-shadow: var(--shadow-card);
   }
   .card-pop {
     background: #fff;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: var(--shadow-pop);
   }
   /* 白地の区画に置いても形が分かるよう、淡い線で縁取るもの */
@@ -583,7 +595,7 @@
   }
   a.card-hover:hover,
   a:hover > .card-hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-pop);
   }
 
@@ -591,7 +603,7 @@
   .rows {
     background: #fff;
     border: 1px solid var(--color-silver-200);
-    border-radius: 1.5rem;
+    border-radius: 0.75rem;
     box-shadow: var(--shadow-card);
     padding: 0.25rem clamp(1rem, 2.4vw, 1.75rem);
   }
@@ -622,33 +634,19 @@
   .photo-frame {
     position: relative;
   }
-  .photo-frame::before {
-    content: "";
-    position: absolute;
-    top: -0.75rem;
-    left: -0.75rem;
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-    background: var(--color-brand-200);
-  }
-  .photo-frame-r::before {
-    left: auto;
-    right: -0.75rem;
-    background: var(--color-sun-300);
-  }
+  /* 写真の後ろに色の板をずらして敷く飾りは、使わなくなった */
   .photo-frame > .photo-card {
     position: relative;
   }
   .photo-card {
     overflow: hidden;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: var(--shadow-card);
     background: var(--color-silver-100);
   }
   .photo-card-sm {
     overflow: hidden;
-    border-radius: 1.25rem;
+    border-radius: 0.75rem;
     background: var(--color-silver-100);
   }
 
@@ -776,7 +774,7 @@
     position: relative;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border-radius: 1.25rem;
+    border-radius: 0.75rem;
     background: #fff;
     box-shadow: var(--shadow-card);
   }
@@ -1116,11 +1114,12 @@
     background: var(--color-brand-50);
     color: var(--color-brand-800);
   }
-  /* 補助金の対象（黄色は地色専用なので、文字は濃紺） */
+  /* 補助金の対象（緑）。badge-sun は以前の名前（同じ見た目） */
+  .badge-eco,
   .badge-sun {
-    border-color: var(--color-sun-400);
-    background: var(--color-sun-100);
-    color: var(--color-navy-900);
+    border-color: var(--color-eco-200);
+    background: var(--color-eco-50);
+    color: var(--color-eco-800);
   }
   .badge-mute {
     border-color: var(--color-silver-200);
@@ -1128,25 +1127,103 @@
     color: var(--color-ink-mute);
   }
 
-  /* 商品の写真（または設置タイプの図）を入れる枠。写真の有無で高さが変わらないよう、比率を固定する */
+  /*
+   * 商品の写真（または設置タイプの図）を入れる枠。写真の有無・縦長か横長かで高さが変わらないよう、比率を固定する。
+   * 写真は枠の中に収める（切り抜かない）。メーカーの写真は白い地のものが多いので、乗算で枠の淡いグレーになじませる
+   * （ファイルそのものは加工しない）。
+   */
   .product-visual {
     position: relative;
     display: grid;
     place-items: center;
     overflow: hidden;
     aspect-ratio: 4 / 3;
-    border-radius: 1.25rem;
-    background: var(--color-mist);
+    border-radius: 0.5rem;
+    background: #f3f5f8;
   }
   .product-visual-tall {
     aspect-ratio: 1 / 1;
+  }
+  .product-visual img {
+    mix-blend-mode: multiply;
+  }
+  /* 写真の枠の隅に添える注記（シリーズ共通イメージ・図は設置タイプ） */
+  .visual-note {
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.35rem;
+    background: rgb(255 255 255 / 0.92);
+    color: var(--color-ink-mute);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* 商品カード：白い地・細い縁。押せる所（写真・型番・ボタン）を分けて置く */
+  .pcard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--color-silver-200);
+    border-radius: 0.75rem;
+    background: #fff;
+    transition:
+      border-color 0.2s var(--ease-out-soft),
+      box-shadow 0.2s var(--ease-out-soft);
+  }
+  .pcard:hover {
+    border-color: var(--color-silver-300);
+    box-shadow: var(--shadow-pop);
+  }
+  .pcard:hover .product-visual img {
+    transform: scale(1.03);
+  }
+  .pcard .product-visual img {
+    transition: transform 0.4s var(--ease-out-soft);
+  }
+
+  /* メーカーのロゴを置く白い札（ロゴの元の色が見えるよう、地は白にする） */
+  .logo-tile {
+    display: grid;
+    place-items: center;
+    min-height: 4.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-silver-200);
+    border-radius: 0.75rem;
+    background: #fff;
+    transition:
+      border-color 0.2s var(--ease-out-soft),
+      box-shadow 0.2s var(--ease-out-soft);
+  }
+  a.logo-tile:hover {
+    border-color: var(--color-brand-400);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* 写真の拡大表示（機種のページ）。<dialog> を使う */
+  .lightbox {
+    width: min(64rem, 100vw - 1.5rem);
+    max-width: none;
+    max-height: calc(100dvh - 1.5rem);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: var(--color-ink);
+  }
+  .lightbox::backdrop {
+    background: rgb(2 11 36 / 0.72);
   }
 
   /* 補足・注意の囲み。左の太い線で種類を示す */
   .callout {
     padding: 1rem 1.25rem;
-    border-left: 6px solid var(--color-brand-500);
-    border-radius: 0.35rem 1rem 1rem 0.35rem;
+    border-left: 4px solid var(--color-brand-500);
+    border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
     background: var(--color-mist);
     font-size: 0.9375rem;
     line-height: 1.95;
@@ -1159,6 +1236,12 @@
   .callout-plain {
     border-left-color: var(--color-silver-400);
     background: var(--color-paper-2);
+  }
+  /* 補助金の説明（緑） */
+  .callout-eco {
+    border-left-color: var(--color-eco-700);
+    background: var(--color-eco-50);
+    color: var(--color-ink);
   }
   .callout > * + * {
     margin-top: 0.5em;
@@ -1251,16 +1334,30 @@
   }
   .table-compare thead th {
     background: #fff;
-    vertical-align: bottom;
+    vertical-align: top;
   }
   @media (min-width: 40rem) {
     .table-compare {
       font-size: 0.9375rem;
     }
+    .table-compare th,
+    .table-compare td {
+      min-width: 13rem;
+    }
     .table-compare tbody th,
     .table-compare thead th:first-child {
       min-width: 9rem;
       width: 9rem;
+    }
+  }
+  /* パソコン：横に収めて、機種の列を同じ幅にそろえる（写真の大きさ・ボタンの位置がそろう） */
+  @media (min-width: 64rem) {
+    .table-compare {
+      table-layout: fixed;
+    }
+    .table-compare th,
+    .table-compare td {
+      min-width: 0;
     }
   }
 
@@ -1269,9 +1366,9 @@
     display: inline-flex;
     align-items: center;
     min-height: 2.5rem;
-    padding-inline: 0.95rem;
+    padding-inline: 0.9rem;
     border: 1.5px solid var(--color-silver-300);
-    border-radius: 9999px;
+    border-radius: 0.5rem;
     background: #fff;
     color: var(--color-navy-900);
     font-size: 0.8125rem;
@@ -1411,6 +1508,19 @@
 [data-mega][data-closed] > [data-mega-panel] {
   visibility: hidden;
   opacity: 0;
+}
+
+/* PC のヘッダー：上段が隠れたときだけ、主メニューの右に電話と見積もりを出す（印は HeaderStuck が付ける） */
+[data-site-header] .stuck-only {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    visibility 0.2s;
+}
+[data-site-header][data-stuck="1"] .stuck-only {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* 飾りの動きは、画面内にあるときだけ動かす（印は RevealObserver が付ける） */

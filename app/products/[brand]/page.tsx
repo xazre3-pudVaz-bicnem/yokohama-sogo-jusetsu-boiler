@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MakerLogo } from "@/components/brand/MakerLogo";
 import { ProductCard } from "@/components/product/ProductCard";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -67,6 +68,15 @@ export default async function BrandPage({ params }: Params) {
           { name: "商品一覧", href: "/products" },
           { name: b.name, href: `/products/${b.id}` },
         ]}
+        aside={
+          <div className="logo-tile !min-h-[9rem] gap-3 !px-8 !py-6 shadow-[var(--shadow-card)]">
+            <MakerLogo logo={b.logo} name={b.name} height={52} priority />
+            <span className="text-[0.8125rem] font-bold text-ink-body">
+              {b.categories.map((c) => getCategory(c).shortName).join("・")}
+              <span className="num ml-1.5">{list.length}機種</span>
+            </span>
+          </div>
+        }
       >
         <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
           <a href={b.url} target="_blank" rel="noopener noreferrer" className="link-arrow !text-sm">
@@ -86,7 +96,7 @@ export default async function BrandPage({ params }: Params) {
       </PageHero>
 
       {groups.map((g, i) => (
-        <section key={g.c.id} id={g.c.id} aria-labelledby={`${g.c.id}-title`} className={`${i % 2 ? "band band-mist" : "bg-white"} scroll-mt-24`}>
+        <section key={g.c.id} id={g.c.id} aria-labelledby={`${g.c.id}-title`} className={`${i % 2 ? "band band-paper" : "bg-white"} scroll-mt-24`}>
           <div className="container-x section-tight">
             <SectionHeading id={`${g.c.id}-title`} eyebrow={g.c.shortName} title={`${b.name}の${g.c.name}`} lead={g.c.summary} className="mb-8" />
             <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -111,11 +121,12 @@ export default async function BrandPage({ params }: Params) {
           <h2 id="other-brands" className="h-sub">
             ほかのメーカーの給湯器
           </h2>
-          <ul className="mt-4 flex flex-wrap gap-2">
+          <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
             {others.map((x) => (
               <li key={x.id}>
-                <Link href={`/products/${x.id}`} className="chip">
-                  {x.name}
+                <Link href={`/products/${x.id}`} className="logo-tile h-full gap-1.5" aria-label={`${x.name}の給湯器`}>
+                  <MakerLogo logo={x.logo} name={x.name} height={24} decorative />
+                  <span className="text-[0.6875rem] text-ink-mute">{productsByBrand(x.id).length}機種</span>
                 </Link>
               </li>
             ))}

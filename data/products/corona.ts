@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * コロナの商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const coronaProducts: Product[] = [
+export const coronaProducts: ProductData[] = [
   {
     "id": "corona-chp-37az2",
     "slug": "chp-37az2",
@@ -151,15 +151,6 @@ export const coronaProducts: Product[] = [
       "水道水以外（温泉水・井戸水）は使用不可",
       "ヒートポンプは主に深夜に運転するため、寝室や隣家に近い場所など騒音が気になる場所には据え付けない。運転音は無響室での測定値で、実際に据え付けた状態では表示数値より大きくなるのが普通"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.corona.co.jp/eco/img/products/chp-37ay4.png",
-      "pageUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#37az2",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "公式ページのこの品番の欄（#37az2）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット。画像を開いて確認した）。製品一覧ページ（products/index.html）でも同じ画像が alt=\"CHP-37AZ2\" で使われているので exact-model とした。ただしファイル名は「chp-37ay4.png」で、旧モデル（AY4）の名前のまま。旧モデルの写真を引き継いで使っている可能性があり、外観が同じかどうかは公式に書かれていない。HEAD で HTTP "
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#37az2",
     "manufacturerPrice": {
       "amount": 1238600,
@@ -338,15 +329,6 @@ export const coronaProducts: Product[] = [
       "水道水以外（温泉水・井戸水）は使用不可",
       "ヒートポンプは主に深夜に運転するため、寝室や隣家に近い場所など騒音が気になる場所には据え付けない。運転音は無響室での測定値で、実際に据え付けた状態では表示数値より大きくなるのが普通"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.corona.co.jp/eco/img/products/chp-46ay4.png",
-      "pageUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#46az2",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "公式ページのこの品番の欄（#46az2）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット。URL の応答だけ確認し、画像そのものは開いていない）。製品一覧ページ（products/index.html）でも同じ画像が alt=\"CHP-46AZ2\" で使われているので exact-model とした。ただしファイル名は「chp-46ay4.png」で、旧モデル（AY4）の名前のまま。旧モデルの写真を引き継いで使っている可能性があり、外観が同じかどうかは公式に書かれて"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#46az2",
     "manufacturerPrice": {
       "amount": 1355200,
@@ -524,15 +506,6 @@ export const coronaProducts: Product[] = [
       "水道水以外（温泉水・井戸水）は使用不可",
       "ヒートポンプは主に深夜に運転するため、寝室や隣家に近い場所など騒音が気になる場所には据え付けない。運転音は無響室での測定値で、実際に据え付けた状態では表示数値より大きくなるのが普通"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.corona.co.jp/eco/img/products/chp-e37ay4.png",
-      "pageUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#e37az2",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "公式ページのこの品番の欄（#e37az2）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット。URL の応答だけ確認し、画像そのものは開いていない）。製品一覧ページ（products/index.html）でも同じ画像が alt=\"CHP-E37AZ2\" で使われているので exact-model とした。ただしファイル名は「chp-e37ay4.png」で、旧モデル（AY4）の名前のまま。旧モデルの写真を引き継いで使っている可能性があり、外観が同じかどうかは公式に書"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.corona.co.jp/eco/highgrade/lineup.html#e37az2",
     "manufacturerPrice": {
       "amount": 1355200,
@@ -712,15 +685,6 @@ export const coronaProducts: Product[] = [
       "水道水以外（温泉水・井戸水）は使用不可",
       "ヒートポンプは主に深夜に運転するため、寝室や隣家に近い場所など騒音が気になる場所には据え付けない。運転音は無響室での測定値で、実際に据え付けた状態では表示数値より大きくなるのが普通"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.corona.co.jp/eco/img/products/chp-hxe37ay4.png",
-      "pageUrl": "https://www.corona.co.jp/eco/premium/lineup.html#hxe37az2",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "公式ページのこの品番の欄（#hxe37az2）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット。URL の応答だけ確認し、画像そのものは開いていない）。製品一覧ページ（products/index.html）でも同じ画像が alt=\"CHP-HXE37AZ2\" で使われているので exact-model とした。ただしファイル名は「chp-hxe37ay4.png」で、旧モデル（AY4）の名前のまま。旧モデルの写真を引き継いで使っている可能性があり、外観が同じかどう"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.corona.co.jp/eco/premium/lineup.html#hxe37az2",
     "manufacturerPrice": {
       "amount": 1439900,
@@ -899,15 +863,6 @@ export const coronaProducts: Product[] = [
       "水道水以外（温泉水・井戸水）は使用不可",
       "ヒートポンプは主に深夜に運転するため、寝室や隣家に近い場所など騒音が気になる場所には据え付けない。運転音は無響室での測定値で、実際に据え付けた状態では表示数値より大きくなるのが普通"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.corona.co.jp/eco/img/products/chp-e372ay4.png",
-      "pageUrl": "https://www.corona.co.jp/eco/thin/lineup.html#e372az2",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14",
-      "note": "公式ページのこの品番の欄（#e372az2）に置かれている製品写真（貯湯ユニット＋ヒートポンプユニット。URL の応答だけ確認し、画像そのものは開いていない）。製品一覧ページ（products/index.html）でも同じ画像が alt=\"CHP-E372AZ2\" で使われているので exact-model とした。ただしファイル名は「chp-e372ay4.png」で、旧モデル（AY4）の名前のまま。旧モデルの写真を引き継いで使っている可能性があり、外観が同じかどうかは公"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.corona.co.jp/eco/thin/lineup.html#e372az2",
     "manufacturerPrice": {
       "amount": 1389300,

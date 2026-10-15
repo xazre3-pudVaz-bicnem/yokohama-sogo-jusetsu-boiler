@@ -1,12 +1,12 @@
-import type { Product } from "@/data/products/types";
+import type { ProductData } from "@/data/products/types";
 
 /**
  * ノーリツの商品データ。2026-10-14 に、公式サイト・公式カタログで型番と仕様を確かめたもの。
  * 根拠のページは各商品の sources。調査のしかたと記録は docs/PRODUCT_DATA.md。
  * 当社の価格（salesPrice など）は、会社から金額を受け取るまで null（画面では「お見積もり」）。
- * 製品写真は、メーカーの掲載許諾が確認できるまで載せない（imageLicenseStatus: "pending"）。
+ * 製品写真の記録は data/products/images.json（ここには書かない）。
  */
-export const noritzProducts: Product[] = [
+export const noritzProducts: ProductData[] = [
   {
     "id": "noritz-gt-c2472aw-1-bl",
     "slug": "gt-c2472aw-1-bl",
@@ -142,14 +142,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 531960,
@@ -312,14 +304,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 470140,
@@ -482,14 +466,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 440990,
@@ -652,14 +628,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 403920,
@@ -821,14 +789,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 484770,
@@ -994,14 +954,6 @@ export const noritzProducts: Product[] = [
       "排気延長する場合は、1〜4曲がりとも 7m 以内で施工（排気筒口径φ100）",
       "RCS-2 は対応していない"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 465960,
@@ -1165,14 +1117,6 @@ export const noritzProducts: Product[] = [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）",
       "排気延長する場合は、1〜4曲がりとも 7m 以内で施工（排気筒口径φ100）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 451880,
@@ -1335,14 +1279,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "燃焼時にドレン排出口からドレンが出るため、排水配管の設置が必要（排水口まで配管し、先端は大気開放にして水につからないようにする）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/img/pic_gt-c72.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/gasfuro_c72.html",
     "manufacturerPrice": {
       "amount": 451880,
@@ -1498,14 +1434,6 @@ export const noritzProducts: Product[] = [
     "cautions": [
       "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/img/pic_gt_2470.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
     "manufacturerPrice": {
       "amount": 431860,
@@ -1631,14 +1559,6 @@ export const noritzProducts: Product[] = [
       "燃焼時に排水接続口からドレン水が出るため、排水配管が必要",
       "ソーラー接続は不可（本体操作時・オートストップなしリモコン接続時は可だが、設定温度にならない場合がある）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/common/img/product/kyutoki/gus/gus_eco/pic_gq_c2434ws.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/gas_c34ws.html",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/gas_c34ws.html",
     "manufacturerPrice": {
       "amount": 218020,
@@ -1786,14 +1706,6 @@ export const noritzProducts: Product[] = [
       "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う",
       "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/img/img_gq79ws.png",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/",
     "manufacturerPrice": {
       "amount": 174350,
@@ -1955,14 +1867,6 @@ export const noritzProducts: Product[] = [
       "奥行500mmでの設置（D500）には条件があり、ガスふろ給湯器エコジョーズ（GT-C）の場合は丸形排気（T）タイプを選ぶ",
       "貯湯ユニットは基礎工事が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/img/img_145.jpg",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/lineup_145.html",
     "manufacturerPrice": {
       "amount": 988900,
@@ -2122,14 +2026,6 @@ export const noritzProducts: Product[] = [
       "奥行500mmでの設置（D500）には条件があり、ガスふろ給湯器エコジョーズ（GT-C）の場合は丸形排気（T）タイプを選ぶ",
       "貯湯ユニットは基礎工事が必要"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/img/img_145.jpg",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/lineup_145.html",
     "manufacturerPrice": {
       "amount": 1110670,
@@ -2298,14 +2194,6 @@ export const noritzProducts: Product[] = [
       "基礎工事を省略する場合は、振れ止め金具SH01と簡易設置台70Lが必要",
       "70Lモデルは、貯湯ユニットの配管カバーが別売品"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/img/img_70.jpg",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/lineup_70.html",
     "manufacturerPrice": {
       "amount": 939400,
@@ -2466,14 +2354,6 @@ export const noritzProducts: Product[] = [
       "基礎工事を省略する場合は、振れ止め金具SH01と簡易設置台70Lが必要",
       "70Lモデルは、貯湯ユニットの配管カバーが別売品"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/img/img_70.jpg",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/",
-      "match": "exact-model",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/lineup_70.html",
     "manufacturerPrice": {
       "amount": 1061170,
@@ -2644,14 +2524,6 @@ export const noritzProducts: Product[] = [
       "70Lモデルは、貯湯ユニットの配管カバーが別売品",
       "設置可能な最低外気温度が -5℃（標準機は -15℃）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/img/img_70.jpg",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/lineup_plugin.html",
     "manufacturerPrice": {
       "amount": 939400,
@@ -2815,14 +2687,6 @@ export const noritzProducts: Product[] = [
       "70Lモデルは、貯湯ユニットの配管カバーが別売品",
       "設置可能な最低外気温度が -5℃（標準機は -15℃）"
     ],
-    "images": [],
-    "imageSource": {
-      "url": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/img/img_70.jpg",
-      "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/",
-      "match": "series-representative",
-      "checkedAt": "2026-10-14"
-    },
-    "imageLicenseStatus": "pending",
     "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/hybrid/lineup_plugin.html",
     "manufacturerPrice": {
       "amount": 1061170,

@@ -79,12 +79,14 @@ for (const p of allProducts) {
     if (!isUrl(p.manufacturerPrice.sourceUrl)) err(`${at} … メーカー希望小売価格の出典がありません`);
   }
 
-  if (p.imageLicenseStatus === "permitted") {
-    if (!p.images.length) err(`${at} … 許諾ありなのに写真がありません`);
-    if (!p.imageSource) err(`${at} … 写真の取得元（imageSource）がありません`);
-  } else if (p.images.length) {
-    err(`${at} … 掲載の許諾を確かめていない写真が入っています（imageLicenseStatus: ${p.imageLicenseStatus}）`);
+  // 製品写真（ファイルの中身・大きさ・取得元の確認は npm run images:check）
+  if (p.images.length && p.images[0].role !== "main") err(`${at} … 1枚目の写真が代表の写真（role: main）ではありません`);
+  for (const img of p.images) {
+    if (!isUrl(img.sourceUrl) || !isUrl(img.pageUrl)) err(`${at} … 写真の取得元（sourceUrl・pageUrl）がありません：${img.src}`);
+    if (!img.alt) err(`${at} … 写真の代わりの文（alt）がありません：${img.src}`);
   }
+  if (p.imageRecord && !isDate(p.imageRecord.verifiedAt)) err(`${at} … 写真を確かめた日（verifiedAt）が不正です`);
+  if (p.imageRecord?.matchType === "unavailable" && !p.imageRecord.unavailableReason) warn(`${at} … 写真を載せていない理由（unavailableReason）がありません`);
 
   if (!isUrl(p.manufacturerUrl)) err(`${at} … メーカーのページの URL がありません`);
   if (!p.sources.length || !p.sources.every(isUrl)) err(`${at} … 根拠のページ（sources）がありません`);

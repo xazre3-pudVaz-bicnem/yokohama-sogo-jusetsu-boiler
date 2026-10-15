@@ -14,7 +14,8 @@
  *   public/images/photos/  … このスクリプトが作る写真（トップの冒頭）
  *   public/images/site/    … 当社の現場の写真
  *   public/images/works/   … 施工事例の写真（当社が施工した現場の写真だけ）
- *   public/images/products/<メーカー>/ … 製品写真（メーカーの許諾を得たものだけ。scripts/fetch-product-images.ts）
+ *   public/images/products/<メーカー>/ … 製品写真（メーカーの公式の写真だけ。記録は data/products/images.json、手順は docs/IMAGE_SOURCES.md）
+ *   public/images/manufacturers/ … メーカーの公式ロゴ（記録は data/brand-logos.json）
  *
  * 元画像が無い環境（assets/ は Git に入れていない）では、1 と 2 を飛ばして、3 だけを行う。
  * 写真を差し替えるときは、assets/source/ に元画像を置き、下の HERO の設定を直して実行する。

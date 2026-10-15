@@ -247,7 +247,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
               </ul>
             </nav>
           )}
-          <aside aria-labelledby="area-sources" className="rounded-3xl bg-paper-2 px-5 py-6 sm:px-7">
+          <aside aria-labelledby="area-sources" className="rounded-xl bg-paper-2 px-5 py-6 sm:px-7">
             <h2 id="area-sources" className="text-sm font-bold text-navy-900">
               このページの出典
             </h2>

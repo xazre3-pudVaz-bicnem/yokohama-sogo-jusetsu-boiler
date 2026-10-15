@@ -209,7 +209,7 @@ export function productSchema(p: Product, opts: { brandName: string; brandCompan
     url: url(opts.path),
     brand: { "@type": "Brand", name: opts.brandName },
     manufacturer: { "@type": "Organization", name: opts.brandCompany },
-    image: p.imageLicenseStatus === "permitted" && p.images.length ? p.images.map((i) => url(i.src)) : undefined,
+    image: p.images.length ? p.images.map((i) => url(i.src)) : undefined,
     additionalProperty: p.specifications.slice(0, 12).map((s) => ({ "@type": "PropertyValue", name: s.label, value: s.value })),
     offers:
       total !== null

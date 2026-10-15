@@ -65,7 +65,7 @@ export function PageFooterBlocks({
             </nav>
           )}
           {sources.length > 0 && (
-            <aside aria-labelledby={`${id}-sources`} className="rounded-3xl bg-paper-2 px-5 py-6 sm:px-7">
+            <aside aria-labelledby={`${id}-sources`} className="rounded-xl bg-paper-2 px-5 py-6 sm:px-7">
               <h2 id={`${id}-sources`} className="text-sm font-bold text-navy-900">
                 このページの出典
               </h2>

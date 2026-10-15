@@ -16,6 +16,15 @@ export function toHalfWidth(s: string): string {
 const choice = (field: EstimateSelectField) =>
   z.string().refine((v) => v === "" || (estimateOptions[field] as readonly string[]).includes(v), "選択肢から選んでください。");
 
+/** 見ていた機種のページ（/products/<メーカー>/<型番>）。それ以外の値は空にする（入力欄の無い項目なので、誤りにはしない） */
+export const PRODUCT_PAGE_PATTERN = /^\/products\/[a-z0-9-]+\/[a-z0-9-]+$/;
+function productPageField() {
+  return z
+    .string()
+    .trim()
+    .transform((v) => (PRODUCT_PAGE_PATTERN.test(v) ? v : ""));
+}
+
 export const estimateSchema = z.object({
   name: z.string().trim().min(1, "お名前を入力してください。").max(60, "お名前は60文字以内で入力してください。"),
   tel: z
@@ -42,6 +51,7 @@ export const estimateSchema = z.object({
   timing: choice("timing"),
   subsidy: choice("subsidy"),
   message: z.string().trim().max(3000, "ご相談の内容は3,000文字以内で入力してください。"),
+  productPage: productPageField(),
 });
 
 export type Estimate = z.infer<typeof estimateSchema>;
@@ -69,6 +79,7 @@ export const photoEstimateSchema = z.object({
   desiredProduct: z.string().trim().max(120, "機種名は120文字以内で入力してください。"),
   contactPref: photoChoice("contactPref"),
   message: z.string().trim().max(1500, "ご要望は1,500文字以内で入力してください。"),
+  productPage: productPageField(),
 });
 
 export type PhotoEstimate = z.infer<typeof photoEstimateSchema>;

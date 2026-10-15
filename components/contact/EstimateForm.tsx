@@ -4,6 +4,7 @@ import Link from "next/link";
 import { startTransition, useActionState, useEffect, useRef, useState, type FormEvent } from "react";
 import { submitEstimate } from "@/app/contact/actions";
 import { newToken, shrinkPhoto } from "@/components/contact/photo-utils";
+import { ProductContextNote, readProductContext } from "@/components/contact/ProductContext";
 import { estimateLabels, estimateOptions, initialEstimateState, PHOTO_RULES, type EstimateField, type EstimateSelectField } from "@/lib/contact-fields";
 
 /**
@@ -16,7 +17,7 @@ import { estimateLabels, estimateOptions, initialEstimateState, PHOTO_RULES, typ
  *   選んだ写真はこの部品が持っておき、入力の誤りでフォームを作り直しても、消えないようにする。
  * - React 19 は、フォームの action が終わると入力欄を空に戻す。検査に落ちたときに入力が消えないよう、
  *   サーバーから返ってきた値を defaultValue に入れ、送信のたびに key を変えてフォームを作り直す。
- * - URL に ?product=（機種の型番）が付いていたら、「気になっている機種」に入れておく。
+ * - 機種のページから来たとき（?product=…&page=…）は、「気になっている機種」と、見ていたページ（メールに載る）を埋めておく。
  */
 type Picked = { id: string; name: string; blob: Blob; url: string };
 
@@ -36,9 +37,11 @@ export function EstimateForm({ note, preview = false, lineUrl }: { note: string;
 
   // 機種のページから来たとき：その機種を「気になっている機種」に入れる
   useEffect(() => {
-    const product = new URLSearchParams(window.location.search).get("product");
+    const { product, page } = readProductContext();
     const input = formRef.current?.elements.namedItem("desiredProduct") as HTMLInputElement | null;
-    if (product && input && !input.value) input.value = product.slice(0, 120);
+    if (product && input && !input.value) input.value = product;
+    const pageInput = formRef.current?.elements.namedItem("productPage") as HTMLInputElement | null;
+    if (page && pageInput && !pageInput.value) pageInput.value = page;
   }, [state.attempt]);
 
   // 結果が返ってきたら、メッセージの位置まで戻す
@@ -185,6 +188,7 @@ export function EstimateForm({ note, preview = false, lineUrl }: { note: string;
         </p>
       )}
 
+      <ProductContextNote />
       <form key={state.attempt} ref={formRef} action={action} onSubmit={onSubmit} noValidate className="space-y-12">
         {/* 迷惑送信の対策（人には見えない欄）。値が入っていたら送信しない。app/contact/actions.ts の TRAP_FIELD と同じ名前にする */}
         <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
@@ -195,6 +199,8 @@ export function EstimateForm({ note, preview = false, lineUrl }: { note: string;
         </div>
         {/* 空のまま届いたとき（JS が動かない環境）は、時間の判定をしない */}
         <input type="hidden" name="elapsed" defaultValue="" />
+        {/* 見ていた機種のページ（機種のページから来たときだけ入る） */}
+        <input type="hidden" name="productPage" defaultValue={v.productPage ?? ""} />
 
         {/* 1. ご連絡先 */}
         <div className="space-y-6">

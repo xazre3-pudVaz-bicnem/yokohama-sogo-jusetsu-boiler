@@ -21,6 +21,7 @@ export const ESTIMATE_FIELDS = [
   "timing",
   "subsidy",
   "message",
+  "productPage",
 ] as const;
 export type EstimateField = (typeof ESTIMATE_FIELDS)[number];
 
@@ -40,6 +41,7 @@ export const estimateLabels: Record<EstimateField, string> = {
   timing: "工事のご希望時期",
   subsidy: "補助金のご相談",
   message: "そのほかのご相談",
+  productPage: "見ていた機種のページ",
 };
 
 /** 選択式の項目の選択肢（サーバー側の検査でも同じ一覧を使う） */
@@ -113,6 +115,7 @@ export const PHOTO_ESTIMATE_FIELDS = [
   "desiredProduct",
   "contactPref",
   "message",
+  "productPage",
 ] as const;
 export type PhotoEstimateField = (typeof PHOTO_ESTIMATE_FIELDS)[number];
 
@@ -131,6 +134,7 @@ export const photoEstimateLabels: Record<PhotoEstimateField, string> = {
   desiredProduct: "気になっている機種",
   contactPref: "ご連絡の方法",
   message: "そのほかのご要望",
+  productPage: "見ていた機種のページ",
 };
 
 export const photoEstimateOptions = {

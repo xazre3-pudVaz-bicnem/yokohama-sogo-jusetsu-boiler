@@ -96,3 +96,10 @@ export const housingLabels: Record<Housing, string> = {
 
 /** 号数の選択肢（ガス給湯器） */
 export const gouOptions = [16, 20, 24] as const;
+
+/** 号数ごとの目安（リンナイの目安。家族の人数と、同時にお湯を使う場所）。/guide/capacity と同じ内容 */
+export const gouGuide: Record<number, { people: string; places: string }> = {
+  24: { people: "4人家族", places: "キッチン・洗面所・浴室など3か所程度" },
+  20: { people: "2人家族", places: "2か所程度" },
+  16: { people: "ひとり暮らし", places: "いずれか1か所" },
+};

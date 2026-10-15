@@ -13,5 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${r.path === "/" ? "" : r.path}`,
     lastModified: r.lastModified,
     priority: r.priority,
+    // 機種のページは、製品写真も画像の sitemap として載せる（画像検索で、型番と写真を結びつけてもらうため）
+    ...(r.images?.length ? { images: r.images.map((src) => `${SITE_URL}${src}`) } : {}),
   }));
 }

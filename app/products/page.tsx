@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ManufacturerLogoGrid } from "@/components/brand/ManufacturerLogoGrid";
 import { ProductExplorer, type FilterGroup } from "@/components/product/ProductExplorer";
+import { QuickFinder } from "@/components/product/QuickFinder";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Icon } from "@/components/ui/Icon";
@@ -42,7 +44,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="商品一覧"
         title="給湯器を、条件から探す"
-        lead={`メーカーの公式情報で型番と仕様を確かめた ${products.length} 機種を載せています（${formatDateJa(latest)}確認）。いまお使いの給湯器と同じ設置方式・号数から探すと、交換の工事が少なく済みます。`}
+        lead={`メーカーの公式情報で型番と仕様を確かめた${products.length}機種を、製品写真とあわせて載せています（${formatDateJa(latest)}確認）。いまお使いの給湯器と同じ設置方式・号数から探すと、交換の工事が少なく済みます。`}
         crumbs={[{ name: "商品一覧", href: PATH }]}
       >
         <nav aria-label="種類から探す" className="mt-6 flex flex-wrap gap-2">
@@ -56,6 +58,18 @@ export default function ProductsPage() {
           </Link>
         </nav>
       </PageHero>
+
+      <section aria-labelledby="makers-title" id="makers" className="scroll-mt-24 border-b border-silver-200 bg-white">
+        <div className="container-x py-8 sm:py-10">
+          <ManufacturerLogoGrid headingId="makers-title" title="メーカーから探す" compact />
+        </div>
+      </section>
+
+      <section aria-labelledby="finder-title" id="finder" className="scroll-mt-24 bg-paper-2">
+        <div className="container-x py-8 sm:py-10">
+          <QuickFinder items={products.map((p) => ({ cat: p.category, housing: p.housing, gou: p.capacity.gou, tank: p.capacity.tankLiters, func: p.functions.key }))} />
+        </div>
+      </section>
 
       <section aria-label="商品の一覧と絞り込み" className="bg-white">
         <div className="container-x section-tight">
@@ -77,7 +91,7 @@ export default function ProductsPage() {
           </div>
           <div>
             <h2 className="h-sub">写真について</h2>
-            <p className="mt-2 text-[0.9063rem] leading-[1.95]">製品写真は、メーカーへの掲載の確認が済んだものから載せます。それまでは、設置タイプを表す図を出しています。</p>
+            <p className="mt-2 text-[0.9063rem] leading-[1.95]">製品写真は、メーカーの公式サイトの写真です。メーカーが同じシリーズの型番に共通で使っている写真には「シリーズ共通イメージ」と添えています。型番に合う公式の写真が無い機種は、設置タイプを表す図を出しています。</p>
           </div>
           <div>
             <h2 className="h-sub">載っていない機種は</h2>

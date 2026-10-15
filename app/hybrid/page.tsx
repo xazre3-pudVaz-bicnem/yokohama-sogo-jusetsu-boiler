@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MakerLogo } from "@/components/brand/MakerLogo";
 import { P, PageFooterBlocks } from "@/components/content/SimplePage";
 import { HybridCompare, KyutouAmounts, RegisteredTable } from "@/components/content/Widgets";
 import { Figure } from "@/components/diagram/Figures";
+import { ProductImage } from "@/components/product/ProductImage";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FieldNote } from "@/components/ui/FieldNote";
 import { Icon } from "@/components/ui/Icon";
@@ -10,7 +12,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading, SectionSplit } from "@/components/ui/SectionHeading";
 import type { BrandId, Product } from "@/data/products/types";
 import { kyutouShoene2026 as k, yokohamaYgrep2026 as y } from "@/data/subsidy/programs";
-import { getBrand, productsByCategory } from "@/lib/products";
+import { getBrand, productPath, productsByCategory, toCard } from "@/lib/products";
 import { reveal } from "@/lib/reveal";
 import { itemListSchema, serviceSchema } from "@/lib/schema";
 import { buildMetadata, formatYen } from "@/lib/seo";
@@ -165,11 +167,29 @@ export default function HybridPage() {
           <SectionHeading id="series" eyebrow="3社の機種" title="リンナイ・ノーリツ・パロマの、ハイブリッド給湯器の違い" lead="このサイトでは、3社の現行の機種を、型番と仕様を公式の資料で確かめて載せています。" className="mb-9" />
           <ul className="grid gap-5 lg:grid-cols-3" {...reveal()}>
             {SERIES.map((s) => {
-              const count = list.filter((p) => p.brand === s.brand).length;
+              const own = list.filter((p) => p.brand === s.brand);
+              const count = own.length;
+              const brand = getBrand(s.brand);
+              // 写真は、型番どおりの写真がある構成を先に（無ければ、メーカーが共通で使う写真）
+              const pictured = [...own].sort((a, b) => Number(b.imageMatchType === "exact-model") - Number(a.imageMatchType === "exact-model")).find((p) => p.images.length);
+              const card = pictured ? toCard(pictured) : null;
               return (
                 <li key={s.brand} className="card card-line flex flex-col px-6 py-6">
-                  <p className="text-xs font-bold text-ink-mute">{getBrand(s.brand).name}</p>
-                  <h3 className="mt-1 font-heading text-[1.0625rem] font-black leading-snug text-navy-900">{s.name}</h3>
+                  {/* 3枚の写真の高さをそろえる（ロゴの高さと、見出しの2行ぶん） */}
+                  <div className="flex h-8 items-center">
+                    <MakerLogo logo={brand.logo} name={brand.name} height={24} />
+                  </div>
+                  <h3 className="mt-3 font-heading text-[1.0625rem] font-black leading-snug text-navy-900 lg:min-h-[2.75em]">{s.name}</h3>
+                  {pictured && card && (
+                    <figure className="mt-4 max-w-md lg:max-w-none">
+                      <Link href={productPath(pictured)} tabIndex={-1} aria-hidden="true" className="block">
+                        <ProductImage image={card.image} shared={card.imageShared} category="hybrid" installKey={pictured.installationType.key} sizes="(min-width: 1024px) 330px, (min-width: 640px) 80vw, 92vw" />
+                      </Link>
+                      <figcaption className="mt-2 text-xs leading-relaxed text-ink-mute">
+                        写真の構成：<span className="num">{pictured.modelNumber}</span>（{brand.name}の公式サイトより）
+                      </figcaption>
+                    </figure>
+                  )}
                   <ul className="dash-list mt-4 space-y-2 text-[0.9063rem] leading-[1.9]">
                     {s.points.map((t) => (
                       <li key={t}>{t}</li>
