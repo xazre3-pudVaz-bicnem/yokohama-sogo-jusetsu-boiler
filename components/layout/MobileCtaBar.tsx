@@ -69,8 +69,8 @@ export function MobileCtaBar({ phone, telHref, line }: { phone: string; telHref:
             <span className="whitespace-nowrap">LINE</span>
           </a>
         )}
-        <Link href="/contact/photo" className={`btn btn-cta btn-sm min-h-12 !px-2 ${line ? "flex-[1.3]" : "flex-1"}`} aria-label="写真でかんたん無料見積もり">
-          <span>無料見積もり</span>
+        <Link href="/contact/photo" className={`btn btn-yellow btn-sm min-h-12 !gap-1 !px-2 ${line ? "flex-[1.3]" : "flex-1"}`} aria-label="写真を送ってかんたん無料見積もり">
+          <span className="whitespace-nowrap">写真で見積もり</span>
         </Link>
       </div>
     </aside>

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { LineConsultPanel } from "@/components/contact/LineConsultPanel";
+import { LineChatEstimate } from "@/components/contact/LineChatEstimate";
 import { PhotoEstimateForm } from "@/components/contact/PhotoEstimateForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqList } from "@/components/ui/FaqList";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { isContactFormEnabled, isContactFormShown, isLabelReaderEnabled } from "@/lib/contact";
+import { img } from "@/lib/images";
 import { faqSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
-import { lineUrl, primaryPhone, siteConfig } from "@/lib/site";
+import { lineUrl, primaryPhone, receptionHours, siteConfig } from "@/lib/site";
 
 const PATH = "/contact/photo";
 
@@ -34,6 +36,10 @@ export default function PhotoEstimatePage() {
   const shown = isContactFormShown();
   const enabled = isContactFormEnabled();
   const reader = isLabelReaderEnabled();
+  const hours = receptionHours();
+  const mascot = img("ai/mascot-point");
+  const mascotOk = img("ai/mascot-ok");
+  const logo = img("brand/logo-mark");
 
   const faqs = [
     {
@@ -66,61 +72,107 @@ export default function PhotoEstimatePage() {
         ]}
       />
 
-      <div className="bg-white">
-        <div className="container-x section grid gap-x-14 gap-y-12 lg:grid-cols-[minmax(0,1fr)_21rem]">
-          <div className="min-w-0">
-            <noscript>
-              <p className="mb-6 rounded-2xl bg-paper-2 px-4 py-3 text-[0.875rem] leading-relaxed">
-                この画面は JavaScript を使います。動かないときは、<Link href="/contact" className="text-link">お見積もりフォーム</Link>か、LINE・お電話でご相談ください。
+      <div className="band band-stripes">
+        <div className="container-x section-tight grid gap-x-8 gap-y-6 lg:grid-cols-[20rem_minmax(0,1fr)]">
+          {/* 左：黄色い案内（PC は貼りつく） */}
+          <aside aria-label="写真でかんたん見積もりの案内" className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+            <div className="relative overflow-hidden rounded-[1.75rem] bg-pop-yellow px-5 pb-5 pt-6 text-center shadow-[0_4px_0_var(--color-pop-yellow-shadow)]">
+              <p className="flex items-center justify-center gap-2 font-heading text-[1.125rem] font-black text-ink">
+                <Image src={logo.src} width={logo.width} height={logo.height} alt="" sizes="40px" className="h-8 w-auto" />
+                ヨコジュウ
               </p>
-            </noscript>
-            {shown ? (
-              <PhotoEstimateForm note={siteConfig.contact.formNote} preview={!enabled} lineUrl={line} readerEnabled={reader} />
-            ) : (
-              // フォームから送れないあいだは、動かないフォームを出さず、LINE とお電話の案内にする
-              <LineConsultPanel title="LINE で写真を送って、かんたん見積もり" />
-            )}
-          </div>
-
-          <aside aria-label="撮り方と、送ったあとの流れ" className="space-y-6 lg:sticky lg:top-24 lg:self-start">
-            <div className="card card-line px-5 py-5">
-              <p className="font-heading text-[0.9375rem] font-black text-navy-900">撮り方のポイント</p>
+              <p className="mt-2 font-heading text-[clamp(1.375rem,1.1rem+1.2vw,1.75rem)] font-black leading-tight tracking-[0.04em] text-ink">
+                <span className="ib">写真で</span>
+                <span className="ib">かんたん見積もり</span>
+              </p>
+              <p className="mx-auto mt-3 flex w-fit items-center gap-1.5">
+                {["見", "積", "無", "料"].map((c) => (
+                  <span key={c} className="grid size-11 place-items-center bg-cta-700 font-heading text-[1.5rem] font-black text-white">
+                    {c}
+                  </span>
+                ))}
+              </p>
+              <p className="mt-3 text-[0.875rem] font-bold leading-relaxed text-ink">型番のシールと、給湯器の全体の写真を送るだけ。現地調査も無料です。</p>
+              <div className="mt-3 flex items-end justify-center gap-2">
+                <p className="pb-2 text-left font-heading text-[0.9375rem] font-black leading-snug text-cta-800">
+                  わからないことは
+                  <br />
+                  何でも聞いてね！
+                </p>
+                <Image src={mascotOk.src} width={mascotOk.width} height={mascotOk.height} alt="" sizes="110px" className="h-auto w-24" />
+              </div>
+            </div>
+            <div className="hidden rounded-[1.25rem] bg-white px-5 py-5 lg:block">
+              <p className="font-heading text-[0.9375rem] font-black text-ink">撮り方のポイント</p>
               <ul className="mt-3 space-y-3">
                 {TIPS.map(([t, d]) => (
                   <li key={t}>
-                    <p className="text-[0.875rem] font-bold text-navy-900">{t}</p>
+                    <p className="text-[0.875rem] font-bold text-ink">{t}</p>
                     <p className="mt-0.5 text-[0.8125rem] leading-[1.85]">{d}</p>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl bg-cream px-5 py-5">
-              <p className="font-heading text-[0.9375rem] font-black text-navy-900">送ったあとの流れ</p>
-              <ol className="steps mt-4">
-                <li>
-                  <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-navy-900">写真を確かめます</p>
-                  <p className="mt-1 text-[0.8125rem] leading-[1.85]">型番から、いまの給湯器の種類・号数・設置の形を調べます。</p>
-                </li>
-                <li>
-                  <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-navy-900">機種の候補と費用の目安</p>
-                  <p className="mt-1 text-[0.8125rem] leading-[1.85]">合う機種の候補と、費用の目安を、{shown ? "お電話かメール" : "LINE のトークかお電話"}でお伝えします。</p>
-                </li>
-                <li>
-                  <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-navy-900">現地調査（無料）・正式なお見積もり</p>
-                  <p className="mt-1 text-[0.8125rem] leading-[1.85]">配管・排気の向き・搬入の経路を確かめ、内訳の分かる見積書をお出しします。</p>
-                </li>
-              </ol>
-            </div>
-            <p className="text-[0.8125rem] leading-[1.9] text-ink-mute">
-              くわしく伝えたいことがあるときは、
-              <Link href="/contact" className="text-link mx-0.5">
-                項目の多いお見積もりフォーム
-              </Link>
-              もお使いいただけます。{phone ? `お急ぎのときは、お電話（${phone}）が確実です。` : ""}
-            </p>
           </aside>
+
+          {/* 右：チャット */}
+          <div className="min-w-0 rounded-[2rem] bg-[#cfe2f2] px-3 py-4 sm:px-6 sm:py-6">
+            <noscript>
+              <p className="mb-6 rounded-2xl bg-white px-4 py-3 text-[0.875rem] leading-relaxed">
+                この画面は JavaScript を使います。動かないときは、<Link href="/contact" className="text-link">お見積もりのページ</Link>か、LINE・お電話でご相談ください。
+              </p>
+            </noscript>
+            {shown ? (
+              <PhotoEstimateForm note={siteConfig.contact.formNote} preview={!enabled} lineUrl={line} readerEnabled={reader} mascot={mascot} phone={phone} />
+            ) : (
+              // フォームから送れないあいだは、動かないフォームを出さず、チャットで答えた内容を LINE で送る形にする
+              <LineChatEstimate mascot={mascot} lineUrl={line} lineId={siteConfig.social.lineId ?? ""} phone={phone} hours={hours} qr={img("brand/line-qr")} />
+            )}
+          </div>
         </div>
       </div>
+
+      <section aria-labelledby="photo-after" className="bg-white">
+        <div className="container-x section-tight grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[1.25rem] border-2 border-[#ececec] px-5 py-5 lg:hidden">
+            <p className="font-heading text-[0.9375rem] font-black text-ink">撮り方のポイント</p>
+            <ul className="mt-3 space-y-3">
+              {TIPS.map(([t, d]) => (
+                <li key={t}>
+                  <p className="text-[0.875rem] font-bold text-ink">{t}</p>
+                  <p className="mt-0.5 text-[0.8125rem] leading-[1.85]">{d}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-[1.25rem] bg-cream px-5 py-5">
+            <h2 id="photo-after" className="font-heading text-[0.9375rem] font-black text-ink">
+              送ったあとの流れ
+            </h2>
+            <ol className="steps mt-4">
+              <li>
+                <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-ink">写真を確かめます</p>
+                <p className="mt-1 text-[0.8125rem] leading-[1.85]">型番から、いまの給湯器の種類・号数・設置の形を調べます。</p>
+              </li>
+              <li>
+                <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-ink">機種の候補と費用の目安</p>
+                <p className="mt-1 text-[0.8125rem] leading-[1.85]">合う機種の候補と、費用の目安を、{shown ? "お電話かメール" : "LINE のトークかお電話"}でお伝えします。</p>
+              </li>
+              <li>
+                <p className="pt-1.5 text-[0.9063rem] font-bold leading-[1.6] text-ink">現地調査（無料）・正式なお見積もり</p>
+                <p className="mt-1 text-[0.8125rem] leading-[1.85]">配管・排気の向き・搬入の経路を確かめ、内訳の分かる見積書をお出しします。</p>
+              </li>
+            </ol>
+          </div>
+          <p className="text-[0.8125rem] leading-[1.9] text-ink-mute lg:col-span-2">
+            くわしく伝えたいことがあるときは、
+            <Link href="/contact" className="text-link mx-0.5">
+              項目の多いお見積もりのページ
+            </Link>
+            もお使いいただけます。{phone ? `お急ぎのときは、お電話（${phone}）が確実です。` : ""}
+          </p>
+        </div>
+      </section>
 
       <section aria-labelledby="photo-faq" className="cv band band-mist section-tight">
         <div className="container-narrow">

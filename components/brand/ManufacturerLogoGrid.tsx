@@ -7,6 +7,7 @@ import { activeBrands, productsByBrand } from "@/lib/products";
  * 取り扱いメーカーの公式ロゴを並べる（トップのヒーローの直下・商品一覧の上）。
  * 押すと、このサイトのメーカー別のページ（/products/<メーカー>）へ移る（メーカーの公式サイトへは送らない）。
  * ロゴは白い札の中に置き、元の色のまま見せる。大きさの印象は、ロゴごとの scale でそろえる（data/brand-logos.json）。
+ * リンクの読み上げは、ロゴの alt（社名）と下の文字のまま（aria-label で別の言い方にすると、見える文字とずれるため）。
  */
 export function ManufacturerLogoGrid({ headingId, title = "取り扱いメーカー", compact = false }: { headingId: string; title?: string; compact?: boolean }) {
   const list = activeBrands();
@@ -24,9 +25,9 @@ export function ManufacturerLogoGrid({ headingId, title = "取り扱いメーカ
           const kinds = b.categories.map((c) => getCategory(c).shortName).join("・");
           return (
             <li key={b.id}>
-              <Link href={`/products/${b.id}`} className="logo-tile h-full gap-2 text-center" aria-label={`${b.name}の給湯器（${kinds}・${n}機種）`}>
+              <Link href={`/products/${b.id}`} className="logo-tile h-full gap-2 text-center">
                 <span className="grid min-h-9 place-items-center">
-                  <MakerLogo logo={b.logo} name={b.name} height={compact ? 24 : 28} decorative />
+                  <MakerLogo logo={b.logo} name={b.name} height={compact ? 24 : 28} />
                 </span>
                 <span className="text-[0.6875rem] leading-snug text-ink-mute">
                   {kinds}

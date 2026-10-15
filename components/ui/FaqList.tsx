@@ -12,7 +12,7 @@ export function FaqList({ faqs, openFirst = false }: { faqs: { q: string; a: str
       {faqs.map((f, i) => (
         <details key={f.q} className="card card-line group px-4 sm:px-6" open={openFirst && i === 0}>
           <summary className="flex items-start gap-3 py-4 sm:gap-4 sm:py-5">
-            <span className="num grid size-7 shrink-0 place-items-center rounded-full bg-brand-600 text-sm font-semibold leading-none text-white" aria-hidden="true">
+            <span className="num grid size-7 shrink-0 place-items-center rounded-full bg-brand-700 text-sm font-semibold leading-none text-white" aria-hidden="true">
               Q
             </span>
             <h3 className="flex-1 pt-0.5 text-base font-bold leading-[1.75]">

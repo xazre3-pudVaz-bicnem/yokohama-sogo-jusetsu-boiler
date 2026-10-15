@@ -219,8 +219,8 @@ export default async function ProductPage({ params }: Params) {
 
   return (
     <>
-      {/* 冒頭：写真（左）と、型番・仕様の要点・見積もり（右） */}
-      <div className="border-b border-silver-200 bg-white">
+      {/* 冒頭：写真（左）と、型番・仕様の要点・見積もり（右）。data-section はヘッダーの帯の色（種類の色） */}
+      <div data-section={p.category === "ecocute" ? "ecocute" : p.category === "hybrid" ? "hybrid" : "gas"} className="border-b border-silver-200 bg-white">
         <div className="container-x pb-10 pt-4 sm:pb-14 lg:pt-5">
           <Breadcrumbs
             items={[
@@ -400,7 +400,7 @@ export default async function ProductPage({ params }: Params) {
               <ul className="rows">
                 {suited.map((t) => (
                   <li key={t} className="flex gap-3 py-3.5 text-[0.9375rem] leading-[1.85]">
-                    <Icon name="check" className="mt-1 size-4 shrink-0 text-brand-600" />
+                    <Icon name="check" className="mt-1 size-4 shrink-0 text-brand-700" />
                     {t}
                   </li>
                 ))}
@@ -414,7 +414,7 @@ export default async function ProductPage({ params }: Params) {
             <ul className="rows">
               {notes.requirements.map((t) => (
                 <li key={t} className="flex gap-3 py-3.5 text-[0.9375rem] leading-[1.85]">
-                  <Icon name="check" className="mt-1 size-4 shrink-0 text-brand-600" />
+                  <Icon name="check" className="mt-1 size-4 shrink-0 text-brand-700" />
                   {t}
                 </li>
               ))}

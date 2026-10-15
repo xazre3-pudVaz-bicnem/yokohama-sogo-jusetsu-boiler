@@ -33,7 +33,7 @@ export function FieldNote({
       <Illust image={pose} width={112} className="h-auto w-[4.75rem] shrink-0 sm:w-28" />
       <div className={`bubble flex-1 px-4 py-3.5 sm:px-6 sm:py-4 ${right ? "bubble-r" : ""}`}>
         <p className="mb-1.5">
-          <span className="inline-block rounded-full bg-brand-600 px-3 py-0.5 text-xs font-bold leading-[1.7] text-white">{label}</span>
+          <span className="inline-block rounded-full bg-brand-700 px-3 py-0.5 text-xs font-bold leading-[1.7] text-white">{label}</span>
         </p>
         <p className="text-[0.9375rem] leading-[1.9] text-ink">{children}</p>
       </div>

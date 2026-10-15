@@ -2,52 +2,74 @@
 
 /*
  * デザイントークン（色は必ずここで定義したものを使う）
- * トーンは「白と淡いグレーの地に、メーカーの製品写真とロゴを主役にした、住宅設備の専門店」。
- * 角丸は控えめ（カード 12px・ボタン 8px）、影は薄く、飾りの図形は置かない。
+ * トーンは「明るく、親しみやすい給湯器の専門店」（2026-10-15 の依頼：キンライサー https://www.kyutooki.com/ のような雰囲気）。
+ * ロゴ・写真・キャラクター・文章は、参考サイトのものを使わない。雰囲気（色・形・組み方）だけを参考にする。
+ * 角は丸く（カード 20px・ボタンは丸い札）、ボタンは下に濃い影を付けて「押せる」形にする。泡の丸い飾り・斜めの帯を使う。
  *
  * 色の役割
- *   ブランド … navy（濃紺・ロゴの背景色）と brand（青）。ヘッダー・見出し・リンク・主な装飾
- *   CTA      … cta（オレンジ）。「無料見積もり」など、問い合わせのボタンだけに使う（ほかの場所に使わない）
- *   補助金   … eco（緑）。補助金の対象の札と、補助金の説明の枠だけ
- *   地色     … 白・paper-2（淡いグレー）・mist（淡い青）
- *   文字     … ink（濃紺）・ink-body・ink-mute
+ *   文字     … ink（ほぼ黒）・ink-body・ink-mute。見出しも ink（navy-900 は、いまは黒に近い灰色の別名）
+ *   赤       … cta。強調・見積もりのボタン・赤い帯・番号
+ *   黄色     … pop-yellow。写真で見積もりのボタン・黄色い帯・蛍光ペン（黄色の上の文字は必ず ink）
+ *   種類の色 … gas（緑）・eco（エコキュート：水色＝brand）・hybrid（紫）。カードの枠・種類のボタン・帯
+ *   補助金   … eco（深い緑）。補助金の対象の札と、補助金の説明の枠だけ
+ *   地色     … 白・pop-pink（淡いピンク）・mist（淡い水色）・cream（淡い黄色）・paper-2（淡い灰色）
  *   LINE     … line（LINE の緑）は、LINE のボタンの縁とアイコンだけ（白い文字は載せない。4.5:1 に届かないため）
  *
  * コントラストの実測（白文字を載せるとき）
- *   cta-700   #c2410c … 5.2:1（ボタンの文字は 15px 以上・太字）
- *   brand-600 #0d57e6 … 5.9:1（小さい文字もOK）
- *   navy-900  #061537 … 17:1
+ *   cta-700   #d40f29 … 5.4:1（小さい文字もOK。淡いピンク・クリームの地でも 4.9:1）。黄色の地の上の赤い文字は cta-800（6:1）
+ *   gas-600   #13a84c … 3.1:1（大きく太い文字だけ：19px 以上の太字）／ gas-700 #0a7f37 … 5.0:1
+ *   brand-600 #0a8fd0 … 3.6:1（大きく太い文字・飾りだけ）／ brand-700 #0570a8 … 5.4:1
+ *   hybrid-600 #8a5cf0 … 4.3:1（大きく太い文字だけ）／ hybrid-700 #7046db … 5.6:1
+ *   navy-900  #2b2b2b … 14:1
  *   eco-700   #0b7a5a … 5.3:1（eco-50 の地に載せても 4.9:1）
- * 黄色（sun / marker）は地色・飾り専用。黄色の上の文字は必ず濃紺にする（白文字は不可）。
  */
 @theme {
-  /* 濃紺（ロゴの背景色 #010b24 を基準に、紙面用に少し明るい段階を用意） */
-  --color-navy-950: #020b24;
-  --color-navy-900: #061537;
-  --color-navy-800: #0a2152;
-  --color-navy-700: #0f2f73;
-  --color-navy-600: #17409a;
+  /* 文字と濃い面の色（以前の濃紺の名前のまま、黒に近い灰色に置き換えた） */
+  --color-navy-950: #1c1c1c;
+  --color-navy-900: #2b2b2b;
+  --color-navy-800: #3a3a3a;
+  --color-navy-700: #4a4a4a;
+  --color-navy-600: #5c5c5c;
 
-  /* 青（ロゴの平行四辺形の色）。ラベル・ボタン・リンク・数字に使う */
-  --color-brand-800: #08348f;
-  --color-brand-700: #0a41b8;
-  --color-brand-600: #0d57e6;
-  --color-brand-500: #1b6cff;
-  --color-brand-400: #4d8dff;
-  --color-brand-300: #8bb4ff;
-  --color-brand-200: #c2d8ff;
-  --color-brand-100: #e3edff;
-  --color-brand-50: #f2f6ff;
-  /* 濃紺の上で使う明るい青（看板の「ヨコジュウ」の色） */
-  --color-sky-400: #45b4ff;
-  --color-sky-300: #7dcbff;
+  /* 水色（エコキュート・リンク・選んだ状態）。ラベル・ボタン・リンク・数字に使う */
+  --color-brand-800: #04608f;
+  --color-brand-700: #0570a8;
+  --color-brand-600: #0a8fd0;
+  --color-brand-500: #2cb3ee;
+  --color-brand-400: #5cc6f3;
+  --color-brand-300: #94dbf8;
+  --color-brand-200: #c4ecfc;
+  --color-brand-100: #e3f6fe;
+  --color-brand-50: #f2fbff;
+  --color-sky-400: #45c6f5;
+  --color-sky-300: #8fdcf9;
 
-  /* 問い合わせのボタン（CTA）だけに使うオレンジ */
-  --color-cta-800: #9a3412;
-  --color-cta-700: #c2410c;
-  --color-cta-600: #dc5a14;
-  --color-cta-100: #ffe8d6;
-  --color-cta-50: #fff5ed;
+  /* 赤（強調・見積もりのボタン・赤い帯） */
+  --color-cta-800: #a50c1f;
+  --color-cta-700: #d40f29;
+  --color-cta-600: #f0263d;
+  --color-cta-100: #ffe1e5;
+  --color-cta-50: #fff2f4;
+
+  /* 種類の色：ガス給湯器（緑）・ハイブリッド（紫） */
+  --color-gas-800: #066a2d;
+  --color-gas-700: #0a7f37;
+  --color-gas-600: #13a84c;
+  --color-gas-500: #2fd068;
+  --color-gas-100: #dcf7e6;
+  --color-gas-50: #f0fcf4;
+  --color-hybrid-700: #7046db;
+  --color-hybrid-600: #8a5cf0;
+  --color-hybrid-500: #a98bf7;
+  --color-hybrid-100: #ece4ff;
+  --color-hybrid-50: #f6f2ff;
+
+  /* 黄色（写真で見積もりのボタン・黄色い帯）とピンク（冒頭の地色） */
+  --color-pop-yellow: #ffe14a;
+  --color-pop-yellow-deep: #ffd21f;
+  --color-pop-yellow-shadow: #d6b300;
+  --color-pop-pink: #ffd9e0;
+  --color-pop-pink-50: #fff1f4;
 
   /* 補助金（対象の札・説明の枠）の緑 */
   --color-eco-800: #075c44;
@@ -59,18 +81,18 @@
   /* LINE の緑（ボタンの縁とアイコンだけ） */
   --color-line: #06c755;
 
-  /* 淡い地色（以前のクリーム。いまは白に近いグレー）と、黄色（蛍光ペン、小さな飾り） */
-  --color-cream: #f6f8fb;
-  --color-cream-2: #eceff4;
-  --color-marker: #ffe27a;
-  --color-sun-500: #f5a81c;
-  --color-sun-400: #ffbd3d;
-  --color-sun-300: #ffd27a;
-  --color-sun-100: #fff0cc;
+  /* 淡い地色（クリーム＝淡い黄色）と、黄色（蛍光ペン、小さな飾り） */
+  --color-cream: #fff8e1;
+  --color-cream-2: #ffefb8;
+  --color-marker: #ffe14a;
+  --color-sun-500: #f5b400;
+  --color-sun-400: #ffd21f;
+  --color-sun-300: #ffe27a;
+  --color-sun-100: #fff6cc;
 
-  /* 淡い青・淡いグレーの地色 */
-  --color-mist: #edf4ff;
-  --color-paper-2: #f5f7fb;
+  /* 淡い水色・淡いグレーの地色 */
+  --color-mist: #eaf8ff;
+  --color-paper-2: #f6f6f6;
 
   /* シルバー */
   --color-silver-50: #f5f6f8;
@@ -82,9 +104,9 @@
   --color-silver-600: #556075;
 
   /* 文字 */
-  --color-ink: #0c1630;
-  --color-ink-body: #2b3650;
-  --color-ink-mute: #556075;
+  --color-ink: #262626;
+  --color-ink-body: #333333;
+  --color-ink-mute: #616161;
 
   /* 入力の誤りを知らせる赤（フォームだけで使う） */
   --color-heat: #c0321f;
@@ -96,10 +118,10 @@
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --shadow-card: 0 1px 2px rgb(6 21 55 / 0.05), 0 4px 14px -8px rgb(6 21 55 / 0.16);
-  --shadow-pop: 0 2px 4px rgb(6 21 55 / 0.06), 0 14px 32px -16px rgb(6 21 55 / 0.3);
-  --shadow-pill: 0 6px 14px -8px rgb(13 87 230 / 0.55);
-  --shadow-cta: 0 6px 14px -8px rgb(194 65 12 / 0.6);
+  --shadow-card: 0 2px 0 rgb(0 0 0 / 0.04), 0 6px 18px -10px rgb(0 0 0 / 0.18);
+  --shadow-pop: 0 3px 0 rgb(0 0 0 / 0.05), 0 16px 32px -16px rgb(0 0 0 / 0.28);
+  --shadow-pill: 0 4px 0 var(--color-brand-800);
+  --shadow-cta: 0 4px 0 var(--color-cta-800);
 
   --breakpoint-xs: 26rem;
 
@@ -263,7 +285,7 @@
     }
   }
 
-  /* ── 地色の帯と、隅の丸い飾り ───────────────────── */
+  /* ── 地色の帯と、飾り ─────────────────────────────── */
   .band {
     position: relative;
     overflow: hidden;
@@ -277,32 +299,107 @@
   .band-paper {
     background: var(--color-paper-2);
   }
-  /* 隅の丸い飾り（deco-tr・deco-bl）は、使わなくなった（クラスが残っていても何も出さない） */
+  .band-pink {
+    background: var(--color-pop-pink-50);
+  }
+  /* 水色に白い水玉（ポップな区画の地） */
+  .band-dots {
+    background-color: #aee3fa;
+    background-image: radial-gradient(rgb(255 255 255 / 0.85) 18%, transparent 19%);
+    background-size: 26px 26px;
+  }
+  /* 白に淡い灰色の水玉 */
+  .band-dots-gray {
+    background-color: #fff;
+    background-image: radial-gradient(#ececec 22%, transparent 23%);
+    background-size: 30px 30px;
+  }
+  /* 淡い水色の斜めのしま */
+  .band-stripes {
+    background: repeating-linear-gradient(-45deg, #e6f7fe 0 10px, #f4fbff 10px 20px);
+  }
   .band > .container-x,
   .band > .container-narrow {
     position: relative;
   }
 
+  /*
+   * 斜めの帯（黄色・赤）。上下の端を斜めに切る（clip-path）。
+   * 中身が斜めの部分にかからないよう、上下の余白を多めにとる。
+   */
+  .slant {
+    position: relative;
+    padding-block: clamp(5rem, 9vw, 8rem);
+    clip-path: polygon(0 clamp(2rem, 5vw, 5rem), 100% 0, 100% calc(100% - clamp(2rem, 5vw, 5rem)), 0 100%);
+  }
+  .slant-yellow {
+    background: linear-gradient(180deg, #ffe76a, var(--color-pop-yellow-deep));
+  }
+  .slant-red {
+    background: var(--color-cta-700);
+    color: #fff;
+  }
+  .slant-red :is(h2, h3) {
+    color: #fff;
+  }
+
+  /*
+   * 泡の丸い飾り（冒頭・帯の地）。中に <span> を並べ、それぞれに位置と大きさ・色を style で渡す。
+   * 飾りなので、読み上げ・操作の対象にしない（aria-hidden を付ける）。
+   */
+  .bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .bubbles > span {
+    position: absolute;
+    border-radius: 9999px;
+  }
+
+  /* 赤いリボンの見出し（「ヨコジュウ NEWS」など）。白い点線の内枠つき */
+  .ribbon {
+    position: relative;
+    display: inline-block;
+    padding: 0.55rem 2.75rem;
+    background: var(--color-cta-700);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 1.1rem) 50%, 100% 100%, 0 100%, 1.1rem 50%);
+  }
+  .ribbon::after {
+    content: "";
+    position: absolute;
+    inset: 0.35rem 1.6rem;
+    border-block: 2px dashed rgb(255 255 255 / 0.85);
+    pointer-events: none;
+  }
+
   /* ── 見出し ─────────────────────────────────────── */
-  /* 見出しの上に添える短いラベル（区画が何の話か）。左に短い線を引いた文字だけにする（吹き出しや色の板は使わない） */
+  /* 見出しの上に添える短いラベル（区画が何の話か）。赤い文字を「＼ ／」で挟む */
   .pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.6em;
-    color: var(--color-brand-700);
+    gap: 0.4em;
+    padding: 0.05rem 0.7rem;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.9);
+    color: var(--color-cta-700);
     font-family: var(--font-heading);
-    font-size: 0.8125rem;
-    font-weight: 700;
+    font-size: 0.875rem;
+    font-weight: 900;
     line-height: 1.6;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
   }
   .pill::before {
-    content: "";
-    flex: none;
-    width: 1.5rem;
-    height: 2px;
-    border-radius: 2px;
-    background: currentColor;
+    content: "＼";
+  }
+  .pill::after {
+    content: "／";
   }
   .pill-center {
     justify-content: center;
@@ -314,40 +411,64 @@
     color: var(--color-eco-700);
   }
   .pill-white {
-    color: var(--color-sky-300);
+    background: transparent;
+    color: #fff;
   }
   /* 小さな区分名（ラベルにするほどでもない場所） */
   .eyebrow {
     display: block;
-    color: var(--color-brand-700);
+    color: var(--color-cta-700);
     font-family: var(--font-heading);
     font-size: 0.8125rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 0.1em;
     line-height: 1.5;
   }
   .eyebrow-on-dark {
-    color: var(--color-sky-300);
+    color: #fff;
   }
   .h-display {
-    font-size: clamp(1.75rem, 1.1rem + 3vw, 2.875rem);
-    line-height: 1.4;
+    font-size: clamp(1.875rem, 1.1rem + 3.4vw, 3.25rem);
+    line-height: 1.35;
     font-weight: 900;
+    letter-spacing: 0.06em;
   }
   .h-page {
-    font-size: clamp(1.625rem, 1.25rem + 1.6vw, 2.375rem);
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
     line-height: 1.4;
     font-weight: 900;
+    letter-spacing: 0.06em;
   }
   .h-section {
-    font-size: clamp(1.4375rem, 1.18rem + 1.1vw, 2rem);
+    font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.25rem);
     line-height: 1.45;
-    font-weight: 700;
+    font-weight: 900;
+    letter-spacing: 0.08em;
   }
   .h-sub {
-    font-size: clamp(1.0938rem, 1.02rem + 0.4vw, 1.3125rem);
+    font-size: clamp(1.125rem, 1.04rem + 0.45vw, 1.375rem);
     line-height: 1.5;
-    font-weight: 700;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  /* 見出しの中で、色を変えて大きくする言葉（赤・緑・水色・オレンジ） */
+  .em-red {
+    color: var(--color-cta-700);
+  }
+  .em-green {
+    color: var(--color-gas-600);
+  }
+  .em-sky {
+    color: var(--color-brand-600);
+  }
+  .em-big {
+    font-size: 1.35em;
+    line-height: 1;
+  }
+  /* 見出しの下に引く点線（2本の点線で挟む小見出し） */
+  .dotted-under {
+    padding-bottom: 0.15em;
+    border-bottom: 2px dotted currentColor;
   }
   .lead {
     font-size: clamp(0.9688rem, 0.94rem + 0.15vw, 1.0313rem);
@@ -359,157 +480,230 @@
     font-feature-settings: "tnum", "lnum";
     letter-spacing: 0.02em;
   }
-  /* 蛍光ペン風の下線（見出しの強調） */
+  /* 蛍光ペン風の下線（見出しの強調）。黄色を太く */
   .marker {
-    background: linear-gradient(transparent 60%, var(--color-marker) 60%);
+    background: linear-gradient(transparent 58%, var(--color-marker) 58%);
     background-repeat: no-repeat;
     padding: 0 0.1em;
   }
 
-  /* ── ボタン（角丸 8px） ────────────────────────────
-   * btn-cta     … 問い合わせ（無料見積もり・この商品で見積もり）。オレンジは、このボタンだけに使う
+  /* ── ボタン（丸い札・下に濃い影） ────────────────────
+   * btn-cta     … 見積もり（無料見積もり・この商品で見積もり）。赤
+   * btn-yellow  … 写真で見積もり（いちばん目立たせたい入口）。黄色に黒い文字
    * btn-line    … LINE で相談（白地・緑の縁）
-   * btn-primary … そのほかの主な操作（青）
-   * btn-outline / btn-navy … 補助の操作 */
+   * btn-gas / btn-eco / btn-hybrid … 種類の入口（緑・水色・紫。白い文字は 19px 以上の太字で使う）
+   * btn-primary … そのほかの主な操作（水色）
+   * btn-outline / btn-navy / btn-white … 補助の操作
+   * 右端の矢印（.btn-arrow）は、白い丸の中に入れる。
+   */
   .btn {
+    --btn-shadow: rgb(0 0 0 / 0.18);
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5em;
+    gap: 0.6em;
     min-height: 3rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem 1.6rem;
+    border-radius: 9999px;
     border: 2px solid transparent;
+    box-shadow: 0 4px 0 var(--btn-shadow);
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 900;
     font-size: 0.9375rem;
     line-height: 1.35;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-align: center;
     text-decoration: none;
     word-break: auto-phrase;
     text-wrap: balance;
     transition:
-      transform 0.2s var(--ease-out-soft),
+      transform 0.15s var(--ease-out-soft),
       background-color 0.2s var(--ease-out-soft),
       color 0.2s var(--ease-out-soft),
-      box-shadow 0.2s var(--ease-out-soft);
+      box-shadow 0.15s var(--ease-out-soft);
   }
   .btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--btn-shadow);
   }
-  .btn .btn-arrow,
-  .btn svg {
+  .btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--btn-shadow);
+  }
+  .btn .btn-arrow {
+    flex: none;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0.28em;
+    border-radius: 9999px;
+    background: #fff;
+    color: var(--btn-arrow, var(--color-ink));
     transition: transform 0.2s var(--ease-out-soft);
   }
   .btn:hover .btn-arrow {
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
   .btn-primary {
-    background: var(--color-brand-600);
+    --btn-shadow: var(--color-brand-800);
+    --btn-arrow: var(--color-brand-700);
+    background: var(--color-brand-700);
     color: #fff;
-    box-shadow: var(--shadow-pill);
   }
   .btn-primary:hover {
-    background: var(--color-brand-700);
+    background: var(--color-brand-800);
   }
   .btn-cta {
+    --btn-shadow: var(--color-cta-800);
+    --btn-arrow: var(--color-cta-700);
     background: var(--color-cta-700);
     color: #fff;
-    box-shadow: var(--shadow-cta);
   }
   .btn-cta:hover {
-    background: var(--color-cta-800);
+    background: #c80f26;
+  }
+  .btn-yellow {
+    --btn-shadow: var(--color-pop-yellow-shadow);
+    background: var(--color-pop-yellow);
+    color: var(--color-ink);
+  }
+  .btn-yellow:hover {
+    background: #ffd92a;
+  }
+  .btn-yellow .btn-arrow {
+    background: var(--color-ink);
+    color: #fff;
+  }
+  .btn-gas {
+    --btn-shadow: var(--color-gas-800);
+    --btn-arrow: var(--color-gas-700);
+    background: var(--color-gas-700);
+    color: #fff;
+  }
+  .btn-eco {
+    --btn-shadow: var(--color-brand-800);
+    --btn-arrow: var(--color-brand-700);
+    background: var(--color-brand-700);
+    color: #fff;
+  }
+  .btn-hybrid {
+    --btn-shadow: #4f2fa3;
+    --btn-arrow: var(--color-hybrid-700);
+    background: var(--color-hybrid-700);
+    color: #fff;
   }
   .btn-line {
+    --btn-shadow: #04a346;
     background: #fff;
-    color: var(--color-navy-900);
+    color: var(--color-ink);
     border-color: var(--color-line);
   }
   .btn-line:hover {
     background: #f0fbf4;
   }
   .btn-navy {
+    --btn-shadow: #000;
     background: var(--color-navy-900);
     color: #fff;
-    box-shadow: var(--shadow-card);
   }
   .btn-navy:hover {
-    background: var(--color-navy-700);
+    background: var(--color-navy-800);
   }
   .btn-white {
+    --btn-shadow: rgb(0 0 0 / 0.15);
     background: #fff;
-    color: var(--color-navy-900);
-    box-shadow: var(--shadow-card);
+    color: var(--color-ink);
   }
   .btn-white:hover {
     background: var(--color-cream);
   }
   .btn-outline {
+    --btn-shadow: rgb(224 18 43 / 0.28);
     background: #fff;
-    color: var(--color-navy-900);
-    border-color: var(--color-navy-900);
+    color: var(--color-ink);
+    border-color: var(--color-cta-700);
   }
   .btn-outline:hover {
-    background: var(--color-paper-2);
+    background: var(--color-cta-50);
+  }
+  .btn-outline .btn-arrow {
+    background: var(--color-cta-700);
+    color: #fff;
   }
   .btn-ghost-dark {
+    --btn-shadow: rgb(0 0 0 / 0.2);
     color: #fff;
-    border-color: rgb(255 255 255 / 0.7);
+    border-color: rgb(255 255 255 / 0.85);
   }
   .btn-ghost-dark:hover {
     background: #fff;
-    color: var(--color-navy-900);
+    color: var(--color-ink);
     border-color: #fff;
   }
   .btn-sm {
     min-height: 2.75rem;
-    padding: 0.4rem 1.1rem;
+    padding: 0.4rem 1.2rem;
     font-size: 0.875rem;
   }
   .btn-xs {
     min-height: 2.75rem;
-    padding: 0.35rem 0.85rem;
+    padding: 0.35rem 0.95rem;
     font-size: 0.8125rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
   .btn-lg {
-    min-height: 3.5rem;
-    padding: 0.6rem 1.75rem;
-    font-size: 1rem;
+    min-height: 3.75rem;
+    padding: 0.6rem 2rem;
+    font-size: 1.0625rem;
+  }
+  /* 大きく太い文字のボタン（種類の入口など。白い文字を 3:1 の色に載せるときに使う） */
+  .btn-xl {
+    min-height: 4.5rem;
+    padding: 0.75rem 2.25rem;
+    font-size: clamp(1.1875rem, 1.05rem + 0.6vw, 1.375rem);
   }
 
-  /* 矢印つきのリンク（一覧・くわしいページへ送るとき）。黄色の太い下線 */
+  /* 矢印つきのリンク（一覧・くわしいページへ送るとき）。赤い矢印 */
   .link-arrow {
     display: inline-flex;
     align-items: center;
     gap: 0.45em;
     min-height: 2.75rem;
-    color: var(--color-navy-900);
+    color: var(--color-ink);
     font-family: var(--font-heading);
     font-size: 0.9375rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-decoration: underline;
-    text-decoration-color: var(--color-sun-400);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 0.4em;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-decoration: none;
     transition: color 0.2s var(--ease-out-soft);
   }
   .link-arrow:hover {
-    color: var(--color-brand-700);
+    color: var(--color-cta-700);
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
   }
   .link-arrow svg {
+    flex: none;
+    width: 1.35em;
+    height: 1.35em;
+    padding: 0.25em;
+    border-radius: 9999px;
+    background: var(--color-cta-700);
+    color: #fff;
     transition: transform 0.2s var(--ease-out-soft);
   }
   .link-arrow:hover svg {
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
   .link-arrow-on-dark {
     color: #fff;
   }
   .link-arrow-on-dark:hover {
-    color: var(--color-sun-300);
+    color: var(--color-pop-yellow);
+  }
+  .link-arrow-on-dark svg {
+    background: #fff;
+    color: var(--color-cta-700);
   }
   .text-link {
     color: var(--color-brand-700);
@@ -526,11 +720,11 @@
     align-items: center;
     gap: 0.4em;
     min-height: 2.5rem;
-    padding-inline: 1rem;
-    border: 1px solid var(--color-silver-300);
-    border-radius: 0.5rem;
+    padding-inline: 1.1rem;
+    border: 2px solid var(--color-silver-300);
+    border-radius: 9999px;
     background: #fff;
-    color: var(--color-navy-900);
+    color: var(--color-ink);
     font-size: 0.8125rem;
     font-weight: 700;
     line-height: 1.4;
@@ -540,20 +734,20 @@
       background-color 0.2s var(--ease-out-soft);
   }
   .chip:hover {
-    border-color: var(--color-brand-500);
-    background: var(--color-mist);
+    border-color: var(--color-cta-700);
+    background: var(--color-cta-50);
   }
   .chip-on {
-    border-color: var(--color-navy-900);
-    background: var(--color-navy-900);
+    border-color: var(--color-cta-700);
+    background: var(--color-cta-700);
     color: #fff;
   }
   .chip-on:hover {
-    border-color: var(--color-navy-900);
-    background: var(--color-navy-900);
+    border-color: var(--color-cta-700);
+    background: var(--color-cta-700);
   }
 
-  /* 行の右端に置く、丸い矢印 */
+  /* 行の右端に置く、丸い矢印（赤い丸に白い矢印） */
   .arrow-dot {
     display: grid;
     place-items: center;
@@ -561,8 +755,8 @@
     width: 2rem;
     height: 2rem;
     border-radius: 9999px;
-    background: var(--color-sun-400);
-    color: var(--color-navy-900);
+    background: var(--color-cta-700);
+    color: #fff;
     transition:
       transform 0.2s var(--ease-out-soft),
       background-color 0.2s var(--ease-out-soft);
@@ -570,23 +764,45 @@
   a:hover .arrow-dot,
   .group:hover .arrow-dot {
     transform: translateX(3px);
-    background: var(--color-sun-500);
+    background: var(--color-cta-800);
   }
 
   /* ── 白い角丸パネル ─────────────────────────────── */
   .card {
     background: #fff;
-    border-radius: 0.75rem;
+    border-radius: 1.25rem;
     box-shadow: var(--shadow-card);
   }
   .card-pop {
     background: #fff;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     box-shadow: var(--shadow-pop);
   }
   /* 白地の区画に置いても形が分かるよう、淡い線で縁取るもの */
   .card-line {
-    border: 1px solid var(--color-silver-200);
+    border: 2px solid #ececec;
+  }
+  /* 太い色の枠（種類の色）。ポップな区画の主役のパネル */
+  .frame {
+    --frame: #ececec;
+    border: 4px solid var(--frame);
+    border-radius: 1.5rem;
+    background: #fff;
+  }
+  .frame-gas {
+    --frame: var(--color-gas-500);
+  }
+  .frame-eco {
+    --frame: var(--color-brand-500);
+  }
+  .frame-hybrid {
+    --frame: var(--color-hybrid-500);
+  }
+  .frame-red {
+    --frame: var(--color-cta-700);
+  }
+  .frame-yellow {
+    --frame: var(--color-pop-yellow-deep);
   }
   .card-hover {
     transition:
@@ -602,8 +818,8 @@
   /* 行の一覧：1枚の白いパネルの中を、点線で区切る（質問・リンク・対応工事など） */
   .rows {
     background: #fff;
-    border: 1px solid var(--color-silver-200);
-    border-radius: 0.75rem;
+    border: 2px solid #ececec;
+    border-radius: 1.25rem;
     box-shadow: var(--shadow-card);
     padding: 0.25rem clamp(1rem, 2.4vw, 1.75rem);
   }
@@ -640,13 +856,13 @@
   }
   .photo-card {
     overflow: hidden;
-    border-radius: 1rem;
+    border-radius: 1.25rem;
     box-shadow: var(--shadow-card);
     background: var(--color-silver-100);
   }
   .photo-card-sm {
     overflow: hidden;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     background: var(--color-silver-100);
   }
 
@@ -682,20 +898,19 @@
   /* 人物のイラストに添える吹き出し */
   .bubble {
     position: relative;
-    border: 2px solid var(--color-brand-500);
-    border-radius: 1.25rem;
+    border: 2px solid #d9d9d9;
+    border-radius: 1.5rem;
     background: #fff;
-    box-shadow: var(--shadow-card);
   }
   .bubble::before {
     content: "";
     position: absolute;
-    bottom: 1.5rem;
+    top: 1.1rem;
     left: -9px;
     width: 1rem;
     height: 1rem;
     transform: rotate(45deg);
-    border: 2px solid var(--color-brand-500);
+    border: 2px solid #d9d9d9;
     border-top: 0;
     border-right: 0;
     background: #fff;
@@ -703,7 +918,7 @@
   .bubble-r::before {
     left: auto;
     right: -9px;
-    border: 2px solid var(--color-brand-500);
+    border: 2px solid #d9d9d9;
     border-bottom: 0;
     border-left: 0;
   }
@@ -714,7 +929,7 @@
     align-items: center;
     padding: 0.15rem 0.75rem;
     border-radius: 9999px;
-    background: var(--color-navy-900);
+    background: var(--color-cta-700);
     color: #fff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -774,7 +989,7 @@
     position: relative;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     background: #fff;
     box-shadow: var(--shadow-card);
   }
@@ -803,7 +1018,7 @@
     color: var(--color-navy-900);
     font-weight: 700;
     white-space: nowrap;
-    background: var(--color-mist);
+    background: var(--color-cream);
   }
   .table-spec tr:last-child th,
   .table-spec tr:last-child td {
@@ -880,9 +1095,9 @@
   .prose-jp h2 {
     margin-top: 2.6em;
     padding: 0.55rem 1rem 0.55rem 1.1rem;
-    border-left: 8px solid var(--color-brand-600);
-    border-radius: 0.35rem 1rem 1rem 0.35rem;
-    background: var(--color-cream);
+    border-left: 8px solid var(--color-cta-700);
+    border-radius: 0.5rem 1.25rem 1.25rem 0.5rem;
+    background: var(--color-cta-50);
     font-size: clamp(1.25rem, 1.12rem + 0.6vw, 1.4375rem);
     font-weight: 900;
     line-height: 1.5;
@@ -890,7 +1105,7 @@
   .prose-jp h3 {
     margin-top: 2.2em;
     padding-bottom: 0.3rem;
-    border-bottom: 3px dotted var(--color-brand-300);
+    border-bottom: 3px dotted var(--color-cta-600);
     font-size: 1.125rem;
     line-height: 1.6;
   }
@@ -923,7 +1138,7 @@
     width: 0.5em;
     height: 0.5em;
     border-radius: 9999px;
-    background: var(--color-brand-500);
+    background: var(--color-cta-700);
   }
   .prose-jp ol {
     list-style: decimal;
@@ -987,7 +1202,7 @@
     width: 0.5em;
     height: 0.5em;
     border-radius: 9999px;
-    background: var(--color-brand-500);
+    background: var(--color-cta-700);
   }
 
   /* ── フォーム ───────────────────────────────────── */
@@ -1014,7 +1229,7 @@
   .field:focus {
     outline: none;
     border-color: var(--color-brand-600);
-    box-shadow: 0 0 0 4px rgb(13 87 230 / 0.16);
+    box-shadow: 0 0 0 4px rgb(10 143 208 / 0.18);
   }
   .field[aria-invalid="true"] {
     border-color: var(--color-heat);
@@ -1093,9 +1308,9 @@
     display: inline-flex;
     align-items: center;
     gap: 0.3em;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid var(--color-silver-300);
-    border-radius: 0.5rem;
+    padding: 0.2rem 0.7rem;
+    border: 1.5px solid var(--color-silver-300);
+    border-radius: 9999px;
     background: #fff;
     color: var(--color-navy-900);
     font-size: 0.75rem;
@@ -1138,8 +1353,8 @@
     place-items: center;
     overflow: hidden;
     aspect-ratio: 4 / 3;
-    border-radius: 0.5rem;
-    background: #f3f5f8;
+    border-radius: 1rem;
+    background: #f5f5f5;
   }
   .product-visual-tall {
     aspect-ratio: 1 / 1;
@@ -1153,8 +1368,8 @@
     left: 0.5rem;
     bottom: 0.5rem;
     padding: 0.2rem 0.5rem;
-    border-radius: 0.35rem;
-    background: rgb(255 255 255 / 0.92);
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 0.94);
     color: var(--color-ink-mute);
     font-size: 0.6875rem;
     font-weight: 700;
@@ -1164,19 +1379,44 @@
 
   /* 商品カード：白い地・細い縁。押せる所（写真・型番・ボタン）を分けて置く */
   .pcard {
+    --cat: #e6e6e6;
+    --cat-deep: var(--color-ink);
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid var(--color-silver-200);
-    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 3px solid var(--cat);
+    border-radius: 1.25rem;
     background: #fff;
     transition:
-      border-color 0.2s var(--ease-out-soft),
+      transform 0.2s var(--ease-out-soft),
       box-shadow 0.2s var(--ease-out-soft);
   }
   .pcard:hover {
-    border-color: var(--color-silver-300);
     box-shadow: var(--shadow-pop);
+  }
+  .pcard[data-cat="gas"],
+  .pcard[data-cat="eco-jozu"] {
+    --cat: var(--color-gas-500);
+    --cat-deep: var(--color-gas-700);
+  }
+  .pcard[data-cat="ecocute"] {
+    --cat: var(--color-brand-500);
+    --cat-deep: var(--color-brand-700);
+  }
+  .pcard[data-cat="hybrid"] {
+    --cat: var(--color-hybrid-500);
+    --cat-deep: var(--color-hybrid-700);
+  }
+  /* カードの上の帯（種類の色。白い札にメーカーのロゴ） */
+  .pcard-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-height: 3rem;
+    padding: 0.45rem 0.75rem;
+    background: var(--cat-deep);
   }
   .pcard:hover .product-visual img {
     transform: scale(1.03);
@@ -1191,15 +1431,15 @@
     place-items: center;
     min-height: 4.5rem;
     padding: 0.75rem 1rem;
-    border: 1px solid var(--color-silver-200);
-    border-radius: 0.75rem;
+    border: 2px solid #ececec;
+    border-radius: 1rem;
     background: #fff;
     transition:
       border-color 0.2s var(--ease-out-soft),
       box-shadow 0.2s var(--ease-out-soft);
   }
   a.logo-tile:hover {
-    border-color: var(--color-brand-400);
+    border-color: var(--color-cta-700);
     box-shadow: var(--shadow-card);
   }
 
@@ -1222,8 +1462,8 @@
   /* 補足・注意の囲み。左の太い線で種類を示す */
   .callout {
     padding: 1rem 1.25rem;
-    border-left: 4px solid var(--color-brand-500);
-    border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+    border-left: 6px solid var(--color-brand-500);
+    border-radius: 0.5rem 1.25rem 1.25rem 0.5rem;
     background: var(--color-mist);
     font-size: 0.9375rem;
     line-height: 1.95;
@@ -1259,7 +1499,7 @@
     position: absolute;
     inset: 0 auto 0 0;
     border-radius: 9999px;
-    background: var(--color-brand-600);
+    background: var(--color-cta-700);
   }
 
   /* 順番のある手順（番号は、順番があるものにだけ付ける） */
@@ -1281,11 +1521,11 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 9999px;
-    background: var(--color-navy-900);
+    background: var(--color-cta-700);
     color: #fff;
     font-family: var(--font-display);
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
   }
   /* 番号どうしをつなぐ線 */
@@ -1327,7 +1567,7 @@
     z-index: 1;
     min-width: 6.5rem;
     width: 6.5rem;
-    background: var(--color-mist);
+    background: var(--color-cream);
     color: var(--color-navy-900);
     font-weight: 700;
     box-shadow: 1px 0 0 var(--color-silver-200);
@@ -1361,14 +1601,55 @@
     }
   }
 
+  /* チャットの形の見積もりの、大きな選択のボタン（input を中に持つ label に付ける）。選ぶと水色で塗る */
+  .chat-opt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    min-height: 3.5rem;
+    padding: 0.55rem 1rem;
+    border: 2px solid var(--color-brand-700);
+    border-radius: 0.875rem;
+    background: var(--color-brand-50);
+    color: var(--color-brand-800);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.35;
+    text-align: center;
+    box-shadow: 0 3px 0 rgb(4 96 143 / 0.35);
+    cursor: pointer;
+    transition:
+      background-color 0.15s,
+      color 0.15s,
+      transform 0.15s;
+  }
+  .chat-opt small {
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .chat-opt:hover {
+    background: var(--color-brand-100);
+  }
+  .chat-opt:has(input:checked) {
+    background: var(--color-brand-700);
+    color: #fff;
+  }
+  .chat-opt:has(input:focus-visible) {
+    outline: 3px solid var(--color-brand-600);
+    outline-offset: 3px;
+  }
+
   /* 絞り込みの選択肢（押すと選ばれる丸い札。input を中に持つ label に付ける） */
   .opt {
     display: inline-flex;
     align-items: center;
     min-height: 2.5rem;
-    padding-inline: 0.9rem;
-    border: 1.5px solid var(--color-silver-300);
-    border-radius: 0.5rem;
+    padding-inline: 1rem;
+    border: 2px solid var(--color-silver-300);
+    border-radius: 9999px;
     background: #fff;
     color: var(--color-navy-900);
     font-size: 0.8125rem;
@@ -1384,8 +1665,8 @@
     border-color: var(--color-brand-500);
   }
   .opt:has(input:checked) {
-    border-color: var(--color-navy-900);
-    background: var(--color-navy-900);
+    border-color: var(--color-brand-700);
+    background: var(--color-brand-700);
     color: #fff;
   }
   .opt:has(input:focus-visible) {
@@ -1508,6 +1789,51 @@
 [data-mega][data-closed] > [data-mega-panel] {
   visibility: hidden;
   opacity: 0;
+}
+
+/*
+ * PC のヘッダーの下段（色の帯）。ページの種類で色を変える（本文に data-section の印がある）。
+ * 印が無いページは赤。種類のタブも、いまのページの種類だけ色の地にする。
+ */
+[data-site-header] .hbar {
+  background: var(--color-cta-700);
+}
+body:has(main [data-section="gas"]) [data-site-header] .hbar {
+  background: var(--color-gas-700);
+}
+body:has(main [data-section="ecocute"]) [data-site-header] .hbar {
+  background: var(--color-brand-700);
+}
+body:has(main [data-section="hybrid"]) [data-site-header] .hbar {
+  background: var(--color-hybrid-700);
+}
+body:has(main [data-section="gas"]) [data-tab="gas"],
+body:has(main [data-section="ecocute"]) [data-tab="ecocute"],
+body:has(main [data-section="hybrid"]) [data-tab="hybrid"],
+body:has(main [data-section="subsidy"]) [data-tab="subsidy"] {
+  background: var(--color-cream);
+  box-shadow: inset 0 -4px 0 var(--color-pop-yellow-deep);
+}
+
+/*
+ * 右下の自動応答チャットの入口。スマホでは、下部の固定ボタンが出ているあいだ、その上に上げる。
+ * 機種の比較の入口（画面の下の帯）が出ているときも、その上に上げる。
+ */
+.chat-launcher {
+  bottom: 1rem;
+}
+@media (max-width: 63.99rem) {
+  body:has(aside[aria-label="ご相談・お見積もり"][data-show="1"]) .chat-launcher {
+    bottom: 5.75rem;
+  }
+}
+body:has(aside[aria-label="機種の比較"]) .chat-launcher {
+  bottom: 6.5rem;
+}
+@media (max-width: 63.99rem) {
+  body:has(aside[aria-label="機種の比較"]):has(aside[aria-label="ご相談・お見積もり"][data-show="1"]) .chat-launcher {
+    bottom: 11rem;
+  }
 }
 
 /* PC のヘッダー：上段が隠れたときだけ、主メニューの右に電話と見積もりを出す（印は HeaderStuck が付ける） */

@@ -68,6 +68,7 @@ export default async function BrandPage({ params }: Params) {
           { name: "商品一覧", href: "/products" },
           { name: b.name, href: `/products/${b.id}` },
         ]}
+        section={b.categories.includes("ecocute") ? "ecocute" : "gas"}
         aside={
           <div className="logo-tile !min-h-[9rem] gap-3 !px-8 !py-6 shadow-[var(--shadow-card)]">
             <MakerLogo logo={b.logo} name={b.name} height={52} priority />
@@ -124,8 +125,8 @@ export default async function BrandPage({ params }: Params) {
           <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
             {others.map((x) => (
               <li key={x.id}>
-                <Link href={`/products/${x.id}`} className="logo-tile h-full gap-1.5" aria-label={`${x.name}の給湯器`}>
-                  <MakerLogo logo={x.logo} name={x.name} height={24} decorative />
+                <Link href={`/products/${x.id}`} className="logo-tile h-full gap-1.5">
+                  <MakerLogo logo={x.logo} name={x.name} height={24} />
                   <span className="text-[0.6875rem] text-ink-mute">{productsByBrand(x.id).length}機種</span>
                 </Link>
               </li>

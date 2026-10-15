@@ -1,12 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
+import { ChatLauncher } from "@/components/chat/ChatLauncher";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCtaBar } from "@/components/layout/MobileCtaBar";
 import { RevealObserver } from "@/components/layout/RevealObserver";
 import { CompareTray } from "@/components/product/CompareControls";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { isChatAIEnabled } from "@/lib/chat/config";
+import { img } from "@/lib/images";
 import { graph, organizationSchema, localBusinessSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig, primaryPhone, telHref, lineUrl } from "@/lib/site";
 import { SITE_URL, IS_PUBLIC } from "@/lib/seo";
@@ -91,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <CompareTray />
         <MobileCtaBar phone={phone} telHref={telHref(phone)} line={lineUrl()} />
+        <ChatLauncher ai={isChatAIEnabled()} mascot={img("ai/mascot-wave")} />
         <RevealObserver />
         <JsonLd data={graph(organizationSchema(), localBusinessSchema(), websiteSchema())} />
       </body>

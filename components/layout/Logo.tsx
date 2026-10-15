@@ -37,7 +37,7 @@ export function Logo({ onDark = false, size = "md", priority = false }: { onDark
           <span className={lg ? "text-[clamp(1.1875rem,5.3vw,1.5rem)]" : "text-[clamp(1.0625rem,4.6vw,1.3rem)]"}>{siteConfig.shortName}</span>
         </span>
         <span
-          className={`mt-1.5 whitespace-nowrap font-bold tracking-[0.18em] ${lg ? "text-[clamp(0.6875rem,2.9vw,0.8125rem)]" : "text-[clamp(0.5938rem,2.5vw,0.6875rem)]"} ${onDark ? "text-sky-300" : "text-brand-700"}`}
+          className={`mt-1.5 whitespace-nowrap font-bold tracking-[0.18em] ${lg ? "text-[clamp(0.6875rem,2.9vw,0.8125rem)]" : "text-[clamp(0.5938rem,2.5vw,0.6875rem)]"} ${onDark ? "text-sky-300" : "text-cta-700"}`}
         >
           {siteConfig.siteLabel}
         </span>

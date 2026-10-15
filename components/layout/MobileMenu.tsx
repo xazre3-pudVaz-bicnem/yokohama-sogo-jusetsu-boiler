@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState, type MouseEvent } from "react";
 import { MakerLogo } from "@/components/brand/MakerLogo";
+import { CategoryIcon } from "@/components/ui/CategoryIcon";
 import { LineIcon } from "@/components/ui/LineIcon";
 import type { BrandLogo } from "@/data/products/types";
 
@@ -73,7 +74,7 @@ export function MobileMenu({
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "メニューを閉じる" : "メニューを開く"}
-        className="relative grid size-11 place-items-center rounded-sm bg-navy-900 text-white"
+        className="relative grid size-11 place-items-center rounded-full bg-cta-700 text-white shadow-[0_3px_0_var(--color-cta-800)]"
       >
         <span className="relative block h-3.5 w-5" aria-hidden="true">
           <span className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-300 ${open ? "translate-y-1.5 rotate-45" : ""}`} />
@@ -90,6 +91,10 @@ export function MobileMenu({
       >
         <nav aria-label="メニュー" className="container-x pb-28 pt-6">
           {/* 連絡先 */}
+          <Link prefetch={false} href="/contact/photo" className="btn btn-yellow btn-lg mb-3 w-full">
+            <CategoryIcon kind="camera" className="size-6" />
+            写真を送ってかんたん見積もり
+          </Link>
           <div className="grid grid-cols-2 gap-3">
             {phone && (
               <a href={telHref} className="btn btn-outline btn-sm flex-col !gap-0.5 !px-2 !py-2.5" data-cv="tel">
@@ -109,6 +114,22 @@ export function MobileMenu({
             )}
           </div>
           {hours && <p className="mt-2 text-center text-xs text-ink-mute">電話受付 {hours}</p>}
+
+          {/* 種類の入口（色つきの絵） */}
+          <ul className="mt-7 grid grid-cols-3 gap-2">
+            {[
+              { href: "/gas-water-heater", label: "ガス給湯器", icon: "gas" as const, tone: "border-gas-500 bg-gas-50" },
+              { href: "/ecocute", label: "エコキュート", icon: "ecocute" as const, tone: "border-brand-500 bg-brand-50" },
+              { href: "/hybrid", label: "ハイブリッド", icon: "hybrid" as const, tone: "border-hybrid-500 bg-hybrid-50" },
+            ].map((c) => (
+              <li key={c.href}>
+                <Link prefetch={false} href={c.href} className={`flex min-h-[5.5rem] flex-col items-center justify-center gap-1 rounded-2xl border-[3px] px-1 text-center text-[0.8125rem] font-bold text-ink ${c.tone}`}>
+                  <CategoryIcon kind={c.icon} className="size-9" />
+                  {c.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           {/* 主なページ */}
           <p className="eyebrow mt-8">メニュー</p>

@@ -96,10 +96,10 @@ function GouFigure({ caption }: { caption?: string }) {
       <div className="grid gap-4 sm:grid-cols-3">
         {GOU.map((g) => (
           <div key={g.gou} className="rounded-2xl bg-mist px-5 py-5">
-            <p className="flex items-baseline gap-1.5">
-              <span className="num text-[2.5rem] font-semibold leading-none text-navy-900">{g.gou}</span>
-              <span className="font-heading text-lg font-black text-navy-900">号</span>
-              <span className="ml-auto rounded-full bg-white px-3 py-1 text-xs font-bold text-brand-800">{g.household}の目安</span>
+            <p className="flex flex-wrap items-baseline gap-x-1.5 gap-y-2">
+              <span className="num shrink-0 whitespace-nowrap text-[2.5rem] font-semibold leading-none text-navy-900">{g.gou}</span>
+              <span className="shrink-0 font-heading text-lg font-black text-navy-900">号</span>
+              <span className="ml-auto whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-bold text-brand-800">{g.household}の目安</span>
             </p>
             <dl className="mt-4 space-y-3 text-[0.8125rem] leading-[1.6]">
               <div>

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MakerLogo } from "@/components/brand/MakerLogo";
-import { ProductImage, type CardImage } from "@/components/product/ProductImage";
+import type { CardImage } from "@/components/product/ProductImage";
+import { CategoryIcon } from "@/components/ui/CategoryIcon";
 import { Icon } from "@/components/ui/Icon";
-import { LineIcon } from "@/components/ui/LineIcon";
 import type { BrandLogo, CategoryId, InstallationKey } from "@/data/products/types";
+import { img } from "@/lib/images";
 
 export type HeroShowcase = {
   /** 種類の名前（ガス給湯器・エコキュート・ハイブリッド給湯器） */
@@ -22,154 +22,129 @@ export type HeroShowcase = {
   installKey: InstallationKey;
 };
 
+/** 種類の入口の色（白い文字は、どれも 4.5:1 以上の濃さの地に載せる） */
+const TONE: Record<string, { box: string; arrow: string; icon: "gas" | "ecocute" | "hybrid" }> = {
+  gas: { box: "border-gas-500 bg-gas-700 shadow-[0_6px_0_var(--color-gas-800)]", arrow: "text-gas-700", icon: "gas" },
+  "eco-jozu": { box: "border-gas-500 bg-gas-700 shadow-[0_6px_0_var(--color-gas-800)]", arrow: "text-gas-700", icon: "gas" },
+  ecocute: { box: "border-brand-500 bg-brand-700 shadow-[0_6px_0_var(--color-brand-800)]", arrow: "text-brand-700", icon: "ecocute" },
+  hybrid: { box: "border-hybrid-500 bg-hybrid-700 shadow-[0_6px_0_#5a35b8]", arrow: "text-hybrid-700", icon: "hybrid" },
+};
+
 /**
- * トップページの最初の画面。
- * 最初の3秒で「何を売っているか（給湯器の交換）」「どこで（横浜市・戸塚区）」「何を扱うか（実機の写真）」「どう相談するか」を伝える。
- *
- * - 左：キャッチコピー・説明・問い合わせのボタン（無料見積もり／LINE で写真を送って相談／取り扱い商品を見る）・要点。
- * - 右：ガス給湯器・エコキュート・ハイブリッド給湯器の、メーカーの公式の製品写真を、種類ごとに1枚ずつ並べる。
+ * トップページの最初の画面（2026-10-15 の依頼で、キンライサーのような明るい作りに変えた）。
+ * - 地：淡いピンクに泡（Codex で作った画像。製品は写っていない）と、色の丸の飾り。
+ * - 中央：ひとこと・見出し（h1：横浜市・戸塚区の給湯器交換なら ヨコジュウ）・赤い副題。
+ * - 種類の入口（ガス給湯器・エコキュート・ハイブリッド）：色の大きなボタンに、メーカーの公式の製品写真を白い窓で載せる。
  *   写真はそれぞれ別の実在の機種で、1つの製品のように合成しない（下にメーカーと型番を書く）。
- * - スマホは、見出しのすぐ下に写真を小さく並べ、その下にボタンを置く（最初の画面で写真とボタンが見える）。
- * - 問い合わせのボタンの並び（[data-hero-cta]）が画面から外れると、スマホの下部の固定ボタンが出る（MobileCtaBar）。
+ * - 左右：スタッフのイラスト（実在の社員ではない）と、キャラクター「ゆげまる」（どちらも Codex で作った絵）。PC だけ。
+ * - 入口とボタンの並び（[data-hero-cta]）が画面から外れると、スマホの下部の固定ボタンが出る（MobileCtaBar）。
  */
-export function Hero({
-  showcase,
-  productCount,
-  brandCount,
-  line,
-  formLabel,
-}: {
-  showcase: HeroShowcase[];
-  productCount: number;
-  brandCount: number;
-  line: string;
-  formLabel: string;
-}) {
-  const points = ["お見積もり・現地調査は無料", "横浜市戸塚区深谷町にオフィス", `${brandCount}メーカー・${productCount}機種を型番で比較`, "補助金の対象を確認日つきで案内"];
+export function Hero({ showcase }: { showcase: HeroShowcase[] }) {
+  const bg = img("ai/hero-bubbles");
+  const staff = img("ai/staff-duo");
+  const mascot = img("ai/mascot-wave");
+  const mark = img("brand/logo-mark");
   return (
-    <section aria-labelledby="hero-title" className="relative overflow-hidden border-b border-silver-200 bg-gradient-to-b from-white to-paper-2">
-      <div className="container-x grid items-center gap-x-10 gap-y-6 pb-10 pt-7 sm:pb-14 sm:pt-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:pb-16 lg:pt-12 xl:gap-x-14">
-        <div className="min-w-0">
-          <p className="text-[0.8125rem] font-bold tracking-[0.08em] text-brand-700">ガス給湯器・エコキュート・ハイブリッド給湯器の交換</p>
-          <h1 id="hero-title" className="mt-2 text-[clamp(1.75rem,1.1rem+3vw,2.875rem)] font-black leading-[1.35] tracking-[0.01em] text-navy-900">
-            <span className="ib">横浜市・戸塚区の</span>
-            <span className="ib">給湯器交換なら</span>
-            <span className="ib marker">ヨコジュウ</span>
-          </h1>
+    <section aria-labelledby="hero-title" className="relative overflow-hidden bg-pop-pink">
+      <Image src={bg.src} alt="" fill sizes="100vw" quality={60} preload fetchPriority="high" className="object-cover" />
+      {/* 色の丸の飾り */}
+      <div className="bubbles" aria-hidden="true">
+        <span style={{ left: "-5rem", top: "-5rem", width: "15rem", height: "15rem", background: "#ffe14a", opacity: 0.85 }} />
+        <span style={{ left: "16%", top: "5.5rem", width: "5rem", height: "5rem", background: "#7fdc93", opacity: 0.8 }} />
+        <span style={{ left: "31%", top: "-3.5rem", width: "8rem", height: "8rem", background: "#8fd3f5", opacity: 0.8 }} />
+        <span style={{ right: "26%", top: "-4rem", width: "10rem", height: "10rem", background: "#ffe14a", opacity: 0.85 }} />
+        <span style={{ right: "6%", top: "1.5rem", width: "6rem", height: "6rem", background: "#8fd3f5", opacity: 0.8 }} />
+        <span style={{ right: "-3rem", top: "9rem", width: "9rem", height: "9rem", background: "#ff9fae", opacity: 0.7 }} />
+        <span style={{ left: "4%", bottom: "4rem", width: "6.5rem", height: "6.5rem", background: "#ffe14a", opacity: 0.85 }} />
+        <span style={{ right: "12%", bottom: "2.5rem", width: "5rem", height: "5rem", background: "#7fdc93", opacity: 0.85 }} />
+        <span style={{ left: "45%", bottom: "1.5rem", width: "1.25rem", height: "1.25rem", background: "#2cb3ee" }} />
+        <span style={{ right: "38%", bottom: "4.5rem", width: "0.9rem", height: "0.9rem", background: "#e0122b" }} />
+      </div>
 
-          {/* スマホ：見出しのすぐ下に、取り扱う種類の写真を小さく並べる */}
-          <ShowcaseRow items={showcase} compact className="mt-5 lg:hidden" />
+      {/* PC：左右にスタッフのイラストとキャラクター */}
+      <Image
+        src={staff.src}
+        width={staff.width}
+        height={staff.height}
+        alt=""
+        sizes="(min-width: 1280px) 300px, 260px"
+        quality={78}
+        className="pointer-events-none absolute left-[max(1rem,calc(50%-41rem))] top-[19rem] hidden h-auto w-[14rem] lg:block xl:top-[20rem] xl:w-[16.5rem]"
+      />
+      <Image
+        src={mascot.src}
+        width={mascot.width}
+        height={mascot.height}
+        alt=""
+        sizes="(min-width: 1280px) 220px, 180px"
+        quality={80}
+        className="pointer-events-none absolute right-[max(1rem,calc(50%-40rem))] top-[24rem] hidden h-auto w-[10rem] lg:block xl:top-[25rem] xl:w-[12rem]"
+      />
 
-          <p className="mt-5 max-w-[34rem] text-[0.9688rem] leading-[1.95] text-ink-body sm:text-base">
-            ガス給湯器からエコキュート、ハイブリッド給湯器まで。設置環境とご予算に合わせてご提案します。機種が決まっていなくても、いまの給湯器の写真からご相談いただけます。
-          </p>
+      <div className="container-x relative pb-24 pt-8 text-center sm:pt-12 lg:pb-28 lg:pt-14">
+        <p className="font-heading text-[clamp(1rem,0.82rem+0.9vw,1.5rem)] font-bold tracking-[0.3em] text-ink">お湯のこと、困ったら</p>
+        <h1 id="hero-title" className="mt-3">
+          <span className="block font-heading text-[clamp(1.0625rem,0.9rem+0.8vw,1.5rem)] font-black tracking-[0.1em] text-ink">横浜市・戸塚区の給湯器交換なら</span>
+          <span className="mt-2 inline-flex items-center gap-[0.18em] font-heading text-[clamp(3.25rem,2.1rem+5.4vw,6rem)] font-black leading-none tracking-[0.04em] text-ink">
+            <Image src={mark.src} width={mark.width} height={mark.height} alt="" sizes="96px" className="h-[0.95em] w-auto" />
+            ヨコジュウ
+          </span>
+        </h1>
+        <p className="mt-6 inline-flex flex-col items-center gap-2 font-heading text-[clamp(1.0625rem,0.86rem+1vw,1.625rem)] font-black tracking-[0.14em] text-cta-700">
+          <span className="dotted-under">ガス給湯器・エコキュートの交換と</span>
+          <span className="dotted-under">写真でかんたん無料見積もり</span>
+        </p>
 
-          <div data-hero-cta className="mt-6 grid gap-2.5 sm:grid-cols-2 sm:gap-3 xl:max-w-[36rem]">
-            <Link href="/contact" className="btn btn-cta btn-lg sm:col-span-2">
-              {formLabel}
+        <div data-hero-cta>
+          <ul className="mx-auto mt-14 grid max-w-[54rem] gap-x-5 gap-y-14 text-left sm:mt-20 sm:grid-cols-3 sm:text-center">
+            {showcase.map((s) => {
+              const tone = TONE[s.category] ?? TONE.gas;
+              return (
+                <li key={s.href}>
+                  <Link
+                    href={s.href}
+                    className={`group relative flex h-full items-center gap-4 rounded-[1.75rem] border-4 py-4 pl-[7.5rem] pr-4 text-white transition-transform hover:translate-y-0.5 sm:flex-col sm:gap-1.5 sm:px-4 sm:pb-5 sm:pt-[5.25rem] ${tone.box}`}
+                  >
+                    {/* 公式の製品写真（白い窓に入れる。メーカーの写真は白い地のものが多いため） */}
+                    <span className="absolute left-3 top-1/2 grid size-[6.25rem] -translate-y-1/2 place-items-center overflow-hidden rounded-2xl border-4 border-white bg-white sm:left-1/2 sm:top-0 sm:size-[7.5rem] sm:-translate-x-1/2 sm:-translate-y-1/2">
+                      {s.image ? (
+                        <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes="120px" quality={75} className="h-[88%] w-[88%] object-contain" />
+                      ) : (
+                        <CategoryIcon kind={tone.icon} className="size-16" />
+                      )}
+                    </span>
+                    <span className="min-w-0 flex-1 font-heading font-black leading-tight sm:flex-none">
+                      <span className="block text-[1.375rem] tracking-[0.04em] sm:text-[1.5rem]">{s.label.replace("ハイブリッド給湯器", "ハイブリッド")}</span>
+                      <span className="mt-0.5 block text-[1rem] tracking-[0.08em]">の交換はこちら</span>
+                    </span>
+                    <span className={`grid size-8 shrink-0 place-items-center rounded-full bg-white ${tone.arrow}`} aria-hidden="true">
+                      <Icon name="arrowRight" className="size-4" />
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-9">
+            <Link href="/contact/photo" className="btn btn-yellow btn-lg">
+              <CategoryIcon kind="camera" className="size-6" />
+              写真を送ってかんたん見積もり
               <Icon name="arrowRight" className="btn-arrow size-4" />
             </Link>
-            {line && (
-              <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-line !px-4" data-cv="line">
-                <LineIcon className="size-5" />
-                {/* 2列に並ぶ幅（640〜1279px）では短くする（2行に割れないように） */}
-                <span className="sm:hidden xl:inline">LINE で写真を送って相談</span>
-                <span className="hidden sm:inline xl:hidden">LINE で相談</span>
-              </a>
-            )}
-            <Link href="/products" className={`btn btn-outline ${line ? "" : "sm:col-span-2"}`}>
-              取り扱い商品を見る
-            </Link>
-          </div>
-
-          <ul className="mt-6 grid gap-x-5 gap-y-2 text-[0.8125rem] font-bold text-navy-900 sm:grid-cols-2">
-            {points.map((t) => (
-              <li key={t} className="flex items-start gap-2">
-                <Icon name="check" className="mt-[0.2rem] size-4 shrink-0 text-brand-600" />
-                {t}
-              </li>
-            ))}
-          </ul>
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-[0.6875rem] leading-relaxed text-ink-mute">
+            製品の写真はメーカーの公式サイトより（{showcase.map((s) => `${s.brandName} ${s.caption}`).join("／")}）。人物とキャラクターはイラストです。
+          </p>
         </div>
-
-        {/* PC：右に、取り扱う種類の写真を、1枚の台に並べて大きく */}
-        <ShowcasePanel items={showcase} />
       </div>
+
+      {/* 下の端の色の線（飾り） */}
+      <svg className="absolute inset-x-0 bottom-0 h-10 w-full sm:h-14" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 56V30C240 6 480 6 720 26s480 26 720 0v30Z" fill="#fff" />
+        <path d="M0 30C240 6 480 6 720 26s480 26 720 0" stroke="#e0122b" strokeWidth="3" fill="none" />
+        <path d="M0 37C240 13 480 13 720 33s480 26 720 0" stroke="#ffd21f" strokeWidth="3" fill="none" />
+        <path d="M0 44C240 20 480 20 720 40s480 26 720 0" stroke="#2cb3ee" strokeWidth="3" fill="none" />
+      </svg>
     </section>
-  );
-}
-
-function ShowcaseRow({ items, compact = false, className = "" }: { items: HeroShowcase[]; compact?: boolean; className?: string }) {
-  return (
-    <ul className={`grid grid-cols-3 gap-2.5 sm:gap-4 ${className}`} aria-label="取り扱っている給湯器の種類">
-      {items.map((s, i) => (
-        <li key={s.href}>
-          <Link href={s.href} className="group block rounded-xl border border-silver-200 bg-white p-1.5 transition-shadow hover:shadow-[var(--shadow-pop)] sm:p-2.5">
-            <ProductImage
-              image={s.image}
-              shared={s.shared}
-              category={s.category}
-              installKey={s.installKey}
-              sizes={compact ? "30vw" : "(min-width: 1280px) 200px, 17vw"}
-              priority={i === 0}
-              tall={!compact}
-              note={false}
-            />
-            <span className={`block text-center font-heading font-bold leading-snug text-navy-900 group-hover:text-brand-700 ${compact ? "mt-1.5 text-[0.75rem]" : "mt-2.5 text-[0.9375rem]"}`}>{compact ? s.label.replace("ハイブリッド給湯器", "ハイブリッド") : s.label}</span>
-            {!compact && (
-              <span className="mt-1.5 flex flex-col items-center gap-1 text-[0.6875rem] leading-tight text-ink-mute">
-                <MakerLogo logo={s.brandLogo} name={s.brandName} height={15} decorative />
-                <span className="num">{s.caption}</span>
-              </span>
-            )}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-/**
- * PC の冒頭の右側：淡いグレーの台に、種類ごとの製品写真を並べる。
- * 重点のハイブリッド給湯器を上の段に大きく、ガス給湯器とエコキュートを下の段に並べる（写真の下端をそろえ、台に立って見えるように）。
- * 写真はそれぞれ別の機種のまま（合成しない）。下に、種類・メーカーのロゴ・写真の機種を書く。
- */
-function ShowcasePanel({ items }: { items: HeroShowcase[] }) {
-  const hybrid = items.find((s) => s.category === "hybrid");
-  const rest = items.filter((s) => s !== hybrid);
-  const tile = (s: HeroShowcase, big: boolean, eager: boolean) => (
-    <Link href={s.href} className="group flex h-full flex-col rounded-xl bg-white/70 px-4 pb-3 pt-4 transition-colors hover:bg-white">
-      <span className={`relative block ${big ? "h-[11.5rem] xl:h-[13rem]" : "h-[9.5rem] xl:h-[10.5rem]"}`}>
-        {s.image && (
-          <Image
-            src={s.image.src}
-            alt={s.image.alt}
-            fill
-            sizes={big ? "(min-width: 1280px) 520px, 40vw" : "(min-width: 1280px) 250px, 20vw"}
-            quality={80}
-            {...(eager ? ({ preload: true, fetchPriority: "high", loading: "eager" } as const) : {})}
-            className="object-contain object-bottom mix-blend-multiply transition-transform duration-500 group-hover:-translate-y-1"
-          />
-        )}
-      </span>
-      <span className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-silver-200 pt-2.5">
-        <span className="font-heading text-[0.9688rem] font-bold leading-snug text-navy-900 group-hover:text-brand-700">{s.label}</span>
-        <span className="flex items-center gap-2 text-[0.6875rem] leading-tight text-ink-mute">
-          <MakerLogo logo={s.brandLogo} name={s.brandName} height={14} decorative />
-          <span className="num">{s.caption}</span>
-        </span>
-      </span>
-    </Link>
-  );
-  return (
-    <div className="hidden rounded-2xl border border-silver-200 bg-[#f3f5f8] p-4 lg:block xl:p-5" aria-label="取り扱っている給湯器の種類">
-      <div className="grid grid-cols-2 gap-3 xl:gap-4">
-        {hybrid && <div className="col-span-2">{tile(hybrid, true, true)}</div>}
-        {rest.map((s) => (
-          <div key={s.href}>{tile(s, false, false)}</div>
-        ))}
-      </div>
-      <p className="mt-3 text-right text-[0.6875rem] text-ink-mute">写真はメーカーの公式サイトより{items.some((s) => s.shared) ? "（シリーズ共通のイメージを含みます）" : ""}</p>
-    </div>
   );
 }

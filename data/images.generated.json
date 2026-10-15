@@ -1,4 +1,49 @@
 {
+  "ai/banner-photo": {
+    "src": "/images/ai/banner-photo.webp",
+    "width": 1280,
+    "height": 720
+  },
+  "ai/banner-subsidy": {
+    "src": "/images/ai/banner-subsidy.webp",
+    "width": 1280,
+    "height": 720
+  },
+  "ai/bath-scene": {
+    "src": "/images/ai/bath-scene.webp",
+    "width": 1280,
+    "height": 720
+  },
+  "ai/hero-bubbles": {
+    "src": "/images/ai/hero-bubbles.webp",
+    "width": 1600,
+    "height": 900
+  },
+  "ai/mascot-ok": {
+    "src": "/images/ai/mascot-ok.webp",
+    "width": 560,
+    "height": 553
+  },
+  "ai/mascot-point": {
+    "src": "/images/ai/mascot-point.webp",
+    "width": 560,
+    "height": 595
+  },
+  "ai/mascot-think": {
+    "src": "/images/ai/mascot-think.webp",
+    "width": 560,
+    "height": 784
+  },
+  "ai/mascot-wave": {
+    "src": "/images/ai/mascot-wave.webp",
+    "width": 560,
+    "height": 590
+  },
+  "ai/staff-duo": {
+    "src": "/images/ai/staff-duo.webp",
+    "width": 720,
+    "height": 1045
+  },
   "area/totsuka-aerial": {
     "src": "/images/area/totsuka-aerial.webp",
     "width": 2000,
@@ -108,6 +153,11 @@
     "src": "/images/illust/pose-think.webp",
     "width": 266,
     "height": 371
+  },
+  "manufacturers/daikin": {
+    "src": "/images/manufacturers/daikin.png",
+    "width": 200,
+    "height": 43
   },
   "photos/hero-tall": {
     "src": "/images/photos/hero-tall.webp",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { EstimateForm } from "@/components/contact/EstimateForm";
-import { LineConsultPanel } from "@/components/contact/LineConsultPanel";
+import { LineChatEstimate } from "@/components/contact/LineChatEstimate";
 import { PhotoSlotFigure } from "@/components/contact/PhotoSlotFigure";
 import { Figure } from "@/components/diagram/Figures";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -83,8 +83,10 @@ export default function ContactPage() {
             {shown ? (
               <EstimateForm note={siteConfig.contact.formNote} preview={!enabled} lineUrl={line} />
             ) : (
-              // フォームから送れないあいだは、動かないフォームを出さず、LINE とお電話の案内にする
-              <LineConsultPanel title="LINE・お電話で、無料見積もり" />
+              // フォームから送れないあいだは、動かないフォームを出さず、チャットで答えた内容を LINE で送る形にする
+              <div className="rounded-[2rem] bg-[#cfe2f2] px-3 py-4 sm:px-6 sm:py-6">
+                <LineChatEstimate mascot={img("ai/mascot-point")} lineUrl={line} lineId={siteConfig.social.lineId ?? ""} phone={phone} hours={hours} qr={qr} />
+              </div>
             )}
           </div>
 

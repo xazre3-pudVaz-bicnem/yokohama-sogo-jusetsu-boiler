@@ -22,26 +22,26 @@ export function Footer() {
   const areaLinks: NavLink[] = [{ href: "/area", label: "対応エリア" }, ...publishedAreas.map((a) => ({ href: `/area/${a.slug}`, label: a.slug === "yokohama" ? "横浜市全体" : a.shortName }))];
 
   return (
-    <footer className="bg-navy-950 text-silver-200">
+    <footer className="cv border-t-4 border-cta-700 bg-paper-2 text-ink-body">
       <div className="container-x grid gap-12 py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.1fr)] lg:gap-14 lg:py-20">
         {/* 運営会社 */}
         <div>
-          <Logo onDark size="lg" />
-          <p className="mt-6 max-w-md text-sm leading-loose text-silver-300">
+          <Logo size="lg" />
+          <p className="mt-6 max-w-md text-sm leading-loose text-ink-body">
             {siteConfig.primaryArea.city}
             {siteConfig.primaryArea.ward}にオフィスのある{siteConfig.name}（{siteConfig.nickname}）が運営する、給湯器交換の専門サイトです。
           </p>
 
           <dl className="mt-7 space-y-4 text-sm">
             <div className="flex gap-3">
-              <dt className="w-[5.5rem] shrink-0 font-bold text-white">運営会社</dt>
+              <dt className="w-[5.5rem] shrink-0 font-bold text-ink">運営会社</dt>
               <dd>{siteConfig.name}</dd>
             </div>
             {offices.map((key) => (
               <div key={key} className="flex gap-3">
-                <dt className="w-[5.5rem] shrink-0 font-bold text-white">{siteConfig.offices[key].label}</dt>
+                <dt className="w-[5.5rem] shrink-0 font-bold text-ink">{siteConfig.offices[key].label}</dt>
                 <dd>
-                  <a href={officeMapUrl(key)} target="_blank" rel="noopener noreferrer" className="leading-relaxed underline-offset-4 hover:text-white hover:underline">
+                  <a href={officeMapUrl(key)} target="_blank" rel="noopener noreferrer" className="leading-relaxed underline-offset-4 hover:text-cta-700 hover:underline">
                     {officeAddressWithPostal(key)}
                   </a>
                 </dd>
@@ -49,12 +49,12 @@ export function Footer() {
             ))}
             {phone && (
               <div className="flex gap-3">
-                <dt className="w-[5.5rem] shrink-0 font-bold text-white">電話</dt>
+                <dt className="w-[5.5rem] shrink-0 font-bold text-ink">電話</dt>
                 <dd>
-                  <a href={telHref(phone)} className="num text-lg font-semibold tracking-wider text-white hover:text-sky-300" data-cv="tel">
+                  <a href={telHref(phone)} className="num text-xl font-bold tracking-wider text-cta-700 hover:text-cta-800" data-cv="tel">
                     {phone}
                   </a>
-                  {hours && <span className="block text-xs text-silver-400 sm:ml-2 sm:inline">受付 {hours}</span>}
+                  {hours && <span className="block text-xs text-ink-mute sm:ml-2 sm:inline">受付 {hours}</span>}
                 </dd>
               </div>
             )}
@@ -66,10 +66,10 @@ export function Footer() {
                 href={line}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 border border-white/30 px-4 text-sm font-bold text-white transition-colors hover:bg-white hover:text-navy-900"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-silver-300 bg-white px-4 text-sm font-bold text-ink transition-colors hover:border-cta-700"
                 data-cv="line"
               >
-                <LineIcon onDark className="size-5" />
+                <LineIcon className="size-5" />
                 LINE で相談
               </a>
             )}
@@ -77,13 +77,13 @@ export function Footer() {
               href={corporateLink("/")}
               target="_blank"
               rel="noopener"
-              className="inline-flex min-h-11 items-center gap-2 border border-white/30 px-4 text-sm font-bold text-white transition-colors hover:bg-white hover:text-navy-900"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-silver-300 bg-white px-4 text-sm font-bold text-ink transition-colors hover:border-cta-700"
             >
               コーポレートサイト
               <Icon name="external" className="size-4" />
             </a>
           </div>
-          <p className="mt-4 max-w-md text-xs leading-relaxed text-silver-400">エアコン・トイレ・太陽光発電・外壁塗装など、給湯器以外の工事は、コーポレートサイトでご案内しています。</p>
+          <p className="mt-4 max-w-md text-xs leading-relaxed text-ink-mute">エアコン・トイレ・太陽光発電・外壁塗装など、給湯器以外の工事は、コーポレートサイトでご案内しています。</p>
         </div>
 
         {/* メニュー */}
@@ -103,8 +103,8 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container-x flex flex-col gap-2 pb-24 pt-6 text-xs text-silver-400 sm:flex-row sm:items-center sm:justify-between lg:pb-6">
+      <div className="border-t border-silver-200 bg-white">
+        <div className="container-x flex flex-col gap-2 pb-24 pt-6 text-xs text-ink-mute sm:flex-row sm:items-center sm:justify-between lg:pb-6">
           <p>
             © {year} {siteConfig.name}
           </p>
@@ -118,11 +118,11 @@ export function Footer() {
 function FooterGroup({ title, links, columns = false }: { title: string; links: NavLink[]; columns?: boolean }) {
   return (
     <div>
-      <p className="eyebrow eyebrow-on-dark border-b border-white/20 pb-2">{title}</p>
+      <p className="eyebrow border-b-2 border-dotted border-silver-300 pb-2">{title}</p>
       <ul className={`mt-3 ${columns ? "grid grid-cols-2 gap-x-4" : ""}`}>
         {links.map((l) => (
           <li key={l.href}>
-            <Link prefetch={false} href={l.href} className="inline-flex min-h-10 items-center text-sm leading-snug text-silver-200 underline-offset-4 hover:text-white hover:underline">
+            <Link prefetch={false} href={l.href} className="inline-flex min-h-10 items-center gap-1 text-sm leading-snug text-ink-body underline-offset-4 hover:text-cta-700 hover:underline">
               {/* 長い名前は、文節の切れ目で折り返す（PC の狭い幅で「全体／像」のように割れないように） */}
               <span>
                 <Phrase>{l.label}</Phrase>

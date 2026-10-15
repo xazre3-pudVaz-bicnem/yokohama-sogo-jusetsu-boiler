@@ -166,7 +166,7 @@ export function ProductExplorer({ items, groups }: { items: ProductCardData[]; g
           <summary className="flex min-h-14 items-center justify-between gap-3 font-heading font-bold text-navy-900">
             <span>
               条件で絞り込む
-              {activeCount > 0 && <span className="num ml-2 inline-grid size-6 place-items-center rounded-full bg-brand-600 text-xs font-semibold text-white">{activeCount}</span>}
+              {activeCount > 0 && <span className="num ml-2 inline-grid size-6 place-items-center rounded-full bg-brand-700 text-xs font-semibold text-white">{activeCount}</span>}
             </span>
             <span className="relative grid size-6 place-items-center rounded-full bg-cream text-navy-900" aria-hidden="true">
               <span className="absolute h-0.5 w-2.5 rounded bg-current" />
