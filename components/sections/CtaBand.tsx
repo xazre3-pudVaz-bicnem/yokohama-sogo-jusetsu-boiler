@@ -1,0 +1,114 @@
+import type { ReactNode } from "react";
+import Link from "next/link";
+import { Icon } from "@/components/ui/Icon";
+import { LineIcon } from "@/components/ui/LineIcon";
+import { Illust } from "@/components/ui/Photo";
+import { Phrase } from "@/components/ui/Phrase";
+import { isContactFormShown } from "@/lib/contact";
+import { reveal } from "@/lib/reveal";
+import { primaryPhone, telHref, lineUrl, receptionHours } from "@/lib/site";
+
+/**
+ * ページの最後に置く、お見積もりの案内。
+ * クリーム地に白い角丸のパネル、丸いボタン、スタッフのイラスト（コーポレートサイトと同じ組み方）。
+ *
+ * 問い合わせの導線は、①ヘッダー ②このページ末尾の案内 ③スマホ下部の固定ボタン、の3か所にまとめている。
+ * ページの冒頭や本文の途中に、同じ案内を繰り返さないこと。
+ * data-cta-zone は、スマホ下部の固定ボタンを隠す目印（この案内が見えているときは、固定ボタンを出さない）。
+ *
+ * いちばん上のボタンは「写真でかんたん見積もり」（/contact/photo）。項目の多いフォーム（/contact）は、その下の文字のリンクにする。
+ * product … 機種のページから来たとき、その機種をフォームの「気になっている機種」に入れておく（/contact/photo?product=…）
+ */
+export function CtaBand({
+  title = "無料見積もり・ご相談",
+  lead = "お見積もりは無料です。型番のシールと給湯器の全体の写真を送っていただくと、機種の候補と費用の目安をお伝えできます。現地にうかがって、配管や排気の向き、搬入の経路を確かめたうえで、内訳の分かる見積書をお出しします。",
+  id = "contact-cta",
+  product,
+}: {
+  title?: ReactNode;
+  lead?: string;
+  id?: string;
+  product?: string;
+}) {
+  const phone = primaryPhone();
+  const hours = receptionHours();
+  const line = lineUrl();
+  // フォームが使えないあいだ（設定前の本番）は、フォームへのボタンを出さない
+  const form = isContactFormShown();
+  const q = product ? `?product=${encodeURIComponent(product)}` : "";
+  const photoHref = `/contact/photo${q}`;
+  const contactHref = `/contact${q}`;
+
+  return (
+    <section aria-labelledby={`${id}-title`} data-cta-zone className="band band-cream py-14 sm:py-20">
+      <span className="absolute left-[8%] top-8 size-3 animate-twinkle rounded-full bg-sun-400" aria-hidden="true" />
+      <span className="absolute bottom-10 right-[10%] size-4 animate-twinkle rounded-full bg-brand-300 [animation-delay:1s]" aria-hidden="true" />
+      <div className="container-x">
+        <div className="card-pop px-5 py-9 sm:px-12 sm:py-12" {...reveal(0, "zoom")}>
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_10rem] lg:gap-10">
+            <div>
+              <p className="mb-5 flex">
+                <span className="pill">お見積もり・現地調査は無料です</span>
+              </p>
+              <h2 id={`${id}-title`} className="h-section">
+                <Phrase>{title}</Phrase>
+              </h2>
+              <p className="mt-4 text-[0.9375rem] leading-[2]">{lead}</p>
+            </div>
+
+            <div className="flex min-w-0 flex-col gap-3 lg:w-[20.5rem]">
+              {form && (
+                <Link href={photoHref} className="btn btn-primary min-h-14 w-full text-base">
+                  写真でかんたん見積もり
+                  <Icon name="arrowRight" className="btn-arrow size-4" />
+                </Link>
+              )}
+              {line && (
+                <a
+                  href={line}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-14 items-center justify-center gap-2.5 rounded-full border-2 border-navy-900 bg-white px-5 py-1.5 font-heading text-base font-bold tracking-wider text-navy-900 transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-cream"
+                  data-cv="line"
+                >
+                  <LineIcon className="size-7" />
+                  {/* 狭い画面では、文節の切れ目で折り返す（「送っ／て」のように割れないように） */}
+                  <span className="text-balance">
+                    <span className="ib">LINE で</span>
+                    <span className="ib">写真を送って</span>
+                    <span className="ib">相談</span>
+                  </span>
+                </a>
+              )}
+              {phone && (
+                <a href={telHref(phone)} className="flex min-h-14 items-center justify-center gap-3 rounded-full border-2 border-navy-900 bg-white px-5 py-1.5 text-navy-900 transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-cream" data-cv="tel">
+                  <Icon name="phone" className="size-5 shrink-0 text-brand-600" />
+                  <span className="text-left leading-none">
+                    <span className="block text-xs font-bold text-ink-mute">
+                      お電話でのご相談
+                      {hours && (
+                        <span className="ml-1 font-normal">
+                          （<span className="ib">受付</span> <span className="ib">{hours}）</span>
+                        </span>
+                      )}
+                    </span>
+                    <span className="num mt-1 block text-[1.3125rem] font-semibold tracking-wider">{phone}</span>
+                  </span>
+                </a>
+              )}
+              {form && (
+                <Link href={contactHref} className="text-link mt-1 self-center text-[0.875rem]">
+                  項目を入力して見積もりを依頼する
+                </Link>
+              )}
+            </div>
+
+            <div className="hidden animate-float-slow lg:block">
+              <Illust image="illust/pose-phone" width={160} className="mx-auto h-auto w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

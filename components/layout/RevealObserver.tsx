@@ -1,0 +1,151 @@
+"use client";
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+/**
+ * 画面に入った要素に印を付ける（表示の切り替えは CSS 側）。
+ *
+ * 1. 登場アニメーション … data-reveal を付けた要素が画面に入ったら data-revealed を付ける。
+ *    - 最初の判定が終わるまで html[data-reveal-on] を付けない。つまり「最初から画面内にある要素」は
+ *      一度も隠れない（LCP を遅らせない・ちらつかない）。画面外の要素だけが隠れて、入ってきたときに現れる。
+ *    - getBoundingClientRect を全要素に呼ぶと content-visibility:auto の区画まで強制レイアウトされるので、
+ *      判定は IntersectionObserver の結果だけで行う。
+ *
+ * 2. ページ内リンク … 描画を後回しにしている区画（.cv）は、画面に入るまで仮の高さで置かれている。
+ *    スクロールの途中で手前の区画が本当の高さに変わると着地点がずれるので、
+ *    飛ぶ前に「行き先より手前にある区画」を先に描画させてから移動する。
+ *    行き先がまだ現れていない（下にずらしてある）ときは、先に現れた状態にしておく（settle）。
+ *
+ * 3. 飾りの動き（ふわふわ・きらきら）… 画面内にあるときだけ動かす。
+ *    クラス名に animate- を含む要素に data-anim を付け、画面内にある間だけ data-inview を付ける。
+ *    CSS 側で「data-anim があって data-inview が無い」要素のアニメーションを止めている。
+ *
+ * JS が動かなければ html[data-reveal-on] も data-anim も付かないので、すべて表示されたままになる。
+ */
+const ANIMATED = '[class*="animate-"]';
+
+export function RevealObserver() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) return;
+    const root = document.documentElement;
+    let first = true;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const vh = window.innerHeight;
+        for (const e of entries) {
+          const r = e.boundingClientRect;
+          // 初回だけは「少しでも画面にかかっている」ものを全部表示済みにする
+          const inView = e.isIntersecting || (first && r.height > 0 && r.top < vh && r.bottom > 0);
+          if (inView) {
+            // "0"＝最初から画面内にあった／"1"＝スクロールして入ってきた（CSS の wipe が、後者だけを動かす）
+            (e.target as HTMLElement).dataset.revealed = first ? "0" : "1";
+            io.unobserve(e.target);
+          }
+        }
+        first = false;
+        root.dataset.revealOn = "1";
+      },
+      { rootMargin: "0px 0px -6% 0px", threshold: 0.04 },
+    );
+
+    const animIo = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          const el = e.target as HTMLElement;
+          if (e.isIntersecting) el.dataset.inview = "1";
+          else delete el.dataset.inview;
+        }
+      },
+      { rootMargin: "60px 0px 60px 0px" },
+    );
+
+    const seen = new WeakSet<Element>();
+    const scan = () => {
+      document.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => {
+        if (seen.has(el)) return;
+        seen.add(el);
+        io.observe(el);
+      });
+      document.querySelectorAll<HTMLElement>(ANIMATED).forEach((el) => {
+        if (el.dataset.anim) return;
+        el.dataset.anim = "1";
+        animIo.observe(el);
+      });
+    };
+    scan();
+
+    // ── ページ内リンク：行き先より手前（と、行き先を含む）区画を先に描画させる
+    const showBefore = (target: Element) => {
+      document.querySelectorAll<HTMLElement>(".cv").forEach((el) => {
+        if (el.contains(target) || el.compareDocumentPosition(target) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          el.style.contentVisibility = "visible";
+        }
+      });
+    };
+    // 行き先と、それを包む要素の「登場の動き」を、動かさずに済ませておく。
+    // 隠れている要素は下にずらしてあり、ブラウザはずれた位置で着地点を決める。そのままだと、現れた後に見出しが
+    // ずらした分だけ上がって、上部に固定したヘッダーの下に潜る
+    const settle = (target: Element) => {
+      for (let el: Element | null = target; el; el = el.parentElement) {
+        if (!(el instanceof HTMLElement) || !el.hasAttribute("data-reveal") || el.dataset.revealed) continue;
+        io.unobserve(el);
+        el.style.transition = "none";
+        el.dataset.revealed = "0";
+        void el.offsetHeight;
+        el.style.transition = "";
+      }
+    };
+    const targetOf = (hash: string): Element | null => {
+      if (hash.length < 2) return null;
+      try {
+        return document.getElementById(decodeURIComponent(hash.slice(1)));
+      } catch {
+        return null;
+      }
+    };
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      if (!a || !a.hash || a.pathname !== window.location.pathname) return;
+      const target = targetOf(a.hash);
+      if (target) {
+        showBefore(target);
+        settle(target);
+      }
+    };
+    document.addEventListener("click", onClick, true);
+
+    // URL に # が付いた状態で開いたとき（他ページからのリンクなど）
+    const initial = targetOf(window.location.hash);
+    if (initial) {
+      showBefore(initial);
+      settle(initial);
+      initial.scrollIntoView({ behavior: "instant", block: "start" });
+    }
+
+    let raf = 0;
+    const mo = new MutationObserver(() => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(scan);
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      document.removeEventListener("click", onClick, true);
+      mo.disconnect();
+      io.disconnect();
+      animIo.disconnect();
+      // ページを移動したら印を外す（次のページで付け直す）
+      document.querySelectorAll<HTMLElement>("[data-anim]").forEach((el) => {
+        delete el.dataset.anim;
+        delete el.dataset.inview;
+      });
+    };
+  }, [pathname]);
+
+  return null;
+}

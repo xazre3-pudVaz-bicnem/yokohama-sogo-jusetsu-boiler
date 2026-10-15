@@ -1,0 +1,192 @@
+name: 給湯器コラムの自動投稿
+
+# 1日1本、給湯器コラムを書いて content/blog/ に追加する（または公開済みの記事を1本見直す）。
+# すべての検査に通った日だけ main へ push する（push を受けて Vercel が本番を更新する）。
+#
+#   題材        … lib/blog-generator/topics.ts から優先度の順に選ぶ（20のジャンル）。最新の公式情報を使う題材は、
+#                 その日に公式ページを取り直せた日だけ書く（取り直せなければ、普遍的な題材に替える）
+#   検査        … 書く前に blog:selftest（検査の仕組み・事実シートとデータの食い違い）→ 書いたあと 機械の検査と読み直し
+#                 → blog:audit --strict（今回の記事。ほかの記事の不合格は Summary に出す）→ build → site:check（全ページ）→ seo:audit（あれば）
+#   事実シート  … 書き手には docs/VERIFIED_FACTS.md の全体ではなく、いつも渡す節と、題材の節（topics.ts の facts）だけを渡す
+#   1日1本      … 今日（日本時間）の記事がすでにあれば何もしない。予定の時刻より遅れて動いた回・手動の2回目でも重ねない
+#   止まったとき … 実行結果の画面（Summary）に、理由と試行の記録が出る。記事は push しない（本番は前の状態のまま）
+#   API キー    … Secrets の ANTHROPIC_API_KEY。未登録のあいだは、失敗にせず、何もしないで終わる
+#   モデル      … 既定は claude-haiku-5-5（書く・読み直す）。リポジトリの変数 ANTHROPIC_MODEL・ANTHROPIC_REVIEW_MODEL、または手動の実行の入力で替えられる
+#   予算の割合  … 補助金の予算の割合（data/subsidy/budget.generated.json）は、キーの有無・記事の成否に関係なく毎日取り直し、
+#                 変わっていれば push する（本番が毎日作り直され、補助金の期限による表示の切り替えもその日に効く）
+on:
+  schedule:
+    # 毎日 9:17（日本時間）。GitHub の cron は UTC。混み合う毎時0分を避けている
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "試し書き（生成と検査だけ行い、保存・公開しない）"
+        type: boolean
+        default: false
+      topic:
+        description: "題材の slug（空欄なら自動で選ぶ。指定すると、今日の記事があっても書く）"
+        type: string
+        required: false
+      model:
+        description: "書くモデル（空欄なら既定の claude-haiku-5-5）"
+        type: string
+        required: false
+      review_model:
+        description: "読み直すモデル（空欄なら既定の claude-haiku-5-5）"
+        type: string
+        required: false
+      mode:
+        description: "new＝新しい記事／refresh＝公開済みの記事の見直し（空欄なら日付から決める）"
+        type: string
+        required: false
+      refresh:
+        description: "見直す記事の slug（mode が refresh のとき。空欄なら自動で選ぶ）"
+        type: string
+        required: false
+
+permissions:
+  contents: write
+
+# 同時に2つ走らせない（同じ日に2本書くのを防ぐ）。走っている回は止めずに、終わるのを待つ
+concurrency:
+  group: daily-blog
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      TZ: Asia/Tokyo
+    steps:
+      # API キーを登録するまでは、記事を書かずに（失敗にせず）、予算の割合の取り直しだけを行う
+      - name: API キーの確認
+        id: key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "### API キーが未登録のため、記事は書きません（補助金の予算の割合の取り直しだけ行います）" >> "$GITHUB_STEP_SUMMARY"
+            echo "リポジトリの Settings → Secrets and variables → Actions に ANTHROPIC_API_KEY を登録すると、次の回から記事を書きます。" >> "$GITHUB_STEP_SUMMARY"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          # push の前に pull --rebase するため、履歴をすべて取る
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 依存パッケージの導入
+        run: npm ci
+
+      # 補助金の予算の割合を、公式ページから取り直す（data/subsidy/budget.generated.json）。
+      # 取得に失敗しても、記事の生成は止めない（古い割合は、画面にも記事にも「いまの値」として出ない仕組み）
+      - name: 補助金の予算の割合を取り直す（失敗しても続ける）
+        continue-on-error: true
+        run: npm run subsidy:budget
+
+      - name: 検査の仕組みと事実シートを確かめる（API は呼ばない）
+        if: steps.key.outputs.ready == 'true'
+        run: npm run blog:selftest
+
+      - name: 記事を書く
+        id: generate
+        if: steps.key.outputs.ready == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ inputs.model || vars.ANTHROPIC_MODEL }}
+          ANTHROPIC_REVIEW_MODEL: ${{ inputs.review_model || vars.ANTHROPIC_REVIEW_MODEL }}
+          ANTHROPIC_FALLBACKS: ${{ vars.ANTHROPIC_FALLBACKS }}
+          TOPIC: ${{ inputs.topic }}
+          BLOG_MODE: ${{ inputs.mode }}
+          REFRESH: ${{ inputs.refresh }}
+          BLOG_REFRESH_RATIO: ${{ vars.BLOG_REFRESH_RATIO }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: npm run blog:generate
+
+      # ここから下は、記事を保存したときだけ。1つでも通らなければ push しない（本番は前の状態のまま）
+      # 点検は全記事に行い、今回書いた・見直した記事が不合格なら止める。ほかの記事の不合格は Summary に出し、
+      # 見直しの日に優先して直す（事実シートを直したあとに古い数値が残った記事で、毎日の投稿を止めないため）
+      - name: 公開済みの記事を点検する（今回の記事は必ず合格）
+        if: steps.generate.outputs.published == 'true'
+        env:
+          SLUG: ${{ steps.generate.outputs.slug }}
+        run: npm run blog:audit -- --strict "$SLUG"
+
+      - name: サイトをビルドして、全ページを検査する
+        if: steps.generate.outputs.published == 'true'
+        run: |
+          npm run build
+          npm run site:check
+          if [ -f scripts/seo-audit.ts ]; then npm run seo:audit; fi
+
+      - name: コミットして push する
+        if: steps.generate.outputs.published == 'true'
+        env:
+          # 記事の題名はモデルが書いた文字列なので、コマンドに直接埋め込まず、環境変数で渡す
+          TITLE: ${{ steps.generate.outputs.title }}
+          SLUG: ${{ steps.generate.outputs.slug }}
+          ACTION: ${{ steps.generate.outputs.action }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/blog
+          if git diff --cached --quiet -- content/blog; then
+            echo "追加・更新する記事はありません"
+            exit 0
+          fi
+          # 予算の割合を取り直せていれば、同じコミットに入れる
+          git add data/subsidy/budget.generated.json 2>/dev/null || true
+          git commit -m "コラムを${ACTION:-追加}：${TITLE}" -m "content/blog/${SLUG}.md（自動投稿。機械の検査・読み直し・点検・ビルドに合格）"
+          # ビルドなどで書き換わった、コミットしないファイルがあっても pull できるよう --autostash を付ける
+          if ! git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+            # ほかの自動更新が予算のファイルを先に書き換えていたときは、そちらを残し、記事だけをコミットし直す
+            git rebase --abort
+            git reset --soft HEAD~1
+            git restore --staged data/subsidy/budget.generated.json 2>/dev/null || true
+            git checkout -- data/subsidy/budget.generated.json 2>/dev/null || true
+            git commit -m "コラムを${ACTION:-追加}：${TITLE}" -m "content/blog/${SLUG}.md（自動投稿。機械の検査・読み直し・点検・ビルドに合格）"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          fi
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "- push しました：/blog/${SLUG}" >> "$GITHUB_STEP_SUMMARY"
+
+      # 記事を書かなかった日・検査で止まった日も、予算の割合が新しくなっていれば、それだけを反映する（試し書きの回は何もしない）
+      - name: 予算の割合だけを反映する
+        if: ${{ always() && !inputs.dry_run && (steps.generate.outputs.published != 'true' || failure()) }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/subsidy/budget.generated.json 2>/dev/null || true
+          if git diff --cached --quiet -- data/subsidy/budget.generated.json; then
+            echo "予算の割合は変わっていません"
+            exit 0
+          fi
+          AS_OF=$(node -e 'console.log(require("./data/subsidy/budget.generated.json").asOf)')
+          git commit -m "補助金の予算の割合を更新（${AS_OF} 0時時点）" -- data/subsidy/budget.generated.json
+          if ! git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+            git rebase --abort || true
+            echo "ほかの更新と重なったため、今回は反映しません" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "- 補助金の予算の割合を更新しました（${AS_OF} 0時時点）" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 止まったときの案内
+        if: failure()
+        run: |
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### 自動投稿は途中で止まりました（記事は push していません。本番は前の状態のままです）" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 止まった手順の名前と、上の「試行の記録」で理由を確かめてください。" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 検査の仕組みで止まった（blog:selftest）ときは、事実シートとデータの食い違い（npm run blog:facts）や、題材の定義を確かめます。" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 直したあと、Actions の画面から手動で実行し直せます（今日の記事がまだ無ければ書きます）。" >> "$GITHUB_STEP_SUMMARY"
