@@ -6,7 +6,6 @@
 
 | 項目 | いまの扱い | 確かめたら直す場所 |
 | --- | --- | --- |
-| 本番のドメイン | 未定。全ページ noindex・canonical と sitemap は出していない | `lib/site.ts` の `productionUrl`、Vercel の `NEXT_PUBLIC_SITE_URL`（Production だけ） |
 | 給湯省エネ2026事業の登録事業者か | 2026-10-14 に国の「登録事業者の検索」で見つからず。「登録済み」とは書いていない（中立の文） | `lib/site.ts` の `subsidyOperator`（registered・number・confirmedAt） |
 | 当社の販売価格（本体・リモコン・標準工事・撤去処分） | すべて「お見積もり」 | 各機種の `salesPrice` など（`data/products/*.ts`） |
 | 工事の保証（有無・年数） | 書いていない | 書くなら `/flow`・`/faq` と、機種のページの注記 |
@@ -23,7 +22,7 @@
 
 1. GitHub に新しいリポジトリを作り、`main` に push（README「GitHub と Vercel」）。
 2. Vercel に新しいプロジェクトを作る（コーポレートサイトとは別）。環境変数を入れる。
-3. ドメインをつなぎ、`NEXT_PUBLIC_SITE_URL` を Production に入れて再デプロイ。
+3. ドメインをつなぎ、`NEXT_PUBLIC_SITE_URL` を Production に入れて再デプロイ。→ 2026-10-16：本番ドメインは https://www.yokoju-boiler.com（`lib/site.ts` の `productionUrl` に設定。Vercel の本番デプロイでは、環境変数が無くてもこの URL を使う）。
 4. 公開後、本番の URL で `NEXT_PUBLIC_SITE_URL=… npm run build && npm run site:check && npm run seo:audit` と同じ確認をする（canonical・noindex・sitemap）。
 5. Search Console と Bing に登録し、sitemap.xml を送る（確認のコードは `GOOGLE_SITE_VERIFICATION`・`BING_SITE_VERIFICATION`）。
 6. GitHub の Secrets に `ANTHROPIC_API_KEY` を入れ、コラムの自動投稿を手動で1回、試し書き（dry_run）で動かす。

@@ -15,7 +15,8 @@ import { manYen } from "@/lib/subsidy";
  */
 /** shared：ほかのページ（種類のページ・補助金のページ）にも同じ問いがあり、そちらで構造化データを出しているもの */
 export type Faq = { q: string; a: string; pickup?: boolean; shared?: boolean };
-export type FaqGroup = { id: string; title: string; faqs: Faq[] };
+/** related … そのまとまりを、くわしく説明しているページ（答えにはリンクを置けないので、まとまりの下に並べる） */
+export type FaqGroup = { id: string; title: string; faqs: Faq[]; related?: { label: string; href: string }[] };
 
 const hybridMax = manYen(k.base.hybrid + k.performanceBonus.hybrid);
 const ecocuteMax = manYen(k.base.ecocute + k.performanceBonus.ecocute);
@@ -31,6 +32,11 @@ export const faqGroups: FaqGroup[] = [
   {
     id: "estimate",
     title: "ご相談・お見積もり",
+    related: [
+      { label: "写真でかんたん見積もり", href: "/contact/photo" },
+      { label: "交換費用の考え方", href: "/guide/cost" },
+      { label: "交換工事の流れ", href: "/flow" },
+    ],
     faqs: [
       {
         q: "見積もりは無料ですか。",
@@ -59,6 +65,11 @@ export const faqGroups: FaqGroup[] = [
   {
     id: "choose",
     title: "機種の選び方",
+    related: [
+      { label: "号数の選び方", href: "/guide/capacity" },
+      { label: "設置タイプの見分け方", href: "/guide/installation-types" },
+      { label: "機種を比較する", href: "/compare" },
+    ],
     faqs: [
       {
         q: "いまと同じメーカーの給湯器にしないといけませんか。",
@@ -83,6 +94,11 @@ export const faqGroups: FaqGroup[] = [
   {
     id: "subsidy",
     title: "補助金",
+    related: [
+      { label: "給湯器の補助金", href: "/subsidy" },
+      { label: "給湯省エネ2026事業", href: "/subsidy/kyutou-shoene-2026" },
+      { label: "横浜市の補助金・支援制度", href: "/subsidy/yokohama" },
+    ],
     faqs: [
       {
         q: "ガス給湯器の交換に、補助金は出ますか。",
@@ -103,6 +119,11 @@ export const faqGroups: FaqGroup[] = [
   {
     id: "trouble",
     title: "故障・交換の時期",
+    related: [
+      { label: "故障・トラブル", href: "/trouble" },
+      { label: "エラーコードの調べ方", href: "/trouble/error-codes" },
+      { label: "交換時期の目安", href: "/guide/timing" },
+    ],
     faqs: [
       {
         q: "給湯器は、何年くらいで交換するものですか。",
@@ -121,6 +142,11 @@ export const faqGroups: FaqGroup[] = [
   {
     id: "area",
     title: "対応エリア・会社",
+    related: [
+      { label: "対応エリア", href: "/area" },
+      { label: "戸塚区の給湯器交換", href: "/area/totsuka" },
+      { label: "運営会社", href: "/company" },
+    ],
     faqs: [
       {
         q: "対応エリアはどこですか。",

@@ -46,13 +46,13 @@ export const siteConfig = {
     "横浜市戸塚区にオフィスのある株式会社 横浜総合住設（ヨコジュウ）の給湯器専門サイトです。ガス給湯器・エコジョーズ・エコキュート・ハイブリッド給湯器の機種を型番で比べ、交換の費用の考え方と国の補助金を確かめたうえで、お見積もりをご依頼いただけます。",
 
   /**
-   * 本番ドメイン。まだ決まっていないので空にしてある（2026-10-14 時点）。
-   * 決まったら "https://www.example.jp" の形で書く（末尾のスラッシュは付けない）。www の有無も、実際に 200 を返す側に合わせる。
+   * 本番ドメイン。2026-10-16 に依頼者から「https://www.yokoju-boiler.com」と連絡を受けて設定した。
+   * www ありが 200 を返し、www なし・http は www ありへ 308 で転送されることを確かめた（末尾のスラッシュは付けない）。
    * canonical・OGP・sitemap.xml・robots.txt・RSS・構造化データの URL は、すべてここ（または環境変数 NEXT_PUBLIC_SITE_URL）から作る。
    * 空のあいだは、本番も全ページ noindex になり、検索結果には出ない（next.config.ts を参照）。
    * ここに書いてよいのは、会社に確かめたドメインだけ。見込みで書かないこと。
    */
-  productionUrl: "",
+  productionUrl: "https://www.yokoju-boiler.com",
 
   /** コーポレートサイト（会社全体の紹介・給湯器以外の工事）。相互リンクと、構造化データの会社の URL に使う */
   corporateUrl: "https://www.yokohama-sogo-jusetsu.com",

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqList } from "@/components/ui/FaqList";
+import { Icon } from "@/components/ui/Icon";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { faqGroups, markupFaqs } from "@/data/faq";
@@ -47,6 +49,18 @@ export default function FaqPage() {
             <section key={g.id} aria-labelledby={g.id} className="scroll-mt-24">
               <SectionHeading id={g.id} title={g.title} className="mb-6" />
               <FaqList faqs={g.faqs} />
+              {/* 答えにはリンクを置けない（構造化データにそのまま入るため）ので、くわしいページは、まとまりの下に並べる */}
+              {g.related?.length ? (
+                <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-1">
+                  <span className="text-[0.8125rem] font-bold text-ink-mute">くわしいページ</span>
+                  {g.related.map((r) => (
+                    <Link key={r.href} href={r.href} className="link-arrow">
+                      {r.label}
+                      <Icon name="arrowRight" className="size-4" />
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
             </section>
           ))}
         </div>
