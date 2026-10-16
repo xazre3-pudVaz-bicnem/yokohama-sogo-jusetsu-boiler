@@ -1,6 +1,6 @@
 # SEO 監査の結果
 
-- 実行：2026-10-16T01:44:35.301Z（本番 URL https://www.yokoju-boiler.com でビルド）
+- 実行：2026-10-16T02:13:00.166Z（本番 URL https://www.yokoju-boiler.com でビルド）
 - ページ数：131（sitemap 127）
 - 誤り：0件／注意：0件
 

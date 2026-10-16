@@ -1,6 +1,6 @@
 import type { Product } from "@/data/products/types";
 import { siteConfig, primaryPhone, telIntl, type OfficeKey } from "@/lib/site";
-import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { SITE_URL, DEFAULT_OG_IMAGE, ogImagePath } from "@/lib/seo";
 
 /**
  * 構造化データ（JSON-LD）を組み立てる。
@@ -240,7 +240,7 @@ export function articleSchema(a: { path: string; title: string; description: str
     inLanguage: "ja",
     articleSection: a.section,
     keywords: a.keywords?.join(", "),
-    image: url(DEFAULT_OG_IMAGE),
+    image: url(ogImagePath(a.path)),
     author: { "@type": "Organization", "@id": ORG_ID, name: siteConfig.name, url: CORP },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },
@@ -270,7 +270,7 @@ export function blogPostingSchema(p: {
     inLanguage: "ja",
     articleSection: p.category,
     keywords: p.keywords.join(", "),
-    image: url(p.image ?? DEFAULT_OG_IMAGE),
+    image: url(p.image ?? ogImagePath(`/blog/${p.slug}`)),
     author: { "@type": "Organization", "@id": ORG_ID, name: p.author, url: url("/company") },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },

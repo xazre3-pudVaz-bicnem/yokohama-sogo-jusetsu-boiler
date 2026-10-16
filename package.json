@@ -21,7 +21,8 @@
     "blog:dry-run": "cross-env DRY_RUN=1 tsx scripts/generate-blog-post.ts",
     "blog:audit": "tsx scripts/blog-audit.ts",
     "blog:selftest": "tsx scripts/blog-selftest.ts",
-    "blog:facts": "tsx scripts/blog-facts.ts"
+    "blog:facts": "tsx scripts/blog-facts.ts",
+    "indexnow": "tsx scripts/indexnow.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

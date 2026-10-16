@@ -55,8 +55,20 @@ export function fitDescription(text: string, max = 120): string {
   return out || text.slice(0, max);
 }
 
-/** 既定の共有画像（scripts/prepare-images.mjs が作る） */
-export const DEFAULT_OG_IMAGE = "/og-image.jpg";
+/**
+ * 既定の共有画像（トップの画像。app/og/[...path]/route.tsx がビルドのときに作る）。
+ * 前の共通の画像（/og-image.jpg。scripts/prepare-images.mjs が作る）は、画像を作れなかったときの代わりに使う。
+ */
+export const DEFAULT_OG_IMAGE = "/og/index.png";
+
+/**
+ * そのページの共有画像（OGP）。ページの題名を入れた画像を、app/og/[...path]/route.tsx がビルドのときに作る。
+ * /guide/cost → /og/guide/cost.png、トップ → /og/index.png。画像を作るページの一覧は lib/og.ts。
+ */
+export function ogImagePath(path: string): string {
+  const p = path.split(/[?#]/)[0].replace(/\/+$/, "");
+  return `/og/${p === "" ? "index" : p.slice(1)}.png`;
+}
 
 type BuildMetadataInput = {
   /** 「｜横浜総合住設」を付ける前のタイトル（社名・愛称を含むとき、長いときは付かない） */
@@ -79,7 +91,8 @@ type BuildMetadataInput = {
 export function buildMetadata(input: BuildMetadataInput): Metadata {
   const title = fullTitle(input.title);
   const url = absoluteUrl(input.path);
-  const img = input.image ?? { src: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: siteConfig.siteName };
+  // 画像を渡さないページは、そのページの題名を入れた共有画像（機種のページなどは、製品の写真を渡している）
+  const img = input.image ?? { src: ogImagePath(input.path), width: 1200, height: 630, alt: input.title };
   const ogImage = absoluteUrl(img.src);
   const noindex = input.noindex || !IS_PUBLIC;
   const feed = absoluteUrl("/feed.xml");

@@ -35,6 +35,7 @@ npm run dev                  # http://localhost:3000
 | `npm run images:prepare` | `public/images/` の画像の一覧（`data/images.generated.json`）とヒーロー・OGP 画像を作り直す |
 | `npm run images:apply -- <フォルダ>` | 製品写真・ロゴの取得の記録（manifest-<メーカー>.json）を、`data/products/images.json`・`data/brand-logos.json` に取り込む（`docs/IMAGE_SOURCES.md`） |
 | `npm run blog:*` | コラムの自動投稿（下の「コラムの自動投稿」） |
+| `npm run indexnow` | IndexNow で、Bing などにページの追加・更新を知らせる（本番のデプロイのあとに実行。`-- /blog/xxx` で指定したパスだけ）。下の「検索と AI への案内」 |
 
 ## 3. フォルダの構成
 
@@ -132,6 +133,13 @@ content/blog/        コラムの記事（自動投稿で増える）
 4. 環境変数（`.env.example` を参照）を入れる。`NEXT_PUBLIC_SITE_URL` は、ドメインが決まってから **Production だけ** に入れる。
 5. ドメインをつないだら、`lib/site.ts` の `productionUrl` にも同じ URL を書き、再デプロイ。
 6. プレビューの URL（*.vercel.app）は、noindex の HTTP ヘッダーも付けています（`next.config.ts`）。
+
+## 9-2. 検索と AI への案内（本番ドメイン https://www.yokoju-boiler.com）
+
+- **共有画像（OGP）**：ページごとに、そのページの題名を入れた画像を、ビルドのときに作ります（`app/og/[...path]/route.tsx`・URL は `/og/<パス>.png`）。文字は各ページのタイトルのまま（`lib/og.ts`。固定のページのタイトルを直したら、ここも直す）。機種のページは、メーカーの製品写真のままです。
+- **llms.txt**：AI のサービス向けに、会社・扱う給湯器・補助金・主なページの案内を `/llms.txt` に出しています（`app/llms.txt/route.ts`。サイトのデータから作る）。
+- **IndexNow**：本番のデプロイのあとに `npm run indexnow` を実行すると、Bing などに全ページを知らせます（Google は対象外。Search Console で sitemap を送る）。鍵のファイルは `public/c7773c9e68af99c2e47800eba13038a9.txt`（公開してよい値）。
+- **Search Console と Bing**：サイトを登録し、`https://www.yokoju-boiler.com/sitemap.xml` を送る。確認のコードは `GOOGLE_SITE_VERIFICATION`・`BING_SITE_VERIFICATION`（Vercel の Production）。
 
 ## 10. 施工事例を足す
 
