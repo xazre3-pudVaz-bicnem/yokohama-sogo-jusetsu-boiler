@@ -124,7 +124,7 @@ export function Header() {
                   <Link
                     prefetch={false}
                     href={l.href}
-                    className="relative flex items-center gap-1 whitespace-nowrap px-2.5 text-[0.875rem] font-bold tracking-wider text-white transition-colors after:absolute after:inset-x-2.5 after:bottom-1.5 after:h-[3px] after:scale-x-0 after:rounded-full after:bg-white after:transition-transform hover:after:scale-x-100 xl:px-4 xl:text-[0.9375rem]"
+                    className="relative flex items-center gap-1 whitespace-nowrap px-2 text-[0.875rem] font-bold tracking-wider text-white transition-colors after:absolute after:inset-x-2 after:bottom-1.5 after:h-[3px] after:scale-x-0 after:rounded-full after:bg-white after:transition-transform hover:after:scale-x-100 xl:px-2.5 xl:text-[0.9375rem] xl:after:inset-x-2.5 2xl:px-3 2xl:after:inset-x-3"
                   >
                     {l.short ? (
                       <>
@@ -202,10 +202,13 @@ export function Header() {
                   <span className="num text-[1.125rem] font-bold tracking-wide">{phone}</span>
                 </a>
               )}
+              {/*
+                名前は短く（主メニュー・LINE と1本の帯に並べ、帯からはみ出さないように）。
+                この組は、隠れているあいだも幅を取るので、どの幅でも「主メニュー＋この組＋LINE」が帯に収まる長さにする
+                （Windows のスクロールバーの分、約17px 狭くなっても収まること。2026-10-16 に 1024〜1920px で測った）。
+              */}
               <Link prefetch={false} href="/contact/photo" className="btn btn-yellow btn-xs !min-h-9 !shadow-none">
-                {/* 幅 1024〜1279px では短く（タブと並んで、帯からはみ出さないように） */}
-                <span className="xl:hidden">写真で見積もり</span>
-                <span className="hidden xl:inline">写真でかんたん見積もり</span>
+                写真で見積もり
               </Link>
             </div>
             {line && (

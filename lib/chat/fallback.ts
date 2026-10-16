@@ -245,7 +245,13 @@ export function answerFromFaq(question: string): string {
   };
   if (faq?.href && faq.label) push(faq.label, faq.href);
   for (const h of r.pages.slice(0, 2)) push(h.p.label, h.p.href);
-  for (const a of publishedAreas) if (question.includes(a.shortName)) push(`${a.shortName}の給湯器交換`, `/area/${a.slug}`);
+  // 長い名前から照らし、合った名前は問いから外す（「港南区」の問いに「南区」のページを出さないため）
+  let rest = question;
+  for (const a of [...publishedAreas].sort((x, y) => y.shortName.length - x.shortName.length)) {
+    if (!rest.includes(a.shortName)) continue;
+    push(`${a.shortName}の給湯器交換`, `/area/${a.slug}`);
+    rest = rest.split(a.shortName).join("　");
+  }
   for (const t of TOPICS.filter((x) => x.words.test(question))) push(t.label, t.href);
   const linkLines = links.map((l) => `[${l.label}](${l.href})`);
 
