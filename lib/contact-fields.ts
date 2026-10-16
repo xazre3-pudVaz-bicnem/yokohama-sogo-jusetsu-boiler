@@ -76,7 +76,11 @@ export const PHOTO_RULES = {
   maxTotalBytes: 3.5 * 1024 * 1024,
   /** 画面側で縮めるときの、長い辺の上限（px） */
   maxEdge: 1600,
-  accept: "image/jpeg,image/png,image/webp,image/heic,image/heif",
+  /**
+   * 選べる形式。HEIC（iPhone の写真の形式）は入れない：入れないと、選んだときに iPhone が JPEG に変えて渡す。
+   * HEIC のまま受け取ると、画面側で縮める処理が、ブラウザによっては読めない（Android・Windows・古い iOS など）
+   */
+  accept: "image/jpeg,image/png,image/webp",
 } as const;
 
 export type EstimateState = {

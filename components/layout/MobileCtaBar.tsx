@@ -55,7 +55,7 @@ export function MobileCtaBar({ phone, telHref, line }: { phone: string; telHref:
     >
       <div className="mx-auto flex max-w-lg gap-2">
         {phone && (
-          <a href={telHref} className={`btn btn-outline btn-sm min-h-12 !px-2 ${line ? "flex-[0.9]" : "flex-1"}`} data-cv="tel" aria-label={`電話で相談する（${phone}）`}>
+          <a href={telHref} className={`btn btn-outline btn-sm min-h-12 min-w-0 !px-2 ${line ? "flex-[0.9]" : "flex-1"}`} data-cv="tel" aria-label={`電話で相談する（${phone}）`}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="size-[1.125rem] shrink-0" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
@@ -63,14 +63,18 @@ export function MobileCtaBar({ phone, telHref, line }: { phone: string; telHref:
           </a>
         )}
         {line && (
-          <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-line btn-sm min-h-12 flex-[0.9] !gap-1 !px-2" data-cv="line" aria-label="LINE で相談する">
+          <a href={line} target="_blank" rel="noopener noreferrer" className="btn btn-line btn-sm min-h-12 min-w-0 flex-[0.9] !gap-1 !px-2" data-cv="line" aria-label="LINE で相談する">
             <LineIcon className="size-[1.125rem]" />
             {/* 幅 320px でも「LINE」を割らない */}
             <span className="whitespace-nowrap">LINE</span>
           </a>
         )}
-        <Link href="/contact/photo" className={`btn btn-yellow btn-sm min-h-12 !gap-1 !px-2 ${line ? "flex-[1.3]" : "flex-1"}`} aria-label="写真を送ってかんたん無料見積もり">
-          <span className="whitespace-nowrap">写真で見積もり</span>
+        <Link href="/contact/photo" className={`btn btn-yellow btn-sm min-h-12 min-w-0 !gap-1 !px-2 ${line ? "flex-[1.3]" : "flex-1"}`} aria-label="写真を送ってかんたん無料見積もり">
+          {/* 文字を大きくしている人の画面では、区切りで2行に折り返す（画面の外にはみ出さないように） */}
+          <span>
+            <span className="ib">写真で</span>
+            <span className="ib">見積もり</span>
+          </span>
         </Link>
       </div>
     </aside>

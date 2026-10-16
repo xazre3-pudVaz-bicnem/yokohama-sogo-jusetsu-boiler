@@ -45,7 +45,7 @@ export function ProductImage({
           width={image.width}
           height={image.height}
           sizes={sizes}
-          quality={78}
+          quality={75}
           {...(priority ? ({ preload: true, fetchPriority: "high", loading: "eager" } as const) : {})}
           // 枠いっぱいに置いて、枠の中に収める（グリッドの中の高さ 100% は効かないことがあり、縦長の写真が枠からはみ出すため）
           className="absolute inset-0 m-auto h-full w-full object-contain p-[7%]"

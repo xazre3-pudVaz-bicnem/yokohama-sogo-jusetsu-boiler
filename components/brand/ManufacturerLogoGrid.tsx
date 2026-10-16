@@ -22,16 +22,22 @@ export function ManufacturerLogoGrid({ headingId, title = "取り扱いメーカ
       <ul className={`grid grid-cols-2 gap-2.5 sm:grid-cols-4 ${compact ? "lg:grid-cols-7" : "lg:grid-cols-7 lg:gap-3"}`}>
         {list.map((b) => {
           const n = productsByBrand(b.id).length;
-          const kinds = b.categories.map((c) => getCategory(c).shortName).join("・");
+          const kinds = b.categories.map((c) => getCategory(c).shortName);
           return (
             <li key={b.id}>
               <Link href={`/products/${b.id}`} className="logo-tile h-full gap-2 text-center">
                 <span className="grid min-h-9 place-items-center">
                   <MakerLogo logo={b.logo} name={b.name} height={compact ? 24 : 28} />
                 </span>
+                {/* 種類の名前の途中・「5機種」の途中では折り返さない（「・」の区切りで折り返す） */}
                 <span className="text-[0.6875rem] leading-snug text-ink-mute">
-                  {kinds}
-                  <span className="num ml-1 font-bold text-ink-body">{n}機種</span>
+                  {kinds.map((k, i) => (
+                    <span key={k} className="ib">
+                      {k}
+                      {i < kinds.length - 1 ? "・" : ""}
+                    </span>
+                  ))}
+                  <span className="num ml-1 whitespace-nowrap font-bold text-ink-body">{n}機種</span>
                 </span>
               </Link>
             </li>

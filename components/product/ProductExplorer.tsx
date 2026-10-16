@@ -181,15 +181,16 @@ export function ProductExplorer({ items, groups }: { items: ProductCardData[]; g
         </div>
       </div>
 
-      <div id="results" className="scroll-mt-28">
+      <div id="results" className="min-w-0 scroll-mt-28">
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
           <p aria-live="polite" className="text-[0.9375rem] font-bold text-navy-900">
             <span className="num text-2xl font-semibold">{shown.length}</span> 機種
             {activeCount > 0 && <span className="ml-1 text-[0.8125rem] font-normal text-ink-mute">（全 {items.length} 機種のうち）</span>}
           </p>
-          <label className="flex items-center gap-2 text-[0.8125rem] font-bold text-navy-900">
-            並べ替え
-            <select value={sort} onChange={(e) => apply(filters, e.target.value as SortKey)} className="field !min-h-11 !w-auto !py-1.5 text-[0.875rem]">
+          {/* 選択肢の長さに合わせた幅のままだと、文字を大きくしている人の画面では一覧ごと横にはみ出すので、画面の幅までに縮める */}
+          <label className="flex min-w-0 max-w-full items-center gap-2 text-[0.8125rem] font-bold text-navy-900">
+            <span className="shrink-0">並べ替え</span>
+            <select value={sort} onChange={(e) => apply(filters, e.target.value as SortKey)} className="field !min-h-11 !w-auto min-w-0 max-w-full !py-1.5 text-[0.875rem]">
               {SORTS.filter((s) => !s.needsTotal || hasTotal).map((s) => (
                 <option key={s.value} value={s.value}>
                   {s.label}

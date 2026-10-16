@@ -203,7 +203,9 @@ export function Header() {
                 </a>
               )}
               <Link prefetch={false} href="/contact/photo" className="btn btn-yellow btn-xs !min-h-9 !shadow-none">
-                写真でかんたん見積もり
+                {/* 幅 1024〜1279px では短く（タブと並んで、帯からはみ出さないように） */}
+                <span className="xl:hidden">写真で見積もり</span>
+                <span className="hidden xl:inline">写真でかんたん見積もり</span>
               </Link>
             </div>
             {line && (

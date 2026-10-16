@@ -51,7 +51,7 @@ export function BudgetMeter({ compact = false }: { compact?: boolean }) {
       ) : (
         <StaleGuard asOf={b.asOf} maxDays={BUDGET_STALE_DAYS} fallback={<div className="mt-3">{noNumber}</div>}>
           <div className="mt-3 flex items-end gap-3">
-            <p className="num text-[2.75rem] font-semibold leading-none text-navy-900">
+            <p className="num shrink-0 whitespace-nowrap text-[2.75rem] font-semibold leading-none text-navy-900">
               {b.percent}
               <span className="ml-0.5 text-xl">％</span>
             </p>

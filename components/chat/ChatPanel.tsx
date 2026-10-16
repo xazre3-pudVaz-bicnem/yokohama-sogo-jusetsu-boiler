@@ -51,8 +51,12 @@ function renderAnswer(text: string, onLink: () => void): ReactNode {
 export function ChatPanel({ open, onClose, ai, mascot }: { open: boolean; onClose: () => void; ai: boolean; mascot: { src: string; width: number; height: number } }) {
   const [messages, setMessages] = useState<Msg[]>(() => {
     try {
-      const saved = sessionStorage.getItem("yokoju-chat");
-      return saved ? (JSON.parse(saved) as Msg[]).slice(-20) : [];
+      const parsed: unknown = JSON.parse(sessionStorage.getItem("yokoju-chat") ?? "[]");
+      if (!Array.isArray(parsed)) return [];
+      const list = parsed.filter((m): m is Msg => !!m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string").slice(-20);
+      // 答えの途中で閉じた・移ったときの、答えの無い問いは外す
+      while (list.length && (list[list.length - 1].role === "user" || !list[list.length - 1].content.trim())) list.pop();
+      return list;
     } catch {
       return [];
     }
@@ -62,30 +66,47 @@ export function ChatPanel({ open, onClose, ai, mascot }: { open: boolean; onClos
   const log = useRef<HTMLDivElement>(null);
   const field = useRef<HTMLTextAreaElement>(null);
   const panel = useRef<HTMLDivElement>(null);
+  const request = useRef<AbortController | null>(null);
+  // スマホ（画面いっぱい）かどうか（この部品はブラウザでだけ描くので、ここで調べてよい）
+  const small = typeof window !== "undefined" && window.matchMedia("(max-width: 639px)").matches;
 
+  // 会話は、答えを受け取り終えてから覚える（途中で閉じても、途中の答えを残さない）
   useEffect(() => {
+    if (busy) return;
     try {
       sessionStorage.setItem("yokoju-chat", JSON.stringify(messages.slice(-20)));
     } catch {
       /* 保存できない環境では覚えない */
     }
+  }, [messages, busy]);
+  useEffect(() => {
     log.current?.scrollTo({ top: log.current.scrollHeight });
   }, [messages]);
+  // 閉じた（ページから外れた）ら、受け取りの途中の通信を止める
+  useEffect(() => () => request.current?.abort(), []);
 
   useEffect(() => {
     if (!open) return;
     field.current?.focus({ preventScroll: true });
+    const full = window.matchMedia("(max-width: 639px)").matches;
     const onKey = (e: globalThis.KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      // 変換の取り消し（日本語の入力中）や、ほかの部品（メニューなど）が使った Esc では閉じない
+      if (e.key !== "Escape" || e.isComposing || e.keyCode === 229 || e.defaultPrevented) return;
+      // PC の小さな窓は、窓の中にいるときだけ閉じる（画面いっぱいのときは、どこでも閉じる）
+      if (!full && !panel.current?.contains(document.activeElement)) return;
+      onClose();
     };
     document.addEventListener("keydown", onKey);
-    // スマホ（画面いっぱい）では、背面のスクロールを止める
-    const small = window.matchMedia("(max-width: 639px)").matches;
+    if (!full) return () => document.removeEventListener("keydown", onKey);
+    // スマホ（画面いっぱい）では、背面のスクロールを止め、背面の要素に移れないようにする
     const prev = document.body.style.overflow;
-    if (small) document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    const others = [...document.body.children].filter((el) => panel.current && el !== panel.current && !el.contains(panel.current) && !el.hasAttribute("inert"));
+    others.forEach((el) => el.setAttribute("inert", ""));
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
+      others.forEach((el) => el.removeAttribute("inert"));
     };
   }, [open, onClose]);
 
@@ -96,8 +117,10 @@ export function ChatPanel({ open, onClose, ai, mascot }: { open: boolean; onClos
     setMessages([...next, { role: "assistant", content: "" }]);
     setInput("");
     setBusy(true);
+    const controller = new AbortController();
+    request.current = controller;
     try {
-      const res = await fetch("/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: next.slice(-10) }) });
+      const res = await fetch("/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: next.slice(-10) }), signal: controller.signal });
       if (!res.body) throw new Error("no body");
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -110,8 +133,10 @@ export function ChatPanel({ open, onClose, ai, mascot }: { open: boolean; onClos
       }
       if (!acc.trim()) setMessages([...next, { role: "assistant", content: "ごめんなさい、お答えを用意できませんでした。もう一度お試しください。" }]);
     } catch {
+      if (controller.signal.aborted) return;
       setMessages([...next, { role: "assistant", content: "通信できませんでした。電波の状態をお確かめのうえ、もう一度お試しください。お急ぎのときは、お電話か LINE でご相談ください。" }]);
     } finally {
+      if (request.current === controller) request.current = null;
       setBusy(false);
     }
   };
@@ -138,7 +163,7 @@ export function ChatPanel({ open, onClose, ai, mascot }: { open: boolean; onClos
       ref={panel}
       id="chat-panel"
       role="dialog"
-      aria-modal="false"
+      aria-modal={small}
       aria-label={ai ? "自動応答AIチャット（ゆげまる）" : "自動応答チャット（ゆげまる）"}
       className={`no-print fixed inset-0 z-[60] flex flex-col bg-white transition-[opacity,transform,visibility] duration-200 sm:inset-auto sm:bottom-5 sm:right-5 sm:h-[min(41rem,calc(100dvh-2.5rem))] sm:w-[24.5rem] sm:overflow-hidden sm:rounded-[1.5rem] sm:border-4 sm:border-pop-yellow sm:shadow-[var(--shadow-pop)] ${open ? "visible translate-y-0 opacity-100" : "invisible translate-y-3 opacity-0"}`}
       inert={!open}
@@ -160,7 +185,7 @@ export function ChatPanel({ open, onClose, ai, mascot }: { open: boolean; onClos
       </div>
 
       {/* 会話 */}
-      <div ref={log} role="log" aria-live="polite" className="flex-1 space-y-3 overflow-y-auto overscroll-contain bg-mist px-3.5 py-4">
+      <div ref={log} role="log" aria-live="polite" aria-busy={busy} className="flex-1 space-y-3 overflow-y-auto overscroll-contain bg-mist px-3.5 py-4">
         <Bubble role="assistant" mascot={mascot}>
           {greeting}
         </Bubble>
@@ -244,10 +269,11 @@ function Bubble({ role, children, mascot }: { role: "user" | "assistant"; childr
 
 function Typing() {
   return (
-    <span className="inline-flex items-center gap-1 py-1" aria-label="答えを考えています">
-      <span className="size-2 animate-bounce rounded-full bg-silver-400 [animation-delay:-0.2s]" />
-      <span className="size-2 animate-bounce rounded-full bg-silver-400 [animation-delay:-0.1s]" />
-      <span className="size-2 animate-bounce rounded-full bg-silver-400" />
+    <span className="inline-flex items-center gap-1 py-1">
+      <span className="sr-only">答えを考えています</span>
+      <span className="size-2 animate-bounce rounded-full bg-silver-400 [animation-delay:-0.2s]" aria-hidden="true" />
+      <span className="size-2 animate-bounce rounded-full bg-silver-400 [animation-delay:-0.1s]" aria-hidden="true" />
+      <span className="size-2 animate-bounce rounded-full bg-silver-400" aria-hidden="true" />
     </span>
   );
 }

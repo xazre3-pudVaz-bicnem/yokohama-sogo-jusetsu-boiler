@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
  *      一度も隠れない（LCP を遅らせない・ちらつかない）。画面外の要素だけが隠れて、入ってきたときに現れる。
  *    - getBoundingClientRect を全要素に呼ぶと content-visibility:auto の区画まで強制レイアウトされるので、
  *      判定は IntersectionObserver の結果だけで行う。
+ *    - キーボードでフォーカスが移った要素は、画面に入ったかどうかに関係なく、すぐに現れた状態にする。
  *
  * 2. ページ内リンク … 描画を後回しにしている区画（.cv）は、画面に入るまで仮の高さで置かれている。
  *    スクロールの途中で手前の区画が本当の高さに変わると着地点がずれるので、
@@ -118,6 +119,13 @@ export function RevealObserver() {
     };
     document.addEventListener("click", onClick, true);
 
+    // キーボードで、まだ現れていない要素（とその中）に移ったときは、動かさずに現れた状態にする。
+    // 画面の下の端（判定から外している 6%）に送られた要素は、そのままだと透明なままフォーカスを受けるため
+    const onFocus = (e: FocusEvent) => {
+      if (e.target instanceof Element) settle(e.target);
+    };
+    document.addEventListener("focusin", onFocus);
+
     // URL に # が付いた状態で開いたとき（他ページからのリンクなど）
     const initial = targetOf(window.location.hash);
     if (initial) {
@@ -136,6 +144,7 @@ export function RevealObserver() {
     return () => {
       cancelAnimationFrame(raf);
       document.removeEventListener("click", onClick, true);
+      document.removeEventListener("focusin", onFocus);
       mo.disconnect();
       io.disconnect();
       animIo.disconnect();

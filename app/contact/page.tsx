@@ -65,7 +65,7 @@ export default function ContactPage() {
       />
 
       <div className="bg-white">
-        <div className="container-x section grid gap-x-14 gap-y-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div className="container-x section grid grid-cols-1 gap-x-14 gap-y-12 lg:grid-cols-[minmax(0,1fr)_22rem]">
           {/* フォーム */}
           <div className="min-w-0">
             {shown && (

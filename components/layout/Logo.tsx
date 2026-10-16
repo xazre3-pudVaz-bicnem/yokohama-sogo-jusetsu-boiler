@@ -10,6 +10,8 @@ import { siteConfig } from "@/lib/site";
  *
  * 幅 360px のスマホでも、右側のボタン（電話・メニュー）と並んで収まるように、
  * md サイズは画面幅に合わせて少し縮む（clamp）。大きさを変えるときは、幅 360px でのはみ出しを確かめること。
+ * 幅 360px 未満（小さなスマホ・拡大表示）では、「株式会社」の小さな文字を省いて、右のボタンと重ならないようにする。
+ * マークと社名は、ひとまとまりのロゴなので、大きさは px で決める（ブラウザの文字の大きさの設定で、ロゴだけが画面からはみ出さないように）。
  */
 export function Logo({ onDark = false, size = "md", priority = false }: { onDark?: boolean; size?: "md" | "lg"; priority?: boolean }) {
   const mark = img(onDark ? "brand/logo-mark-dark" : "brand/logo-mark");
@@ -29,15 +31,15 @@ export function Logo({ onDark = false, size = "md", priority = false }: { onDark
         // （React は eager な img を自動で先読みするので、ページの主役の写真と取り合わないよう、優先度を下げる）
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "low" : undefined}
-        className={`w-auto shrink-0 ${lg ? "h-11 xs:h-14" : "h-[2.125rem] xs:h-[2.625rem]"}`}
+        className={`w-auto shrink-0 ${lg ? "h-[44px] xs:h-[56px]" : "h-[34px] xs:h-[42px]"}`}
       />
       <span className="flex min-w-0 flex-col leading-none">
         <span className={`flex items-baseline gap-1 whitespace-nowrap font-bold tracking-[0.08em] xs:gap-1.5 ${onDark ? "text-white" : "text-navy-900"}`}>
-          <span className={`${lg ? "text-[0.625rem] xs:text-xs" : "text-[0.5625rem] xs:text-[0.625rem]"} font-semibold tracking-[0.12em] opacity-80`}>株式会社</span>
-          <span className={lg ? "text-[clamp(1.1875rem,5.3vw,1.5rem)]" : "text-[clamp(1.0625rem,4.6vw,1.3rem)]"}>{siteConfig.shortName}</span>
+          <span className={`${lg ? "text-[10px] xs:text-[12px]" : "text-[9px] max-[22.5rem]:hidden xs:text-[10px]"} font-semibold tracking-[0.12em] opacity-80`}>株式会社</span>
+          <span className={lg ? "text-[clamp(19px,5.3vw,24px)]" : "text-[clamp(17px,4.6vw,20.8px)]"}>{siteConfig.shortName}</span>
         </span>
         <span
-          className={`mt-1.5 whitespace-nowrap font-bold tracking-[0.18em] ${lg ? "text-[clamp(0.6875rem,2.9vw,0.8125rem)]" : "text-[clamp(0.5938rem,2.5vw,0.6875rem)]"} ${onDark ? "text-sky-300" : "text-cta-700"}`}
+          className={`mt-1.5 whitespace-nowrap font-bold tracking-[0.18em] ${lg ? "text-[clamp(11px,2.9vw,13px)]" : "text-[clamp(9.5px,2.5vw,11px)]"} ${onDark ? "text-sky-300" : "text-cta-700"}`}
         >
           {siteConfig.siteLabel}
         </span>

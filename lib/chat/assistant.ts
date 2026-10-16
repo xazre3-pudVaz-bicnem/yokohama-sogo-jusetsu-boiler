@@ -16,10 +16,12 @@ const MODEL = process.env.CHAT_MODEL || "claude-haiku-5-5";
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 
-let knowledge: string | null = null;
+// サイトの情報は、日ごとに作り直す（補助金の受付の状況などが変わるため）
+let knowledge: { day: string; text: string } | null = null;
 function siteKnowledge(): string {
-  knowledge ??= buildKnowledge();
-  return knowledge;
+  const day = new Date().toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" });
+  if (knowledge?.day !== day) knowledge = { day, text: buildKnowledge() };
+  return knowledge.text;
 }
 
 /** 答えを少しずつ返す（UTF-8 の文字の流れ）。途中で失敗したとき・答えが空のとき（安全のための判定で答えない場合など）は、その旨を書いて終える */

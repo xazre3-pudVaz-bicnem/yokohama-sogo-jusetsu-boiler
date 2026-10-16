@@ -68,7 +68,7 @@ export function Hero({ showcase }: { showcase: HeroShowcase[] }) {
         height={staff.height}
         alt=""
         sizes="(min-width: 1280px) 300px, 260px"
-        quality={78}
+        quality={75}
         className="pointer-events-none absolute left-[max(1rem,calc(50%-41rem))] top-[19rem] hidden h-auto w-[14rem] lg:block xl:top-[20rem] xl:w-[16.5rem]"
       />
       <Image
@@ -77,7 +77,7 @@ export function Hero({ showcase }: { showcase: HeroShowcase[] }) {
         height={mascot.height}
         alt=""
         sizes="(min-width: 1280px) 220px, 180px"
-        quality={80}
+        quality={75}
         className="pointer-events-none absolute right-[max(1rem,calc(50%-40rem))] top-[24rem] hidden h-auto w-[10rem] lg:block xl:top-[25rem] xl:w-[12rem]"
       />
 

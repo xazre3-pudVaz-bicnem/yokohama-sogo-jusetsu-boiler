@@ -54,7 +54,7 @@ export function ProductGallery({
             width={current.width}
             height={current.height}
             sizes="(min-width: 1024px) 560px, (min-width: 768px) 46vw, 92vw"
-            quality={80}
+            quality={75}
             preload={index === 0}
             fetchPriority={index === 0 ? "high" : "auto"}
             loading={index === 0 ? "eager" : "lazy"}
@@ -104,7 +104,7 @@ export function ProductGallery({
       >
         <div className="relative bg-white p-3 sm:p-5">
           <div className="relative mx-auto aspect-square max-h-[calc(100dvh-8rem)] w-full max-w-[calc(100dvh-8rem)]">
-            <Image src={current.src} alt={current.alt} fill sizes="(min-width: 1024px) 64rem, 100vw" quality={85} className="object-contain" />
+            <Image src={current.src} alt={current.alt} fill sizes="(min-width: 1024px) 64rem, 100vw" quality={75} className="object-contain" />
           </div>
           <div className="mt-3 flex items-center justify-between gap-3">
             <p className="text-[0.8125rem] font-bold text-ink-body">{current.caption || current.alt}</p>

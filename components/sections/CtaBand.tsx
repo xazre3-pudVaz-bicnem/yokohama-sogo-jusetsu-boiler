@@ -53,7 +53,7 @@ export function CtaBand({
         height={staff.height}
         alt=""
         sizes="260px"
-        quality={76}
+        quality={75}
         className="pointer-events-none absolute bottom-[clamp(2rem,5vw,5rem)] right-[max(0.5rem,calc(50%-38rem))] hidden h-auto w-[14rem] xl:block"
       />
       <Image
@@ -62,7 +62,7 @@ export function CtaBand({
         height={mascot.height}
         alt=""
         sizes="140px"
-        quality={80}
+        quality={75}
         className="pointer-events-none absolute left-[max(0.5rem,calc(50%-36rem))] top-[clamp(4rem,8vw,7rem)] hidden h-auto w-[8.5rem] lg:block"
       />
       <div className="container-x relative text-center">

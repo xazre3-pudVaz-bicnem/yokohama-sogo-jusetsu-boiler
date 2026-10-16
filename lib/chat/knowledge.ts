@@ -6,7 +6,7 @@ import { allContentPages, contentPagePath } from "@/lib/content";
 import { capacityLabel, getBrand, manufacturerPriceLabel, productPath, products, subsidyView } from "@/lib/products";
 import { formatDateJa } from "@/lib/seo";
 import { lineUrl, officeAddressWithPostal, primaryPhone, receptionHours, siteConfig } from "@/lib/site";
-import { manYen, operatorStatement } from "@/lib/subsidy";
+import { budgetStatus, kyutouPhase, manYen, operatorStatement, phaseLabel } from "@/lib/subsidy";
 import { fillTokens } from "@/lib/tokens";
 
 /**
@@ -31,7 +31,10 @@ export function buildKnowledge(): string {
     `交換工事の流れ：ご相談 → 機種のご提案 → 現地調査（無料）→ お見積もり・ご契約 → 工事・お引き渡し（/flow）`,
   ].filter(Boolean);
 
+  const budget = budgetStatus();
   const sub = [
+    // いまの受付の状況（受付が終わったあとに、受付中のように答えないため）
+    `${k.name}のいまの受付の状況：${phaseLabel(kyutouPhase())}${budget.percent !== null ? `（予算に対する申請額の割合 ${budget.percent}％、${formatDateJa(budget.asOf)}時点）` : ""}。`,
     `${k.name}（国の事業）：補助額は1台あたり。エコキュート ${manYen(k.base.ecocute)}（性能加算の要件を満たすと＋${manYen(k.performanceBonus.ecocute)}）、ハイブリッド給湯機 ${manYen(k.base.hybrid)}（性能加算で＋${manYen(k.performanceBonus.hybrid)}）、エネファーム ${manYen(k.base.enefarm)}。`,
     "ガス給湯器（従来型）とエコジョーズは、この事業の対象ではない。",
     "対象は、国の対象製品リストに登録された機種だけ。予算の上限に達すると、期限の前でも受付が終わる。補助金を必ず受け取れるとは言えない。",

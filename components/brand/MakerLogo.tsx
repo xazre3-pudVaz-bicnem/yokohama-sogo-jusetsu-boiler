@@ -43,7 +43,8 @@ export function MakerLogo({
       unoptimized={logo.src.endsWith(".svg")}
       {...(priority ? ({ preload: true, loading: "eager" } as const) : {})}
       className={`shrink-0 ${className}`}
-      style={{ width: w, height: h }}
+      // 置き場所が狭いときは、縦横の比率を保ったまま小さくする（高さを固定すると、幅だけ縮んでロゴが潰れる）
+      style={{ width: w, maxWidth: "100%", height: "auto" }}
     />
   );
 }

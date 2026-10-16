@@ -187,23 +187,27 @@ export default function HomePage() {
         </div>
         <div className="mt-7">
           <NewsCarousel label="お知らせ">
+            {/* バナーの高さ：スマホは中身に合わせて伸ばす（文字を大きくしている人の画面でも、文字が切れないように）。sm から上は 16:8 */}
             {/* 補助金 */}
-            <Link href="/subsidy" className="group relative flex aspect-[16/8] min-h-[13.5rem] overflow-hidden rounded-[1.5rem] border-4 border-eco-200 bg-eco-50">
-              <Image src={bannerSubsidy.src} alt="" fill sizes="(min-width: 768px) 672px, 86vw" quality={70} className="object-cover" />
+            <Link href="/subsidy" className="group relative flex h-full min-h-[13.5rem] overflow-hidden sm:h-auto sm:aspect-[16/8] rounded-[1.5rem] border-4 border-eco-200 bg-eco-50">
+              <Image src={bannerSubsidy.src} alt="" fill sizes="(min-width: 768px) 672px, 86vw" quality={75} className="object-cover" />
               <span className="relative flex max-w-[64%] flex-col justify-center px-5 py-4 sm:px-7">
                 <span className="w-fit rounded-full bg-eco-700 px-3 py-0.5 text-xs font-bold text-white">国の補助金</span>
                 <span className="mt-2 font-heading text-[clamp(1.25rem,0.9rem+1.6vw,2rem)] font-black leading-tight text-ink">{k.name}</span>
                 <span className="mt-2 text-[0.8125rem] font-bold leading-relaxed text-ink sm:text-[0.9375rem]">
-                  エコキュート {manYen(k.base.ecocute)}（性能加算で{ecocuteMax}）
+                  {/* 金額の途中で折り返さないよう、区切りごとにまとめる */}
+                  <span className="ib">エコキュート {manYen(k.base.ecocute)}</span>
+                  <span className="ib">（性能加算で{ecocuteMax}）</span>
                   <br />
-                  ハイブリッド {manYen(k.base.hybrid)}（性能加算で{hybridMax}）
+                  <span className="ib">ハイブリッド {manYen(k.base.hybrid)}</span>
+                  <span className="ib">（性能加算で{hybridMax}）</span>
                 </span>
                 <span className="mt-1.5 text-[0.6875rem] leading-relaxed text-ink-body">1台あたり。撤去加算は別。対象の機種と条件があり、予算の上限で受付が終わります。</span>
               </span>
             </Link>
             {/* 写真で見積もり */}
-            <Link href="/contact/photo" className="group relative flex aspect-[16/8] min-h-[13.5rem] overflow-hidden rounded-[1.5rem] border-4 border-brand-200 bg-brand-100">
-              <Image src={bannerPhoto.src} alt="" fill sizes="(min-width: 768px) 672px, 86vw" quality={70} className="object-cover" />
+            <Link href="/contact/photo" className="group relative flex h-full min-h-[13.5rem] overflow-hidden sm:h-auto sm:aspect-[16/8] rounded-[1.5rem] border-4 border-brand-200 bg-brand-100">
+              <Image src={bannerPhoto.src} alt="" fill sizes="(min-width: 768px) 672px, 86vw" quality={75} className="object-cover" />
               <span className="relative flex max-w-[60%] flex-col justify-center px-5 py-4 sm:px-7">
                 <span className="w-fit rounded-full bg-cta-700 px-3 py-0.5 text-xs font-bold text-white">見積もり無料</span>
                 <span className="mt-2 font-heading text-[clamp(1.25rem,0.9rem+1.6vw,2rem)] font-black leading-tight text-ink">
@@ -216,7 +220,7 @@ export default function HomePage() {
             </Link>
             {/* ハイブリッド */}
             {hybridPhoto && (
-              <Link href="/hybrid" className="group relative flex aspect-[16/8] min-h-[13.5rem] overflow-hidden rounded-[1.5rem] border-4 border-hybrid-100 bg-gradient-to-br from-hybrid-50 to-hybrid-100">
+              <Link href="/hybrid" className="group relative flex h-full min-h-[13.5rem] overflow-hidden sm:h-auto sm:aspect-[16/8] rounded-[1.5rem] border-4 border-hybrid-100 bg-gradient-to-br from-hybrid-50 to-hybrid-100">
                 <span className="relative z-10 flex max-w-[58%] flex-col justify-center px-5 py-4 sm:px-7">
                   <span className="w-fit rounded-full bg-hybrid-700 px-3 py-0.5 text-xs font-bold text-white">ハイブリッド給湯器</span>
                   <span className="mt-2 font-heading text-[clamp(1.25rem,0.9rem+1.6vw,2rem)] font-black leading-tight text-ink">
@@ -230,14 +234,14 @@ export default function HomePage() {
                 </span>
                 {hybridPhoto.images[0] && (
                   <span className="absolute inset-y-4 right-4 grid w-[38%] place-items-center rounded-2xl bg-white">
-                    <Image src={hybridPhoto.images[0].src} alt={hybridPhoto.images[0].alt} width={hybridPhoto.images[0].width} height={hybridPhoto.images[0].height} sizes="240px" quality={72} className="h-[86%] w-[86%] object-contain" />
+                    <Image src={hybridPhoto.images[0].src} alt={hybridPhoto.images[0].alt} width={hybridPhoto.images[0].width} height={hybridPhoto.images[0].height} sizes="240px" quality={75} className="h-[86%] w-[86%] object-contain" />
                   </span>
                 )}
               </Link>
             )}
             {/* エコキュート */}
             {ecocutePhoto && (
-              <Link href="/ecocute" className="group relative flex aspect-[16/8] min-h-[13.5rem] overflow-hidden rounded-[1.5rem] border-4 border-brand-200 bg-gradient-to-br from-brand-50 to-brand-100">
+              <Link href="/ecocute" className="group relative flex h-full min-h-[13.5rem] overflow-hidden sm:h-auto sm:aspect-[16/8] rounded-[1.5rem] border-4 border-brand-200 bg-gradient-to-br from-brand-50 to-brand-100">
                 <span className="relative z-10 flex max-w-[58%] flex-col justify-center px-5 py-4 sm:px-7">
                   <span className="w-fit rounded-full bg-brand-700 px-3 py-0.5 text-xs font-bold text-white">エコキュート</span>
                   <span className="mt-2 font-heading text-[clamp(1.25rem,0.9rem+1.6vw,2rem)] font-black leading-tight text-ink">
@@ -249,7 +253,7 @@ export default function HomePage() {
                 </span>
                 {ecocutePhoto.images[0] && (
                   <span className="absolute inset-y-4 right-4 grid w-[38%] place-items-center rounded-2xl bg-white">
-                    <Image src={ecocutePhoto.images[0].src} alt={ecocutePhoto.images[0].alt} width={ecocutePhoto.images[0].width} height={ecocutePhoto.images[0].height} sizes="240px" quality={72} className="h-[86%] w-[86%] object-contain" />
+                    <Image src={ecocutePhoto.images[0].src} alt={ecocutePhoto.images[0].alt} width={ecocutePhoto.images[0].width} height={ecocutePhoto.images[0].height} sizes="240px" quality={75} className="h-[86%] w-[86%] object-contain" />
                   </span>
                 )}
               </Link>
@@ -261,7 +265,9 @@ export default function HomePage() {
             <span className="grid size-6 shrink-0 place-items-center rounded-full bg-silver-500 font-bold text-white" aria-hidden="true">
               !
             </span>
-            <span className="flex-1">国の補助金（{k.name}）は、予算の上限に達すると、期限の前でも受付が終わります。受付の状況を見る</span>
+            <span className="flex-1">
+              国の補助金（{k.name}）は、予算の上限に達すると、期限の前でも受付が終わります。<span className="ib">受付の状況を見る</span>
+            </span>
             <Icon name="chevronRight" className="size-4 shrink-0" />
           </Link>
         </div>
@@ -534,7 +540,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="overflow-hidden rounded-[2rem] border-4 border-white shadow-[var(--shadow-pop)]" {...reveal(0, "zoom")}>
-            <Image src={bannerPhoto.src} width={bannerPhoto.width} height={bannerPhoto.height} alt="" sizes="(min-width: 1024px) 560px, 92vw" quality={72} className="h-auto w-full" />
+            <Image src={bannerPhoto.src} width={bannerPhoto.width} height={bannerPhoto.height} alt="" sizes="(min-width: 1024px) 560px, 92vw" quality={75} className="h-auto w-full" />
           </div>
         </div>
       </section>

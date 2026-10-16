@@ -79,6 +79,11 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
   const err = state.errors ?? {};
   const [choices, setChoices] = useState<Record<ChoiceField, string>>({ condition: v.condition ?? "", gasType: v.gasType ?? "", housing: v.housing ?? "", desiredType: v.desiredType ?? "" });
   const [slots, setSlots] = useState<Slots>({ label: [], whole: [], extra: [] });
+  // 写真を縮める・読み取る処理を待つあいだに、利用者が写真を外す・選び直すことがある。待ったあとは、この最新の状態を使う
+  const slotsRef = useRef(slots);
+  useEffect(() => {
+    slotsRef.current = slots;
+  }, [slots]);
   const [busy, setBusy] = useState<PhotoSlotId | null>(null);
   const [photoError, setPhotoError] = useState("");
   const [stepError, setStepError] = useState("");
@@ -118,15 +123,17 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
 
   const pick = async (slot: PhotoSlotId, files: FileList | null) => {
     if (!files?.length) return;
+    // 欄を空にする（同じ写真を選び直せるように）と、ブラウザによっては FileList も空になるので、先に取り出しておく
+    const chosen = Array.from(files);
     const def = PHOTO_SLOTS.find((s) => s.id === slot)!;
     setPhotoError("");
     setStepError("");
     setBusy(slot);
     // 1枚だけの欄は、選び直したら入れ替える（新しい写真が読めたときだけ）
-    const room = def.max === 1 ? 1 : def.max - slots[slot].length;
+    const room = def.max === 1 ? 1 : def.max - slotsRef.current[slot].length;
     const added: Picked[] = [];
     let failed = 0;
-    for (const file of Array.from(files).slice(0, Math.max(0, room))) {
+    for (const file of chosen.slice(0, Math.max(0, room))) {
       const blob = await shrinkPhoto(file);
       if (!blob) {
         failed += 1;
@@ -136,14 +143,16 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
       urlsRef.current.add(url);
       added.push({ id: `${slot}-${Date.now()}-${added.length}`, blob, url });
     }
-    let message = files.length > room ? `「${def.title}」は${def.max}枚までです。` : "";
+    let message = chosen.length > room ? `「${def.title}」は${def.max}枚までです。` : "";
     if (added.length) {
-      const nextSlots: Slots = { ...slots, [slot]: def.max === 1 ? added : [...slots[slot], ...added] };
+      const current = slotsRef.current;
+      const nextSlots: Slots = { ...current, [slot]: def.max === 1 ? added : [...current[slot], ...added] };
       if (total(nextSlots) > PHOTO_ESTIMATE_RULES.maxTotalBytes) {
         added.forEach((p) => release(p.url));
         message = "写真の合計の容量が大きすぎます。「そのほか」の枚数を減らすか、LINE でお送りください。";
       } else {
-        if (def.max === 1) slots[slot].forEach((p) => release(p.url));
+        if (def.max === 1) current[slot].forEach((p) => release(p.url));
+        slotsRef.current = nextSlots;
         setSlots(nextSlots);
         if (slot === "label") setRead(null);
       }
@@ -159,14 +168,17 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
   };
 
   const remove = (slot: PhotoSlotId, id: string) => {
-    slots[slot].filter((p) => p.id === id).forEach((p) => release(p.url));
-    setSlots({ ...slots, [slot]: slots[slot].filter((p) => p.id !== id) });
+    const current = slotsRef.current;
+    current[slot].filter((p) => p.id === id).forEach((p) => release(p.url));
+    const nextSlots: Slots = { ...current, [slot]: current[slot].filter((p) => p.id !== id) };
+    slotsRef.current = nextSlots;
+    setSlots(nextSlots);
     if (slot === "label") setRead(null);
   };
 
   /** 型番のシールの写真から読み取って、③の欄に入れる */
   const readLabel = async () => {
-    const photo = slots.label[0];
+    const photo = slotsRef.current.label[0];
     if (!photo) return;
     setReading(true);
     setRead(null);
@@ -178,8 +190,10 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
     } catch {
       r = { ok: false, message: "いまは読み取りができませんでした。そのままお進みいただくか、型番を入力してください。" };
     }
-    setRead(r);
     setReading(false);
+    // 読み取りのあいだに、シールの写真を外した・選び直したときは、古い写真の結果を入れない
+    if (slotsRef.current.label[0]?.id !== photo.id) return;
+    setRead(r);
     if (!r.ok) return;
     const form = formRef.current;
     if (!form) return;
@@ -202,8 +216,24 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
 
   const value = (name: PhotoEstimateField) => String((formRef.current?.elements.namedItem(name) as HTMLInputElement | null)?.value ?? "").trim();
 
+  /** 確認の画面に出す内容（いまの入力から作る） */
+  const buildSummary = (): [string, string][] => {
+    const fd = new FormData(formRef.current!);
+    return PHOTO_ESTIMATE_FIELDS.filter((k) => k !== "productPage")
+      .map((k) => [photoEstimateLabels[k], String(fd.get(k) ?? "").trim()] as [string, string])
+      .filter(([, val]) => val !== "");
+  };
+
   /** 次の段階へ進む前の、その段階の確認（送信のときに、サーバーでも同じことを確かめる） */
   const next = () => {
+    // 選択肢で Enter を押したときも、ここに来る。答えていない質問があれば、そこへ戻す
+    if (step === 0) {
+      const first = QUESTIONS.find((q) => !choices[q.field]);
+      if (first) {
+        (formRef.current?.querySelector(`input[name="${first.field}"]`) as HTMLInputElement | null)?.focus();
+        return;
+      }
+    }
     if (step === 1) {
       if (!slots.label.length && !(labelMissing && slots.whole.length)) {
         setStepError(labelMissing ? "シールが無い・読めないときは、給湯器の全体の写真を選んでください。" : "型番のシールの写真を選んでください。シールが無い・読めないときは、その旨を選んで、全体の写真を。");
@@ -216,13 +246,7 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
         setStepError(`${missing.join("・")}を入力してください。`);
         return;
       }
-      // 確認の画面に出す内容
-      const fd = new FormData(formRef.current!);
-      setSummary(
-        PHOTO_ESTIMATE_FIELDS.filter((k) => k !== "productPage")
-          .map((k) => [photoEstimateLabels[k], String(fd.get(k) ?? "").trim()] as [string, string])
-          .filter(([, val]) => val !== ""),
-      );
+      setSummary(buildSummary());
     }
     go(step + 1);
   };
@@ -307,7 +331,17 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
       <div className="mt-5">
         <ProductContextNote />
       </div>
-      <form key={state.attempt} ref={formRef} action={action} onSubmit={onSubmit} noValidate className="space-y-7">
+      <form
+        key={state.attempt}
+        ref={formRef}
+        action={action}
+        onSubmit={onSubmit}
+        onChange={() => {
+          if (step === 4) setSummary(buildSummary());
+        }}
+        noValidate
+        className="space-y-7"
+      >
         <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
           <label>
             このまま空欄にしてください
@@ -401,13 +435,14 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
                             <circle cx="12" cy="13.5" r="3.5" />
                           </svg>
                           {busy === slot.id ? "読み込んでいます…" : list.length && slot.max === 1 ? "撮り直す・選び直す" : "撮影する・写真を選ぶ"}
+                          <span className="sr-only">（{slot.title}）</span>
                           {/* name を付けない：縮めた写真を、送るときに付ける */}
                           <input
                             type="file"
                             accept={PHOTO_ESTIMATE_RULES.accept}
                             multiple={slot.max > 1}
                             className="sr-only"
-                            disabled={busy !== null || (slot.max > 1 && list.length >= slot.max)}
+                            disabled={busy !== null || (slot.id === "label" && reading) || (slot.max > 1 && list.length >= slot.max)}
                             onChange={(e) => {
                               void pick(slot.id, e.target.files);
                               e.target.value = "";
@@ -428,7 +463,7 @@ export function PhotoEstimateForm({ note, preview = false, lineUrl, readerEnable
                               {/* 送る前の確認用の小さな表示（その場で作った画像なので、next/image は使わない） */}
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img src={p.url} alt={`${slot.title}の写真 ${i + 1}`} className="aspect-square w-full object-cover" />
-                              <button type="button" onClick={() => remove(slot.id, p.id)} className="absolute right-1 top-1 grid size-9 place-items-center rounded-full bg-navy-950/80 text-lg leading-none text-white" aria-label={`${slot.title}の写真 ${i + 1} を外す`}>
+                              <button type="button" onClick={() => remove(slot.id, p.id)} disabled={busy !== null || (slot.id === "label" && reading)} className="absolute right-1 top-1 grid size-9 place-items-center rounded-full bg-navy-950/80 text-lg leading-none text-white disabled:opacity-50" aria-label={`${slot.title}の写真 ${i + 1} を外す`}>
                                 ×
                               </button>
                             </li>

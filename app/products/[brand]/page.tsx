@@ -72,9 +72,15 @@ export default async function BrandPage({ params }: Params) {
         aside={
           <div className="logo-tile !min-h-[9rem] gap-3 !px-8 !py-6 shadow-[var(--shadow-card)]">
             <MakerLogo logo={b.logo} name={b.name} height={52} priority />
-            <span className="text-[0.8125rem] font-bold text-ink-body">
-              {b.categories.map((c) => getCategory(c).shortName).join("・")}
-              <span className="num ml-1.5">{list.length}機種</span>
+            {/* 種類の名前の途中・「16機種」の途中では折り返さない */}
+            <span className="text-center text-[0.8125rem] font-bold text-ink-body">
+              {b.categories.map((c, i) => (
+                <span key={c} className="ib">
+                  {getCategory(c).shortName}
+                  {i < b.categories.length - 1 ? "・" : ""}
+                </span>
+              ))}
+              <span className="num ml-1.5 whitespace-nowrap">{list.length}機種</span>
             </span>
           </div>
         }

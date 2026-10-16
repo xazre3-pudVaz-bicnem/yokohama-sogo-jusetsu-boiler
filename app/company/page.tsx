@@ -53,7 +53,7 @@ export default function CompanyPage() {
               <a href={telHref(phone)} className="num text-lg font-semibold tracking-wider text-navy-900 hover:text-brand-700" data-cv="tel">
                 {phone}
               </a>
-              {hours && <span className="ml-2 text-[0.8125rem] text-ink-mute">受付 {hours}</span>}
+              {hours && <span className="ib ml-2 whitespace-nowrap text-[0.8125rem] text-ink-mute">受付 {hours}</span>}
             </span>,
           ],
         ] as [string, React.ReactNode][])

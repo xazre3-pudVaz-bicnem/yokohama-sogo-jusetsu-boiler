@@ -188,9 +188,21 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-padding-top: 5.5rem;
+    /* キーボードで移ったとき、右下のチャットのボタン（スマホでは下部の固定ボタンも）に隠れない所まで送る */
+    scroll-padding-bottom: 10rem;
+    /* フォーカスの枠の色。色の濃い帯（ヘッダーの帯・ページ最後の赤い帯）の中では白にする */
+    --focus-ring: var(--color-brand-700);
   }
-  html[data-scroll-behavior="smooth"] {
-    scroll-behavior: smooth;
+  @media (max-width: 63.99rem) {
+    html {
+      scroll-padding-bottom: 11.5rem;
+    }
+  }
+  /* 動きを減らす設定の人には、なめらかなスクロールをかけない（この指定は強いので、設定のときだけに限る） */
+  @media (prefers-reduced-motion: no-preference) {
+    html[data-scroll-behavior="smooth"] {
+      scroll-behavior: smooth;
+    }
   }
   body {
     background: #fff;
@@ -232,7 +244,12 @@
     text-underline-offset: 0.2em;
   }
   :focus-visible {
-    outline: 3px solid var(--color-brand-600);
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+  /* 見えない入力欄（写真を選ぶ など）は、押せる見た目の label に枠を出す */
+  label:has(> input.sr-only:focus-visible) {
+    outline: 3px solid var(--focus-ring);
     outline-offset: 3px;
   }
   ::selection {
@@ -288,7 +305,11 @@
   /* ── 地色の帯と、飾り ─────────────────────────────── */
   .band {
     position: relative;
+    /* 中の要素の余白が外へ出ないように（hidden のときと同じ扱い。clip にはこの働きが無いため） */
+    display: flow-root;
     overflow: hidden;
+    /* 対応するブラウザでは clip にする（hidden はスクロールの基準になり、中の sticky が貼りつかなくなるため） */
+    overflow: clip;
   }
   .band-cream {
     background: var(--color-cream);
@@ -336,6 +357,7 @@
     background: linear-gradient(180deg, #ffe76a, var(--color-pop-yellow-deep));
   }
   .slant-red {
+    --focus-ring: #fff;
     background: var(--color-cta-700);
     color: #fff;
   }
@@ -1638,7 +1660,7 @@
     color: #fff;
   }
   .chat-opt:has(input:focus-visible) {
-    outline: 3px solid var(--color-brand-600);
+    outline: 3px solid var(--focus-ring);
     outline-offset: 3px;
   }
 
@@ -1670,7 +1692,7 @@
     color: #fff;
   }
   .opt:has(input:focus-visible) {
-    outline: 3px solid var(--color-brand-600);
+    outline: 3px solid var(--focus-ring);
     outline-offset: 3px;
   }
 }
@@ -1796,7 +1818,12 @@
  * 印が無いページは赤。種類のタブも、いまのページの種類だけ色の地にする。
  */
 [data-site-header] .hbar {
+  --focus-ring: #fff;
   background: var(--color-cta-700);
+}
+/* 帯の中に開く白いメガメニューでは、枠の色を元に戻す */
+[data-site-header] [data-mega-panel] {
+  --focus-ring: var(--color-brand-700);
 }
 body:has(main [data-section="gas"]) [data-site-header] .hbar {
   background: var(--color-gas-700);
@@ -1830,7 +1857,9 @@ body:has(main [data-section="subsidy"]) [data-tab="subsidy"] {
 body:has(aside[aria-label="機種の比較"]) .chat-launcher {
   bottom: 6.5rem;
 }
+/* スマホの比較のトレイは、下部の固定ボタンの有無にかかわらず、下から 4.75rem の位置にある。その上に置く */
 @media (max-width: 63.99rem) {
+  body:has(aside[aria-label="機種の比較"]) .chat-launcher,
   body:has(aside[aria-label="機種の比較"]):has(aside[aria-label="ご相談・お見積もり"][data-show="1"]) .chat-launcher {
     bottom: 11rem;
   }

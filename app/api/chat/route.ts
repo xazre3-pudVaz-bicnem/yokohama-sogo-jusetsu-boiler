@@ -26,10 +26,23 @@ const hits = new Map<string, number[]>();
 function tooMany(key: string): boolean {
   const now = Date.now();
   const list = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS);
+  // 上限を超えた分は数えない（送り続けられても、記録が増え続けないように）
+  if (list.length >= LIMIT) {
+    hits.set(key, list);
+    return true;
+  }
   list.push(now);
+  hits.delete(key);
   hits.set(key, list);
-  if (hits.size > 5000) hits.clear();
-  return list.length > LIMIT;
+  // 記録が多くなったら、時間が過ぎたものから消す。それでも多ければ、古いものから消す（全員の記録を一度に消さない）
+  if (hits.size > 5000) {
+    for (const [k, v] of hits) if (!v.length || now - v[v.length - 1] >= WINDOW_MS) hits.delete(k);
+    for (const k of hits.keys()) {
+      if (hits.size <= 4000) break;
+      hits.delete(k);
+    }
+  }
+  return false;
 }
 
 function text(body: string, status = 200, mode = "faq"): Response {
@@ -40,7 +53,15 @@ export async function POST(req: Request): Promise<Response> {
   // ほかのサイトのページから呼ばせない（ブラウザが付ける Origin が、このサイトと違えば断る）
   const origin = req.headers.get("origin");
   const host = req.headers.get("host");
-  if (origin && host && new URL(origin).host !== host) return text("この窓口は、サイトの中からだけ使えます。", 403);
+  if (origin && host) {
+    let from = "";
+    try {
+      from = new URL(origin).host;
+    } catch {
+      /* 「null」など、読めない Origin は、ほかのサイトからとみなす */
+    }
+    if (from !== host) return text("この窓口は、サイトの中からだけ使えます。", 403);
+  }
 
   const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "local";
   if (tooMany(ip)) return text("短い時間に、たくさんのご質問が届きました。少し時間をおいてから、もう一度お試しください。", 429);
@@ -63,7 +84,8 @@ export async function POST(req: Request): Promise<Response> {
     if (last && last.role === m.role) last.content += `\n${content}`;
     else messages.push({ role: m.role, content });
   }
-  const question = [...messages].reverse().find((m) => m.role === "user")?.content;
+  // 最後は、利用者の質問であること（AI の答えで終わる会話は受け付けない）
+  const question = messages.at(-1)?.role === "user" ? messages.at(-1)?.content : undefined;
   if (!question) return text("ご質問を入力してください。", 400);
 
   if (!isChatAIEnabled()) return text(answerFromFaq(question));

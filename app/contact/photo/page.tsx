@@ -73,7 +73,7 @@ export default function PhotoEstimatePage() {
       />
 
       <div className="band band-stripes">
-        <div className="container-x section-tight grid gap-x-8 gap-y-6 lg:grid-cols-[20rem_minmax(0,1fr)]">
+        <div className="container-x section-tight grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-[20rem_minmax(0,1fr)]">
           {/* 左：黄色い案内（PC は貼りつく） */}
           <aside aria-label="写真でかんたん見積もりの案内" className="space-y-5 lg:sticky lg:top-24 lg:self-start">
             <div className="relative overflow-hidden rounded-[1.75rem] bg-pop-yellow px-5 pb-5 pt-6 text-center shadow-[0_4px_0_var(--color-pop-yellow-shadow)]">
