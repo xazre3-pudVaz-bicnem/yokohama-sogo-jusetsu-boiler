@@ -7,6 +7,7 @@ import { capacityLabel, getBrand, manufacturerPriceLabel, productPath, products,
 import { formatDateJa } from "@/lib/seo";
 import { lineUrl, officeAddressWithPostal, primaryPhone, receptionHours, siteConfig } from "@/lib/site";
 import { budgetStatus, kyutouPhase, manYen, operatorStatement, phaseLabel } from "@/lib/subsidy";
+import { RELATION_LABEL, successorBrandPath, successorBrands, successorViews } from "@/lib/successors";
 import { fillTokens } from "@/lib/tokens";
 
 /**
@@ -66,6 +67,15 @@ export function buildKnowledge(): string {
   const pages = allContentPages().map((p) => `${fillTokens(p.h1)}（${contentPagePath(p)}）`);
   const faqs = allFaqs.map((f) => `Q. ${fillTokens(f.q)}\nA. ${fillTokens(f.a)}`);
   const areas = publishedAreas.map((a) => `${a.shortName}（/area/${a.slug}）`);
+  // 古い型番 → メーカーが案内している機種。全部（1,000 を超える型番）は載せず、メーカーごとの件数と一覧のページ、
+  // このサイトの機種につながる対応だけを載せる（チャットの文脈を大きくしすぎない）
+  const succBrands = successorBrands();
+  const successorSummary = succBrands.map((b) => `${b.name}：古い型番 ${b.oldModels}件（${successorBrandPath(b.id)}）`);
+  const successors = succBrands.flatMap((b) =>
+    successorViews(b.id)
+      .filter((v) => v.successors.some((s) => s.onSite.length))
+      .map((v) => `${b.name} ${v.oldModels.join("・")} → ${v.successors.filter((s) => s.onSite.length).map((s) => `${s.onSite[0].modelNumber}（${productPath(s.onSite[0])}）`).join("・")}（${RELATION_LABEL[v.relation]}${v.note ? `｜${v.note}` : ""}）`),
+  );
 
   return [
     "## 会社とお見積もり",
@@ -80,6 +90,9 @@ export function buildKnowledge(): string {
     `## 掲載している機種（${products.length}機種。メーカー・型番｜種類｜号数や容量｜機能｜設置方式｜補助金｜参考価格｜ページ）`,
     ...lines,
     "",
+    ...(succBrands.length
+      ? ["## 古い型番から、メーカーが案内している機種（後継機種・取り替えの推奨。メーカー別の一覧のページ）", ...successorSummary, "このサイトの機種につながる対応：", ...successors, ""]
+      : []),
     "## 解説のページ",
     ...pages,
     "",

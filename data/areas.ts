@@ -45,7 +45,8 @@ export type Area = {
   name: string;
   /** 短い名前（例：戸塚区） */
   shortName: string;
-  kind: "city" | "ward";
+  /** city＝横浜市全体、ward＝横浜市の区、neighbor＝横浜市の周辺の市（会社の対応エリアの神奈川県内） */
+  kind: "city" | "ward" | "neighbor";
   priority: "A" | "B";
   title: string;
   h1: string;
@@ -59,6 +60,10 @@ export type Area = {
   image?: ImageKey;
   imageAlt?: string;
   stats: AreaStats;
+  /** 統計の出典（無ければ横浜市の出典 AREA_STAT_SOURCES）。横浜市の外の市は、国・県の出典を書く */
+  statSources?: SourceRef[];
+  /** 統計の時点と、人口の出典の呼び方（無ければ AREA_STAT_AS_OF） */
+  statAsOf?: StatAsOf;
   /** 区内の主な駅（区の資料・横浜市統計書で確かめたもの） */
   stations: string[];
   /** 戸塚区と隣り合うか（戸塚区自身は null） */
@@ -83,8 +88,10 @@ export const AREA_STAT_SOURCES: SourceRef[] = [
   { label: "横浜市 推計人口（行政区別の人口・世帯数・面積。令和8年10月1日現在）", url: "https://www.city.yokohama.lg.jp/city-info/yokohamashi/tokei-chosa/portal/opendata/suikei01.html" },
 ];
 
+export type StatAsOf = { housing: string; population: string; populationSource: string };
+
 /** 統計の時点（画面に出す） */
-export const AREA_STAT_AS_OF = { housing: "令和5年（2023年）10月1日現在", population: "令和8年（2026年）10月1日現在" };
+export const AREA_STAT_AS_OF: StatAsOf = { housing: "令和5年（2023年）10月1日現在", population: "令和8年（2026年）10月1日現在", populationSource: "横浜市の推計人口" };
 
 const DANCHI_LIST: SourceRef = { label: "横浜市旭区大規模団地再生ビジョン（平成30年9月）《市内大規模団地一覧》", url: "https://www.city.yokohama.lg.jp/asahi/kurashi/machizukuri_kankyo/machizukuri/danntisaiseivision.files/0002_20190130.pdf" };
 const DRAIN_RULE: SourceRef = { label: "横浜市 排水設備要覧（ドレン排水の扱い）", url: "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/setsuzoku/haisui/youran.html" };
@@ -94,6 +101,20 @@ const D = "2026-10-14";
 const D2 = "2026-10-16";
 const STAT_TERMS: SourceRef = { label: "総務省統計局「令和5年住宅・土地統計調査 用語の解説」", url: "https://www.stat.go.jp/data/jyutaku/2023/pdf/yougo.pdf" };
 
+/** 横浜市の周辺の市（相模原市・大和市・藤沢市・鎌倉市）のページを足した日 */
+const D3 = "2026-11-17";
+/** 周辺の市の統計の出典（横浜市の外なので、国・県の資料。住宅の割合は e-Stat の表から計算した値） */
+const NEIGHBOR_STAT_SOURCES: SourceRef[] = [
+  { label: "総務省統計局「令和5年住宅・土地統計調査」住宅及び世帯に関する基本集計（e-Stat。第7-2表 住宅の建て方・階数、第5-3表 所有の関係・建築の時期、第29-2表 省エネルギー設備等）", url: "https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00200522&tstat=000001207800&cycle=0&tclass1=000001207808&tclass2=000001207809&tclass3val=0" },
+  { label: "神奈川県人口統計調査「神奈川県の人口と世帯」（令和8年10月1日現在。令和7年国勢調査速報値を基準とした推計）", url: "https://www.pref.kanagawa.jp/docs/x6z/tc30/jinko/jimkotosetai.html" },
+  { label: "国土地理院 令和8年全国都道府県市区町村別面積調（7月1日時点）", url: "https://www.gsi.go.jp/KOKUJYOHO/MENCHO/backnumber/GSI-menseki20260701.pdf" },
+  STAT_TERMS,
+];
+const NEIGHBOR_STAT_AS_OF: StatAsOf = {
+  housing: "令和5年（2023年）10月1日現在",
+  population: "令和8年（2026年）10月1日現在",
+  populationSource: "神奈川県人口統計調査。面積は国土地理院の令和8年7月1日時点の面積調",
+};
 export const areas: Area[] = [
   /* ------------------------------------------------------------------ */
   {
@@ -282,7 +303,7 @@ export const areas: Area[] = [
       DANCHI_LIST,
     ],
     productFocus: {},
-    nearby: ["izumi", "sakae", "konan", "asahi", "hodogaya", "minami"],
+    nearby: ["izumi", "sakae", "konan", "asahi", "hodogaya", "minami", "fujisawa", "kamakura"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -369,7 +390,7 @@ export const areas: Area[] = [
       DANCHI_LIST,
     ],
     productFocus: { housing: "detached", categories: ["ecocute", "hybrid", "eco-jozu"] },
-    nearby: ["totsuka", "seya", "asahi", "sakae"],
+    nearby: ["totsuka", "seya", "asahi", "sakae", "yamato", "fujisawa"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -456,7 +477,7 @@ export const areas: Area[] = [
       DANCHI_LIST,
     ],
     productFocus: { housing: "detached" },
-    nearby: ["totsuka", "konan", "kanazawa", "isogo", "izumi"],
+    nearby: ["totsuka", "konan", "kanazawa", "isogo", "izumi", "kamakura"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -701,7 +722,7 @@ export const areas: Area[] = [
       { label: "横浜市都市計画マスタープラン 瀬谷区プラン 2. 瀬谷区の現状", url: "https://www.city.yokohama.lg.jp/seya/kurashi/machizukuri_kankyo/machizukuri/masterplan/mplan.files/0006_20181119.pdf" },
     ],
     productFocus: { housing: "detached" },
-    nearby: ["izumi", "asahi", "midori"],
+    nearby: ["izumi", "asahi", "midori", "yamato"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -1021,7 +1042,7 @@ export const areas: Area[] = [
       { label: "かなすた（横浜市金沢区）「金沢シーサイドタウン」", url: "https://kanasuta.city.yokohama.lg.jp/living/1018/" },
     ],
     productFocus: {},
-    nearby: ["isogo", "sakae"],
+    nearby: ["isogo", "sakae", "kamakura"],
   },
 
   /* ------------------------------------------------------------------ */
@@ -1763,6 +1784,439 @@ export const areas: Area[] = [
     productFocus: {},
     nearby: ["kohoku", "midori", "aoba"],
   },
+
+  /* ------------------------------------------------------------------ */
+  /* 横浜市の周辺の市（kind: "neighbor"）。統計は国・県の資料（NEIGHBOR_STAT_SOURCES）、本文は各市の公式の資料 */
+  {
+    slug: "sagamihara",
+    name: "相模原市",
+    shortName: "相模原市",
+    kind: "neighbor",
+    priority: "B",
+    title: "相模原市の給湯器交換｜団地・マンションと戸建ての給湯器",
+    h1: "相模原市の給湯器交換",
+    description:
+      "相模原市の給湯器交換。住宅の51.5％が共同住宅で、市内には戸建ての団地を除いて102の住宅団地（30,274戸）があります。団地・マンションと戸建ての給湯器を替えるときの確認点を、市の資料と統計からまとめました。",
+    lead: "相模原市は、神奈川県の北西部にある、県内で横浜市に次いで2番目に広い市です。住宅の46.6％が一戸建て、51.5％が共同住宅です（令和5年住宅・土地統計調査）。",
+    keyword: "相模原市 給湯器交換",
+    secondaryKeywords: ["相模原市 給湯器", "相模原市南区 給湯器", "相模大野 給湯器"],
+    publishedAt: D3,
+    updatedAt: D3,
+    stats: {
+      population: 712090,
+      households: 347896,
+      areaKm2: 328.91,
+      detachedPercent: 46.6,
+      apartmentPercent: 51.5,
+      sixStoryPercent: 31.7,
+      upTo1980Percent: 14.3,
+      from2001Percent: 38.2,
+      ownedPercent: 60.3,
+      solarPercent: 3.1,
+    },
+    statSources: NEIGHBOR_STAT_SOURCES,
+    statAsOf: NEIGHBOR_STAT_AS_OF,
+    stations: [
+      "相模大野駅（小田急小田原線・江ノ島線）",
+      "小田急相模原駅（小田急小田原線）・東林間駅（小田急江ノ島線）",
+      "橋本駅（JR横浜線・相模線、京王相模原線）",
+      "相模原駅・淵野辺駅・古淵駅（JR横浜線）",
+      "原当麻駅・下溝駅・相武台下駅（JR相模線）",
+    ],
+    adjacentToTotsuka: false,
+    coastal: false,
+    sections: [
+      {
+        id: "town",
+        heading: "相模川の河岸段丘に広がる、住宅都市",
+        blocks: [
+          {
+            type: "p",
+            text: "相模原市の都市計画マスタープランは、市域の東部は相模川に沿った3つのなだらかな階段状の河岸段丘からなる、と書いています。市は昭和29年の市制施行のあと、内陸工業都市・住宅都市（ベッドタウン）として発展してきました。",
+          },
+          {
+            type: "p",
+            text: "平成22年に指定都市になり、緑区・中央区・南区の3つの区があります。南区の相模大野駅の周辺は、土地区画整理事業や米軍施設の跡地利用によって、商業・業務施設や高層住宅などが集まっています（南区のプロフィール）。",
+          },
+          {
+            type: "p",
+            text: "{{company}}の本社は、{{headOfficeArea}}にあります。相模原市からの給湯器の交換のご相談もお受けしています。",
+          },
+        ],
+      },
+      {
+        id: "danchi",
+        heading: "102の住宅団地と、築30年を超えるマンション",
+        blocks: [
+          {
+            type: "p",
+            text: "第3次相模原市住生活基本計画によると、市内には戸建ての住宅団地を除く住宅団地が102団地（30,274戸）あり、市の住宅の約10％近くを占めます。同じ計画は、計画をつくった時点で、マンションの29％（13,940戸）が築30年を過ぎている、と書いています。",
+          },
+          {
+            type: "p",
+            text: "団地やマンションの給湯器は、PS（パイプシャフト）の中や、廊下側の壁に付いていることが多く、設置の形と排気の向きで、選べる機種が決まります。管理組合の決まりがある場合は、交換の前に確かめます。",
+          },
+          {
+            type: "p",
+            text: "南区の基本計画は、相模大野駅や東林間駅の周辺には賃貸型の集合住宅が多い、と書いています。借りている住まいの給湯器は建物の設備なので、調子が悪いときは、まず貸主か管理会社にご相談ください。",
+          },
+          { type: "links", items: [{ href: "/products/successor", label: "古い型番から後継機種を探す", note: "メーカーが案内している後継・取り替えの機種" }] },
+        ],
+      },
+      {
+        id: "roads",
+        heading: "渋滞や狭い道の多い地区での工事",
+        blocks: [
+          {
+            type: "p",
+            text: "南区の基本計画は、区内の車やバスでの移動について、渋滞や狭あい道路が多く、通行に支障がある、という課題を挙げています。給湯器の交換では、工事の車を停める場所と、本体を運ぶ道のりを、お見積もりのときに確かめます。",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "相模原市の団地で、PSの中に付いている給湯器も交換できますか。",
+        a: "多くの場合、交換できます。いまの給湯器の型番と、PSの扉の中か外か（設置の形）を確かめて、同じ形で付けられる機種をご案内します。型番が分かれば、メーカーが案内している後継の機種も調べられます。",
+      },
+      {
+        q: "相模原市に会社がありますか。",
+        a: "{{company}}の本社は、{{headOfficeArea}}にあります。{{totsukaOfficeArea}}には、戸塚オフィスがあります。",
+      },
+    ],
+    sources: [
+      { label: "相模原市 都市計画マスタープラン（1. 都市計画マスタープランの策定に当たって～3. 都市づくりの課題）", url: "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/004/702/001.pdf" },
+      { label: "相模原市文化財保存活用地域計画 第1章 相模原市の概況", url: "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/034/396/01.pdf" },
+      { label: "相模原市 南区のプロフィール", url: "https://www.city.sagamihara.kanagawa.jp/minamiku/1009531.html" },
+      { label: "相模原市 南区基本計画（計画期間：令和2～9年度）", url: "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/009/557/11.pdf" },
+      { label: "第3次相模原市住生活基本計画 第2章 住生活の現状と課題", url: "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/004/805/20200331/05.pdf" },
+      { label: "相模原市 都市計画マスタープラン（5. 区別構想：南区）", url: "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/004/702/006.pdf" },
+      { label: "相模原市 令和7年版統計書 07.商業～12.住居及び土木建設（駅別の乗車人員）", url: "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/035/144/PDF03.pdf" },
+    ],
+    productFocus: { housing: "apartment" },
+    nearby: ["yamato", "seya"],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "yamato",
+    name: "大和市",
+    shortName: "大和市",
+    kind: "neighbor",
+    priority: "B",
+    title: "大和市の給湯器交換｜人口密度の高い、駅に近い住宅地",
+    h1: "大和市の給湯器交換",
+    description:
+      "大和市の給湯器交換。人口密度が神奈川県内で川崎市に次いで2番目に高く、住宅の56.2％が共同住宅、40.1％が一戸建ての大和市で、戸建てが密集した地域や団地の給湯器を替えるときの確認点をまとめました。",
+    lead: "大和市は、神奈川県のほぼ中央にあり、東は境川を境に横浜市の瀬谷区・泉区と接しています。住宅の56.2％が共同住宅、40.1％が一戸建てです（令和5年住宅・土地統計調査）。",
+    keyword: "大和市 給湯器交換",
+    secondaryKeywords: ["大和市 給湯器", "中央林間 給湯器", "南林間 給湯器"],
+    publishedAt: D3,
+    updatedAt: D3,
+    stats: {
+      population: 247304,
+      households: 119289,
+      areaKm2: 27.09,
+      detachedPercent: 40.1,
+      apartmentPercent: 56.2,
+      sixStoryPercent: 29.0,
+      upTo1980Percent: 16.3,
+      from2001Percent: 38.0,
+      ownedPercent: 53.8,
+      solarPercent: 2.9,
+    },
+    statSources: NEIGHBOR_STAT_SOURCES,
+    statAsOf: NEIGHBOR_STAT_AS_OF,
+    stations: [
+      "大和駅（小田急江ノ島線・相鉄本線）",
+      "中央林間駅（小田急江ノ島線・東急田園都市線）",
+      "南林間駅・鶴間駅・桜ヶ丘駅・高座渋谷駅（小田急江ノ島線）",
+      "つきみ野駅（東急田園都市線）・相模大塚駅（相鉄本線）",
+    ],
+    adjacentToTotsuka: false,
+    coastal: false,
+    sections: [
+      {
+        id: "town",
+        heading: "林間都市と田園都市の開発で広がった住宅地",
+        blocks: [
+          {
+            type: "p",
+            text: "大和市の都市計画マスタープランによると、市の北部は、小田急江ノ島線の開通に合わせた1920〜1930年代の林間都市開発と、東急田園都市線の延伸に合わせた1960〜1970年代の田園都市開発で生まれた住宅地です。南部の高座渋谷駅の周辺などでは、1970年代から土地区画整理事業が行われてきました。",
+          },
+          {
+            type: "p",
+            text: "市内には小田急江ノ島線・東急田園都市線・相鉄本線の3つの路線に8つの駅があり、市域のほとんどが駅から歩ける範囲です。市の大部分は起伏の少ない相模野台地の上にあり、平坦な地形です（同じマスタープラン）。",
+          },
+        ],
+      },
+      {
+        id: "dense",
+        heading: "戸建てが密集した地域と、狭い道",
+        blocks: [
+          {
+            type: "p",
+            text: "大和市は、県内の19の市の中で面積が下から5番目に狭い一方、人口密度は川崎市に次いで2番目です（大和市の概要）。マスタープランの南林間・鶴間地域の構想は、多くの戸建て住宅が密集して立地している、と書いています。南林間駅の西側では、幅4.0m未満の狭い道路も見られます。",
+          },
+          {
+            type: "p",
+            text: "家と家の間が狭い場所では、給湯器の排気が隣の家の窓や壁に向かわないか、新しい給湯器で必要な離れの寸法がとれるかを確かめます。工事の車を停める場所と、本体を運ぶ道のりも、お見積もりのときに確かめます。",
+          },
+        ],
+      },
+      {
+        id: "danchi",
+        heading: "境川沿いの大規模な団地",
+        blocks: [
+          {
+            type: "p",
+            text: "昭和40年代には、上和田団地・県営いちょう下和田団地などの大規模な団地が、境川沿いの低地に整備されました（マスタープランの高座渋谷地域の構想）。",
+          },
+          {
+            type: "p",
+            text: "団地やマンションの給湯器は、設置の形（壁掛け・PSの中など）と排気の向きで、選べる機種が決まります。いまの給湯器の型番が分かれば、同じ形で付けられる機種を調べられます。",
+          },
+          { type: "links", items: [{ href: "/products/successor", label: "古い型番から後継機種を探す", note: "メーカーが案内している後継・取り替えの機種" }] },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "大和市でも、給湯器の交換を頼めますか。",
+        a: "ご相談をお受けしています。大和市は、境川をはさんで横浜市の瀬谷区・泉区と隣り合っています。ご住所と、いまの給湯器の型番をお知らせください。",
+      },
+      {
+        q: "家と家の間が狭くても、給湯器を交換できますか。",
+        a: "多くの場合、交換できます。排気の向きを変える部材や、幅の狭い機種を使うこともあります。現地で離れの寸法を確かめてから、機種と工事をご案内します。",
+      },
+    ],
+    sources: [
+      { label: "大和市都市計画マスタープラン（令和8年3月一部改定） 第1章：全体構想", url: "https://www.city.yamato.lg.jp/material/files/group/51/toshi_zentaikousou_R8.pdf" },
+      { label: "大和市都市計画マスタープラン（令和8年3月一部改定） 第2章：地域別構想(2)南林間・鶴間地域", url: "https://www.city.yamato.lg.jp/material/files/group/51/toshi_tiiki_minami_R8.pdf" },
+      { label: "大和市都市計画マスタープラン（令和8年3月一部改定） 第2章：地域別構想(5)高座渋谷地域", url: "https://www.city.yamato.lg.jp/material/files/group/51/toshi_tiiki_shibuya_R8.pdf" },
+      { label: "大和の都市計画【令和8年4月】", url: "https://www.city.yamato.lg.jp/material/files/group/53/R8yamatotosikeikaku.pdf" },
+      { label: "大和市の概要", url: "https://www.city.yamato.lg.jp/recruitment/yamatoshinitsuite/22364.html" },
+    ],
+    productFocus: { housing: "apartment" },
+    nearby: ["seya", "izumi", "fujisawa", "sagamihara"],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "fujisawa",
+    name: "藤沢市",
+    shortName: "藤沢市",
+    kind: "neighbor",
+    priority: "B",
+    title: "藤沢市の給湯器交換｜海の近くの住まいと、景観の決まりのある地区",
+    h1: "藤沢市の給湯器交換",
+    description:
+      "藤沢市の給湯器交換。南は相模湾に面し、北部は境川をはさんで横浜市と接する藤沢市で、海の近くの住まいや、室外機などの置き場所に決まりのある地区、昭和40年代からの団地の給湯器を替えるときの確認点をまとめました。",
+    lead: "藤沢市は、神奈川県の中央南部にあり、南は相模湾に面しています。住宅の53.2％が共同住宅、44.1％が一戸建てで、2001年以降に建てられた住宅が46.3％です（令和5年住宅・土地統計調査）。",
+    keyword: "藤沢市 給湯器交換",
+    secondaryKeywords: ["藤沢市 給湯器", "湘南台 給湯器", "辻堂 給湯器"],
+    publishedAt: D3,
+    updatedAt: D3,
+    stats: {
+      population: 444157,
+      households: 205720,
+      areaKm2: 69.56,
+      detachedPercent: 44.1,
+      apartmentPercent: 53.2,
+      sixStoryPercent: 29.6,
+      upTo1980Percent: 14.2,
+      from2001Percent: 46.3,
+      ownedPercent: 59.1,
+      solarPercent: 4.2,
+    },
+    statSources: NEIGHBOR_STAT_SOURCES,
+    statAsOf: NEIGHBOR_STAT_AS_OF,
+    stations: [
+      "藤沢駅（JR東海道線・小田急江ノ島線・江ノ電）",
+      "湘南台駅（小田急江ノ島線・相鉄いずみ野線・横浜市営地下鉄ブルーライン）",
+      "辻堂駅（JR東海道線）",
+    ],
+    adjacentToTotsuka: true,
+    coastal: true,
+    sections: [
+      {
+        id: "coast",
+        heading: "相模湾に面した市",
+        blocks: [
+          {
+            type: "p",
+            text: "藤沢市は、横浜市・鎌倉市・茅ヶ崎市・大和市・綾瀬市・海老名市・寒川町の6市1町に囲まれ、南は相模湾に面しています。海岸線の長さは5.239kmです（市のプロフィール）。横浜市とは、戸塚区・泉区と隣り合っています。",
+          },
+          {
+            type: "p",
+            text: "藤沢市景観計画は、市域を、北部の相模原台地と、南部の湘南砂丘の沖積低地の、大きく2つの地形に分けています。",
+          },
+          {
+            type: "p",
+            text: "海の近くでは、潮風による塩害を考えて、メーカーが用意している塩害への対策の仕様の機種を選ぶかを確かめます。",
+          },
+        ],
+      },
+      {
+        id: "landscape",
+        heading: "室外機などの置き場所に決まりのある地区",
+        blocks: [
+          {
+            type: "p",
+            text: "藤沢市は、市域の全体を景観計画区域とし、一定の規模以上の建物に届出を義務づけています。規制を強めた景観形成地区もあります（景観法に基づく手続の対象のページ）。",
+          },
+          {
+            type: "p",
+            text: "景観計画の地区ごとの基準には、給排水管や空調設備の室外機などの建築設備を、道路などから見えない位置に置くとするものがあります（江の島や湘南台の地区の基準など）。壁に付ける設備を替えるときは、地区の基準を確かめてから、置き場所を決めます。",
+          },
+        ],
+      },
+      {
+        id: "danchi",
+        heading: "昭和40年代の団地と、湘南ライフタウン",
+        blocks: [
+          {
+            type: "p",
+            text: "藤沢市住宅マスタープランは、1965年（昭和40年）前後に、当時の日本住宅公団による大規模な団地が3か所建設された、と書いています。湘南ライフタウンを中心に、昭和50年代に建設された中高層住宅が多く、建物の老朽化と、住む人の高齢化への対応が課題とされています。",
+          },
+          {
+            type: "p",
+            text: "団地やマンションの給湯器は、設置の形（壁掛け・PSの中など）と排気の向きで、選べる機種が決まります。管理組合の決まりがある場合は、交換の前に確かめます。",
+          },
+          { type: "links", items: [{ href: "/products/successor", label: "古い型番から後継機種を探す", note: "メーカーが案内している後継・取り替えの機種" }] },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "藤沢市の海の近くの家です。どんな給湯器を選べばよいですか。",
+        a: "海の近くでは、潮風による塩害に備えて、メーカーが用意している塩害への対策の仕様の機種を選ぶかを確かめます。いまの給湯器の設置の形と号数も合わせて、合う機種をご案内します。",
+      },
+      {
+        q: "藤沢市でも、給湯器の交換を頼めますか。",
+        a: "ご相談をお受けしています。藤沢市は、横浜市の戸塚区・泉区と隣り合っています。ご住所と、いまの給湯器の型番をお知らせください。",
+      },
+    ],
+    sources: [
+      { label: "藤沢市 市のプロフィール", url: "https://www.city.fujisawa.kanagawa.jp/kouhou/shise/gaiyo/shokai/profile.html" },
+      { label: "藤沢市景観計画（平成25年5月改訂）", url: "https://www.city.fujisawa.kanagawa.jp/documents/11871/keikankeikaku2.pdf" },
+      { label: "藤沢市 景観法に基づく手続の対象", url: "https://www.city.fujisawa.kanagawa.jp/keikan/machizukuri/kenchiku/kekan/todokede.html" },
+      { label: "藤沢市住宅マスタープラン（2019年1月策定） はじめに・第1章", url: "https://www.city.fujisawa.kanagawa.jp/documents/20973/02jutakuhajimeni1syou.pdf" },
+      { label: "藤沢市（藤沢駅周辺地区）移動円滑化基本構想", url: "https://www.city.fujisawa.kanagawa.jp/documents/11842/000133190.pdf" },
+      { label: "藤沢市（湘南台駅周辺地区）移動円滑化基本構想", url: "https://www.city.fujisawa.kanagawa.jp/documents/11842/000133191.pdf" },
+      { label: "横浜市都市計画マスタープラン戸塚区プラン ２章 戸塚区の成り立ちと現況及び課題", url: "https://www.city.yokohama.lg.jp/totsuka/kurashi/machizukuri_kankyo/machizukuri/totsuka_machi/tosimasu.files/0005_20181018.pdf" },
+      { label: "横浜市都市計画マスタープラン泉区プラン １．泉区の概況とまちづくりの課題", url: "https://www.city.yokohama.lg.jp/izumi/kurashi/machizukuri_kankyo/machizukuri/kupurann.files/0005_20260918.pdf" },
+    ],
+    productFocus: { housing: "apartment" },
+    nearby: ["totsuka", "izumi", "kamakura", "yamato"],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "kamakura",
+    name: "鎌倉市",
+    shortName: "鎌倉市",
+    kind: "neighbor",
+    priority: "B",
+    title: "鎌倉市の給湯器交換｜風致地区と谷戸の戸建て住宅",
+    h1: "鎌倉市の給湯器交換",
+    description:
+      "鎌倉市の給湯器交換。市域の約55.5％が風致地区で、住宅の60.4％が一戸建ての鎌倉市で、風致地区の決まりや、谷戸の奥の狭い道、昭和40年代の戸建ての給湯器を替えるときの確認点をまとめました。",
+    lead: "鎌倉市は、北は横浜市、西は藤沢市、東は逗子市に接し、南は相模湾に面しています。住宅の60.4％が一戸建てで、持ち家が71.8％です（令和5年住宅・土地統計調査）。",
+    keyword: "鎌倉市 給湯器交換",
+    secondaryKeywords: ["鎌倉市 給湯器", "大船 給湯器", "鎌倉 給湯器 交換"],
+    publishedAt: D3,
+    updatedAt: D3,
+    stats: {
+      population: 168661,
+      households: 77873,
+      areaKm2: 39.66,
+      detachedPercent: 60.4,
+      apartmentPercent: 36.9,
+      sixStoryPercent: 30.2,
+      upTo1980Percent: 19.4,
+      from2001Percent: 41.0,
+      ownedPercent: 71.8,
+      solarPercent: 3.8,
+    },
+    statSources: NEIGHBOR_STAT_SOURCES,
+    statAsOf: NEIGHBOR_STAT_AS_OF,
+    stations: ["大船駅（JR東海道線・横須賀線・根岸線、湘南モノレール）", "鎌倉駅（JR横須賀線・江ノ電）", "北鎌倉駅（JR横須賀線）"],
+    adjacentToTotsuka: true,
+    coastal: true,
+    sections: [
+      {
+        id: "fuuchi",
+        heading: "市の約55.5％が風致地区",
+        blocks: [
+          {
+            type: "p",
+            text: "鎌倉市では、市の全域の約55.5％（約2,194ha）が風致地区に指定されています。風致地区で建物などの新築・増築・改築などをするときは、市長の許可が必要です（鎌倉市の風致地区のページ）。",
+          },
+          {
+            type: "p",
+            text: "鎌倉市風致地区条例の許可の審査基準は、エアコンの室外機や給湯器、貯水タンクといった建築設備は、壁面後退距離の対象にしていない、と書いています。ただし、これらを建物の壁で覆ったものは、その壁が壁面後退距離の対象になります。",
+          },
+          {
+            type: "p",
+            text: "鎌倉市景観計画も、建築設備などは周辺の景観との調和を図るものとしています。給湯器の置き場所を変えるときや、目隠しの囲いを付けるときは、地区の決まりを確かめます。",
+          },
+        ],
+      },
+      {
+        id: "yato",
+        heading: "谷戸の住宅地と、狭い行き止まりの道",
+        blocks: [
+          {
+            type: "p",
+            text: "鎌倉市の都市マスタープランは、市街地が丘陵−谷戸−市街地という地形の構造になっている、と書いています。谷戸の住宅地は、昭和30年代頃からの宅地化で形成され、幅が狭く、地形の制約から行き止まりになっている道路があります。",
+          },
+          {
+            type: "p",
+            text: "車の入れない道の奥の家では、工事の車を停める場所から、本体を運ぶ道のりを、お見積もりのときに確かめます。",
+          },
+        ],
+      },
+      {
+        id: "older",
+        heading: "昭和40年代に建てられた戸建て",
+        blocks: [
+          {
+            type: "p",
+            text: "都市マスタープランは、持家は昭和40年代に建設された戸建住宅を中心に、老朽化しているものが少なくない、と書いています。昭和35年頃からは「昭和の鎌倉攻め」といわれる宅地開発ブームが始まり、七里ガ浜・今泉などで大規模な宅地造成が行われました（第3次鎌倉市住宅マスタープラン）。",
+          },
+          {
+            type: "p",
+            text: "長く使われてきた家では、給湯器だけでなく、つながっている配管やリモコンの線の傷みも合わせて確かめます。",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "鎌倉市の風致地区の家です。給湯器の交換で気をつけることはありますか。",
+        a: "同じ場所で入れ替えるだけか、置き場所を変えたり囲いを付けたりするかで、確かめることが変わります。鎌倉市の審査基準では、給湯器などの建築設備は壁面後退距離の対象にしていませんが、設備を覆う壁は対象になります。迷う場合は、市の担当の窓口に確かめてから工事をします。",
+      },
+      {
+        q: "鎌倉市でも、給湯器の交換を頼めますか。",
+        a: "ご相談をお受けしています。鎌倉市は、横浜市の戸塚区・栄区と隣り合っています。ご住所と、いまの給湯器の型番をお知らせください。",
+      },
+    ],
+    sources: [
+      { label: "鎌倉市歴史的風致維持向上計画（第2期） 表紙～第1章 鎌倉市の歴史的風致形成の背景", url: "https://www.city.kamakura.kanagawa.jp/fuuchi/documents/2ndplan_prologue-chapter1.pdf" },
+      { label: "鎌倉市 風致地区（鎌倉市風致地区条例）", url: "https://www.city.kamakura.kanagawa.jp/fuuchi/huutitiku.html" },
+      { label: "鎌倉市風致地区条例による許可の審査基準・解釈と運用（平成26年4月） 第2章 許可基準 第1節", url: "https://www.city.kamakura.kanagawa.jp/fuuchi/documents/dai2shou-dai1setu-kyokakijunn.pdf" },
+      { label: "鎌倉市景観計画（平成29年3月） 第3章（土地利用類型別）", url: "https://www.city.kamakura.kanagawa.jp/keikan/documents/06_3-ruikei.pdf" },
+      { label: "鎌倉市都市マスタープラン（平成27年9月） 第2章 都市マスタープランの基本方針", url: "https://www.city.kamakura.kanagawa.jp/plan/documents/2kihon.pdf" },
+      { label: "鎌倉市都市マスタープラン（平成27年9月） 第3章 1.土地利用の方針", url: "https://www.city.kamakura.kanagawa.jp/plan/documents/3-1tochiriyou.pdf" },
+      { label: "鎌倉市都市マスタープラン（平成27年9月） 第3章 6.住宅・住環境整備の方針", url: "https://www.city.kamakura.kanagawa.jp/plan/documents/3-6jyutaku.pdf" },
+      { label: "第3次鎌倉市住宅マスタープラン（平成29年3月） 第2章", url: "https://www.city.kamakura.kanagawa.jp/kenchiku/documents/2syo.pdf" },
+      { label: "鎌倉市交通マスタープラン（令和8年4月）", url: "https://www.city.kamakura.kanagawa.jp/koutsu/documents/koutsumasu.pdf" },
+      { label: "横浜市都市計画マスタープラン栄区プラン 第1章 栄区の現状と課題", url: "https://www.city.yokohama.lg.jp/sakae/kurashi/machizukuri_kankyo/machizukuri/toshikeikaku/sakae-mplan.files/plan_chapter1.pdf" },
+    ],
+    productFocus: { housing: "detached" },
+    nearby: ["sakae", "totsuka", "kanazawa", "fujisawa"],
+  },
 ];
 
 /** 公開する地域のページ */
@@ -1775,4 +2229,9 @@ export function getArea(slug: string): Area | undefined {
 /** 区のページ（市のページを除く） */
 export function wardAreas(): Area[] {
   return areas.filter((a) => a.kind === "ward");
+}
+
+/** 横浜市の周辺の市のページ */
+export function neighborAreas(): Area[] {
+  return areas.filter((a) => a.kind === "neighbor");
 }

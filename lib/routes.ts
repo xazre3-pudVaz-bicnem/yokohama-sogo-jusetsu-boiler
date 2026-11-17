@@ -5,6 +5,7 @@ import { works, workUpdatedAt } from "@/data/works";
 import { activeClusters, getAllPosts, MIN_POSTS_TO_INDEX, pageCount } from "@/lib/blog";
 import { allContentPages, contentPagePath } from "@/lib/content";
 import { latestProductUpdate, productPath, products } from "@/lib/products";
+import { SUCCESSOR_PATH, successorBrandPath, successorBrands, successorsUpdatedAt } from "@/lib/successors";
 
 /**
  * サイトの URL の一覧（sitemap.xml・内部リンクの検査・コラムの自動生成のリンクの検査が使う）。
@@ -43,6 +44,13 @@ export function sitemapRoutes(): RouteEntry[] {
     ...STATIC_PAGES.map((p) => ({ path: p.path, priority: p.priority, lastModified: p.path === "/" ? max(SITE_UPDATED, latestPost) : SITE_UPDATED })),
     ...brands.filter((b) => products.some((p) => p.brand === b.id)).map((b) => ({ path: `/products/${b.id}`, priority: 0.8, lastModified: latestProductUpdate(products.filter((p) => p.brand === b.id)) })),
     ...products.map((p) => ({ path: productPath(p), priority: 0.7, lastModified: p.lastUpdatedAt, images: p.images.map((i) => i.src) })),
+    // 古い型番から後継の機種を探すページ（入口と、メーカーごとの一覧。メーカーの案内が1件以上あるときだけ）
+    ...(successorBrands().length
+      ? [
+          { path: SUCCESSOR_PATH, priority: 0.7, lastModified: successorsUpdatedAt(SITE_UPDATED) },
+          ...successorBrands().map((b) => ({ path: successorBrandPath(b.id), priority: 0.6, lastModified: successorsUpdatedAt(SITE_UPDATED, b.id) })),
+        ]
+      : []),
     ...allContentPages().map((p) => ({ path: contentPagePath(p), priority: p.cluster === "subsidy" ? 0.8 : 0.7, lastModified: p.updatedAt })),
     ...publishedAreas.map((a) => ({ path: `/area/${a.slug}`, priority: a.priority === "A" ? 0.8 : 0.6, lastModified: a.updatedAt })),
   ];
@@ -54,7 +62,8 @@ export function sitemapRoutes(): RouteEntry[] {
   if (posts.length >= MIN_POSTS_TO_INDEX) {
     entries.push({ path: "/blog", priority: 0.6, lastModified: latestPost });
     for (let page = 2; page <= pageCount(posts.length); page++) entries.push({ path: `/blog/page/${page}`, priority: 0.3, lastModified: latestPost });
-    for (const { cluster } of activeClusters()) entries.push({ path: `/blog/category/${cluster.id}`, priority: 0.4, lastModified: latestPost });
+    // 記事が MIN_POSTS_TO_INDEX 本に満たないカテゴリは noindex（app/blog/category/[slug]）なので、sitemap に入れない
+    for (const { cluster, count } of activeClusters()) if (count >= MIN_POSTS_TO_INDEX) entries.push({ path: `/blog/category/${cluster.id}`, priority: 0.4, lastModified: latestPost });
   }
   for (const p of posts) entries.push({ path: `/blog/${p.slug}`, priority: 0.5, lastModified: p.updatedAt });
   return entries;
@@ -63,7 +72,9 @@ export function sitemapRoutes(): RouteEntry[] {
 /** サイトに実在するパス（内部リンクの検査用。検索結果に出さないページも含む） */
 export function knownPaths(): Set<string> {
   const set = new Set(sitemapRoutes().map((r) => r.path));
-  for (const p of ["/compare", "/works", "/blog", "/contact/thanks", "/feed.xml"]) set.add(p);
+  for (const p of ["/compare", "/works", "/blog", "/contact/thanks", "/feed.xml", "/products/successor"]) set.add(p);
+  // 記事の少ないカテゴリ（noindex で sitemap に入れない）も、ページはある
+  for (const { cluster } of activeClusters()) set.add(`/blog/category/${cluster.id}`);
   return set;
 }
 

@@ -1868,5 +1868,1097 @@ export const rinnaiProducts: ProductData[] = [
       "https://rinnai.jp/jutaku-shoene/kyutou-shoene/",
       "https://rkids.rinnai.jp/rin/cgi-bin/itemSearchTop.cgi"
     ]
-  }
+  },
+  {
+    "id": "rinnai-ruf-e200faw",
+    "slug": "ruf-e200faw",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-Eシリーズ",
+    "name": "RUF-Eシリーズ ふろ給湯器",
+    "modelNumber": "RUF-E200FAW",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛型（W）"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "フルオート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600×幅470×奥行240（mm）"
+      },
+      {
+        "label": "質量",
+        "value": "26.0kg"
+      },
+      {
+        "label": "ガス消費量",
+        "value": "給湯36.7kW（31,600kcal/h）／おいだき11.0kW（9,500kcal/h）／同時47.7kW（41,000kcal/h）"
+      },
+      {
+        "label": "号数の範囲",
+        "value": "20～1.5号"
+      },
+      {
+        "label": "接続口径",
+        "value": "ガス：LPG 15A（R1/2）、13A・12A 20A（R3/4）／ふろ：15A（G1/2B）／給湯・給水：20A（R3/4）（給湯・給水接続15Aの機種はRUF-E201FAW）"
+      },
+      {
+        "label": "消費電力",
+        "value": "定格105W（待機時0.8W、ヒーター作動時170W）"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/cm²）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用して効率よくお湯を沸かす高効率ガス給湯器（エコジョーズ）",
+      "フルオート：湯はりから、おいだき・保温・たし湯まで全自動。おいだき配管自動洗浄・自動たし湯・自動沸きあげはフルオートのみの機能",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を熱源機に接続して給湯のみ使用できる（ポータブル電源が必要）",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）",
+      "製品寿命お知らせ：給湯器の状態を分析し、経年劣化をリモコンへ通知（リモコン332・342シリーズ接続時）"
+    ],
+    "cautions": [
+      "PS設置はできない（PS設置には排気バリエーションの機種を使う）",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+    "manufacturerPrice": {
+      "amount": 502700,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf"
+    ]
+  },
+  {
+    "id": "rinnai-ruf-e161eaw",
+    "slug": "ruf-e161eaw",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-Eシリーズ",
+    "name": "RUF-Eシリーズ ふろ給湯器",
+    "modelNumber": "RUF-E161EAW",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛型（W）"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 16,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "フルオート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600×幅470×奥行240（mm）"
+      },
+      {
+        "label": "質量",
+        "value": "25.0kg"
+      },
+      {
+        "label": "ガス消費量",
+        "value": "給湯29.4kW（25,300kcal/h）／おいだき11.0kW（9,500kcal/h）／同時39.2kW（33,700kcal/h）"
+      },
+      {
+        "label": "号数の範囲",
+        "value": "16～1.5号"
+      },
+      {
+        "label": "接続口径",
+        "value": "ガス：LPG 15A（R1/2）、13A・12A 15A（R1/2）／ふろ：15A（G1/2B）／給湯・給水：15A（R1/2）（給湯・給水接続20Aの機種はRUF-E160EAW）"
+      },
+      {
+        "label": "消費電力",
+        "value": "定格95W（待機時0.8W、ヒーター作動時170W）"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/cm²）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用して効率よくお湯を沸かす高効率ガス給湯器（エコジョーズ）",
+      "フルオート：湯はりから、おいだき・保温・たし湯まで全自動。おいだき配管自動洗浄・自動たし湯・自動沸きあげはフルオートのみの機能",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を熱源機に接続して給湯のみ使用できる（ポータブル電源が必要）",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）",
+      "製品寿命お知らせ：給湯器の状態を分析し、経年劣化をリモコンへ通知（リモコン332・342シリーズ接続時）"
+    ],
+    "cautions": [
+      "PS設置はできない（PS設置には排気バリエーションの機種を使う）",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+    "manufacturerPrice": {
+      "amount": 464200,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf"
+    ]
+  },
+  {
+    "id": "rinnai-ruf-e240eag",
+    "slug": "ruf-e240eag",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-Eシリーズ",
+    "name": "RUF-Eシリーズ ふろ給湯器（屋外据置型）",
+    "modelNumber": "RUF-E240EAG",
+    "installationType": {
+      "key": "floor",
+      "label": "屋外据置型（G）"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "フルオート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600×幅517×奥行250（mm）"
+      },
+      {
+        "label": "質量",
+        "value": "28.0kg"
+      },
+      {
+        "label": "ガス消費量",
+        "value": "給湯44.2kW（38,000kcal/h）／おいだき11.0kW（9,500kcal/h）／同時54.0kW（46,400kcal/h）"
+      },
+      {
+        "label": "号数の範囲",
+        "value": "24～1.5号"
+      },
+      {
+        "label": "接続口径",
+        "value": "ガス：LPG 15A（R1/2）、13A・12A 20A（R3/4）／ふろ：15A（G1/2B）／給湯・給水：20A（R3/4）"
+      },
+      {
+        "label": "消費電力",
+        "value": "定格105W（待機時0.8W、ヒーター作動時196W）"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/cm²）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用して効率よくお湯を沸かす高効率ガス給湯器（エコジョーズ）",
+      "フルオート：湯はりから、おいだき・保温・たし湯まで全自動。おいだき配管自動洗浄・自動たし湯・自動沸きあげはフルオートのみの機能",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を熱源機に接続して給湯のみ使用できる（ポータブル電源が必要）",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）"
+    ],
+    "cautions": [
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+    "manufacturerPrice": {
+      "amount": 547800,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf",
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+    ]
+  },
+  {
+    "id": "rinnai-ruf-e240eat",
+    "slug": "ruf-e240eat",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-Eシリーズ",
+    "name": "RUF-Eシリーズ ふろ給湯器（PS扉内設置型／PS前排気型）",
+    "modelNumber": "RUF-E240EAT",
+    "installationType": {
+      "key": "ps-door",
+      "label": "PS扉内設置型／PS前排気型（T）"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "フルオート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "排気筒口径",
+        "value": "φ100（排気延長不可）"
+      },
+      {
+        "label": "設置方式",
+        "value": "屋外壁掛・PS設置に対応（側方10mm近接設置が可能）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用して効率よくお湯を沸かす高効率ガス給湯器（エコジョーズ）",
+      "フルオート：湯はりから、おいだき・保温・たし湯まで全自動。おいだき配管自動洗浄・自動たし湯・自動沸きあげはフルオートのみの機能",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を熱源機に接続して給湯のみ使用できる（ポータブル電源が必要）",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）",
+      "超高層対応品（風速30m/sまで）。ただし壁掛またはPS設置の場合のみ対応（PS扉内設置は不可）",
+      "排気流速アップ対応品"
+    ],
+    "cautions": [
+      "PS扉内設置の場合は扉内設置用取付BOX UOP-P030が必要",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+    "manufacturerPrice": {
+      "amount": 545600,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf",
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+    ]
+  },
+  {
+    "id": "rinnai-ruf-e240eaa",
+    "slug": "ruf-e240eaa",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-Eシリーズ",
+    "name": "RUF-Eシリーズ ふろ給湯器（アルコーブ設置型）",
+    "modelNumber": "RUF-E240EAA",
+    "installationType": {
+      "key": "ps-standard",
+      "label": "アルコーブ設置型（A）"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "フルオート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "設置方式",
+        "value": "屋外壁掛・PS設置に対応（側方10mm近接設置が可能）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用して効率よくお湯を沸かす高効率ガス給湯器（エコジョーズ）",
+      "フルオート：湯はりから、おいだき・保温・たし湯まで全自動。おいだき配管自動洗浄・自動たし湯・自動沸きあげはフルオートのみの機能",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を熱源機に接続して給湯のみ使用できる（ポータブル電源が必要）",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）",
+      "側方排気アダプタは付属",
+      "超高層対応品（風速30m/sまで）。ただし壁掛設置でかつ側方給気アダプタを取り付けた場合のみ対応"
+    ],
+    "cautions": [
+      "扉内設置の場合はアルコーブ扉内アダプタ（専用オプション UOP-TAR114）を使用",
+      "左・右共通",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+    "manufacturerPrice": {
+      "amount": 545600,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf",
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+    ]
+  },
+  {
+    "id": "rinnai-ruf-e200esat",
+    "slug": "ruf-e200esat",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-Eシリーズ",
+    "name": "RUF-Eシリーズ ふろ給湯器（PS扉内設置型／PS前排気型）",
+    "modelNumber": "RUF-E200ESAT",
+    "installationType": {
+      "key": "ps-door",
+      "label": "PS扉内設置型／PS前排気型（T）"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "オート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "排気筒口径",
+        "value": "φ100（排気延長不可）"
+      },
+      {
+        "label": "設置方式",
+        "value": "屋外壁掛・PS設置に対応（側方10mm近接設置が可能）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用して効率よくお湯を沸かす高効率ガス給湯器（エコジョーズ）",
+      "オート：湯はりから、おいだき・保温までが自動",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を熱源機に接続して給湯のみ使用できる（ポータブル電源が必要）",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）",
+      "超高層対応品（風速30m/sまで）。ただし壁掛またはPS設置の場合のみ対応（PS扉内設置は不可）",
+      "排気流速アップ対応品"
+    ],
+    "cautions": [
+      "PS扉内設置の場合は扉内設置用取付BOX UOP-P030が必要",
+      "給湯・給水接続15Aの場合は別の型式（RUF-E201ESAT）",
+      "Q21の機能は備えていない",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/",
+    "manufacturerPrice": {
+      "amount": 449900,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf",
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+    ]
+  },
+  {
+    "id": "rinnai-rux-e2406w-a",
+    "slug": "rux-e2406w-a",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUX-Eシリーズ",
+    "name": "RUX-Eシリーズ ガス給湯器",
+    "modelNumber": "RUX-E2406W(A)",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛型（W）"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "hot-water-only",
+      "label": "給湯専用"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ530×幅350×奥行190（mm）"
+      },
+      {
+        "label": "質量",
+        "value": "18.0kg"
+      },
+      {
+        "label": "ガス消費量",
+        "value": "45.2kW（38,900kcal/h）"
+      },
+      {
+        "label": "号数の範囲",
+        "value": "24～2.4号"
+      },
+      {
+        "label": "給湯熱効率",
+        "value": "93％"
+      },
+      {
+        "label": "接続口径",
+        "value": "ガス：LPG 15A（R1/2）、13A・12A 20A（R3/4）／給湯・給水：20A（R3/4）（給湯・給水接続15Aの機種はRUX-E2416W(A)）"
+      },
+      {
+        "label": "消費電力",
+        "value": "定格56W（待機時0.8W、ヒーター作動時89W）"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/cm²）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "91.0%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "106%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "BC-145V（A）",
+        "note": "浴室リモコン別売"
+      },
+      {
+        "model": "MC-145V（A）",
+        "note": "台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用するエコジョーズの給湯専用機（おいだき機能なし）",
+      "熱効率93％で年間のガス使用量を削減（RUX-E2406・E2016・E1616シリーズ）",
+      "本体のみでは60℃の定温出湯。別売のリモコンをつけると給湯温度（35/37～60℃）を設定できる",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を接続して給湯できる（リモコンMC・BC-145V（A）とポータブル電源が必要）",
+      "低NOx（NOx濃度60ppm以下）"
+    ],
+    "cautions": [
+      "PS設置はできない（PS設置には排気バリエーションの機種を使う）",
+      "高温水出湯は不可",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/",
+    "manufacturerPrice": {
+      "amount": 246400,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/",
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf"
+    ]
+  },
+  {
+    "id": "rinnai-rux-e1616w-a",
+    "slug": "rux-e1616w-a",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUX-Eシリーズ",
+    "name": "RUX-Eシリーズ ガス給湯器",
+    "modelNumber": "RUX-E1616W(A)",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛型（W）"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 16,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "hot-water-only",
+      "label": "給湯専用"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ530×幅350×奥行190（mm）"
+      },
+      {
+        "label": "質量",
+        "value": "16.0kg"
+      },
+      {
+        "label": "ガス消費量",
+        "value": "30.1kW（25,900kcal/h）"
+      },
+      {
+        "label": "号数の範囲",
+        "value": "16～2.4号"
+      },
+      {
+        "label": "給湯熱効率",
+        "value": "93％"
+      },
+      {
+        "label": "接続口径",
+        "value": "ガス：LPG 15A（R1/2）、13A・12A 15A（R1/2）／給湯・給水：15A（R1/2）（給湯・給水接続20Aの機種はRUX-E1606W(A)）"
+      },
+      {
+        "label": "消費電力",
+        "value": "定格41W（待機時0.8W、ヒーター作動時89W）"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/cm²）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "91.0%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "106%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "BC-145V（A）",
+        "note": "浴室リモコン別売"
+      },
+      {
+        "model": "MC-145V（A）",
+        "note": "台所リモコン別売"
+      }
+    ],
+    "features": [
+      "排気熱を再利用するエコジョーズの給湯専用機（おいだき機能なし）",
+      "熱効率93％で年間のガス使用量を削減（RUX-E2406・E2016・E1616シリーズ）",
+      "本体のみでは60℃の定温出湯。別売のリモコンをつけると給湯温度（35/37～60℃）を設定できる",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を接続して給湯できる（リモコンMC・BC-145V（A）とポータブル電源が必要）",
+      "低NOx（NOx濃度60ppm以下）"
+    ],
+    "cautions": [
+      "PS設置はできない（PS設置には排気バリエーションの機種を使う）",
+      "高温水出湯は不可",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/",
+    "manufacturerPrice": {
+      "amount": 221100,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/",
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf"
+    ]
+  },
+  {
+    "id": "rinnai-rufh-e2407at2-3-a",
+    "slug": "rufh-e2407at2-3-a",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUFH-Eシリーズ",
+    "name": "ふろ給湯暖房熱源機（RUFH-Eシリーズ・PS扉内設置型／PS前排気型）",
+    "modelNumber": "RUFH-E2407AT2-3(A)",
+    "installationType": {
+      "key": "ps-door",
+      "label": "PS扉内設置型／PS前排気型（T）"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "heating",
+      "label": "フルオート（ふろ給湯＋温水暖房）"
+    },
+    "heating": true,
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "暖房能力",
+        "value": "11.6kW"
+      },
+      {
+        "label": "暖房バリエーション",
+        "value": "2-3（2温度・床暖房3系統、熱動弁内蔵）"
+      },
+      {
+        "label": "給排気筒口径",
+        "value": "φ100（排気延長7m・4曲りまで）"
+      },
+      {
+        "label": "設置方式",
+        "value": "屋外壁掛・PS設置に対応（側方10mm近接設置が可能）"
+      },
+      {
+        "label": "エネルギー消費効率（定格）",
+        "value": "93.0%"
+      },
+      {
+        "label": "給湯部熱効率（定格）",
+        "value": "95.0%"
+      },
+      {
+        "label": "暖房部熱効率（定格）",
+        "value": "87.0%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "101%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "給湯・おいだきに加え、床暖房などの温水暖房に使える熱源機（エコジョーズ）",
+      "フルオート：湯はりから、おいだき・保温・たし湯まで全自動",
+      "床暖房と放熱機の両方に接続でき、床暖房は3系統まで接続可能（熱動弁ヘッダーを内蔵）",
+      "停電モード：停電時もガスと水道が使えれば、ポータブル電源を接続して給湯のみ使用できる（ふろ自動運転・おいだき・暖房は使えない）",
+      "給湯最小号数を0.4号以下に設計し、節水シャワーにも対応",
+      "超高層対応品（風速30m/sまで）。ただし壁掛またはPS設置の場合のみ対応（PS扉内設置は不可）",
+      "排気流速アップ対応品"
+    ],
+    "cautions": [
+      "PS扉内でアルコーブ設置する場合は、側方排気アダプタ WOP-M305HT が必要",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/rufh-rvd/e-series/",
+    "manufacturerPrice": {
+      "amount": 603900,
+      "tax": "included",
+      "includes": "本体のみ。リモコン別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KDSE.pdf"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KDSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf",
+      "https://www.rinnai.jp/products/waterheater/gas/rufh-rvd/e-series/"
+    ]
+  },
+  {
+    "id": "rinnai-ruf-te200esat",
+    "slug": "ruf-te200esat",
+    "brand": "rinnai",
+    "category": "eco-jozu",
+    "series": "RUF-TEシリーズ",
+    "name": "RUF-TEシリーズ 既築集合住宅取り替え用ガスふろ給湯器（PS扉内設置型／PS前排気型）",
+    "modelNumber": "RUF-TE200ESAT",
+    "installationType": {
+      "key": "ps-door",
+      "label": "PS扉内設置型／PS前排気型（T）"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "オート"
+    },
+    "gasTypes": [
+      "13A・12A",
+      "LPG"
+    ],
+    "specifications": [
+      {
+        "label": "排気筒口径",
+        "value": "φ100（排気延長不可）"
+      },
+      {
+        "label": "設置方式",
+        "value": "屋外壁掛・PS設置に対応（側方10mm近接設置が可能）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率）",
+        "value": "92.5%"
+      },
+      {
+        "label": "省エネ基準達成率（2028年度目標）",
+        "value": "103%"
+      },
+      {
+        "label": "本体色",
+        "value": "シャイニーシルバー"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MBC-342VC",
+        "note": "浴室・台所リモコン（アプリ対応）別売"
+      },
+      {
+        "model": "MBC-282VC",
+        "note": "浴室・台所リモコン別売"
+      }
+    ],
+    "features": [
+      "既設のおいだき配管を利用してドレン水を浴室の排水口へ流すため、ドレン配管工事ができないPS設置の既築集合住宅でもエコジョーズに取り替えられる（集合住宅取替用エコジョーズ）",
+      "オート：湯はりから、おいだき・保温までが自動",
+      "低NOx（すべての燃焼域でNOx濃度60ppm以下）",
+      "超高層対応品（風速30m/sまで）。ただし壁掛またはPS設置の場合のみ対応（PS扉内設置は不可）",
+      "排気流速アップ対応品"
+    ],
+    "cautions": [
+      "ドレン排水切替ユニット（ROP-DHU3・別売）は本体設置時に必要なオプション",
+      "ドレン排水切替ユニットとおいだき（往き）配管の接続には、配管方法に応じた別売の接続セットが必要",
+      "PS扉内設置の場合は扉内設置用取付BOX UOP-P030が必要",
+      "Q21の機能は備えていない",
+      "設置可否の詳細は現地調査が必要"
+    ],
+    "manufacturerUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/ute-te/",
+    "manufacturerPrice": {
+      "amount": 480700,
+      "tax": "included",
+      "includes": "本体のみ。ドレン排水切替ユニット（必須オプション）・リモコンは別売。配送費・据付部材・据付工事費・使用済み商品の引取り費等は含まない",
+      "asOf": "2026年9月1日改定後の価格（総合カタログ『2026年9月 新価格』／2026年9月改定価格表）",
+      "sourceUrl": "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.rinnai.jp/catalog_download/pdf/Rinnai_KSE.pdf",
+      "https://www.rinnai.co.jp/releases/2026/0612/images/202609price.pdf",
+      "https://www.rinnai.jp/products/waterheater/gas/ruf/ute-te/"
+    ]
+  },
 ];

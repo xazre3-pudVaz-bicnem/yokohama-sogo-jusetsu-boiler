@@ -50,6 +50,9 @@ const TOKENS: Record<string, string> = {
   company: siteConfig.name,
   nickname: siteConfig.nickname,
   phone: siteConfig.contact.companyPhone,
+  // 事業所の場所（市区町村と町名まで。番地は lib/site.ts の住所の表示で出す）
+  headOfficeArea: `${siteConfig.offices.head.city}${siteConfig.offices.head.town}`,
+  totsukaOfficeArea: `${siteConfig.offices.totsuka.city}${siteConfig.offices.totsuka.town}`,
 };
 
 export function fillTokens(text: string): string {

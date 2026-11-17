@@ -24,6 +24,7 @@ import { productSchema } from "@/lib/schema";
 import { buildMetadata, formatDateJa, formatYen } from "@/lib/seo";
 import { lineUrl, primaryPhone, telHref } from "@/lib/site";
 import { kyutouPhase, manYen, operatorStatement } from "@/lib/subsidy";
+import { predecessorsOf, RELATION_LABEL, successorBrandPath } from "@/lib/successors";
 
 /**
  * 機種のページ（/products/<メーカー>/<型番>）。
@@ -216,6 +217,7 @@ export default async function ProductPage({ params }: Params) {
   const suited = suitedFor(p, brand.name);
   const faqs = productFaqs(p);
   const guides = relatedGuides(p);
+  const predecessors = predecessorsOf(p);
 
   return (
     <>
@@ -405,6 +407,51 @@ export default async function ProductPage({ params }: Params) {
                   </li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {/* 前のモデル（メーカーが、この機種への取り替えを案内している古い型番。data/products/successors.ts） */}
+          {predecessors.length > 0 && (
+            <section aria-labelledby="predecessors" className="cv">
+              <SectionHeading
+                id="predecessors"
+                eyebrow="前のモデルから"
+                title="この機種への取り替えを、メーカーが案内している型番"
+                lead={`${brand.name}は、次の古い型番からの取り替えに、この機種を案内しています。いまの給湯器の型番が下にあれば、この機種が交換の候補になります。`}
+                className="mb-6"
+              />
+              <ul className="rows">
+                {predecessors.map((v) => (
+                  <li key={v.key} className="py-3.5">
+                    <p className="flex flex-wrap gap-1.5">
+                      {v.oldModels.map((m) => (
+                        <span key={m} className="num rounded-md bg-paper-2 px-2 py-0.5 text-[0.875rem] font-semibold text-navy-900 [overflow-wrap:anywhere]">
+                          {m}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="mt-1.5 text-[0.8125rem] leading-[1.8] text-ink-body">
+                      <span className="font-bold text-brand-700">{RELATION_LABEL[v.relation]}</span>
+                      {v.successors.length > 1 && `（この機種を含む${v.successors.length}機種のどれか）`}
+                    </p>
+                    {v.note && <p className="mt-1 text-[0.8125rem] leading-[1.8] text-ink-body">{v.note}</p>}
+                    <p className="mt-1 text-xs text-ink-mute">
+                      出典：
+                      <a href={v.source.url} target="_blank" rel="noopener noreferrer" className="text-link !font-normal">
+                        {v.source.label}
+                      </a>
+                      {v.where ? `（${v.where}）` : ""}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-[0.8125rem] leading-[1.85] text-ink-mute">配管の位置やリモコンの種類によって、使う部材や工事が変わることがあります。現地調査で確かめます。</p>
+              <p className="mt-2">
+                <Link href={successorBrandPath(p.brand)} className="link-arrow !text-sm">
+                  {brand.name}のほかの古い型番から探す
+                  <Icon name="arrowRight" className="size-4" />
+                </Link>
+              </p>
             </section>
           )}
 

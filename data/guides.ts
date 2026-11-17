@@ -1167,6 +1167,7 @@ export const guidePages: ContentPage[] = [
     ],
     related: [
       { href: "/contact", label: "無料見積もり", note: "型番と設置場所の写真を送れます" },
+      { href: "/products/successor", label: "古い型番から後継機種を探す", note: "メーカーが案内している後継の機種" },
       { href: "/guide/timing", label: "給湯器の交換時期の目安", note: "製造から10年がひとつの目安" },
       { href: "/guide/capacity", label: "給湯器の号数の選び方", note: "いまの号数を確かめたあとに" },
       { href: "/guide/auto-fullauto", label: "オートとフルオートの違い", note: "ふろ機能の記号の意味" },

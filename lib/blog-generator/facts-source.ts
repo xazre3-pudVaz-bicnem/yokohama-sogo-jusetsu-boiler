@@ -1,4 +1,4 @@
-import { AREA_STAT_AS_OF, AREA_STAT_SOURCES, publishedAreas } from "@/data/areas";
+import { AREA_STAT_AS_OF, AREA_STAT_SOURCES, publishedAreas, type Area } from "@/data/areas";
 import { categories, getCategory, installationLabels } from "@/data/categories";
 import type { Product } from "@/data/products/types";
 import { chintaiShoene2026 as chintai, kyutouShoene2026 as k, miraiEco2026 as mirai, yokohamaYgrep2026 as y } from "@/data/subsidy/programs";
@@ -116,16 +116,20 @@ function ygrep(): string {
   ]);
 }
 
+function areaStatLine(a: Area): string {
+  const s = a.stats;
+  return `${a.shortName}：一戸建て${s.detachedPercent}%・共同住宅${s.apartmentPercent}%（6階建以上${s.sixStoryPercent}%）・1980年以前${s.upTo1980Percent}%・太陽光${s.solarPercent}%`;
+}
+
 function wards(): string {
-  const lines = publishedAreas.map((a) => {
-    const s = a.stats;
-    return `${a.shortName}：一戸建て${s.detachedPercent}%・共同住宅${s.apartmentPercent}%（6階建以上${s.sixStoryPercent}%）・1980年以前${s.upTo1980Percent}%・太陽光${s.solarPercent}%`;
-  });
-  return section("横浜市の区の住まい（統計）", "wards", publishedAreas.reduce((d, a) => (a.updatedAt > d ? a.updatedAt : d), "2026-10-14"), AREA_STAT_SOURCES.slice(0, 2).map((s) => s.url), [
+  const yokohama = publishedAreas.filter((a) => a.kind !== "neighbor");
+  return section("横浜市の区の住まい（統計）", "wards", yokohama.reduce((d, a) => (a.updatedAt > d ? a.updatedAt : d), "2026-10-14"), AREA_STAT_SOURCES.slice(0, 2).map((s) => s.url), [
     `令和5年住宅・土地統計調査（${AREA_STAT_AS_OF.housing}）。住宅数に対する割合。共同住宅の6階建以上は共同住宅に対する割合、1980年以前は建てられた時期、太陽光は太陽光を利用した発電機器のある住宅`,
-    ...lines,
+    ...yokohama.map(areaStatLine),
   ]);
 }
+
+// 横浜市の周辺の市（kind: "neighbor"）の統計は、使う題材が無いので節にしない（題材を足すときに、ここへ節を作る）
 
 const CATEGORY_IDS: Record<Product["category"], string> = { gas: "products-gas", "eco-jozu": "products-eco-jozu", ecocute: "products-ecocute", hybrid: "products-hybrid" };
 
@@ -197,7 +201,7 @@ function productList(categoryId: Product["category"]): string {
 
 /** ファイルの自動生成の部分の全体（目印は含まない） */
 export function generatedFacts(): string {
-  return [company(), subsidyCore(), kyutou(), miraiEco(), chintaiSection(), ygrep(), wards(), ...categories.map((c) => productList(c.id))].join("\n\n");
+  return [company(), subsidyCore(), kyutou(), miraiEco(), chintaiSection(), ygrep(), wards(), ...categories.map((c) => productList(c.id))].filter((x): x is string => !!x).join("\n\n");
 }
 
 /* ------------------------------------------------------------------ */

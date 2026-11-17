@@ -422,6 +422,112 @@
     "evidence": "総合商品情報サイト（rkids.rinnai.jp。rinnai.jp の取扱説明書ページのリンクから入る）の、熱源機 RHBF-RK246AW（品名コード 28-4650）の商品詳細ページのシステムの写真。この熱源機は標準の X5 と PLUG-IN MODEL で共通。総合商品情報サイトでは RHP-R225-P（28-5932）の画像は RHP-R225 と同じもの、RTUP-R701（28-7064）の画像は RTU-R701 と同じ画像IDで、rinnai.jp の PLUG-IN MODEL（ふろ給湯）のページ（lineup/single_wh_70pi）も標準の X5 と同じ画像（single_wh_70.webp、single_wh_70/04.webp）を使っている。暖房付きの画像は使っていない。ヒートポンプとタンクユニットは各型式の商品詳細ページの画像を unit として追加。",
     "verifiedAt": "2026-10-15"
   },
+  "rinnai-ruf-e200faw": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e200faw-main.webp",
+        "width": 648,
+        "height": 828,
+        "role": "main",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/ruf/e-series.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+      }
+    ],
+    "sharedGroup": "RUF-Eシリーズ 屋外壁掛型（W）：RUF-E240EAW・RUF-E240ESAW・RUF-E200FAW・RUF-E200FSAW・RUF-E161EAW・RUF-E161ESAW",
+    "evidence": "rinnai.jp の RUF-Eシリーズのページの冒頭（見出し「RUF-Eシリーズ」「ふろ給湯器」の横の figure.title__photo。alt は空）の製品写真。同じページの「号数・価格」の表は屋外壁掛型（W）の6機種（RUF-E240EAW・E240ESAW・E200FAW・E200FSAW・E161EAW・E161ESAW）だけで、「おもな仕様」の設置方式は屋外壁掛型（W）。総合カタログ（Rinnai_KSE.pdf p.74）で W の24・20・16号はどれも高さ600×幅470×奥行240・本体色シャイニーシルバー。写真は前面上部に横長の排気口がある壁掛型の本体で、据置型・PS扉内型・アルコーブ型の外観ではない。メーカーが1枚の写真を W の6機種に共通で使っているため officially-shared-series。",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-ruf-e161eaw": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-ruf-e161eaw-main.webp",
+        "width": 648,
+        "height": 828,
+        "role": "main",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/ruf/e-series.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/ruf/e-series/"
+      }
+    ],
+    "sharedGroup": "RUF-Eシリーズ 屋外壁掛型（W）：RUF-E240EAW・RUF-E240ESAW・RUF-E200FAW・RUF-E200FSAW・RUF-E161EAW・RUF-E161ESAW",
+    "evidence": "rinnai.jp の RUF-Eシリーズのページの冒頭（見出し「RUF-Eシリーズ」「ふろ給湯器」の横の figure.title__photo。alt は空）の製品写真。同じページの「号数・価格」の表は屋外壁掛型（W）の6機種（RUF-E240EAW・E240ESAW・E200FAW・E200FSAW・E161EAW・E161ESAW）だけで、「おもな仕様」の設置方式は屋外壁掛型（W）。総合カタログ（Rinnai_KSE.pdf p.74）で W の24・20・16号はどれも高さ600×幅470×奥行240・本体色シャイニーシルバー。写真は前面上部に横長の排気口がある壁掛型の本体で、据置型・PS扉内型・アルコーブ型の外観ではない。メーカーが1枚の写真を W の6機種に共通で使っているため officially-shared-series。",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-ruf-e240eag": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "rinnai.jp の RUF-Eシリーズのページにある据置型（G）の画像（place_02.webp、図の見出し「据置型（G）」）は設置場所の線画のイラストで、製品写真ではない。外観の合う公式の写真（直接の画像 URL がある rinnai.jp の写真）が見つからない。総合カタログの PDF には排気バリエーションの商品写真が載っているが、Web で単体の画像として公開されていない。総合商品情報サイト（rkids.rinnai.jp）は接続認証のあるサイトのため使っていない。壁掛型（W）の写真（gas/ruf/e-series.webp など）は外観が違うので流用しない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（rinnai.jp で公開されている画像）が見つからなかったため（設置場所の図・別の設置方式の写真は使わない）",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-ruf-e240eat": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "rinnai.jp の RUF-Eシリーズのページにある PS扉内設置型（T）の画像（place_08.webp、図の見出し「PS扉内設置型（T）」）は設置場所の線画のイラストで、製品写真ではない。外観の合う公式の写真（直接の画像 URL がある rinnai.jp の写真）が見つからない。総合カタログの PDF には排気バリエーションの商品写真が載っているが、Web で単体の画像として公開されていない。総合商品情報サイト（rkids.rinnai.jp）は接続認証のあるサイトのため使っていない。壁掛型（W）の写真（gas/ruf/e-series.webp など）は外観が違うので流用しない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（rinnai.jp で公開されている画像）が見つからなかったため（設置場所の図・別の設置方式の写真は使わない）",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-ruf-e240eaa": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "rinnai.jp の RUF-Eシリーズのページにあるアルコーブ設置型（A）の画像（place_07.webp、図の見出し「アルコーブ設置型（A）」）は設置場所の図で、製品写真ではない。外観の合う公式の写真（直接の画像 URL がある rinnai.jp の写真）が見つからない。総合カタログの PDF には排気バリエーションの商品写真が載っているが、Web で単体の画像として公開されていない。総合商品情報サイト（rkids.rinnai.jp）は接続認証のあるサイトのため使っていない。壁掛型（W）の写真（gas/ruf/e-series.webp など）は外観が違うので流用しない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（rinnai.jp で公開されている画像）が見つからなかったため（設置場所の図・別の設置方式の写真は使わない）",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-ruf-e200esat": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "PS扉内設置型（T）の製品写真は rinnai.jp にない（設置場所の図 place_08.webp だけ）。外観の合う公式の写真（直接の画像 URL がある rinnai.jp の写真）が見つからない。総合カタログの PDF には排気バリエーションの商品写真が載っているが、Web で単体の画像として公開されていない。総合商品情報サイト（rkids.rinnai.jp）は接続認証のあるサイトのため使っていない。壁掛型（W）の写真（gas/ruf/e-series.webp など）は外観が違うので流用しない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（rinnai.jp で公開されている画像）が見つからなかったため（設置場所の図・別の設置方式の写真は使わない）",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-rux-e2406w-a": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rux-e2406w-a-main.webp",
+        "width": 480,
+        "height": 722,
+        "role": "main",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/rux/e-series.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/"
+      }
+    ],
+    "sharedGroup": "RUX-Eシリーズ 屋外壁掛型（W）：RUX-E2406W(A)・RUX-E2016W(A)・RUX-E1616W(A)",
+    "evidence": "rinnai.jp の RUX-Eシリーズのページの冒頭（見出し「RUX-Eシリーズ」「ガス給湯器」の横の figure.title__photo。alt は空）の製品写真。同じページの「号数・価格」の表は屋外壁掛型（W）の RUX-E2406W(A)・RUX-E2016W(A)・RUX-E1616W(A) の3機種だけ。総合カタログ（Rinnai_KSE.pdf p.110）で3機種とも高さ530×幅350×奥行190・本体色シャイニーシルバー。写真は壁掛型の給湯専用機の本体（PS扉内型・アルコーブ型・据置型の外観ではない）。メーカーが1枚の写真を W の3機種に共通で使っているため officially-shared-series。",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-rux-e1616w-a": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/rinnai/rinnai-rux-e1616w-a-main.webp",
+        "width": 480,
+        "height": 722,
+        "role": "main",
+        "sourceUrl": "https://www.rinnai.jp/products/waterheater/assets/images/gas/rux/e-series.webp",
+        "pageUrl": "https://www.rinnai.jp/products/waterheater/gas/rux/e-series/"
+      }
+    ],
+    "sharedGroup": "RUX-Eシリーズ 屋外壁掛型（W）：RUX-E2406W(A)・RUX-E2016W(A)・RUX-E1616W(A)",
+    "evidence": "rinnai.jp の RUX-Eシリーズのページの冒頭（見出し「RUX-Eシリーズ」「ガス給湯器」の横の figure.title__photo。alt は空）の製品写真。同じページの「号数・価格」の表は屋外壁掛型（W）の RUX-E2406W(A)・RUX-E2016W(A)・RUX-E1616W(A) の3機種だけ。総合カタログ（Rinnai_KSE.pdf p.110）で3機種とも高さ530×幅350×奥行190・本体色シャイニーシルバー。写真は壁掛型の給湯専用機の本体（PS扉内型・アルコーブ型・据置型の外観ではない）。メーカーが1枚の写真を W の3機種に共通で使っているため officially-shared-series。",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-rufh-e2407at2-3-a": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "rinnai.jp の RUFH-E, RVD-Eシリーズのページの写真（rufh-e.webp・rufh-ue.webp・rvd-e.webp）は屋外壁掛型の本体で、PS扉内設置型／PS前排気型（T）の外観ではない。外観の合う公式の写真（直接の画像 URL がある rinnai.jp の写真）が見つからない。総合カタログの PDF には排気バリエーションの商品写真が載っているが、Web で単体の画像として公開されていない。総合商品情報サイト（rkids.rinnai.jp）は接続認証のあるサイトのため使っていない。壁掛型（W）の写真（gas/ruf/e-series.webp など）は外観が違うので流用しない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（rinnai.jp で公開されている画像）が見つからなかったため（設置場所の図・別の設置方式の写真は使わない）",
+    "verifiedAt": "2026-11-16"
+  },
+  "rinnai-ruf-te200esat": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "rinnai.jp の RUF-UTE, RUF-TEシリーズのページの写真（gas/ruf/me-ue-ume.webp）と、ニュースリリース（2025年1月27日）の写真は屋外壁掛型（RUF-UTE240EAW など）で、PS扉内設置型／PS前排気型（T）の外観ではない。外観の合う公式の写真（直接の画像 URL がある rinnai.jp の写真）が見つからない。総合カタログの PDF には排気バリエーションの商品写真が載っているが、Web で単体の画像として公開されていない。総合商品情報サイト（rkids.rinnai.jp）は接続認証のあるサイトのため使っていない。壁掛型（W）の写真（gas/ruf/e-series.webp など）は外観が違うので流用しない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（rinnai.jp で公開されている画像）が見つからなかったため（設置場所の図・別の設置方式の写真は使わない）",
+    "verifiedAt": "2026-11-16"
+  },
   "noritz-gt-c2472aw-1-bl": {
     "matchType": "exact-model",
     "images": [
@@ -794,6 +900,93 @@
     "evidence": "代表の写真は、noritz.co.jp の HPHB R290 特設ページの商品ラインアップで「70L MODEL プラグイン機」に使われているシステムの写真（img_lineup03.jpg。標準機の写真と画素の差がほぼ無い）。特設ページは、この写真に「給湯・おふろ沸かし・温水暖房」のアイコンと「※ 暖房なしタイプもお選びいただけます。」を添えており、メーカーは組み合わせる熱源機（暖房付き・暖房なし）で写真を分けていない。プラグイン機のページ（lineup_plugin.html）の設置の図でも、同じ形の給湯器に「GTH-C71/70シリーズ GT-C72-1シリーズ」と書いている。同じページのシステム構成例「暖房・ふろ・給湯タイプ」が SH-Q0701-PL BL＋HP-2233-PL BL＋GTH-C2471AWDBL。ただし写真の給湯器は前面上部に横長の排気口がある形（GT-C72 と同じ形に見える）。GTH-C2471AWD BL は、仕様表（CSV）で高さ740mm×幅480mm×奥行240mm、製品データサービスの写真では前面上部に丸形の排気口と下部に点検ふたがある形で、システムの写真の給湯器とは外観が違う。そのため、GTH-C2471AWD BL のページの写真（ファイル名 03_W_8516.jpg）をユニットの写真として添えた。貯湯ユニットの写真は、製品データサービス（n-techdocs.com。noritz.co.jp の取扱説明書の検索からリンクされ、著作権表示は NORITZ Corporation）の SH-Q0701-PL BL のページに載っている写真（ファイル名は SH-Q0701 で、標準機と同じ写真）。ヒートポンプユニット（HP-2233）だけを写した公式の写真は見つからなかった（製品データサービスの HP-2233 BL・HP-2233-PL BL のページに写真が無い）ので、システムの写真で見せている。製品データサービスの写真は、各ページが表示用に発行する期限付きの URL（Amazon S3）から取得した。",
     "verifiedAt": "2026-10-15"
   },
+  "noritz-gt-2470saw-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-2470saw-1-bl-main.webp",
+        "width": 840,
+        "height": 1000,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/img/pic_gt_2470.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/"
+      }
+    ],
+    "sharedGroup": "GT-70シリーズ 屋外壁掛形（noritz.co.jp のガスふろ給湯器のページの代表写真）：GT-2470SAW-1 BL・GT-2470AW-1 BL・GT-1670SAW-1 BL など",
+    "evidence": "noritz.co.jp のガスふろ給湯器のページ（gasfuro_eco/）で、GT-70シリーズに1枚だけ使われている写真（alt「GT-70シリーズ」、pic_gt_2470.png、840×1000px）。写真は前面上部に横長の排気口がある白い屋外壁掛形。総合カタログ2026.Ⅲで、この機種は「屋外壁掛形」の欄（134・128ページ）。メーカーがシリーズの代表として1枚の写真を使っているため officially-shared-series。PS扉内設置形（-T）は外観が違うので、この写真を使わない。",
+    "verifiedAt": "2026-11-17"
+  },
+  "noritz-gt-2470aw-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-2470aw-1-bl-main.webp",
+        "width": 840,
+        "height": 1000,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/img/pic_gt_2470.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/"
+      }
+    ],
+    "sharedGroup": "GT-70シリーズ 屋外壁掛形（noritz.co.jp のガスふろ給湯器のページの代表写真）：GT-2470SAW-1 BL・GT-2470AW-1 BL・GT-1670SAW-1 BL など",
+    "evidence": "noritz.co.jp のガスふろ給湯器のページ（gasfuro_eco/）で、GT-70シリーズに1枚だけ使われている写真（alt「GT-70シリーズ」、pic_gt_2470.png、840×1000px）。写真は前面上部に横長の排気口がある白い屋外壁掛形。総合カタログ2026.Ⅲで、この機種は「屋外壁掛形」の欄（134・128ページ）。メーカーがシリーズの代表として1枚の写真を使っているため officially-shared-series。PS扉内設置形（-T）は外観が違うので、この写真を使わない。",
+    "verifiedAt": "2026-11-17"
+  },
+  "noritz-gt-1670saw-1-bl": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gt-1670saw-1-bl-main.webp",
+        "width": 840,
+        "height": 1000,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/img/pic_gt_2470.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/"
+      }
+    ],
+    "sharedGroup": "GT-70シリーズ 屋外壁掛形（noritz.co.jp のガスふろ給湯器のページの代表写真）：GT-2470SAW-1 BL・GT-2470AW-1 BL・GT-1670SAW-1 BL など",
+    "evidence": "noritz.co.jp のガスふろ給湯器のページ（gasfuro_eco/）で、GT-70シリーズに1枚だけ使われている写真（alt「GT-70シリーズ」、pic_gt_2470.png、840×1000px）。写真は前面上部に横長の排気口がある白い屋外壁掛形。総合カタログ2026.Ⅲで、この機種は「屋外壁掛形」の欄（134・128ページ）。メーカーがシリーズの代表として1枚の写真を使っているため officially-shared-series。PS扉内設置形（-T）は外観が違うので、この写真を使わない。",
+    "verifiedAt": "2026-11-17"
+  },
+  "noritz-gt-2070saw-t-1-bl": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "noritz.co.jp のガスふろ給湯器のページの GT-70シリーズの写真は屋外壁掛形で、PS扉内設置形（前面上部に丸形の排気口）とは外観が違う。noritz.co.jp に PS扉内設置形の写真が見つからない。製品データサービス（n-techdocs.com）は robots.txt で自動の取得を断っているため使わない。",
+    "unavailableReason": "外観の合うメーカーの公式の写真（noritz.co.jp で公開されている画像）が見つからなかったため（屋外壁掛形の写真は外観が違うので使わない）",
+    "verifiedAt": "2026-11-17"
+  },
+  "noritz-gq-2479ws": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gq-2479ws-main.webp",
+        "width": 527,
+        "height": 832,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/img/img_gq79ws.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/"
+      }
+    ],
+    "sharedGroup": "GQ-79WSシリーズ 屋外壁掛形：GQ-2479WS・GQ-2079WS・GQ-1679WS",
+    "evidence": "noritz.co.jp のガス給湯器のページ（gas_eco/）で、GQ-79WSシリーズに1枚だけ使われている写真（alt「GQ-79WSシリーズ」、img_gq79ws.png、527×832px。既存の GQ-1679WS と同じ写真）。同じページの比較表で GQ-79WSシリーズは 24・20・16号。総合カタログ2026.Ⅲの149ページで、この機種は「屋外壁掛形」の欄（「写真は24号給湯タイプです。」）。写真は前面上部に横長の排気口がある白い屋外壁掛形。",
+    "verifiedAt": "2026-11-17"
+  },
+  "noritz-gq-2079ws": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/noritz/noritz-gq-2079ws-main.webp",
+        "width": 527,
+        "height": 832,
+        "role": "main",
+        "sourceUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/img/img_gq79ws.png",
+        "pageUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/"
+      }
+    ],
+    "sharedGroup": "GQ-79WSシリーズ 屋外壁掛形：GQ-2479WS・GQ-2079WS・GQ-1679WS",
+    "evidence": "noritz.co.jp のガス給湯器のページ（gas_eco/）で、GQ-79WSシリーズに1枚だけ使われている写真（alt「GQ-79WSシリーズ」、img_gq79ws.png、527×832px。既存の GQ-1679WS と同じ写真）。同じページの比較表で GQ-79WSシリーズは 24・20・16号。総合カタログ2026.Ⅲの149ページで、この機種は「屋外壁掛形」の欄（「写真は24号給湯タイプです。」）。写真は前面上部に横長の排気口がある白い屋外壁掛形。",
+    "verifiedAt": "2026-11-17"
+  },
   "paloma-fh-eh2422fawl": {
     "matchType": "officially-shared-series",
     "images": [
@@ -1070,6 +1263,92 @@
     "sharedGroup": "HYBRID PLUS 据置タイプ：HB-232TUHPL-P＋据置型熱源機（FH-EH2422FARL／FH-EH2422SARL）",
     "evidence": "公式の製品ページ（rno=541）では、HB-232TUHPL-P_FH-EH2422FARL（24号据え置きフルオート）の行にも壁掛型熱源機のシステム画像（products_hybridplus-24_240_240.jpg）が使われているが、熱源機が据置型なので使わない（前回の記録はこの壁掛型の画像だった）。給湯省エネ2026案内ページと特設ページのラインアップ画像も壁掛型の熱源機なので使わない。main には、HYBRID PLUS 特設ページ「コンパクトだから限られたスペースでも設置できる」の「据置タイプ」の画像（ヒートポンプタンクユニットと据置型熱源機を並べたもの）を使用。これがこの構成を示す唯一の公式画像で、背景に壁と床がある設置イメージ（人物・文字なし）、440×260 と小さい。unit には、特設ページ「ハイブリッド対応型給湯器」の「据置きタイプの給湯器」（マークなし、749×997）を追加。FH-EH2422FARL の製品ページ（rno=321）の画像 FH-E2422FARL-eco.jpg と同じ外観で、rno=541 の仕様表では FH-EH2422FARL／SARL は屋外据置型・外形670×534×240。ヒートポンプタンクユニット HB-232TUHPL-P だけを写した文字のない公式写真は見つからなかった。リモコン画像は MFC-HBE308D（rno=544）。",
     "verifiedAt": "2026-10-15"
+  },
+  "paloma-fh-2423saw-1": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-2423saw-1-main.webp",
+        "width": 240,
+        "height": 300,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-2423FAWL-icon-1-1.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=304"
+      }
+    ],
+    "sharedGroup": "ガスふろ給湯器（従来型）24号 壁掛型・PS 標準設置型：FH-2423SAW-1・FH-2423SAWL-1・FH-2423FAWL-1",
+    "evidence": "公式の製品ページ（rno=304「オート 24号 FH-2423SAシリーズ」）のラインアップで、FH-2423SAW-1（壁掛型・PS 標準設置型）の行に使われている画像。ファイル名はフルオートの姉妹機 FH-2423FAWL を示すが、メーカーがこの型番の行に載せているもの（FH-2423SAWL-1 の行も同じ画像）。カタログの仕様一覧（121ページ）で FH-2423FAWL-1 と FH-2423SAW-1 は同じ行（外形600×470×240）。前面上部に横長の排気口がある壁掛型。公式サイトの画像は 240×300px だけで、24号の人数アイコン（4～5人）が入っている。",
+    "verifiedAt": "2026-11-17"
+  },
+  "paloma-fh-2423fawl-1": {
+    "matchType": "exact-model",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-2423fawl-1-main.webp",
+        "width": 240,
+        "height": 300,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-2423FAWL-icon-1-1.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=301"
+      }
+    ],
+    "evidence": "公式の製品ページ（rno=301「フルオート 24号 FH-2423FAシリーズ」）のラインアップで、FH-2423FAWL-1（壁掛型・PS 標準設置型）の行に使われている画像。ファイル名もこの型番（FH-2423FAWL）を示す。前面上部に横長の排気口がある壁掛型で、カタログの仕様一覧（121ページ）の外形600×470×240と合う。公式サイトの画像は 240×300px だけで、24号の人数アイコン（4～5人）が入っている。",
+    "verifiedAt": "2026-11-17"
+  },
+  "paloma-fh-1613saw-1": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-1613saw-1-main.webp",
+        "width": 240,
+        "height": 300,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-1613FAWL-icon-1-1.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=307"
+      }
+    ],
+    "sharedGroup": "ガスふろ給湯器（従来型）16号 壁掛型・PS 標準設置型：FH-1613SAW-1・FH-1613SAWL-1・FH-1613FAWL-1",
+    "evidence": "公式の製品ページ（rno=307「オート 16号 FH-1613SAシリーズ」）のラインアップで、FH-1613SAW-1（壁掛型・PS 標準設置型）の行に使われている画像。ファイル名はフルオートの姉妹機 FH-1613FAWL を示すが、メーカーがこの型番の行に載せているもの（FH-1613SAWL-1 の行も同じ）。カタログの仕様一覧（121ページ）で FH-1613FAWL-1 と FH-1613SAW-1 は同じ行（外形600×470×240）。公式サイトの画像は 240×300px で、16号の人数アイコン（1～2人）が入っている。",
+    "verifiedAt": "2026-11-17"
+  },
+  "paloma-fh-2023satl-1": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-fh-2023satl-1-main.webp",
+        "width": 1029,
+        "height": 1200,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/oidaki/img/FH-2023FATL-icon-1.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305"
+      }
+    ],
+    "sharedGroup": "ガスふろ給湯器（従来型）20号 PS扉内前方排気型：FH-2023SATL-1・FH-2023FATL-1",
+    "evidence": "PS扉内前方排気型の専用画像（壁掛型の画像は使っていない）。公式の製品ページ（rno=305「オート 20号 FH-2023SAシリーズ」）のラインアップで、FH-2023SATL-1（PS扉内前方排気型）の行に使われている画像。ファイル名はフルオートの姉妹機 FH-2023FATL を示すが、メーカーがこの型番の行に載せているもの。前面上部に丸い排気口とフードがある外観。画像は 2000×2333px で、20号の人数アイコン（2～3人）が入っている。カタログ68ページでは FH-2023SATL-1 は外形600×470×240（オートタイプの共通仕様）。",
+    "verifiedAt": "2026-11-17"
+  },
+  "paloma-ph-2017aw": {
+    "matchType": "officially-shared-series",
+    "images": [
+      {
+        "src": "/images/products/paloma/paloma-ph-2017aw-main.webp",
+        "width": 240,
+        "height": 360,
+        "role": "main",
+        "sourceUrl": "https://www.paloma.co.jp/vc-files/vs-files/product/waterheater/boileronly/img/PH-2015AW-icon.jpg",
+        "pageUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=238"
+      }
+    ],
+    "sharedGroup": "給湯専用 コンパクトオートストップタイプ 20号 壁掛型・PS標準設置型：PH-2017AW・PH-2017AWL・PH-2015AW（PH-2015AW はカタログで在庫限り）",
+    "evidence": "公式の製品ページ（rno=238「オートストップ 20号 PH-2017Aシリーズ」）の上部画像と、ラインアップの PH-2017AW（壁掛型・PS標準設置型）の行に使われている画像。ファイル名は前の型番 PH-2015AW を示すが、メーカーがこの型番の行に載せているもの（PH-2017AWL の行も同じ）。カタログの仕様一覧（123ページ）で PH-2017AW と PH-2015AW は同じ行（外形520×350×135）。前面上部に横長の排気口がある薄型の壁掛型。公式サイトの画像は 240×360px で、20号の人数アイコン（2～3人）が入っている。",
+    "verifiedAt": "2026-11-17"
+  },
+  "paloma-ph-2427aw": {
+    "matchType": "unavailable",
+    "images": [],
+    "evidence": "paloma.co.jp に PH-2427AW の製品ページがない（製品検索・サイト内検索とも0件。2026-11-16）。カタログ（2026年9月新価格）89ページには PH-2427AW・PH-2427AWL・PH-2426AW（在庫限り）・PH-2426AWL の欄に1枚の写真があるが、公式サイト上の画像の URL ではない。公式サイトの PH-2426Aシリーズのページ（rno=239）の画像 PH-2426AW-icon.jpg は前の型番（在庫限り）の画像として載っているもので、PH-2427AW の画像としてメーカーが示していないため使わない。",
+    "unavailableReason": "メーカーの公式サイトに、この型番の製品ページ・写真がまだ無いため（カタログには掲載）",
+    "verifiedAt": "2026-11-17"
   },
   "mitsubishi-srt-s377": {
     "matchType": "exact-model",

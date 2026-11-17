@@ -18,6 +18,8 @@ import { categories, functionLabels, installationLabels } from "@/data/categorie
 import type { Block, ContentPage } from "@/data/content-types";
 import { allFaqs } from "@/data/faq";
 import { products as allProducts } from "@/data/products";
+import { successorBrandNotes, successorSources, successorTable } from "@/data/products/successors";
+import { normalizeModel } from "@/lib/model-number";
 import { works } from "@/data/works";
 import { internalLinksIn } from "@/components/ui/RichText";
 import { allContentPages } from "@/lib/content";
@@ -173,7 +175,70 @@ for (const w of works) {
   if (w.after?.productId && !ids.has(w.after.productId)) err(`/works/${w.slug} … 機種 ${w.after.productId} がありません`);
 }
 
-console.log(`商品 ${allProducts.length}件・解説 ${seen.size}ページ・地域 ${areas.length}ページを確かめました。誤り ${errors.length}件・注意 ${warnings.length}件`);
+/* ------------------------------------------------------------------ */
+/* 古い型番と後継の機種（メーカーの公式の案内だけ）                    */
+/* ------------------------------------------------------------------ */
+const OFFICIAL_HOSTS: Record<string, RegExp> = {
+  rinnai: /(^|.)rinnai.(jp|co.jp)$/,
+  noritz: /(^|.)(noritz.co.jp|noritz.mediapress-net.com)$/,
+  paloma: /(^|.)(paloma.co.jp|paloma.icata.net)$/,
+  mitsubishi: /(^|.)mitsubishielectric.co.jp$/,
+  panasonic: /(^|.)panasonic.(jp|biz|com)$/,
+  daikin: /(^|.)daikin(aircon)?.(co.jp|com)$/,
+  corona: /(^|.)corona.co.jp$/,
+};
+/** 使わないサイト（接続認証のあるサイト・会員向けのサイト・自動の取得を断っているサイト） */
+const BANNED_HOSTS = /(^|.)(rkids.rinnai.jp|oyunet.noritz.co.jp|n-techdocs.com)$/;
+const succSources = new Map(successorSources.map((s) => [s.id, s]));
+for (const s of successorSources) {
+  const where = `後継機種の出典（${s.id}）`;
+  let host = "";
+  try {
+    host = new URL(s.url).hostname;
+  } catch {
+    err(`${where} … URL が不正です`);
+  }
+  if (host && BANNED_HOSTS.test(host)) err(`${where} … 使わないサイトです（${host}）`);
+  if (!s.label.trim()) err(`${where} … 資料の名前がありません`);
+  if (!isDate(s.verifiedAt)) err(`${where} … 確かめた日が不正です`);
+}
+const succSeen = new Set<string>();
+let succOld = 0;
+for (const [i, r] of successorTable.entries()) {
+  const where = `/products/successor/${r.brand}（${i + 1}行目：${r.oldModels[0] ?? "?"}）`;
+  succOld += r.oldModels.length;
+  if (!r.oldModels.length || r.oldModels.some((m) => !m.trim())) err(`${where} … 古い型番がありません`);
+  if (!r.successors.length || r.successors.some((m) => !m.trim())) err(`${where} … 案内している型番がありません`);
+  if (r.relation !== "successor" && r.relation !== "replacement") err(`${where} … 対応の種類が不正です`);
+  const src = succSources.get(r.sourceId);
+  if (!src) err(`${where} … 出典（${r.sourceId}）が successorSources にありません`);
+  else {
+    let host = "";
+    try {
+      host = new URL(src.url).hostname;
+    } catch {
+      /* 上で誤りにしている */
+    }
+    if (host && !OFFICIAL_HOSTS[r.brand]?.test(host)) err(`${where} … 出典が ${r.brand} の公式のドメインではありません（${host}）`);
+  }
+  for (const o of r.oldModels) {
+    for (const s of r.successors) {
+      const key = `${r.brand}:${normalizeModel(o)}:${normalizeModel(s)}:${r.note ?? ""}`;
+      if (succSeen.has(key)) err(`${where} … 同じ対応（${o} → ${s}）が2回あります`);
+      succSeen.add(key);
+      if (normalizeModel(o) === normalizeModel(s)) err(`${where} … 古い型番と案内している型番が同じです（${o}）`);
+    }
+    if (allProducts.some((p) => p.brand === r.brand && normalizeModel(p.modelNumber) === normalizeModel(o))) warn(`${where} … 古い型番 ${o} が、このサイトの現行の機種と同じです`);
+  }
+  for (const m of r.siteModels ?? []) {
+    if (!allProducts.some((p) => p.brand === r.brand && normalizeModel(p.modelNumber) === normalizeModel(m))) err(`${where} … siteModels の ${m} が、このサイトの機種にありません`);
+  }
+}
+for (const [brand, notes] of Object.entries(successorBrandNotes)) {
+  for (const n of notes ?? []) if (!succSources.has(n.sourceId)) err(`後継機種のメーカーの注意（${brand}） … 出典（${n.sourceId}）が successorSources にありません`);
+}
+
+console.log(`商品 ${allProducts.length}件・解説 ${seen.size}ページ・地域 ${areas.length}ページ・後継機種の対応 ${successorTable.length}行（古い型番 ${succOld}件）を確かめました。誤り ${errors.length}件・注意 ${warnings.length}件`);
 for (const e of errors) console.log(`  誤り：${e}`);
 for (const w of warnings) console.log(`  注意：${w}`);
 process.exitCode = errors.length ? 1 : 0;

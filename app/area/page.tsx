@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Icon } from "@/components/ui/Icon";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { AREA_STAT_SOURCES, getArea, wardAreas, type Area } from "@/data/areas";
+import { AREA_STAT_SOURCES, getArea, neighborAreas, wardAreas, type Area } from "@/data/areas";
 import { reveal } from "@/lib/reveal";
 import { itemListSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
@@ -14,12 +14,15 @@ import { officeAddressWithPostal, officeMapUrl, siteConfig } from "@/lib/site";
 
 const PATH = "/area";
 
+const NEIGHBOR_NAMES = neighborAreas().map((a) => a.name).join("・");
+
 export const metadata: Metadata = buildMetadata({
-  title: "対応エリア｜横浜市戸塚区を中心に、横浜市内の給湯器交換",
-  description:
-    "横浜総合住設の給湯器交換の対応エリア。戸塚区の戸塚オフィスを拠点に、泉区・栄区・港南区から港北区・青葉区・鶴見区まで、横浜市の18区へ伺います。区ごとの住まいの違いも統計で比べられます。",
+  title: NEIGHBOR_NAMES ? "対応エリア｜横浜市戸塚区を中心に、横浜市と周辺の市の給湯器交換" : "対応エリア｜横浜市戸塚区を中心に、横浜市内の給湯器交換",
+  description: NEIGHBOR_NAMES
+    ? `横浜総合住設の給湯器交換の対応エリア。戸塚区の戸塚オフィスを拠点に、横浜市の18区と、${NEIGHBOR_NAMES}へ伺います。区・市ごとの住まいの違いも統計で比べられます。`
+    : "横浜総合住設の給湯器交換の対応エリア。戸塚区の戸塚オフィスを拠点に、泉区・栄区・港南区から港北区・青葉区・鶴見区まで、横浜市の18区へ伺います。区ごとの住まいの違いも統計で比べられます。",
   path: PATH,
-  keywords: ["横浜市 給湯器交換 対応エリア", "横浜市 給湯器 業者", "横浜 給湯器 交換 地域"],
+  keywords: ["横浜市 給湯器交換 対応エリア", "横浜市 給湯器 業者", "横浜 給湯器 交換 地域", ...(NEIGHBOR_NAMES ? ["神奈川県 給湯器交換 対応エリア"] : [])],
 });
 
 /** 駅の名前（路線名を外し、2つの路線に同じ駅があるときは1つにまとめる） */
@@ -49,13 +52,14 @@ export default function AreaHubPage() {
   const wards = wardAreas();
   const main = wards.filter((a) => a.priority === "A");
   const more = wards.filter((a) => a.priority === "B");
+  const neighbors = neighborAreas();
   const city = getArea("yokohama");
   return (
     <>
       <PageHero
         eyebrow="対応エリア"
-        title="横浜市戸塚区を中心に、横浜市内へ伺います"
-        lead="横浜総合住設の戸塚オフィスは、戸塚区深谷町にあります。戸塚区と、となりの泉区・栄区・港南区を中心に、横浜市内の給湯器の交換を承っています。区ごとに住まいの形が違うので、地域のページでは、公的な統計から交換のときに確かめることをまとめました。"
+        title={neighbors.length ? "横浜市戸塚区を中心に、横浜市と周辺の市へ伺います" : "横浜市戸塚区を中心に、横浜市内へ伺います"}
+        lead={`横浜総合住設の戸塚オフィスは、戸塚区深谷町にあります。戸塚区と、となりの泉区・栄区・港南区を中心に、横浜市内${neighbors.length ? `と、${NEIGHBOR_NAMES}` : ""}の給湯器の交換を承っています。地域ごとに住まいの形が違うので、地域のページでは、公的な統計から交換のときに確かめることをまとめました。`}
         crumbs={[{ name: "対応エリア", href: PATH }]}
         illust="illust/people-staff-ok"
       />
@@ -78,6 +82,18 @@ export default function AreaHubPage() {
               </li>
             ))}
           </ul>
+          {neighbors.length > 0 && (
+            <>
+              <SectionHeading id="neighbor-area" eyebrow="周辺の市" title="横浜市の周辺の市" className="mb-8 mt-14" />
+              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" {...reveal()}>
+                {neighbors.map((a) => (
+                  <li key={a.slug}>
+                    <AreaCard a={a} />
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           <p className="mt-8 text-[0.9375rem] leading-[1.95]">
             横浜市の周辺の地域も、ご住所をお知らせいただければ、対応できるかどうかをお答えします。
             {city && (
@@ -128,7 +144,7 @@ export default function AreaHubPage() {
       </section>
 
       <CtaBand id="cta-area" />
-      <JsonLd data={itemListSchema("対応エリア", [...(city ? [{ name: city.name, href: "/area/yokohama" }] : []), ...wards.map((a) => ({ name: a.name, href: `/area/${a.slug}` }))])} />
+      <JsonLd data={itemListSchema("対応エリア", [...(city ? [{ name: city.name, href: "/area/yokohama" }] : []), ...wards.map((a) => ({ name: a.name, href: `/area/${a.slug}` })), ...neighbors.map((a) => ({ name: a.name, href: `/area/${a.slug}` }))])} />
     </>
   );
 }

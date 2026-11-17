@@ -119,6 +119,7 @@ export const footerGuideNav: NavLink[] = [
   { href: "/guide/cost", label: "交換費用の考え方" },
   { href: "/guide/capacity", label: "号数の選び方" },
   { href: "/guide/installation-types", label: "設置方式の見分け方" },
+  { href: "/products/successor", label: "古い型番から探す" },
   { href: "/trouble", label: "故障・トラブル" },
   { href: "/compare", label: "機種を比較する" },
 ];

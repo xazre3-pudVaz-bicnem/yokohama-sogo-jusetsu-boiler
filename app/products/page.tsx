@@ -96,10 +96,16 @@ export default function ProductsPage() {
           <div>
             <h2 className="h-sub">載っていない機種は</h2>
             <p className="mt-2 text-[0.9063rem] leading-[1.95]">ここに載せているのは代表的な機種です。いまお使いの給湯器の型番をお知らせいただければ、同じ場所に収まる機種をお調べします。</p>
-            <Link href="/guide/model-label" className="link-arrow mt-2 !text-sm">
-              型番の調べ方
-              <Icon name="arrowRight" className="size-4" />
-            </Link>
+            <p className="mt-2 flex flex-col items-start gap-1">
+              <Link href="/products/successor" className="link-arrow !text-sm">
+                古い型番から後継機種を探す
+                <Icon name="arrowRight" className="size-4" />
+              </Link>
+              <Link href="/guide/model-label" className="link-arrow !text-sm">
+                型番の調べ方
+                <Icon name="arrowRight" className="size-4" />
+              </Link>
+            </p>
           </div>
         </div>
       </section>

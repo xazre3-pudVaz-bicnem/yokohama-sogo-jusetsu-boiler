@@ -66,13 +66,15 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
   const path = `/area/${a.slug}`;
   const crumbs = [
     { name: "対応エリア", href: "/area" },
-    { name: a.kind === "ward" ? a.shortName : a.name, href: path },
+    { name: a.kind === "city" ? a.name : a.shortName, href: path },
   ];
   const faqs = a.faqs.map((f) => ({ q: fillTokens(f.q), a: plainText(fillTokens(f.a)) }));
   const picks = pickProducts(a);
   const works = worksOfArea(a.slug);
   const nearby = a.nearby.map((s) => getArea(s)).filter((x): x is Area => !!x);
   const s = a.stats;
+  const asOf = a.statAsOf ?? AREA_STAT_AS_OF;
+  const statSources = a.statSources ?? AREA_STAT_SOURCES;
   const statRows: [string, string][] = [
     ["一戸建て", pct(s.detachedPercent)],
     ["共同住宅", pct(s.apartmentPercent)],
@@ -106,7 +108,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             <div>
               <SectionHeading id="stats" eyebrow="数字で見る住まい" title={`${a.shortName}の住まい`} lead={`住宅の建て方と古さは、給湯器の設置の形と、交換で確かめることにかかわります。人口は${s.population.toLocaleString("ja-JP")}人、世帯数は${s.households.toLocaleString("ja-JP")}世帯、面積は${s.areaKm2}km²です。`} />
               <p className="mt-4 text-[0.8125rem] leading-[1.9] text-ink-mute">
-                住宅は{AREA_STAT_AS_OF.housing}（住宅・土地統計調査）、人口・世帯数・面積は{AREA_STAT_AS_OF.population}（横浜市の推計人口）。割合は住宅数に対する値で、6階建以上は共同住宅に対する割合です。
+                住宅は{asOf.housing}（住宅・土地統計調査）、人口・世帯数・面積は{asOf.population}（{asOf.populationSource}）。割合は住宅数に対する値で、6階建以上は共同住宅に対する割合です。
               </p>
             </div>
             <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3" {...reveal()}>
@@ -253,7 +255,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             </h2>
             <p className="mt-1.5 text-[0.8125rem] leading-[1.9] text-ink-mute">統計の数値と、区・市の情報は、次の公式の資料で確かめたものです（{formatDateJa(a.updatedAt)}時点）。</p>
             <ul className="mt-3 space-y-1.5 text-[0.8125rem] leading-[1.8]">
-              {[...AREA_STAT_SOURCES, ...a.sources].map((src) => (
+              {[...statSources, ...a.sources].map((src) => (
                 <li key={src.url} className="flex gap-2">
                   <Icon name="external" className="mt-1 size-3.5 shrink-0 text-ink-mute" />
                   <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-link !font-normal break-all">

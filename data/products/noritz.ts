@@ -2717,5 +2717,668 @@ export const noritzProducts: ProductData[] = [
       "https://www.n-techdocs.com/products/120901",
       "https://www.n-techdocs.com/products/120902"
     ]
+  },
+  {
+    "id": "noritz-gt-2470saw-1-bl",
+    "slug": "gt-2470saw-1-bl",
+    "brand": "noritz",
+    "category": "gas",
+    "series": "GT-70シリーズ（ユコアGT）",
+    "name": "ガスふろ給湯器 設置フリー形 シンプル オート",
+    "modelNumber": "GT-2470SAW-1 BL",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛形"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "シンプル（オート）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス（13A）：50.5kW（43,400kcal／h） ／ LPG：50.5kW（3.61kg／h）"
+      },
+      {
+        "label": "ガス消費量（ふろ）",
+        "value": "都市ガス（13A）：12.8kW（11,000kcal／h） ／ LPG：12.8kW（0.91kg／h）"
+      },
+      {
+        "label": "ガス消費量（同時使用時）",
+        "value": "都市ガス（13A）：64.0kW（55,000kcal／h） ／ LPG：64.0kW（4.57kg／h）"
+      },
+      {
+        "label": "ガス消費量の都市ガスの値",
+        "value": "13Aの値（12Aは若干小さくなる）"
+      },
+      {
+        "label": "エネルギー消費効率",
+        "value": "（モード）82.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      },
+      {
+        "label": "熱効率（ふろ）",
+        "value": "82.0%"
+      },
+      {
+        "label": "消費電力",
+        "value": "115W 凍結予防ヒータ：125W 待機時：1.7W"
+      },
+      {
+        "label": "質量（本体）",
+        "value": "23.5kg"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "RC-K101EWマルチセット",
+        "note": "無線LAN対応高機能リモコン"
+      },
+      {
+        "model": "RC-J101Eマルチセット",
+        "note": "ベーシックリモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。エネルギー消費効率はモード熱効率 82.5%",
+      "オート（グレードは「シンプル」）",
+      "設置フリー形（戸建・集合住宅向け、1～3階の浴室に対応）",
+      "RC-K101系マルチリモコンに対応",
+      "側面近接10mmに対応"
+    ],
+    "cautions": [
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+    "manufacturerPrice": {
+      "amount": 463760,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材は含まない",
+      "asOf": "ノーリツ ガス給湯機器 総合カタログ2026.Ⅲ（2026年8月現在）カタログ134ページ",
+      "sourceUrl": "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+      "https://www.noritz.co.jp/product/PDF/gt-70.pdf",
+      "https://noritz.mediapress-net.com/iportal/CatalogSearch.do?method=catalogSearchByDefaultSettingCategories&volumeID=NRZ50001&designID=NRZD001",
+      "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    ]
+  },
+  {
+    "id": "noritz-gt-2470aw-1-bl",
+    "slug": "gt-2470aw-1-bl",
+    "brand": "noritz",
+    "category": "gas",
+    "series": "GT-70シリーズ（ユコアGT）",
+    "name": "ガスふろ給湯器 設置フリー形 スタンダード フルオート",
+    "modelNumber": "GT-2470AW-1 BL",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛形"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "スタンダード（フルオート）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス（13A）：50.5kW（43,400kcal／h） ／ LPG：50.5kW（3.61kg／h）"
+      },
+      {
+        "label": "ガス消費量（ふろ）",
+        "value": "都市ガス（13A）：12.8kW（11,000kcal／h） ／ LPG：12.8kW（0.91kg／h）"
+      },
+      {
+        "label": "ガス消費量（同時使用時）",
+        "value": "都市ガス（13A）：64.0kW（55,000kcal／h） ／ LPG：64.0kW（4.57kg／h）"
+      },
+      {
+        "label": "ガス消費量の都市ガスの値",
+        "value": "13Aの値（12Aは若干小さくなる）"
+      },
+      {
+        "label": "エネルギー消費効率",
+        "value": "（モード）82.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      },
+      {
+        "label": "熱効率（ふろ）",
+        "value": "82.0%"
+      },
+      {
+        "label": "消費電力",
+        "value": "115W 凍結予防ヒータ：125W 待機時：1.7W"
+      },
+      {
+        "label": "質量（本体）",
+        "value": "23.5kg"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "RC-K101EWマルチセット",
+        "note": "無線LAN対応高機能リモコン"
+      },
+      {
+        "model": "RC-J101Eマルチセット",
+        "note": "ベーシックリモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。エネルギー消費効率はモード熱効率 82.5%",
+      "フルオート（グレードは「スタンダード」）",
+      "ふろ配管を自動で洗い流す「スマート配管クリーン」に対応（GT-70シリーズのプレミアム・スタンダードに搭載）",
+      "設置フリー形（戸建・集合住宅向け、1～3階の浴室に対応）",
+      "RC-K101系マルチリモコンに対応",
+      "側面近接10mmに対応"
+    ],
+    "cautions": [
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+    "manufacturerPrice": {
+      "amount": 526020,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材は含まない",
+      "asOf": "ノーリツ ガス給湯機器 総合カタログ2026.Ⅲ（2026年8月現在）カタログ128ページ",
+      "sourceUrl": "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+      "https://www.noritz.co.jp/product/PDF/gt-70.pdf",
+      "https://noritz.mediapress-net.com/iportal/CatalogSearch.do?method=catalogSearchByDefaultSettingCategories&volumeID=NRZ50001&designID=NRZD001",
+      "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    ]
+  },
+  {
+    "id": "noritz-gt-1670saw-1-bl",
+    "slug": "gt-1670saw-1-bl",
+    "brand": "noritz",
+    "category": "gas",
+    "series": "GT-70シリーズ（ユコアGT）",
+    "name": "ガスふろ給湯器 設置フリー形 シンプル オート",
+    "modelNumber": "GT-1670SAW-1 BL",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛形"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 16,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "シンプル（オート）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス（13A）：33.6kW（28,900kcal／h） ／ LPG：33.6kW（2.40kg／h）"
+      },
+      {
+        "label": "ガス消費量（ふろ）",
+        "value": "都市ガス（13A）：12.8kW（11,000kcal／h） ／ LPG：12.8kW（0.91kg／h）"
+      },
+      {
+        "label": "ガス消費量（同時使用時）",
+        "value": "都市ガス（13A）：43.7kW（37,600kcal／h） ／ LPG：43.7kW（3.12kg／h）"
+      },
+      {
+        "label": "ガス消費量の都市ガスの値",
+        "value": "13Aの値（12Aは若干小さくなる）"
+      },
+      {
+        "label": "エネルギー消費効率",
+        "value": "（モード）82.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      },
+      {
+        "label": "熱効率（ふろ）",
+        "value": "82.0%"
+      },
+      {
+        "label": "消費電力",
+        "value": "95W 凍結予防ヒータ：125W 待機時：1.7W"
+      },
+      {
+        "label": "質量（本体）",
+        "value": "22.5kg"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "RC-K101EWマルチセット",
+        "note": "無線LAN対応高機能リモコン"
+      },
+      {
+        "model": "RC-J101Eマルチセット",
+        "note": "ベーシックリモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。エネルギー消費効率はモード熱効率 82.5%",
+      "オート（グレードは「シンプル」）",
+      "設置フリー形（戸建・集合住宅向け、1～3階の浴室に対応）",
+      "RC-K101系マルチリモコンに対応",
+      "側面近接10mmに対応"
+    ],
+    "cautions": [
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+    "manufacturerPrice": {
+      "amount": 391270,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材は含まない",
+      "asOf": "ノーリツ ガス給湯機器 総合カタログ2026.Ⅲ（2026年8月現在）カタログ134ページ",
+      "sourceUrl": "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+      "https://www.noritz.co.jp/product/PDF/gt-70.pdf",
+      "https://noritz.mediapress-net.com/iportal/CatalogSearch.do?method=catalogSearchByDefaultSettingCategories&volumeID=NRZ50001&designID=NRZD001",
+      "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    ]
+  },
+  {
+    "id": "noritz-gt-2070saw-t-1-bl",
+    "slug": "gt-2070saw-t-1-bl",
+    "brand": "noritz",
+    "category": "gas",
+    "series": "GT-70シリーズ（ユコアGT）",
+    "name": "ガスふろ給湯器 設置フリー形 シンプル オート",
+    "modelNumber": "GT-2070SAW-T-1 BL",
+    "installationType": {
+      "key": "ps-door",
+      "label": "PS扉内設置形"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "シンプル（オート）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス（13A）：42.1kW（36,200kcal／h） ／ LPG：42.1kW（3.01kg／h）"
+      },
+      {
+        "label": "ガス消費量（ふろ）",
+        "value": "都市ガス（13A）：12.8kW（11,000kcal／h） ／ LPG：12.8kW（0.91kg／h）"
+      },
+      {
+        "label": "ガス消費量（同時使用時）",
+        "value": "都市ガス（13A）：54.8kW（47,100kcal／h） ／ LPG：54.8kW（3.91kg／h）"
+      },
+      {
+        "label": "ガス消費量の都市ガスの値",
+        "value": "13Aの値（12Aは若干小さくなる）"
+      },
+      {
+        "label": "エネルギー消費効率",
+        "value": "（モード）82.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      },
+      {
+        "label": "熱効率（ふろ）",
+        "value": "82.0%"
+      },
+      {
+        "label": "消費電力",
+        "value": "130W 凍結予防ヒータ：125W 待機時：1.7W"
+      },
+      {
+        "label": "質量（本体）",
+        "value": "23kg"
+      },
+      {
+        "label": "排気延長",
+        "value": "7m・4曲がり以内（排気筒径φ100）"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "RC-K101EWマルチセット",
+        "note": "無線LAN対応高機能リモコン"
+      },
+      {
+        "model": "RC-J101Eマルチセット",
+        "note": "ベーシックリモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。エネルギー消費効率はモード熱効率 82.5%",
+      "オート（グレードは「シンプル」）",
+      "集合住宅のPS扉内に設置する形。前方排気延長にも対応",
+      "RC-K101系マルチリモコンに対応",
+      "側面近接10mmに対応"
+    ],
+    "cautions": [
+      "排気延長は 7m・4曲がり以内で施工する（排気筒径φ100）",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+    "manufacturerPrice": {
+      "amount": 443630,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材は含まない",
+      "asOf": "ノーリツ ガス給湯機器 総合カタログ2026.Ⅲ（2026年8月現在）カタログ136ページ",
+      "sourceUrl": "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.noritz.co.jp/product/kyutou_bath/gas/gasfuro_eco/",
+      "https://www.noritz.co.jp/product/PDF/gt-70.pdf",
+      "https://noritz.mediapress-net.com/iportal/CatalogSearch.do?method=catalogSearchByDefaultSettingCategories&volumeID=NRZ50001&designID=NRZD001",
+      "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    ]
+  },
+  {
+    "id": "noritz-gq-2479ws",
+    "slug": "gq-2479ws",
+    "brand": "noritz",
+    "category": "gas",
+    "series": "GQ-79WSシリーズ（ユコアGQ-WS）",
+    "name": "ガス給湯器 給湯専用 オートストップ",
+    "modelNumber": "GQ-2479WS",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛形"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "hot-water-only",
+      "label": "給湯専用（オートストップ）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス（13A）：50.0kW（43,000kcal／h） ／ LPG：50.0kW（3.57kg／h）"
+      },
+      {
+        "label": "ガス消費量の都市ガスの値",
+        "value": "13Aの値（12Aは若干小さくなる）"
+      },
+      {
+        "label": "エネルギー消費効率",
+        "value": "（モード）83.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      },
+      {
+        "label": "消費電力",
+        "value": "49W 凍結予防ヒータ：116W 待機時：1.0W"
+      },
+      {
+        "label": "質量（本体）",
+        "value": "15kg"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "RC-7907M",
+        "note": "台所リモコン（オートストップタイプ）"
+      },
+      {
+        "model": "RC-B907S",
+        "note": "浴室リモコン（オートストップタイプ）"
+      },
+      {
+        "model": "RC-7906M",
+        "note": "台所リモコン（オートストップなしタイプ）"
+      },
+      {
+        "model": "RC-7906S",
+        "note": "浴室リモコン（オートストップなしタイプ）"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）の給湯専用ガス給湯器。エネルギー消費効率はモード熱効率 83.5%",
+      "オートストップタイプのリモコン（台所 RC-7907M・浴室 RC-B907S）と組み合わせると、設定した湯量でお湯はりを止められる",
+      "集合住宅向けには PS標準設置形（-PS）・PS扉内設置形（-T）などの別型番がある"
+    ],
+    "cautions": [
+      "最高使用温度は60℃。リモコン未接続時は60℃固定出湯となり、オートストップ機能は作動しない",
+      "リモコンの対応個数は合計2個まで（台所・浴室リモコンはそれぞれ複数接続できない）",
+      "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/",
+    "manufacturerPrice": {
+      "amount": 196570,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材は含まない",
+      "asOf": "ノーリツ ガス給湯機器 総合カタログ2026.Ⅲ（2026年8月現在）カタログ149ページ",
+      "sourceUrl": "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/",
+      "https://www.noritz.co.jp/product/PDF/gq-79ws.pdf",
+      "https://noritz.mediapress-net.com/iportal/CatalogSearch.do?method=catalogSearchByDefaultSettingCategories&volumeID=NRZ50001&designID=NRZD001",
+      "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    ]
+  },
+  {
+    "id": "noritz-gq-2079ws",
+    "slug": "gq-2079ws",
+    "brand": "noritz",
+    "category": "gas",
+    "series": "GQ-79WSシリーズ（ユコアGQ-WS）",
+    "name": "ガス給湯器 給湯専用 オートストップ",
+    "modelNumber": "GQ-2079WS",
+    "installationType": {
+      "key": "wall",
+      "label": "屋外壁掛形"
+    },
+    "housing": [
+      "detached"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "hot-water-only",
+      "label": "給湯専用（オートストップ）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス（13A）：41.6kW（35,800kcal／h） ／ LPG：41.6kW（2.97kg／h）"
+      },
+      {
+        "label": "ガス消費量の都市ガスの値",
+        "value": "13Aの値（12Aは若干小さくなる）"
+      },
+      {
+        "label": "エネルギー消費効率",
+        "value": "（モード）83.0%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "RC-7907M",
+        "note": "台所リモコン（オートストップタイプ）"
+      },
+      {
+        "model": "RC-B907S",
+        "note": "浴室リモコン（オートストップタイプ）"
+      },
+      {
+        "model": "RC-7906M",
+        "note": "台所リモコン（オートストップなしタイプ）"
+      },
+      {
+        "model": "RC-7906S",
+        "note": "浴室リモコン（オートストップなしタイプ）"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）の給湯専用ガス給湯器。エネルギー消費効率はモード熱効率 83.0%",
+      "オートストップタイプのリモコン（台所 RC-7907M・浴室 RC-B907S）と組み合わせると、設定した湯量でお湯はりを止められる",
+      "集合住宅向けには PS標準設置形（-PS）・PS扉内設置形（-T）などの別型番がある"
+    ],
+    "cautions": [
+      "最高使用温度は60℃。リモコン未接続時は60℃固定出湯となり、オートストップ機能は作動しない",
+      "リモコンの対応個数は合計2個まで（台所・浴室リモコンはそれぞれ複数接続できない）",
+      "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/",
+    "manufacturerPrice": {
+      "amount": 181280,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材は含まない",
+      "asOf": "ノーリツ ガス給湯機器 総合カタログ2026.Ⅲ（2026年8月現在）カタログ149ページ",
+      "sourceUrl": "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.noritz.co.jp/product/kyutou_bath/gas/gas_eco/",
+      "https://www.noritz.co.jp/product/PDF/gq-79ws.pdf",
+      "https://noritz.mediapress-net.com/iportal/CatalogSearch.do?method=catalogSearchByDefaultSettingCategories&volumeID=NRZ50001&designID=NRZD001",
+      "https://noritz.mediapress-net.com/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=NRZ50001&categoryID=&catalogID=24516410000&catalogCategoryID=&pageGroupID=&pageID=&designID=NRZD001"
+    ]
   }
 ];

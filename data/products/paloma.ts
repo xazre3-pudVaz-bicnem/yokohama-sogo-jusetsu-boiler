@@ -849,7 +849,7 @@ export const palomaProducts: ProductData[] = [
       },
       {
         "label": "消費電力 50Hz/60Hz",
-        "value": "115W"
+        "value": "100W"
       },
       {
         "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
@@ -914,7 +914,7 @@ export const palomaProducts: ProductData[] = [
     "subsidyVerifiedAt": null,
     "dataVerifiedAt": "2026-10-14",
     "availableStatus": "current",
-    "lastUpdatedAt": "2026-10-14",
+    "lastUpdatedAt": "2026-11-17",
     "sources": [
       "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305",
       "https://www.paloma.co.jp/product/waterheater/oidaki/index.html",
@@ -1850,6 +1850,867 @@ export const palomaProducts: ProductData[] = [
       "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4812990000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01",
       "https://www.paloma.co.jp/special/kyutou_shoene2026/",
       "https://www.paloma.co.jp/vc-files/paloma/product/products_hybridplus/products_hybridplus_shiyou_02.jpg"
+    ]
+  },
+  {
+    "id": "paloma-fh-2423saw-1",
+    "slug": "fh-2423saw-1",
+    "brand": "paloma",
+    "category": "gas",
+    "series": "ガスふろ給湯器 オートタイプ（従来型）",
+    "name": "オート 24号 FH-2423SAシリーズ",
+    "modelNumber": "FH-2423SAW-1",
+    "installationType": {
+      "key": "wall",
+      "label": "壁掛型・PS 標準設置型"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "オート"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600mm×幅470mm×奥行240mm"
+      },
+      {
+        "label": "質量",
+        "value": "23（満水：24）kg"
+      },
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス 50.4kW ／ LPガス 50.4kW"
+      },
+      {
+        "label": "ガス消費量（追焚）",
+        "value": "都市ガス 11.6kW ／ LPガス 11.6kW"
+      },
+      {
+        "label": "給湯温度調節（リモコン接続の場合）",
+        "value": "32-60℃"
+      },
+      {
+        "label": "接続（給水・給湯）",
+        "value": "R3/4(20A)"
+      },
+      {
+        "label": "接続（ガス）",
+        "value": "12A・13A R3/4(20A) ／ LPG R1/2(15A)"
+      },
+      {
+        "label": "消費電力 50Hz/60Hz",
+        "value": "115W"
+      },
+      {
+        "label": "待機時消費電力",
+        "value": "1.3W"
+      },
+      {
+        "label": "電源コード",
+        "value": "1.8m"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/㎠）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
+        "value": "82.5%"
+      },
+      {
+        "label": "熱効率（給湯／ふろ）",
+        "value": "給湯 82.5% ／ ふろ 82%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MFC-E238V",
+        "note": "無線LAN対応リモコン Felimo Link（ボイス）"
+      },
+      {
+        "model": "MFC-E236D",
+        "note": "インターホン付"
+      },
+      {
+        "model": "MFC-E226V",
+        "note": "Felimo Voice（ボイス）"
+      },
+      {
+        "model": "MFC-250V",
+        "note": "ボイス"
+      },
+      {
+        "model": "MFC-250",
+        "note": "スタンダード"
+      },
+      {
+        "model": "ZC-250",
+        "note": "増設リモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。モード熱効率 82.5%",
+      "オートタイプ：スイッチひとつで設定湯量・温度の湯はりから保温（おいだき）まで自動",
+      "自動運転の終了後に、おいだき配管を新しいお湯で洗い流す「配管クリーン機能」",
+      "保温時間のカスタマイズ、湯はり完了前お知らせ、予約運転",
+      "パロマ独自の“面”センサーによる壁面火災防止装置",
+      "側方近接（1cm）設置に対応",
+      "外装は塩害・サビに強い鋼板（耐塩害仕様は JRA9002 に基づく）",
+      "日本製"
+    ],
+    "cautions": [
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=304",
+    "manufacturerPrice": {
+      "amount": 480370,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材・取付工事費・使用済み商品の引き取り費は含まない",
+      "asOf": "ガス給湯器総合カタログ 2026年9月新価格（掲載内容は2026年8月現在）と、2026-11-16 の公式製品ページ",
+      "sourceUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=304"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=304",
+      "https://www.paloma.co.jp/product/waterheater/oidaki/index.html",
+      "https://www.paloma.co.jp/product/catalog/index.html",
+      "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01"
+    ]
+  },
+  {
+    "id": "paloma-fh-2423fawl-1",
+    "slug": "fh-2423fawl-1",
+    "brand": "paloma",
+    "category": "gas",
+    "series": "ガスふろ給湯器 フルオートタイプ（従来型）",
+    "name": "フルオート 24号 FH-2423FAシリーズ",
+    "modelNumber": "FH-2423FAWL-1",
+    "installationType": {
+      "key": "wall",
+      "label": "壁掛型・PS 標準設置型"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "fullauto",
+      "label": "フルオート"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600mm×幅470mm×奥行240mm"
+      },
+      {
+        "label": "質量",
+        "value": "23（満水：24）kg"
+      },
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス 50.4kW ／ LPガス 50.4kW"
+      },
+      {
+        "label": "ガス消費量（追焚）",
+        "value": "都市ガス 11.6kW ／ LPガス 11.6kW"
+      },
+      {
+        "label": "給湯温度調節（リモコン接続の場合）",
+        "value": "32-60℃"
+      },
+      {
+        "label": "接続（給水・給湯）",
+        "value": "R3/4(20A)"
+      },
+      {
+        "label": "接続（ガス）",
+        "value": "12A・13A R3/4(20A) ／ LPG R1/2(15A)"
+      },
+      {
+        "label": "消費電力 50Hz/60Hz",
+        "value": "115W"
+      },
+      {
+        "label": "待機時消費電力",
+        "value": "1.3W"
+      },
+      {
+        "label": "電源コード",
+        "value": "1.8m"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/㎠）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
+        "value": "82.5%"
+      },
+      {
+        "label": "熱効率（給湯／ふろ）",
+        "value": "給湯 82.5% ／ ふろ 82%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MFC-E238V",
+        "note": "無線LAN対応リモコン Felimo Link（ボイス）"
+      },
+      {
+        "model": "MFC-E236D",
+        "note": "インターホン付"
+      },
+      {
+        "model": "MFC-E226V",
+        "note": "Felimo Voice（ボイス）"
+      },
+      {
+        "model": "MFC-250V",
+        "note": "ボイス"
+      },
+      {
+        "model": "MFC-250",
+        "note": "スタンダード"
+      },
+      {
+        "model": "ZC-250",
+        "note": "増設リモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。モード熱効率 82.5%",
+      "フルオートタイプ：湯はりから保温（おいだき）、たし湯まで自動",
+      "お風呂の栓を抜くと、おいだき配管を新しいお湯で洗い流す「配管クリーン機能」",
+      "保温時間のカスタマイズ、湯はり完了前お知らせ、予約運転",
+      "パロマ独自の“面”センサーによる壁面火災防止装置",
+      "側方近接（1cm）設置に対応",
+      "外装は塩害・サビに強い鋼板（耐塩害仕様は JRA9002 に基づく）",
+      "日本製"
+    ],
+    "cautions": [
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=301",
+    "manufacturerPrice": {
+      "amount": 546370,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材・取付工事費・使用済み商品の引き取り費は含まない",
+      "asOf": "ガス給湯器総合カタログ 2026年9月新価格（掲載内容は2026年8月現在）と、2026-11-16 の公式製品ページ",
+      "sourceUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=301"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=301",
+      "https://www.paloma.co.jp/product/waterheater/oidaki/index.html",
+      "https://www.paloma.co.jp/product/catalog/index.html",
+      "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01"
+    ]
+  },
+  {
+    "id": "paloma-fh-1613saw-1",
+    "slug": "fh-1613saw-1",
+    "brand": "paloma",
+    "category": "gas",
+    "series": "ガスふろ給湯器 オートタイプ（従来型）",
+    "name": "オート 16号 FH-1613SAシリーズ",
+    "modelNumber": "FH-1613SAW-1",
+    "installationType": {
+      "key": "wall",
+      "label": "壁掛型・PS 標準設置型"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 16,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "オート"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600mm×幅470mm×奥行240mm"
+      },
+      {
+        "label": "質量",
+        "value": "23（満水：24）kg"
+      },
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス 33.6kW ／ LPガス 33.6kW"
+      },
+      {
+        "label": "ガス消費量（追焚）",
+        "value": "都市ガス 11.6kW ／ LPガス 11.6kW"
+      },
+      {
+        "label": "給湯温度調節（リモコン接続の場合）",
+        "value": "32-60℃"
+      },
+      {
+        "label": "接続（給水・給湯）",
+        "value": "R1/2(15A)"
+      },
+      {
+        "label": "接続（ガス）",
+        "value": "12A・13A R1/2(15A) ／ LPG R1/2(15A)"
+      },
+      {
+        "label": "消費電力 50Hz/60Hz",
+        "value": "95W"
+      },
+      {
+        "label": "待機時消費電力",
+        "value": "1.3W"
+      },
+      {
+        "label": "電源コード",
+        "value": "1.8m"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/㎠）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
+        "value": "82.5%"
+      },
+      {
+        "label": "熱効率（給湯／ふろ）",
+        "value": "給湯 83% ／ ふろ 82%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MFC-E238V",
+        "note": "無線LAN対応リモコン Felimo Link（ボイス）"
+      },
+      {
+        "model": "MFC-E236D",
+        "note": "インターホン付"
+      },
+      {
+        "model": "MFC-E226V",
+        "note": "Felimo Voice（ボイス）"
+      },
+      {
+        "model": "MFC-250V",
+        "note": "ボイス"
+      },
+      {
+        "model": "MFC-250",
+        "note": "スタンダード"
+      },
+      {
+        "model": "ZC-250",
+        "note": "増設リモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。モード熱効率 82.5%",
+      "オートタイプ：スイッチひとつで設定湯量・温度の湯はりから保温（おいだき）まで自動",
+      "自動運転の終了後に、おいだき配管を新しいお湯で洗い流す「配管クリーン機能」",
+      "保温時間のカスタマイズ、湯はり完了前お知らせ、予約運転",
+      "パロマ独自の“面”センサーによる壁面火災防止装置",
+      "側方近接（1cm）設置に対応",
+      "外装は塩害・サビに強い鋼板（耐塩害仕様は JRA9002 に基づく）",
+      "日本製"
+    ],
+    "cautions": [
+      "16号は、受注対応で給水・給湯または都市ガス（12A・13A）の接続を R3/4（20A）にできる",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=307",
+    "manufacturerPrice": {
+      "amount": 416020,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材・取付工事費・使用済み商品の引き取り費は含まない",
+      "asOf": "ガス給湯器総合カタログ 2026年9月新価格（掲載内容は2026年8月現在）と、2026-11-16 の公式製品ページ",
+      "sourceUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=307"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=307",
+      "https://www.paloma.co.jp/product/waterheater/oidaki/index.html",
+      "https://www.paloma.co.jp/product/catalog/index.html",
+      "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01"
+    ]
+  },
+  {
+    "id": "paloma-fh-2023satl-1",
+    "slug": "fh-2023satl-1",
+    "brand": "paloma",
+    "category": "gas",
+    "series": "ガスふろ給湯器 オートタイプ（従来型）",
+    "name": "オート 20号 FH-2023SAシリーズ",
+    "modelNumber": "FH-2023SATL-1",
+    "installationType": {
+      "key": "ps-door",
+      "label": "PS扉内前方排気型"
+    },
+    "housing": [
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "auto",
+      "label": "オート"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ600mm×幅470mm×奥行240mm"
+      },
+      {
+        "label": "質量",
+        "value": "23（満水：24）kg"
+      },
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス 42.0kW ／ LPガス 42.0kW"
+      },
+      {
+        "label": "ガス消費量（追焚）",
+        "value": "都市ガス 11.6kW ／ LPガス 11.6kW"
+      },
+      {
+        "label": "給湯温度調節（リモコン接続の場合）",
+        "value": "32-60℃"
+      },
+      {
+        "label": "接続（給水・給湯）",
+        "value": "R3/4(20A)"
+      },
+      {
+        "label": "接続（ガス）",
+        "value": "12A・13A R3/4(20A) ／ LPG R1/2(15A)"
+      },
+      {
+        "label": "消費電力 50Hz/60Hz",
+        "value": "100W"
+      },
+      {
+        "label": "待機時消費電力",
+        "value": "1.3W"
+      },
+      {
+        "label": "電源コード",
+        "value": "1.8m"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/㎠）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
+        "value": "82.5%"
+      },
+      {
+        "label": "熱効率（給湯／ふろ）",
+        "value": "給湯 83% ／ ふろ 82%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MFC-E238V",
+        "note": "無線LAN対応リモコン Felimo Link（ボイス）"
+      },
+      {
+        "model": "MFC-E236D",
+        "note": "インターホン付"
+      },
+      {
+        "model": "MFC-E226V",
+        "note": "Felimo Voice（ボイス）"
+      },
+      {
+        "model": "MFC-250V",
+        "note": "ボイス"
+      },
+      {
+        "model": "MFC-250",
+        "note": "スタンダード"
+      },
+      {
+        "model": "ZC-250",
+        "note": "増設リモコン"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）のガスふろ給湯器。モード熱効率 82.5%",
+      "オートタイプ：スイッチひとつで設定湯量・温度の湯はりから保温（おいだき）まで自動",
+      "自動運転の終了後に、おいだき配管を新しいお湯で洗い流す「配管クリーン機能」",
+      "保温時間のカスタマイズ、湯はり完了前お知らせ、予約運転",
+      "パロマ独自の“面”センサーによる壁面火災防止装置",
+      "側方近接（1cm）設置に対応",
+      "ブラケットは標準で取付済み",
+      "外装は塩害・サビに強い鋼板（耐塩害仕様は JRA9002 に基づく）",
+      "日本製"
+    ],
+    "cautions": [
+      "排気延長・側方排気はできない",
+      "専用のオプション部品に、PS扉内取付ボックス TBFH-2 と排気変更アダプター HHFAK-8 がある",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305",
+    "manufacturerPrice": {
+      "amount": 471350,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材・取付工事費・使用済み商品の引き取り費は含まない",
+      "asOf": "ガス給湯器総合カタログ 2026年9月新価格（掲載内容は2026年8月現在）と、2026-11-16 の公式製品ページ",
+      "sourceUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=305",
+      "https://www.paloma.co.jp/product/waterheater/oidaki/index.html",
+      "https://www.paloma.co.jp/product/catalog/index.html",
+      "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01"
+    ]
+  },
+  {
+    "id": "paloma-ph-2017aw",
+    "slug": "ph-2017aw",
+    "brand": "paloma",
+    "category": "gas",
+    "series": "給湯専用 オートストップ（コンパクトオートストップタイプ）",
+    "name": "オートストップ 20号 PH-2017Aシリーズ",
+    "modelNumber": "PH-2017AW",
+    "installationType": {
+      "key": "wall",
+      "label": "壁掛型・PS標準設置型"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 20,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "hot-water-only",
+      "label": "給湯専用（オートストップ）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ520mm×幅350mm×奥行135mm"
+      },
+      {
+        "label": "質量",
+        "value": "13.5（満水：14.5）kg"
+      },
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス 42.0kW ／ LPガス 42.0kW"
+      },
+      {
+        "label": "給湯温度調節（リモコン接続の場合）",
+        "value": "35～60℃"
+      },
+      {
+        "label": "接続（給水・給湯）",
+        "value": "R1/2(15A)"
+      },
+      {
+        "label": "接続（ガス）",
+        "value": "12A・13A R1/2(15A) ／ LPG R1/2(15A)"
+      },
+      {
+        "label": "消費電力 50Hz/60Hz",
+        "value": "47W"
+      },
+      {
+        "label": "待機時消費電力",
+        "value": "1.2W"
+      },
+      {
+        "label": "電源コード",
+        "value": "1.5m"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/㎠）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
+        "value": "82.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MC-150V",
+        "note": "台所リモコン（ボイスリモコン）"
+      },
+      {
+        "model": "FC-150V",
+        "note": "浴室リモコン（ボイスリモコン）"
+      },
+      {
+        "model": "MC-150",
+        "note": "台所リモコン（スタンダードリモコン）。オートストップ機能には対応していない"
+      },
+      {
+        "model": "FC-150",
+        "note": "浴室リモコン（スタンダードリモコン）"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）の給湯専用ガス給湯器。モード熱効率 82.5%",
+      "オートストップ対応（ボイスリモコンとの組合せ。スタンダードリモコンはオートストップ機能に対応していない）",
+      "奥行 135mm の薄型（コンパクトオートストップタイプ）",
+      "壁面火災防止装置、側方近接（1cm）設置に対応",
+      "日本製"
+    ],
+    "cautions": [
+      "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=238",
+    "manufacturerPrice": {
+      "amount": 194810,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材・取付工事費・使用済み商品の引き取り費は含まない",
+      "asOf": "ガス給湯器総合カタログ 2026年9月新価格（掲載内容は2026年8月現在）と、2026-11-16 の公式製品ページ",
+      "sourceUrl": "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=238"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.paloma.co.jp/cgi-bin/productDetail.cgi?rno=238",
+      "https://www.paloma.co.jp/product/waterheater/boileronly/index.html",
+      "https://www.paloma.co.jp/product/catalog/index.html",
+      "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01"
+    ]
+  },
+  {
+    "id": "paloma-ph-2427aw",
+    "slug": "ph-2427aw",
+    "brand": "paloma",
+    "category": "gas",
+    "series": "給湯専用 オートストップ（コンパクトオートストップタイプ）",
+    "name": "ガス給湯器 コンパクトオートストップタイプ 24号 PH-2427AW",
+    "modelNumber": "PH-2427AW",
+    "installationType": {
+      "key": "wall",
+      "label": "壁掛型・PS 標準設置型"
+    },
+    "housing": [
+      "detached",
+      "apartment"
+    ],
+    "capacity": {
+      "gou": 24,
+      "tankLiters": null
+    },
+    "functions": {
+      "key": "hot-water-only",
+      "label": "給湯専用（オートストップ）"
+    },
+    "gasTypes": [
+      "都市ガス（12A・13A）",
+      "LPガス（LPG）"
+    ],
+    "specifications": [
+      {
+        "label": "外形寸法",
+        "value": "高さ520mm×幅350mm×奥行170mm"
+      },
+      {
+        "label": "質量",
+        "value": "15（満水：16）kg"
+      },
+      {
+        "label": "ガス消費量（給湯）",
+        "value": "都市ガス 50.4kW ／ LPガス 50.4kW"
+      },
+      {
+        "label": "給湯温度調節（リモコン接続の場合）",
+        "value": "37～60℃"
+      },
+      {
+        "label": "接続（給水・給湯）",
+        "value": "R3/4(20A)"
+      },
+      {
+        "label": "接続（ガス）",
+        "value": "12A・13A R1/2(15A) ／ LPG R1/2(15A)"
+      },
+      {
+        "label": "消費電力 50Hz/60Hz",
+        "value": "52W"
+      },
+      {
+        "label": "待機時消費電力",
+        "value": "1.2W"
+      },
+      {
+        "label": "電源コード",
+        "value": "1.5m"
+      },
+      {
+        "label": "最低作動水圧",
+        "value": "10kPa（0.1kgf/㎠）"
+      },
+      {
+        "label": "エネルギー消費効率（モード熱効率・JIS S 2075に基づく）",
+        "value": "82.5%"
+      },
+      {
+        "label": "熱効率（給湯）",
+        "value": "83.0%"
+      }
+    ],
+    "remotes": [
+      {
+        "model": "MC-150V",
+        "note": "台所リモコン（ボイスリモコン）"
+      },
+      {
+        "model": "FC-150V",
+        "note": "浴室リモコン（ボイスリモコン）"
+      },
+      {
+        "model": "MC-150",
+        "note": "台所リモコン（スタンダードリモコン）。オートストップ機能には対応していない"
+      },
+      {
+        "model": "FC-150",
+        "note": "浴室リモコン（スタンダードリモコン）"
+      }
+    ],
+    "features": [
+      "従来型（非エコジョーズ）の給湯専用ガス給湯器。モード熱効率 82.5%",
+      "オートストップ対応（ボイスリモコンとの組合せ。スタンダードリモコンはオートストップ機能に対応していない）",
+      "壁面火災防止装置、側方近接（1cm）設置に対応",
+      "日本製"
+    ],
+    "cautions": [
+      "浴槽の落とし込みにオートストップを使う場合は、サーモ付混合水栓以外の水栓を使う",
+      "従来型のため、国の「給湯省エネ2026事業」の対象機器ではない（制度の対象はエコキュート・ハイブリッド給湯機・エネファーム）"
+    ],
+    "manufacturerUrl": "https://www.paloma.co.jp/product/catalog/index.html",
+    "manufacturerPrice": {
+      "amount": 214940,
+      "tax": "included",
+      "includes": "本体のみ。リモコン・別売部材・取付工事費・使用済み商品の引き取り費は含まない",
+      "asOf": "ガス給湯器総合カタログ 2026年9月新価格（掲載内容は2026年8月現在）",
+      "sourceUrl": "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01"
+    },
+    "salesPrice": null,
+    "remotePrice": null,
+    "installationPrice": null,
+    "disposalPrice": null,
+    "taxStatus": "included",
+    "subsidyEligibility": "not-target",
+    "subsidyProgram": null,
+    "subsidyAmount": null,
+    "subsidyVerifiedAt": null,
+    "dataVerifiedAt": "2026-11-16",
+    "availableStatus": "current",
+    "lastUpdatedAt": "2026-11-16",
+    "sources": [
+      "https://www.paloma.co.jp/product/catalog/index.html",
+      "https://paloma.icata.net/iportal/CatalogDownload.do?method=downloadPdfCatalog&type=downloadPdfCatalog&volumeID=PLM00001&categoryID=&catalogID=4131160000&catalogCategoryID=&pageGroupID=&pageID=&designID=PLMD01",
+      "https://www.paloma.co.jp/product/waterheater/boileronly/index.html"
     ]
   }
 ];

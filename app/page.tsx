@@ -18,7 +18,7 @@ import { FaqList } from "@/components/ui/FaqList";
 import { Icon } from "@/components/ui/Icon";
 import { LineIcon } from "@/components/ui/LineIcon";
 import { Phrase } from "@/components/ui/Phrase";
-import { wardAreas } from "@/data/areas";
+import { neighborAreas, wardAreas } from "@/data/areas";
 import { brands } from "@/data/brands";
 import { categories, gouGuide, gouOptions } from "@/data/categories";
 import { pickupFaqs } from "@/data/faq";
@@ -151,6 +151,7 @@ export default function HomePage() {
   const picks = starterPicks();
   const guides = contentPages("guide");
   const areas = wardAreas();
+  const neighbors = neighborAreas();
   const posts = getAllPosts().slice(0, 3);
   const operator = operatorStatement();
   const phone = primaryPhone();
@@ -699,7 +700,7 @@ export default function HomePage() {
           <Heading id="area" eyebrow="対応エリア" lead="区ごとに住まいの形が違うので、地域のページでは、公的な統計から交換のときに確かめることをまとめました。">
             <span className="inline-flex items-center gap-2">
               <CategoryIcon kind="area" className="size-9" />
-              戸塚区を中心に、横浜市内へ伺います
+              {neighbors.length ? "戸塚区を中心に、横浜市と周辺の市へ伺います" : "戸塚区を中心に、横浜市内へ伺います"}
             </span>
           </Heading>
           <ul className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-2.5" {...reveal()}>
@@ -715,6 +716,13 @@ export default function HomePage() {
                 横浜市全体
               </Link>
             </li>
+            {neighbors.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/area/${a.slug}`} className="opt">
+                  {a.shortName}
+                </Link>
+              </li>
+            ))}
           </ul>
           <p className="mt-5 text-center text-[0.875rem] leading-[1.95]">ページの無い地域も、ご住所をお知らせいただければ、対応できるかどうかをお答えします。</p>
           <p className="mt-3 text-center">
