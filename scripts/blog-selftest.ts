@@ -25,6 +25,7 @@ import { publishedAreas } from "@/data/areas";
 import { getAllPosts, type Post } from "@/lib/blog";
 import { blogClusters, getCluster } from "@/lib/blog-clusters";
 import { linkCatalog } from "@/lib/blog-links";
+import { auditPost } from "@/lib/blog-generator/audit";
 import { CORE_SECTION_IDS, FACTS_MAX_BYTES, FACTS_PATH, loadFactSheet, numericTokens, scopeIds, sectionsFor, sheetText, unknownNumericTokens, withLiveSections } from "@/lib/blog-generator/facts";
 import { extractGeneratedBlock, generatedFacts, productListId, productSectionId } from "@/lib/blog-generator/facts-source";
 import {
@@ -431,6 +432,13 @@ console.log("10. 見直し（リライト）");
   const fr = refreshReasons(failing, sheet, [failing]);
   check("点検で不合格の記事は、その理由（不合格の内容）で見直す", fr.some((r) => r.failing && r.instruction.includes("99万円")), fr.map((r) => r.instruction).join(" / "));
   check("点検で合格する記事には、その理由を付けない", !refreshReasons(base, sheet, [base]).some((r) => r.failing), refreshReasons(base, sheet, [base]).map((r) => r.instruction).join(" / "));
+  // 「〇月〇日の時点で」と、その日の制度の状態を書いた記事は、次の日からも点検で不合格にしない（見直した日の状態の節を通す）。
+  // 状態がその後に変わったときだけ、見直す理由にする
+  const phasePost = { ...base, slug: "phase-post", publishedAt: "2026-11-17", updatedAt: "2026-11-17", body: `${base.body}\n\n国の給湯省エネ2026事業は、2026年11月17日の時点で、交付申請の予約は終了し、交付申請は受付中です。` };
+  const phaseAudit = auditPost(phasePost, [phasePost], loadFactSheet(FACTS_PATH, "2026-11-20"));
+  check("記事を見直した日の制度の状態（日付）は、次の日からの点検でも通す", phaseAudit.ok, phaseAudit.errors.join(" / "));
+  check("制度の受付の状態が変わったら、見直す理由になる", refreshReasons(phasePost, loadFactSheet(FACTS_PATH, "2027-01-15")).some((r) => r.failing && r.instruction.includes("受付の状態が")));
+  check("制度の受付の状態が同じなら、その理由は付けない", !refreshReasons(phasePost, loadFactSheet(FACTS_PATH, "2026-11-20")).some((r) => r.instruction.includes("受付の状態が")));
   // 比べる相手は、点検には合格するが、見直す理由の多い記事（出典の節が確認し直された古い記事）。
   // 不合格の記事は、本文・主キーワード・検索意図の重ならない別の記事（悪い原稿）にする（重なると、両方が不合格になるため）
   const badFx = readFixture("blog-bad.json");

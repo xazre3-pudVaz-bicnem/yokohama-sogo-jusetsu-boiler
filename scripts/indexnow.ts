@@ -4,6 +4,9 @@
  *
  *   npm run indexnow               … sitemap.xml に載せている全ページを送る
  *   npm run indexnow -- /blog/xxx  … 指定したパスだけを送る（コラムの記事を足したときなど）
+ *   npm run indexnow -- --wait 2026-11-20 /blog/xxx /blog
+ *                                  … 最初のパスのページが本番に出て、その文字列（記事の日付など）を含むまで待ってから送る
+ *                                    （自動投稿で、push のあとの本番の更新を待つ。15分たっても出なければ、送らずに終わる）
  *
  * - 本番のデプロイが終わってから実行する（まだ無いページを知らせないため）。
  * - 鍵は public/<鍵>.txt に置いてある（公開してよい値。秘密の情報ではない）。鍵を変えるときは、ファイル名と中身と下の KEY をそろえる。
@@ -14,15 +17,36 @@ import { siteConfig } from "@/lib/site";
 
 const KEY = "c7773c9e68af99c2e47800eba13038a9";
 
+/** ページが本番に出て、text を含むようになるまで待つ（20秒おき・最大15分） */
+async function waitUntilLive(url: string, text: string): Promise<boolean> {
+  for (let i = 0; i < 45; i++) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (res.ok && (await res.text()).includes(text)) return true;
+    } catch {
+      // 一時的な失敗は、次の回で確かめ直す
+    }
+    await new Promise((r) => setTimeout(r, 20_000));
+  }
+  return false;
+}
+
 async function main() {
   const site = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || siteConfig.productionUrl).replace(/\/+$/, "");
   if (!site) {
     console.log("本番 URL が未設定なので、送りません。");
     return;
   }
-  const args = process.argv.slice(2).filter((a) => a.startsWith("/"));
+  const argv = process.argv.slice(2);
+  const waitIndex = argv.indexOf("--wait");
+  const waitFor = waitIndex >= 0 ? argv[waitIndex + 1] : undefined;
+  const args = argv.filter((a) => a.startsWith("/"));
   const paths = args.length ? args : sitemapRoutes().map((r) => r.path);
   const urlList = [...new Set(paths)].map((p) => (p === "/" ? site : `${site}${p}`));
+  if (waitFor && !(await waitUntilLive(urlList[0], waitFor))) {
+    console.log(`IndexNow：${urlList[0]} が15分のうちに本番に出なかった（「${waitFor}」を含まない）ので、送りません。`);
+    return;
+  }
   const host = new URL(site).host;
   const res = await fetch("https://api.indexnow.org/indexnow", {
     method: "POST",

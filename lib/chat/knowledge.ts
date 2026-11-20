@@ -7,6 +7,7 @@ import { capacityLabel, getBrand, manufacturerPriceLabel, productPath, products,
 import { formatDateJa } from "@/lib/seo";
 import { lineUrl, officeAddressWithPostal, primaryPhone, receptionHours, siteConfig } from "@/lib/site";
 import { budgetStatus, kyutouPhase, manYen, operatorStatement, phaseLabel } from "@/lib/subsidy";
+import { errorCodeBrands, errorCodesBrandPath } from "@/lib/error-codes";
 import { RELATION_LABEL, successorBrandPath, successorBrands, successorViews } from "@/lib/successors";
 import { fillTokens } from "@/lib/tokens";
 
@@ -92,6 +93,14 @@ export function buildKnowledge(): string {
     "",
     ...(succBrands.length
       ? ["## 古い型番から、メーカーが案内している機種（後継機種・取り替えの推奨。メーカー別の一覧のページ）", ...successorSummary, "このサイトの機種につながる対応：", ...successors, ""]
+      : []),
+    // エラーコードは、番号の数が多い（数百）ので、メーカーごとの一覧のページだけを渡す（番号の意味は、そのページを案内する）
+    ...(errorCodeBrands().length
+      ? [
+          "## エラーコードの一覧（メーカーごと。番号の意味と、メーカーが案内している対処。番号ごとのページの中のリンクは #code-番号）",
+          ...errorCodeBrands().map((b) => `${b.name}の${b.ecocuteOnly ? "エコキュート" : "給湯器"}：${b.count}件（${errorCodesBrandPath(b.id)}）`),
+          "",
+        ]
       : []),
     "## 解説のページ",
     ...pages,

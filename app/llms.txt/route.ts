@@ -3,10 +3,12 @@ import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
 import { kyutouShoene2026 as k } from "@/data/subsidy/programs";
 import { allContentPages, contentPagePath } from "@/lib/content";
+import { errorCodeBrands, errorCodesBrandPath } from "@/lib/error-codes";
 import { products } from "@/lib/products";
 import { absoluteUrl, formatDateJa } from "@/lib/seo";
 import { officeAddressWithPostal, primaryPhone, receptionHours, siteConfig } from "@/lib/site";
 import { kyutouPhase, manYen, phaseLabel } from "@/lib/subsidy";
+import { SUCCESSOR_PATH, successorBrandPath, successorBrands } from "@/lib/successors";
 import { fillTokens } from "@/lib/tokens";
 
 /**
@@ -54,6 +56,8 @@ export function GET(): Response {
     link("給湯器の商品一覧", "/products", "メーカー・号数・設置方式・補助金の対象で絞り込める"),
     ...makers.map((b) => link(`${b.name}の給湯器`, `/products/${b.id}`)),
     link("機種を比較する", "/compare"),
+    link("古い型番から後継機種を探す", SUCCESSOR_PATH, "メーカーが公式の資料で案内している後継機種・取り替えの推奨機種を、いまの機種の型番で探せる（出典つき）"),
+    ...successorBrands().map((b) => link(`${b.name}の古い型番から探す`, successorBrandPath(b.id), `古い型番 ${b.oldModels}件`)),
     "",
     "## 給湯器の選び方",
     ...byCluster("guide"),
@@ -64,6 +68,7 @@ export function GET(): Response {
     "",
     "## 故障・トラブル",
     ...byCluster("trouble"),
+    ...errorCodeBrands().map((x) => link(`${x.name}の${x.ecocuteOnly ? "エコキュート" : "給湯器"}のエラーコード一覧`, errorCodesBrandPath(x.id), `番号の意味と、メーカーが案内している対処（${x.count}件。メーカーの公式の資料から）`)),
     "",
     "## 対応エリア",
     link("対応エリア", "/area"),

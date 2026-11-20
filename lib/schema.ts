@@ -1,3 +1,4 @@
+import { neighborAreas } from "@/data/areas";
 import type { Product } from "@/data/products/types";
 import { siteConfig, primaryPhone, telIntl, type OfficeKey } from "@/lib/site";
 import { SITE_URL, DEFAULT_OG_IMAGE, ogImagePath } from "@/lib/seo";
@@ -62,13 +63,16 @@ function postalAddress(key: OfficeKey): Json {
 export const areaServed: Json[] = [
   { "@type": "AdministrativeArea", name: "神奈川県横浜市戸塚区" },
   { "@type": "City", name: "横浜市" },
+  // 地域のページがある、横浜市の周辺の市（data/areas.ts の kind: "neighbor"。ページと同じ範囲にする）
+  ...neighborAreas().map((a) => ({ "@type": "City", name: `神奈川県${a.name}` })),
   { "@type": "AdministrativeArea", name: "神奈川県" },
   { "@type": "AdministrativeArea", name: "東京都" },
 ];
 
 function sameAs(): string[] {
-  // LINE（友だち追加の URL）は入れない。会社を説明するプロフィールのページではないため
-  const all: string[] = [siteConfig.social.instagram];
+  // LINE（友だち追加の URL）は入れない。会社を説明するプロフィールのページではないため。
+  // Googleビジネスプロフィールは、会社を説明するプロフィールなので入れる（共有リンクがあるときだけ）
+  const all: string[] = [siteConfig.social.instagram, siteConfig.gbp.mapsUrl];
   return all.filter(Boolean);
 }
 

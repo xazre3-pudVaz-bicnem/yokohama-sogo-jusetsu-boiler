@@ -14,6 +14,7 @@ import type { BrandId } from "@/data/products/types";
 import { productPath, productsByBrand, toCard } from "@/lib/products";
 import { itemListSchema } from "@/lib/schema";
 import { buildMetadata, fitDescription, formatDateJa } from "@/lib/seo";
+import { successorBrandPath, successorBrands } from "@/lib/successors";
 
 /**
  * メーカー別のページ（/products/<メーカー>）。そのメーカーの掲載機種を、種類ごとに並べる。
@@ -90,6 +91,12 @@ export default async function BrandPage({ params }: Params) {
             {b.name}の公式サイト
             <Icon name="external" className="size-4" />
           </a>
+          {successorBrands().some((x) => x.id === b.id) && (
+            <Link href={successorBrandPath(b.id)} className="link-arrow !text-sm">
+              {b.name}の古い型番から探す
+              <Icon name="arrowRight" className="size-4" />
+            </Link>
+          )}
           {groups.length > 1 && (
             <span className="flex flex-wrap gap-2">
               {groups.map((g) => (

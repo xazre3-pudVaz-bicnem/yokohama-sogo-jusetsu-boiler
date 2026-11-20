@@ -1,5 +1,6 @@
 import type { Post } from "@/lib/blog";
 import { numericTokens, withLiveSections, type FactSheet } from "@/lib/blog-generator/facts";
+import { phaseSection } from "@/lib/blog-generator/facts-source";
 import { liveSectionId } from "@/lib/blog-generator/live";
 import { scopeForTopic } from "@/lib/blog-generator/scope";
 import { getTopic } from "@/lib/blog-generator/topics";
@@ -40,6 +41,9 @@ export function auditPost(post: Post, posts: Post[], baseSheet: FactSheet): Vali
     );
     live = { checkedAt: post.liveCheckedAt, sources: liveUrls };
   }
+  // その日の制度の状態は、点検の日の節に加えて、記事を書いた日・見直した日の節も通す（「〇月〇日の時点で〜」の文を、
+  // 次の日から不合格にしないため。状態がその後に変わったときは、generate.ts の refreshReasons が見直しの理由にする）
+  for (const day of new Set([post.publishedAt, post.updatedAt].filter(Boolean))) sheet = withLiveSections(sheet, phaseSection(day));
   const factSections = topic ? [...new Set([...scopeForTopic(topic, !!live), ...(liveId ? [liveId] : [])])] : undefined;
   return validateArticle(draft, {
     sheet,

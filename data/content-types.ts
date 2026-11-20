@@ -43,7 +43,8 @@ export type WidgetName =
   | "products-hybrid"
   | "ygrep-summary" // 横浜市の制度のまとめ
   | "ward-compare" // 地域のページがある区の、住まいの統計の比較
-  | "contact-photo-guide"; // 型番と設置場所の写真の送り方
+  | "contact-photo-guide" // 型番と設置場所の写真の送り方
+  | "error-code-makers"; // メーカーごとのエラーコードの一覧への入口（data/error-codes.ts にあるメーカーだけ）
 
 export type Block =
   | { type: "p"; text: string }

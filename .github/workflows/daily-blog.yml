@@ -160,6 +160,18 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
           echo "- push しました：/blog/${SLUG}" >> "$GITHUB_STEP_SUMMARY"
 
+      # 本番の更新（Vercel）で記事が出るのを待ってから、IndexNow で検索エンジン（Bing など）に知らせる。
+      # 記事のページに今日の日付（公開日か更新日）が出たら送る。15分たっても出なければ送らずに終わる。失敗しても止めない
+      - name: 検索エンジンに知らせる（IndexNow）
+        if: steps.generate.outputs.published == 'true'
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          SLUG: ${{ steps.generate.outputs.slug }}
+        run: |
+          npm run --silent indexnow -- --wait "dateTime=\"$(date +%F)\"" "/blog/${SLUG}" /blog | tee "$RUNNER_TEMP/indexnow.log"
+          echo "- $(tail -n 1 "$RUNNER_TEMP/indexnow.log")" >> "$GITHUB_STEP_SUMMARY"
+
       # 記事を書かなかった日・検査で止まった日も、予算の割合が新しくなっていれば、それだけを反映する（試し書きの回は何もしない）
       - name: 予算の割合だけを反映する
         if: ${{ always() && !inputs.dry_run && (steps.generate.outputs.published != 'true' || failure()) }}

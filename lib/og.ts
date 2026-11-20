@@ -4,6 +4,7 @@ import { getCategory } from "@/data/categories";
 import { activeClusters, BLOG_NAME, getAllPosts, pageCount } from "@/lib/blog";
 import { allContentPages, contentPagePath } from "@/lib/content";
 import { products } from "@/lib/products";
+import { errorCodeBrands, errorCodesBrandPath } from "@/lib/error-codes";
 import { successorBrandPath, successorBrands } from "@/lib/successors";
 import { kyutouPhase } from "@/lib/subsidy";
 import { fillTokens } from "@/lib/tokens";
@@ -63,6 +64,7 @@ export function ogCards(): Map<string, OgCard> {
   }
   for (const a of publishedAreas) map.set(`/area/${a.slug}`, { label: "対応エリア", title: a.title, tone: "red" });
   for (const b of successorBrands()) map.set(successorBrandPath(b.id), { label: "型番から探す", title: `${b.name}の古い型番から後継機種を探す`, tone: "navy" });
+  for (const b of errorCodeBrands()) map.set(errorCodesBrandPath(b.id), { label: "故障・トラブル", title: `${b.name}の${b.ecocuteOnly ? "エコキュート" : "給湯器"}のエラーコード一覧`, tone: "orange" });
   for (const b of brands.filter((x) => products.some((p) => p.brand === x.id))) {
     const cats = b.categories.map((c) => getCategory(c).shortName).join("・");
     map.set(`/products/${b.id}`, { label: `${b.name}の給湯器`, title: `${b.name}の給湯器の交換｜${cats}の機種と型番`, tone: "navy" });

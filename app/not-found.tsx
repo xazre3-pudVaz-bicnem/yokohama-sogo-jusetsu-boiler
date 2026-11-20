@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 const LINKS = [
   { href: "/", label: "トップページ" },
   { href: "/products", label: "商品を探す" },
+  { href: "/products/successor", label: "古い型番から後継機種を探す" },
   { href: "/subsidy", label: "給湯器の補助金" },
   { href: "/guide", label: "給湯器の選び方" },
   { href: "/trouble", label: "故障・トラブル" },

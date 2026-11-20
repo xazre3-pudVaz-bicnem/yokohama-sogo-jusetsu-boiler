@@ -6,6 +6,7 @@ import { activeClusters, getAllPosts, MIN_POSTS_TO_INDEX, pageCount } from "@/li
 import { allContentPages, contentPagePath } from "@/lib/content";
 import { latestProductUpdate, productPath, products } from "@/lib/products";
 import { SUCCESSOR_PATH, successorBrandPath, successorBrands, successorsUpdatedAt } from "@/lib/successors";
+import { errorCodeBrands, errorCodesBrandPath, errorCodesUpdatedAt } from "@/lib/error-codes";
 
 /**
  * サイトの URL の一覧（sitemap.xml・内部リンクの検査・コラムの自動生成のリンクの検査が使う）。
@@ -52,6 +53,8 @@ export function sitemapRoutes(): RouteEntry[] {
         ]
       : []),
     ...allContentPages().map((p) => ({ path: contentPagePath(p), priority: p.cluster === "subsidy" ? 0.8 : 0.7, lastModified: p.updatedAt })),
+    // メーカーごとのエラーコードの一覧（入口の /trouble/error-codes は allContentPages にある）
+    ...errorCodeBrands().map((b) => ({ path: errorCodesBrandPath(b.id), priority: 0.6, lastModified: errorCodesUpdatedAt(SITE_UPDATED, b.id) })),
     ...publishedAreas.map((a) => ({ path: `/area/${a.slug}`, priority: a.priority === "A" ? 0.8 : 0.6, lastModified: a.updatedAt })),
   ];
   if (works.length) {

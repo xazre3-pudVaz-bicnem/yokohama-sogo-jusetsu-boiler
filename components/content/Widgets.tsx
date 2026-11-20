@@ -8,6 +8,7 @@ import type { WidgetName } from "@/data/content-types";
 import type { CategoryId, Product } from "@/data/products/types";
 import { chintaiShoene2026 as c, kyutouShoene2026 as k, miraiEco2026 as m, yokohamaYgrep2026 as y } from "@/data/subsidy/programs";
 import { isContactFormShown } from "@/lib/contact";
+import { errorCodeBrands, errorCodesBrandPath } from "@/lib/error-codes";
 import { getBrand, productPath, productsByCategory, toCard } from "@/lib/products";
 import { formatDateJa } from "@/lib/seo";
 import { lineUrl } from "@/lib/site";
@@ -50,7 +51,32 @@ export function Widget({ name }: { name: WidgetName }) {
       return <WardCompare />;
     case "contact-photo-guide":
       return <ContactPhotoGuide />;
+    case "error-code-makers":
+      return <ErrorCodeMakers />;
   }
+}
+
+/** メーカーごとのエラーコードの一覧への入口。一覧のあるメーカーだけを出す（無ければ何も出さない） */
+function ErrorCodeMakers() {
+  const list = errorCodeBrands();
+  if (!list.length) return null;
+  return (
+    <ul className="grid gap-3 sm:grid-cols-2">
+      {list.map((b) => (
+        <li key={b.id}>
+          <Link href={errorCodesBrandPath(b.id)} className="card card-line group flex h-full items-center justify-between gap-3 px-5 py-4">
+            <span>
+              <span className="block font-heading font-black text-navy-900 group-hover:text-brand-700">{b.name}の{b.ecocuteOnly ? "エコキュート" : "給湯器"}</span>
+              <span className="mt-0.5 block text-[0.8125rem] text-ink-mute">エラーコード {b.count}件（番号で絞り込めます）</span>
+            </span>
+            <span className="arrow-dot shrink-0">
+              <Icon name="arrowRight" className="size-3.5" />
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function TableShell({ label, children, note }: { label: string; children: React.ReactNode; note?: React.ReactNode }) {

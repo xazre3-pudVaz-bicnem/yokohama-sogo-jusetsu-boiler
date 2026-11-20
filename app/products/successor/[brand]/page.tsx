@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SuccessorFilter } from "@/components/product/SuccessorFilter";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Icon } from "@/components/ui/Icon";
+import { ListFilter } from "@/components/ui/ListFilter";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { brands } from "@/data/brands";
@@ -23,7 +23,7 @@ import {
 
 /**
  * メーカーごとの、古い型番 → メーカーが案内している機種の一覧（/products/successor/<メーカー>）。
- * 行はサーバーで出し、絞り込みは SuccessorFilter が表示済みの行を隠す（JavaScript が動かなくても一覧は見える）。
+ * 行はサーバーで出し、絞り込みは ListFilter が表示済みの行を隠す（JavaScript が動かなくても一覧は見える）。
  * 出典は番号でまとめて、ページの下に載せる（行ごとに外部リンクを並べない）。
  */
 export const dynamicParams = false;
@@ -99,7 +99,13 @@ export default async function SuccessorBrandPage({ params }: Params) {
 
       <div className="bg-white">
         <div className="container-narrow section-tight">
-          <SuccessorFilter listId={listId} total={views.length} example={example} />
+          <ListFilter
+            listId={listId}
+            total={views.length}
+            label="いまの給湯器の型番で絞り込む"
+            hint={`型番の一部だけでも探せます（例：${example}）。全角・半角、空白の有無は気にしなくて大丈夫です。`}
+            emptyText="この一覧には見つかりませんでした。「～」の付いた型番は、その型番からの範囲です。型番の前半だけで探すか、銘板（型番のシール）の写真でご相談ください。"
+          />
 
           <ul className="mt-6 space-y-1.5 text-[0.8125rem] leading-[1.85] text-ink-mute">
             {relations.includes("successor") && <li>「{RELATION_LABEL.successor}」… {b.name}が、後継機種・現行品・モデルチェンジとして示している機種です。</li>}

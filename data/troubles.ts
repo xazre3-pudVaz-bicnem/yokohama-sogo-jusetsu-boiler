@@ -942,9 +942,10 @@ export const troublePages: ContentPage[] = [
       "給湯器のリモコンに出たエラーコードの調べ方を、リンナイ・ノーリツ・パロマの公式の一覧への案内とあわせてまとめました。点火不良や中和器の寿命、88・888の点検のお知らせなど、各社が公式に載せている主な番号の意味も表で確かめられます。",
     lead: "同じ番号でも、メーカーや機種によって意味が違うことがあります。番号だけで判断せず、本体の銘板でメーカーと型番を確かめてから、各社の公式の案内で調べます。",
     keyword: "給湯器 エラーコード",
-    secondaryKeywords: ["給湯器 エラー 111", "給湯器 888 点滅", "給湯器 エラー 290", "リンナイ エラーコード", "ノーリツ エラーコード"],
+    // メーカー名つきの検索語（「リンナイ エラーコード」など）は、メーカーごとの一覧（/trouble/error-codes/<メーカー>）が担当する
+    secondaryKeywords: ["給湯器 エラー 111", "給湯器 888 点滅", "給湯器 エラー 290", "給湯器 エラー 一覧", "エコキュート エラーコード"],
     publishedAt: "2026-10-14",
-    updatedAt: "2026-10-14",
+    updatedAt: "2026-11-20",
     summary: "メーカーごとの公式の調べ方と、主な番号の意味。88・888の点検のお知らせも。",
     sections: [
       {
@@ -992,6 +993,17 @@ export const troublePages: ContentPage[] = [
               "**パロマ**：番号の意味と処置は、機種ごとの取扱説明書の「故障かな？と思ったら」に載っています。[修理のご案内](https://www.paloma.co.jp/support/repair/index.html)のページから、よくあるご質問も開けます。",
             ],
           },
+        ],
+      },
+      {
+        id: "makers",
+        heading: "メーカーごとのエラーコードの一覧",
+        blocks: [
+          {
+            type: "p",
+            text: "このサイトでも、メーカーの公式の資料から、番号の意味と、メーカーが案内している対処を、メーカーごとにまとめました。リモコンに出ている番号で絞り込めます。",
+          },
+          { type: "widget", name: "error-code-makers" },
         ],
       },
       {
@@ -1142,6 +1154,7 @@ export const troublePages: ContentPage[] = [
       { href: "/guide/model-label", label: "型番の調べ方", note: "メーカーと型番を確かめる" },
       { href: "/trouble/freeze", label: "給湯器が凍結したときの対処と予防", note: "冬に出る290・562・632・032" },
       { href: "/trouble/repair-or-replace", label: "横浜市で給湯器が故障したときの修理と交換", note: "88・888が出た機器の考え方" },
+      { href: "/products/successor", label: "古い型番から後継機種を探す", note: "替えるときに、メーカーが案内している機種" },
     ],
   },
 
@@ -1559,6 +1572,7 @@ export const troublePages: ContentPage[] = [
       { href: "/guide/timing", label: "交換時期の目安", note: "年数と症状から考える" },
       { href: "/guide/cost", label: "交換費用の考え方", note: "お見積もりの見方" },
       { href: "/area/yokohama", label: "横浜市の給湯器交換", note: "対応エリアと、横浜市での進め方" },
+      { href: "/products/successor", label: "古い型番から後継機種を探す", note: "メーカーが案内している後継・取り替えの機種" },
     ],
   },
 ];

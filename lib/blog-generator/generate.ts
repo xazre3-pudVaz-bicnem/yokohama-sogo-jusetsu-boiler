@@ -216,6 +216,18 @@ export function refreshReasons(post: Post, sheet: FactSheet, posts?: Post[]): Re
       });
     }
   }
+  // 給湯省エネ2026事業の受付の状態（受付中・予約終了・終了）が、記事を見直した日から変わっていて、本文が受付の状態に触れているとき。
+  // 点検（audit.ts）は、記事を見直した日の「その日の制度の状態」の数値を通すため、状態の変化はここで見つける
+  const phaseToday = sheet.sections.find((s) => s.id === "subsidy-phase" && !s.live)?.checkedAt;
+  const phaseAt = (day: string) => kyutouPhase(new Date(`${day}T12:00:00+09:00`));
+  if (phaseToday && post.updatedAt && phaseAt(post.updatedAt) !== phaseAt(phaseToday) && /受付|交付申請の予約/.test(post.body)) {
+    const day = formatDateJa(phaseToday);
+    out.push({
+      instruction: `給湯省エネ2026事業の受付の状態が、記事を見直した日（${formatDateJa(post.updatedAt)}）から変わっています。受付の状態を書いた文を、事実シートの「その日の制度の状態」の節に合わせてください（「${day}の時点で」と日付も合わせる）。`,
+      resolved: (d) => d.body.includes(day) || d.body.includes(day.replace(/^\d+年/, "")) || !/受付中/.test(d.body),
+      failing: true,
+    });
+  }
   for (const sec of sheet.sections) {
     // その日の制度の状態（確認日が毎日今日になる）と、その日に確かめた節は、見直しの理由にしない
     if (sec.id === "subsidy-phase" || sec.live) continue;
@@ -389,6 +401,7 @@ const REVIEW_SYSTEM_RULES = `あなたは、給湯器の交換工事を行う会
 6. 誤字、不自然な日本語、意味の通らない文、文の途中で終わっている箇所、です・ます調でない文が無いか。
 7. 最初の段落で、検索意図に答えているか。見出しが内容を表しているか。
 8. 制度に触れているのに確認日が書かれていない、本日確かめた情報なのに確かめた日が書かれていない、ということが無いか。
+9. サイト内のリンク：下の「リンクできるページ」は、このサイトに実在するページの一覧です。一覧にあるページへのリンクと、そのページの名前・内容に合う案内の文（「〜は、［ページの名前］で確かめられます」など）は、事実シートに書かれていなくても問題にしない。一覧に無いページへのリンクと、リンクの文言が一覧のページの名前・内容と食い違うものだけを挙げる。
 
 ## 判定
 - 上の1〜8に当たる箇所を、issues に1件ずつ挙げる。quote には、原稿の文をそのまま抜き出す。
@@ -828,6 +841,8 @@ export async function generatePost(opts: { fetcher?: Fetcher } = {}): Promise<Ge
           model: REVIEW_MODEL,
           system: [
             { type: "text", text: REVIEW_SYSTEM_RULES },
+            // 書き手と同じ「リンクできるページ」を渡す（渡さないと、実在するページへのリンクを「事実シートに無いページ」として不合格にする）
+            { type: "text", text: `## リンクできるページ（このサイトに実在するページ）\n${linkCatalog(job.productIds)}` },
             { type: "text", text: `## 事実シート（この記事で使ってよい節）\n\n${sheetText(job.sheet, job.promptScope)}`, cache_control: { type: "ephemeral" } },
           ],
           user: `## 題材\n${job.reviewNote}\n\n## 原稿\n### 題名\n${draft.title}\n\n### 説明文\n${draft.description}\n\n### 本文\n${draft.body}\n\n### 質問と答え\n${draft.faq.map((q) => `Q. ${q.q}\nA. ${q.a}`).join("\n\n") || "（なし）"}\n\n### 出典として挙げた URL\n${draft.sources.map((x) => `- ${x.url}`).join("\n") || "（なし）"}\n\nこの原稿を確かめてください。`,

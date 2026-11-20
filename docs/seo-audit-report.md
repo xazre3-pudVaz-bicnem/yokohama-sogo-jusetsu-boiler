@@ -1,7 +1,7 @@
 # SEO 監査の結果
 
-- 実行：2026-11-17T00:44:05.962Z（本番 URL https://www.yokoju-boiler.com でビルド）
-- ページ数：182（sitemap 174）
+- 実行：2026-11-20T05:23:54.540Z（本番 URL https://www.yokoju-boiler.com でビルド）
+- ページ数：187（sitemap 179）
 - 誤り：0件／注意：0件
 
 ## 誤り
@@ -41,14 +41,14 @@
 | /area/tsuzuki | 都筑区 給湯器交換 | 都筑区の給湯器交換｜港北ニュータウンの集合住宅とテラスハウス | 3728 | 21 |  |
 | /area/yamato | 大和市 給湯器交換 | 大和市の給湯器交換｜人口密度の高い、駅に近い住宅地 | 3602 | 21 |  |
 | /area/yokohama | 横浜市 給湯器 対応エリア | 横浜市の給湯器交換｜対応エリアと区ごとの住まいの事情 | 4296 | 35 |  |
-| /blog | 給湯器 コラム | 給湯器コラム｜交換時期・故障のサイン・選び方・補助金 | 1102 | 15 |  |
+| /blog | 給湯器 コラム | 給湯器コラム｜交換時期・故障のサイン・選び方・補助金 | 1128 | 15 |  |
 | /blog/category/eco-jozu | — | 「エコジョーズ」のコラム一覧｜給湯器コラム｜横浜総合住設 | 476 | 11 | noindex |
 | /blog/category/ene-farm | — | 「エネファームから」のコラム一覧｜給湯器コラム｜横浜総合住設 | 492 | 11 | noindex |
 | /blog/category/error-codes | — | 「エラー表示」のコラム一覧｜給湯器コラム｜横浜総合住設 | 477 | 11 | noindex |
 | /blog/category/symptoms | — | 「故障のサイン」のコラム一覧｜給湯器コラム｜横浜総合住設 | 610 | 12 | noindex |
 | /blog/category/vs-ecocute | — | 「エコキュートとの違い」のコラム一覧｜給湯器コラム | 494 | 11 | noindex |
-| /blog/eco-jozu-merits-demerits | エコジョーズ メリット デメリット | エコジョーズのメリットとデメリット、ドレン排水と補助金まで | 4017 | 16 |  |
-| /blog/eco-jozu-or-ecocute | エコジョーズ エコキュート どっち | エコジョーズとエコキュート、どっちにする？家の条件で比べる | 5070 | 19 |  |
+| /blog/eco-jozu-merits-demerits | エコジョーズ メリット デメリット | エコジョーズのメリットとデメリット、ドレン排水と補助金まで | 4083 | 16 |  |
+| /blog/eco-jozu-or-ecocute | エコジョーズ エコキュート どっち | エコジョーズとエコキュート、どっちにする？家の条件で比べる | 5111 | 19 |  |
 | /blog/ene-farm-floor-heating-after | エネファーム 床暖房 交換後 | エネファーム交換後も床暖房は使える？暖房対応の替える先 | 4061 | 16 |  |
 | /blog/error-632-reheat-circulation | 給湯器 エラー 632 | 給湯器のエラー632。浴槽の水位・フィルター・凍結を確かめる | 3364 | 16 |  |
 | /blog/water-heater-reheat-not-working | 給湯器 追い焚き できない | 給湯器の追い焚きができない。断水・水位・フィルターを確かめる | 3669 | 17 |  |
@@ -81,19 +81,19 @@
 | /products/corona/chp-e372az2 | CHP-E372AZ2 | コロナ CHP-E372AZ2｜特徴・仕様・交換見積もり｜ヨコジュウ | 6058 | 15 |  |
 | /products/corona/chp-e37az2 | CHP-E37AZ2 | コロナ CHP-E37AZ2｜特徴・仕様・交換見積もり｜ヨコジュウ | 5978 | 15 |  |
 | /products/corona/chp-hxe37az2 | CHP-HXE37AZ2 | コロナ CHP-HXE37AZ2｜特徴・仕様・交換見積もり｜ヨコジュウ | 6109 | 15 |  |
-| /products/daikin | ダイキン 給湯器 交換 | ダイキンの給湯器の交換｜エコキュートの機種と型番｜横浜総合住設 | 1344 | 16 |  |
+| /products/daikin | ダイキン 給湯器 交換 | ダイキンの給湯器の交換｜エコキュートの機種と型番｜横浜総合住設 | 1357 | 17 |  |
 | /products/daikin/ea377aftv | EA377AFTV | ダイキン EA377AFTV｜特徴・仕様・交換見積もり｜ヨコジュウ | 7008 | 16 |  |
 | /products/daikin/ea377afv | EA377AFV | ダイキン EA377AFV｜特徴・仕様・交換見積もり｜ヨコジュウ | 8245 | 16 |  |
 | /products/daikin/ea467afv | EA467AFV | ダイキン EA467AFV｜特徴・仕様・交換見積もり｜ヨコジュウ | 8148 | 16 |  |
 | /products/daikin/en377afv | EN377AFV | ダイキン EN377AFV｜特徴・仕様・交換見積もり｜ヨコジュウ | 8162 | 16 |  |
 | /products/daikin/ex377afv | EX377AFV | ダイキン EX377AFV｜特徴・仕様・交換見積もり｜ヨコジュウ | 6106 | 16 |  |
-| /products/mitsubishi | 三菱電機 給湯器 交換 | 三菱電機の給湯器の交換｜エコキュートの機種と型番｜横浜総合住設 | 1327 | 16 |  |
+| /products/mitsubishi | 三菱電機 給湯器 交換 | 三菱電機の給湯器の交換｜エコキュートの機種と型番｜横浜総合住設 | 1340 | 17 |  |
 | /products/mitsubishi/srt-p377ub | SRT-P377UB | 三菱電機 SRT-P377UB｜特徴・仕様・交換見積もり｜ヨコジュウ | 6688 | 16 |  |
 | /products/mitsubishi/srt-s377 | SRT-S377 | 三菱電機 SRT-S377｜特徴・仕様・交換見積もり｜ヨコジュウ | 6037 | 16 |  |
 | /products/mitsubishi/srt-s377uz | SRT-S377UZ | 三菱電機 SRT-S377UZ｜特徴・仕様・交換見積もり｜ヨコジュウ | 6287 | 16 |  |
 | /products/mitsubishi/srt-s467 | SRT-S467 | 三菱電機 SRT-S467｜特徴・仕様・交換見積もり｜ヨコジュウ | 6004 | 16 |  |
 | /products/mitsubishi/srt-s467u | SRT-S467U | 三菱電機 SRT-S467U｜特徴・仕様・交換見積もり｜ヨコジュウ | 6165 | 16 |  |
-| /products/noritz | ノーリツ 給湯器 交換 | ノーリツの給湯器の交換｜エコジョーズ・ガス給湯器・ハイブリッドの機種と型番 | 4888 | 36 |  |
+| /products/noritz | ノーリツ 給湯器 交換 | ノーリツの給湯器の交換｜エコジョーズ・ガス給湯器・ハイブリッドの機種と型番 | 4901 | 37 |  |
 | /products/noritz/gq-1679ws | GQ-1679WS | ノーリツ GQ-1679WS｜特徴・仕様・交換見積もり｜ヨコジュウ | 3802 | 17 |  |
 | /products/noritz/gq-2079ws | GQ-2079WS | ノーリツ GQ-2079WS｜特徴・仕様・交換見積もり｜ヨコジュウ | 3530 | 17 |  |
 | /products/noritz/gq-2479ws | GQ-2479WS | ノーリツ GQ-2479WS｜特徴・仕様・交換見積もり｜ヨコジュウ | 3632 | 17 |  |
@@ -138,13 +138,13 @@
 | /products/paloma/ph-2017aw | PH-2017AW | パロマ PH-2017AW｜特徴・仕様・交換見積もり｜ヨコジュウ | 3677 | 17 |  |
 | /products/paloma/ph-2427aw | PH-2427AW | パロマ PH-2427AW｜特徴・仕様・交換見積もり｜ヨコジュウ | 3514 | 17 |  |
 | /products/paloma/ph-em1616awl | PH-EM1616AWL | パロマ PH-EM1616AWL｜特徴・仕様・交換見積もり｜ヨコジュウ | 3647 | 18 |  |
-| /products/panasonic | パナソニック 給湯器 交換 | パナソニックの給湯器の交換｜エコキュートの機種と型番 | 1281 | 16 |  |
+| /products/panasonic | パナソニック 給湯器 交換 | パナソニックの給湯器の交換｜エコキュートの機種と型番 | 1296 | 17 |  |
 | /products/panasonic/he-j37nqs | HE-J37NQS | パナソニック HE-J37NQS｜特徴・仕様・交換見積もり｜ヨコジュウ | 5764 | 15 |  |
 | /products/panasonic/he-j46nqs | HE-J46NQS | パナソニック HE-J46NQS｜特徴・仕様・交換見積もり｜ヨコジュウ | 5804 | 15 |  |
 | /products/panasonic/he-jpu37nqs | HE-JPU37NQS | パナソニック HE-JPU37NQS｜特徴・仕様・交換見積もり｜ヨコジュウ | 6080 | 15 |  |
 | /products/panasonic/he-ju37nqs | HE-JU37NQS | パナソニック HE-JU37NQS｜特徴・仕様・交換見積もり｜ヨコジュウ | 6006 | 15 |  |
 | /products/panasonic/he-w37lqs | HE-W37LQS | パナソニック HE-W37LQS｜特徴・仕様・交換見積もり｜ヨコジュウ | 6142 | 16 |  |
-| /products/rinnai | リンナイ 給湯器 交換 | リンナイの給湯器の交換｜エコジョーズ・ガス給湯器・ハイブリッドの機種と型番 | 5272 | 38 |  |
+| /products/rinnai | リンナイ 給湯器 交換 | リンナイの給湯器の交換｜エコジョーズ・ガス給湯器・ハイブリッドの機種と型番 | 5285 | 39 |  |
 | /products/rinnai/rhbf-rck246aw-rhp-r222-s-rtu-r1602 | RHBF-RCK246AW + RHP-R222(S) + RTU-R1602 | リンナイ RHBF-RCK246AW + RHP-R222(S) + RTU-R1602｜ハイブリッド給湯器 | 5226 | 15 |  |
 | /products/rinnai/rhbf-rk246aw-rhp-r225-p-rtup-r701 | RHBF-RK246AW + RHP-R225-P + RTUP-R701 | リンナイ RHBF-RK246AW + RHP-R225-P + RTUP-R701｜ハイブリッド給湯器 | 5630 | 15 |  |
 | /products/rinnai/rhbf-rk246aw-rhp-r225-rtu-r701 | RHBF-RK246AW + RHP-R225 + RTU-R701 | リンナイ RHBF-RK246AW + RHP-R225 + RTU-R701｜ハイブリッド給湯器 | 5236 | 15 |  |
@@ -190,11 +190,16 @@
 | /subsidy/totsuka | 戸塚区 給湯器 補助金 | 戸塚区の給湯器交換と補助金｜国と横浜市の制度の使い方 | 2235 | 8 |  |
 | /subsidy/yokohama | 横浜市 給湯器 補助金 | 横浜市の給湯器の補助金｜国の制度と市のポイント還元 | 3245 | 14 |  |
 | /trouble | 給湯器 故障 | 給湯器の故障・トラブル｜お湯が出ない・エラー・水漏れ・凍結 | 1060 | 12 |  |
-| /trouble/error-codes | 給湯器 エラーコード | 給湯器のエラーコードの調べ方と主な番号｜横浜総合住設 | 4626 | 9 |  |
+| /trouble/error-codes | 給湯器 エラーコード | 給湯器のエラーコードの調べ方と主な番号｜横浜総合住設 | 4916 | 15 |  |
+| /trouble/error-codes/corona | コロナ エラーコード | コロナのエコキュートのエラーコード一覧｜番号の意味とメーカーの案内 | 12306 | 13 |  |
+| /trouble/error-codes/daikin | ダイキン エラーコード | ダイキンのエコキュートのエラーコード一覧｜番号の意味とメーカーの案内 | 16146 | 14 |  |
+| /trouble/error-codes/mitsubishi | 三菱電機 エラーコード | 三菱電機のエコキュートのエラーコード一覧｜番号の意味とメーカーの案内 | 20128 | 14 |  |
+| /trouble/error-codes/noritz | ノーリツ エラーコード | ノーリツの給湯器のエラーコード一覧｜番号の意味とメーカーの案内 | 14153 | 14 |  |
+| /trouble/error-codes/rinnai | リンナイ エラーコード | リンナイの給湯器のエラーコード一覧｜番号の意味とメーカーの案内 | 16281 | 14 |  |
 | /trouble/freeze | 給湯器 凍結 | 給湯器が凍結したときの対処と予防｜横浜総合住設 | 3963 | 8 |  |
 | /trouble/no-hot-water | 給湯器 お湯が出ない | 給湯器からお湯が出ないときの確認と対処｜横浜総合住設 | 4173 | 10 |  |
 | /trouble/noise | 給湯器 異音 | 給湯器の異音、故障ではない音と危ない音｜横浜総合住設 | 3492 | 8 |  |
-| /trouble/repair-or-replace | 横浜市 給湯器 修理 | 横浜市で給湯器が故障したときの修理と交換｜横浜総合住設 | 3741 | 10 |  |
+| /trouble/repair-or-replace | 横浜市 給湯器 修理 | 横浜市で給湯器が故障したときの修理と交換｜横浜総合住設 | 3775 | 11 |  |
 | /trouble/unstable-temperature | 給湯器 温度が安定しない | 給湯器の温度が安定しないときの原因と確認｜横浜総合住設 | 3644 | 9 |  |
 | /trouble/water-leak | 給湯器 水漏れ | 給湯器の水漏れ、正常な排水との見分け方｜横浜総合住設 | 3493 | 8 |  |
 | /works | — | 給湯器の施工事例｜横浜市・戸塚区｜横浜総合住設 | 376 | 5 | noindex |

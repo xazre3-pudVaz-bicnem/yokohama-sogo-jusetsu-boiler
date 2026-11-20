@@ -156,7 +156,8 @@ export const siteConfig = {
    * 住所の文字列だけで地図を埋め込むと、建物の名称のカードが出てしまうため、embedUrl が入るまで地図は埋め込まない。
    */
   gbp: {
-    mapsUrl: "",
+    /** プロフィールの共有リンク（2026-11-20 に依頼者から受け取ったもの。Google の「株式会社横浜総合住設」のプロフィールに開く） */
+    mapsUrl: "https://share.google/nPx8Wvx8pFlgTBR6Q",
     embedUrl: "",
     reviewUrl: "",
   },

@@ -232,17 +232,30 @@ function productDetail(p: Product): string {
   return section(`機種の詳細：${b.name} ${p.modelNumber}`, productSectionId(p), p.dataVerifiedAt, [p.manufacturerUrl, ...p.sources.slice(0, 2)], lines);
 }
 
-/** 読み込むときに作る節（その日の制度の状態・機種ごとの仕様） */
-export function runtimeFacts(today: string): string {
-  const phase = kyutouPhase(new Date(`${today}T12:00:00+09:00`));
+/** その日の、給湯省エネ2026事業の状態（open・reservation-closed・ended） */
+export function phaseOn(day: string): ReturnType<typeof kyutouPhase> {
+  return kyutouPhase(new Date(`${day}T12:00:00+09:00`));
+}
+
+/**
+ * その日の制度の状態の節（Markdown）。書き手には今日の節を渡す。
+ * 公開済みの記事の点検では、記事を書いた日・見直した日の節も足す（「〇月〇日の時点で」と書いた文を、次の日から不合格にしないため。
+ * 状態がその後に変わったときは、generate.ts の refreshReasons が見直しの理由にする）。
+ */
+export function phaseSection(day: string): string {
+  const phase = phaseOn(day);
   const phaseText =
     phase === "open"
-      ? `${date(today)}の時点で受付中（予算の上限に達した時点で終わる）`
+      ? `${date(day)}の時点で受付中（予算の上限に達した時点で終わる）`
       : phase === "reservation-closed"
-        ? `${date(today)}の時点で、交付申請の予約は終了（交付申請は受付中）。新しく申し込む前提の書き方をしない`
-        : `${date(today)}の時点で受付を終了。制度を「使える」と書かず、終わった制度の記録として扱う`;
-  const phaseSection = section("その日の制度の状態", "subsidy-phase", today, [k.urls.top], [`${k.name}：${phaseLabel(phase)}。${phaseText}`]);
-  return [phaseSection, ...products.map(productDetail)].join("\n\n");
+        ? `${date(day)}の時点で、交付申請の予約は終了（交付申請は受付中）。新しく申し込む前提の書き方をしない`
+        : `${date(day)}の時点で受付を終了。制度を「使える」と書かず、終わった制度の記録として扱う`;
+  return section("その日の制度の状態", "subsidy-phase", day, [k.urls.top], [`${k.name}：${phaseLabel(phase)}。${phaseText}`]);
+}
+
+/** 読み込むときに作る節（その日の制度の状態・機種ごとの仕様） */
+export function runtimeFacts(today: string): string {
+  return [phaseSection(today), ...products.map(productDetail)].join("\n\n");
 }
 
 /* ------------------------------------------------------------------ */
